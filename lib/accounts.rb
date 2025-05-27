@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "accounts/version"
+require "accounts/version"
+require "accounts/railtie"
+require "accounts/engine"
 
 module Accounts
   class Error < StandardError; end
