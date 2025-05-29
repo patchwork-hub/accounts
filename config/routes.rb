@@ -13,6 +13,15 @@ Accounts::Engine.routes.draw do
         end
       end
 
+      resources :notification_tokens, only: [:create] do
+        collection do
+          post :revoke_token, to: 'notification_tokens#revoke_notification_token'
+          post :update_mute, to: 'notification_tokens#update_mute'
+          get :get_mute_status, to: 'notification_tokens#get_mute_status'
+          delete '/reset_device_tokens/:platform_type', to: 'notification_tokens#reset_device_tokens'
+        end
+      end
+
     end
   end
 end

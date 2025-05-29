@@ -4,6 +4,6 @@ module Accounts::Concerns::AccountConcern
   extend ActiveSupport::Concern
 
   included do
-    #scope :accounts, -> { where.not(domain: nil) }
+    has_many :notification_tokens, class_name: 'NotificationToken', dependent: :delete_all, inverse_of: :account
   end
 end
