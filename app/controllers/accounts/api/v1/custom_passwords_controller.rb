@@ -209,7 +209,7 @@ module Accounts::Api::V1
       if @user.confirmation_sent_at.present?
         @user.account.update!(discoverable: false)
         @user.skip_confirmation!
-        @user.update!(otp_secret: nil, confirmed_at: Time.now.utc, confirmation_sent_at: nil, confirmation_token: nil)
+        @user.update!(otp_secret: nil, confirmed_at: Time.current, confirmation_sent_at: nil, confirmation_token: nil, approved: true)
         create_useage_wait_list(waitlist_entry) if @can_register
       else
         @user.update!(otp_secret: nil)
