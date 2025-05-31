@@ -16,7 +16,6 @@ class LoginService
     if user.nil? || user.confirmed_at.nil?
       return "You don't have access to login."
     end
-
     nil
   end
 
