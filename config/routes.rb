@@ -22,6 +22,14 @@ Accounts::Engine.routes.draw do
         end
       end
 
+      namespace :patchwork do
+        resources :email_settings, only: [:index] do
+          collection do
+            post '/notification', to: 'email_settings#email_notification'
+          end
+        end
+      end
+
     end
   end
 end
