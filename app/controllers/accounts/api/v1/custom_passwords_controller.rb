@@ -108,10 +108,11 @@ module Accounts::Api::V1
       email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
       return render_password_error(message: 'Invalid email format.') unless new_email.match?(email_regex)
 
+      @user.skip_confirmation!
       if new_email != @user.email
         @user.update!(
           unconfirmed_email: new_email,
-          confirmation_sent_at: Time.now.utc,
+          confirmation_sent_at: Time.current,
           otp_secret: generate_otp_token,
           confirmed_at: nil
         )
@@ -218,10 +219,14 @@ module Accounts::Api::V1
 
     def handle_email_change
       new_email = @user.unconfirmed_email
-      @user.skip_confirmation!
-      if @user.update(email: new_email)
-        @user.update!(unconfirmed_email: nil, confirmation_token: nil, confirmed_at: Time.now.utc)
-      end
+      @user.email = new_email
+      @user.skip_reconfirmation!
+      @user.unconfirmed_email = nil
+      @user.confirmation_token = nil
+      @user.confirmed_at = Time.current
+      @user.approved =  true
+      @user.confirmation_sent_at = nil
+      @user.save!
     end
 
     def find_waitlist_entry
@@ -229,7 +234,7 @@ module Accounts::Api::V1
     end
 
     def create_useage_wait_list(waitlist_entry)
-      waitlist_entry.update!(used: true, account_id: @user.account.id, confirmed_at: Time.zone.now) if waitlist_entry.present?
+      waitlist_entry.update!(used: true, account_id: @user.account.id, confirmed_at: Time.current) if waitlist_entry.present?
     end
   end
 end
