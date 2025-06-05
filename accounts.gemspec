@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["Aung Kyaw Phyo"]
   spec.email = ["kiru.kiru28@gmail.com"]
 
-  spec.summary = "Overrides Register, Notification tokens"
+  spec.summary = "Overrides Register, Notification tokens, Push notification"
   spec.description = "A custom gem to dynamically override the Mastodon Register and Notification features"
   spec.homepage = "https://www.joinpatchwork.org/"
   spec.license = "MIT"
@@ -38,5 +38,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rails", "~> 8.0"
   spec.add_dependency "byebug"
-  spec.add_dependency "annotaterb"
+  spec.add_dependency 'googleauth', '~> 1.13', '>= 1.13.1'
+  spec.add_dependency 'httparty'
 end
