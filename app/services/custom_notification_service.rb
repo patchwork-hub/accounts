@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class CustomNotificationService < BaseService
+  include NewsmastHelper
+
   def call(recipient, notification)
     notification_tokens = NotificationToken.where(account_id: recipient.id)
     return nil if notification_tokens.empty? || notification_tokens.any? { |token| token.mute }
@@ -56,8 +58,9 @@ class CustomNotificationService < BaseService
     }
     # ios & android
     ios_android_devices = notification_tokens.where.not(platform_type: 'huawei').pluck(:notification_token)
+    app_title = is_newsmast? ? 'Newsmast' : 'Channels'
     ios_android_devices.each do |device|
-      FirebaseNotificationService.send_notification(device, 'Channels', body, data)
+      FirebaseNotificationService.send_notification(device, app_title, body, data)
     end
 
     # ## huawei
