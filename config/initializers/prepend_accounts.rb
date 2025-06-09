@@ -5,6 +5,7 @@ Rails.application.config.to_prepare do
   Oauth::TokensController.prepend(Accounts::Concerns::CustomOauthBehavior)
   Account.include(Accounts::Concerns::AccountConcern)
   User.include(OverrideDeviseConfirmation)
+  User.include(OverrideDevisePassword)
   REST::CredentialAccountSerializer.prepend(Overrides::CredentialAccountSerializer)
   NotifyService.prepend(Overrides::NotifyServiceExtension)
 end
