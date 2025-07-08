@@ -5,6 +5,9 @@ module NewsmastHelper
 
   def is_newsmast?
     return true if Rails.env.development?
-    Rails.env.production? && ENV['LOCAL_DOMAIN'] == 'mastodon.newsmast.org'
+
+    return true if Rails.env.production? && %w[mastodon.newsmast.org newsmast.social].include?(ENV['LOCAL_DOMAIN'])
+    
+    false
   end
 end
