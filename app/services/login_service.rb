@@ -28,7 +28,8 @@ class LoginService
     end
 
     unless %w[UserAdmin HubAdmin].include?(user.role&.name)
-      return 'Organisation admin isn\'t allowed to access login.'
+      readable_role = user.role&.name&.gsub(/([a-z])([A-Z])/, '\1 \2')&.downcase&.capitalize
+      return "#{readable_role} isn\'t allowed to access login."
     end
 
     nil

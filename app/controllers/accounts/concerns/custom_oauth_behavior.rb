@@ -6,7 +6,7 @@ module Accounts::Concerns::CustomOauthBehavior
 
   def create
 
-    if client_credentials?
+    if client_credentials? || authorization_code?
       super
       return 
     end
@@ -28,6 +28,10 @@ module Accounts::Concerns::CustomOauthBehavior
 
   def client_credentials?
     oauth_params[:grant_type] == 'client_credentials'
+  end
+
+  def authorization_code?
+    params[:grant_type] == 'authorization_code'
   end
 
   def oauth_params
