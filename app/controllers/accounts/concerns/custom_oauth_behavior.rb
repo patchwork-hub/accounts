@@ -31,7 +31,7 @@ module Accounts::Concerns::CustomOauthBehavior
   end
 
   def authorization_code?
-    params[:grant_type] == 'authorization_code'
+    oauth_params[:grant_type] == 'authorization_code'
   end
 
   def oauth_params

@@ -12,10 +12,11 @@ class LoginService
   end
 
   def newsmast_login
-    user = fetch_user_credentials
-    if user.nil? || user.confirmed_at.nil?
-      return "You don't have access to login."
-    end
+    ## Temporarily disabled NewsMast login functionality
+    # user = fetch_user_credentials
+    # if user.nil? || user.confirmed_at.nil?
+    #   return "You don't have access to login."
+    # end
     nil
   end
 
