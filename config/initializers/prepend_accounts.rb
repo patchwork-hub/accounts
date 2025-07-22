@@ -2,8 +2,7 @@
 
 Rails.application.config.to_prepare do
   Api::V1::AccountsController.prepend(Accounts::Concerns::AccountsCreation)
-  # Temporarily disable NewsMast login functionality
-  # OAuth::TokensController.prepend(Accounts::Concerns::CustomOauthBehavior)
+  Oauth::TokensController.prepend(Accounts::Concerns::CustomOauthBehavior)
   Account.include(Accounts::Concerns::AccountConcern)
   User.include(OverrideDeviseConfirmation)
   User.include(OverrideDevisePassword)
