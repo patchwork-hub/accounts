@@ -17,6 +17,7 @@ module Accounts::Api::V1
         user.reset_password!
         user.otp_secret = generate_otp_token
         user.save!
+        user.skip_confirmation!
         CustomPasswordsMailer.with(user: user).reset_password_confirmation.deliver_later
         render json: { reset_password_token: user.reload.reset_password_token }, status: 200
       else
@@ -35,6 +36,7 @@ module Accounts::Api::V1
 
       @user.password = password_params[:password]
       @user.save(validate: false)
+      @user.skip_confirmation!
       render json: { message: 'The password has been updated.' }, status: 200
     rescue ActiveSupport::MessageVerifier::InvalidSignature
       render_password_error(message: 'The password update was unsuccessful.')
@@ -85,7 +87,8 @@ module Accounts::Api::V1
 
       @user.password = password_params[:password]
       @user.save(validate: false)
-
+      @user.skip_confirmation!
+      
       render json: { message: 'The password has been updated.' }, status: 200
     rescue ActiveSupport::MessageVerifier::InvalidSignature
       render_password_error(message: 'The password update was unsuccessful.')
