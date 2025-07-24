@@ -14,7 +14,9 @@ module Accounts::Api::V1
     def create
       user = User.find_by(email: verify_otp_params[:email])
       if user
-        user.reset_password!
+        raw, enc = Devise.token_generator.generate(User, :reset_password_token)
+        user.reset_password_token = enc
+        user.reset_password_sent_at = Time.now.utc
         user.otp_secret = generate_otp_token
         user.save!
         CustomPasswordsMailer.with(user: user).reset_password_confirmation.deliver_later
@@ -34,8 +36,8 @@ module Accounts::Api::V1
       end
 
       @user.password = password_params[:password]
+      @user.skip_password_change_notification = true
       @user.save(validate: false)
-      @user.skip_confirmation!
       render json: { message: 'The password has been updated.' }, status: 200
     rescue ActiveSupport::MessageVerifier::InvalidSignature
       render_password_error(message: 'The password update was unsuccessful.')
@@ -85,8 +87,8 @@ module Accounts::Api::V1
       end
 
       @user.password = password_params[:password]
+      @user.skip_password_change_notification = true
       @user.save(validate: false)
-      @user.skip_confirmation!
       
       render json: { message: 'The password has been updated.' }, status: 200
     rescue ActiveSupport::MessageVerifier::InvalidSignature
