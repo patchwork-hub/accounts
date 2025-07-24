@@ -6,7 +6,7 @@ require 'httparty'
 class FirebaseNotificationService
   include HTTParty
 
-  BASE_URL = 'https://fcm.googleapis.com/v1/projects/newsmast-e9c24/messages:send'
+  BASE_URL = 'https://fcm.googleapis.com/v1/projects/mome-379ae/messages:send'
 
   def self.send_notification(token, title, body, data = {})
     # Path to your service account JSON file
