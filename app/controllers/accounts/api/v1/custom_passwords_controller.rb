@@ -17,7 +17,6 @@ module Accounts::Api::V1
         user.reset_password!
         user.otp_secret = generate_otp_token
         user.save!
-        user.skip_confirmation!
         CustomPasswordsMailer.with(user: user).reset_password_confirmation.deliver_later
         render json: { reset_password_token: user.reload.reset_password_token }, status: 200
       else
