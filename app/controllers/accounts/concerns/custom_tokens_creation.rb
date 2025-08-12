@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Accounts::Concerns::CustomOauthBehavior
+module Accounts::Concerns::CustomTokensCreation
   extend ActiveSupport::Concern
   include NewsmastHelper
 
