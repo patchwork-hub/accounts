@@ -6,7 +6,7 @@ module NewsmastHelper
   def is_newsmast?
     return true if Rails.env.development?
 
-    return true if Rails.env.production? && %w[mastodon.newsmast.org newsmast.social mo-me.social].include?(ENV['LOCAL_DOMAIN'])
+    return true if Rails.env.production? && %w[mastodon.newsmast.org newsmast.social mo-me.social patchwork.io].include?(ENV['LOCAL_DOMAIN'])
     
     false
   end
@@ -15,6 +15,14 @@ module NewsmastHelper
     return true if Rails.env.development?
 
     return true if Rails.env.production? && %w[mo-me.social].include?(ENV['LOCAL_DOMAIN'])
+    
+    false
+  end
+
+    def is_patchwork?
+    return true if Rails.env.development?
+
+    return true if Rails.env.production? && %w[patchwork.io].include?(ENV['LOCAL_DOMAIN'])
     
     false
   end

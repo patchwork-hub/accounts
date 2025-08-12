@@ -62,6 +62,8 @@ class CustomNotificationService < BaseService
       'Mo-Me'
     elsif is_newsmast?
       'Newsmast'
+    elsif is_patchwork?
+      'Patchwork'
     else
       'Channels'
     end

@@ -10,6 +10,8 @@ class CustomPasswordsMailer < ApplicationMailer
                 'Channel'
               when 'mo-me.social'
                 'mo-me.social'
+              when 'patchwork.io'
+                'Patchwork'
               else
                 'Newsmast'
               end
