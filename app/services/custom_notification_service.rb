@@ -60,10 +60,10 @@ class CustomNotificationService < BaseService
     ios_android_devices = notification_tokens.where.not(platform_type: 'huawei').pluck(:notification_token)
     app_title = if is_mo_me?
       'Mo-Me'
-    elsif is_newsmast?
-      'Newsmast'
     elsif is_patchwork?
       'Patchwork'
+    elsif is_newsmast?
+      'Newsmast'
     else
       'Channels'
     end
