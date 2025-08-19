@@ -58,11 +58,12 @@ class CustomNotificationService < BaseService
     }
     # ios & android
     ios_android_devices = notification_tokens.where.not(platform_type: 'huawei').pluck(:notification_token)
-    app_title = if is_mo_me?
-      'Mo-Me'
-    elsif is_patchwork?
+    app_title = case ENV['LOCAL_DOMAIN']
+    when 'patchwork.io'
       'Patchwork'
-    elsif is_newsmast?
+    when 'mo-me.social'
+      'Mo-Me'
+    when 'mastodon.newsmast.org', 'newsmast.social'
       'Newsmast'
     else
       'Channels'
