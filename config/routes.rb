@@ -22,6 +22,8 @@ Accounts::Engine.routes.draw do
         end
       end
 
+      resources :user_locales, only: [:create]
+
       namespace :patchwork do
         resources :email_settings, only: [:index] do
           collection do

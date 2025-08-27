@@ -2,6 +2,8 @@
 
 module Accounts::Api::V1
   class CustomPasswordsController < Api::BaseController
+    include Accounts::Concerns::ApiResponseHelper
+    
     ACCESS_TOKEN_SCOPES = 'read write follow push profile'
     skip_before_action :require_authenticated_user!, except: [:change_password, :change_email]
     before_action :require_authenticated_user!, only: [:change_password, :change_email]
@@ -22,13 +24,14 @@ module Accounts::Api::V1
         CustomPasswordsMailer.with(user: user).reset_password_confirmation.deliver_later
         render json: { reset_password_token: user.reload.reset_password_token }, status: 200
       else
-        render json: { error: 'Email not found!' }, status: 404
+        render_not_found
       end
     end
 
     def update
       unless @user && password_params[:password].present? && password_params[:password_confirmation].present? && @user&.otp_secret.nil?
-        return render_password_error(message: 'Missing required fields') 
+        return render_password_not_found
+        #return render_password_error(message: 'Missing required fields') 
       end
 
       unless password_params[:password].eql?(password_params[:password_confirmation])
