@@ -10,4 +10,5 @@ Rails.application.config.to_prepare do
   REST::CredentialAccountSerializer.prepend(Overrides::CredentialAccountSerializer)
   NotifyService.prepend(Overrides::NotifyServiceExtension)
   AppSignUpService.prepend(Overrides::AppSignUpServiceExtension)
+  User.include(UserConcern)
 end

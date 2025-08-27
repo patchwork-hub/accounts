@@ -9,10 +9,6 @@ module Accounts::Api::V1::Patchwork
       notification_emails = current_user.settings.as_json.select do |key, _|
         key.to_s.start_with?("notification_emails.")
       end
-      if notification_emails.empty?
-        settings = email_notification_attributes(enabled: false)
-        current_user.update(settings: settings)
-      end
       notification_emails.delete(:'notification_emails.software_updates')
       all_same = notification_emails.values.uniq.size == 1
       result_variable = all_same ? notification_emails.values.first : true
