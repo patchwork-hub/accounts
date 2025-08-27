@@ -8,4 +8,5 @@ Rails.application.config.to_prepare do
   User.include(OverrideDevisePassword)
   REST::CredentialAccountSerializer.prepend(Overrides::CredentialAccountSerializer)
   NotifyService.prepend(Overrides::NotifyServiceExtension)
+  User.include(UserConcern)
 end
