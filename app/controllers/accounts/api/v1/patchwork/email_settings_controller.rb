@@ -12,15 +12,16 @@ module Accounts::Api::V1::Patchwork
       notification_emails.delete(:'notification_emails.software_updates')
       all_same = notification_emails.values.uniq.size == 1
       result_variable = all_same ? notification_emails.values.first : true
-      render json: { data: notification_emails.empty? ? false : result_variable }, status: 200
+      data = notification_emails.empty? ? false : result_variable
+      render_success(data, 'api.messages.success', :ok)
     end
 
     def email_notification
       settings = enable_email_notification? ? email_notification_attributes(enabled: true) : email_notification_attributes(enabled: false)
       if current_user.update(settings: settings)
-        render json: { message: "Changes successfully saved." }, status: 200
+        render_success({}, 'api.messages.success', :ok)
       else
-        render json: { error: "Something went wrong!" }, status: 422
+        render_error('api.errors.unprocessable_entity', :unprocessable_entity)
       end
     end
 

@@ -3,7 +3,7 @@
 module Accounts::Api::V1
   class CustomPasswordsController < Api::BaseController
     include Accounts::Concerns::ApiResponseHelper
-    
+
     ACCESS_TOKEN_SCOPES = 'read write follow push profile'
     skip_before_action :require_authenticated_user!, except: [:change_password, :change_email]
     before_action :require_authenticated_user!, only: [:change_password, :change_email]
@@ -22,7 +22,7 @@ module Accounts::Api::V1
         user.otp_secret = generate_otp_token
         user.save!
         CustomPasswordsMailer.with(user: user).reset_password_confirmation.deliver_later
-        render json: { reset_password_token: user.reload.reset_password_token }, status: 200
+        render_reset_password_token(user.reload.reset_password_token, :ok)
       else
         render_not_found
       end
@@ -31,19 +31,19 @@ module Accounts::Api::V1
     def update
       unless @user && password_params[:password].present? && password_params[:password_confirmation].present? && @user&.otp_secret.nil?
         return render_password_not_found
-        #return render_password_error(message: 'Missing required fields') 
+        #return render_result({}, 'api.account.errors.missing_field', :unprocessable_entity)
       end
 
       unless password_params[:password].eql?(password_params[:password_confirmation])
-        return render_password_error(message: 'Password unmatch.') 
+        return render_result({}, 'api.account.errors.password_unmatch', :unprocessable_entity)
       end
 
       @user.password = password_params[:password]
       @user.skip_password_change_notification = true
       @user.save(validate: false)
-      render json: { message: 'The password has been updated.' }, status: 200
+      render_updated({}, 'api.account.messages.password_updated')
     rescue ActiveSupport::MessageVerifier::InvalidSignature
-      render_password_error(message: 'The password update was unsuccessful.')
+      render_result({}, 'api.account.errors.password_update_fail', :unprocessable_entity)
     end
 
     def request_otp
@@ -51,69 +51,69 @@ module Accounts::Api::V1
         @user.otp_secret = generate_otp_token
         @user.save!
         CustomPasswordsMailer.with(user: @user).reset_password_confirmation.deliver_later
-        render json: { access_token: verify_otp_params[:id] }, status: 200
+        render_access_token(verify_otp_params[:id], :ok)
       else
-        render json: { error: 'Email not found!' }, status: 404
+        render_not_found('api.account.errors.email_not_found')
       end
     end
 
     def verify_otp
       unless @user && verify_otp?(verify_otp_params[:otp_secret], reset_password: reset_password?)
-        return render_password_error(message: 'Invalid otp!') 
+        return render_result({}, 'api.account.errors.otp_invalid', :unprocessable_entity)
       end
 
       waitlist_entry = is_newsmast? ? nil : find_waitlist_entry
       @can_register = registration_allowed?(waitlist_entry)
-      return render_password_error(message: 'You\'r not allowed to register!') unless @can_register
+      return render_result({}, 'api.account.errors.register_not_allow', :unprocessable_entity) unless @can_register
 
       ActiveRecord::Base.transaction do
         handle_user_confirmation(waitlist_entry)
         handle_email_change if change_email?
       end
 
-      render json: { message: generate_access_token }, status: 200
+      render_generate_access_token(generate_access_token, :ok)
     rescue ActiveRecord::RecordInvalid => e
-      render_password_error(message: e.message)
+      render_result({}, e.message, :unprocessable_entity)
     end
 
     def change_password
       @user = current_user
-      
+
       unless @user && password_params[:password].present? &&
       password_params[:password_confirmation].present? &&
       password_params[:current_password].present? && @user&.otp_secret.nil?
-        return render_password_error(message: 'Missing required fields')
+        return render_result({}, 'api.account.errors.missing_field', :unprocessable_entity)
       end
 
       unless @user.valid_password?(password_params[:current_password])
-        return render_password_error(message: 'Current password is incorrect.') 
+        return render_result({}, 'api.account.errors.password_incorrect', :unprocessable_entity)
       end
 
       @user.password = password_params[:password]
       @user.skip_password_change_notification = true
       @user.save(validate: false)
-      
-      render json: { message: 'The password has been updated.' }, status: 200
+
+      render_updated({}, 'api.account.messages.password_updated')
     rescue ActiveSupport::MessageVerifier::InvalidSignature
-      render_password_error(message: 'The password update was unsuccessful.')
+      render_result({}, 'api.account.errors.password_update_fail', :unprocessable_entity)
     end
 
     def change_email
       @user = current_user
       unless @user && verify_otp_params[:email].present? && password_params[:current_password].present?
-        return render_password_error(message: 'Missing required fields.') 
+        return render_result({}, 'api.account.errors.missing_field', :unprocessable_entity)
       end
 
       unless @user.valid_password?(password_params[:current_password])
-        return render_password_error(message: 'Current password is incorrect.') 
+        return render_result({}, 'api.account.errors.password_incorrect', :unprocessable_entity)
       end
 
       new_email = verify_otp_params[:email]
 
-      return render_password_error(message: 'Email has already been taken.') if User.exists?(email: new_email)
+      return render_result({}, 'api.account.errors.email_taken', :unprocessable_entity) if User.exists?(email: new_email)
 
       email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-      return render_password_error(message: 'Invalid email format.') unless new_email.match?(email_regex)
+      return render_result({}, 'api.account.errors.email_invalid', :unprocessable_entity) unless new_email.match?(email_regex)
 
       @user.skip_confirmation!
       if new_email != @user.email
@@ -132,9 +132,9 @@ module Accounts::Api::V1
         CustomPasswordsMailer.with(user: @user).reset_password_confirmation.deliver_later
       end
 
-      render json: { message: generate_access_token }, status: 200
+      render_generate_access_token(generate_access_token, :ok)
     rescue ActiveSupport::MessageVerifier::InvalidSignature
-      render_password_error(message: 'The email update was unsuccessful.')
+      render_result({}, 'api.account.errors.email_update_fail', :unprocessable_entity)
     end
 
     private
@@ -158,13 +158,9 @@ module Accounts::Api::V1
               end
     end
 
-    def render_password_error(message:)
-      render json: { message: message }, status: 422
-    end
-
     def verify_otp?(otp_secret, reset_password: false)
       if reset_password && (@user.reset_password_sent_at.nil? || @user.reset_password_sent_at < 30.minutes.ago)
-        return false 
+        return false
       end
 
       @user&.otp_secret == otp_secret

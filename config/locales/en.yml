@@ -18,7 +18,7 @@ en:
       validation_failed: "Validation failed!"
       invalid_request: "Invalid request!"
       rate_limit_exceeded: "Rate limit exceeded. Please try again later"
-      
+
     messages:
       success: "Operation completed successfully"
       created: "Resource created successfully"
@@ -35,18 +35,38 @@ en:
         name_taken: "Community name is already taken"
         slug_taken: "Community identifier is already taken"
         invalid_visibility: "Invalid visibility setting"
-        
+
       messages:
         created: "Community created successfully"
         updated: "Community updated successfully"
         visibility_updated: "Community visibility updated"
-        
+
+    notification:
+      messages:
+        token_already_exists: "Notification token already exists"
+        token_saved: "Notification token saved"
+        token_deleted: "Notification token deleted successfully"
+        token_not_found: "No notification tokens found"
+        mute_updated: "Mute status updated successfully"
+
     account:
       errors:
         invalid_credentials: "Invalid username or password"
         account_not_found: "Account not found"
         account_suspended: "Account has been suspended"
         email_not_verified: "Email address not verified"
+        email_not_found: "Email not found!"
+        email_invalid: "Invalid email format."
+        email_taken: "Email has already been taken"
+        email_update_fail: "The email update was unsuccessful."
+        password_unmatch: "Password unmatch."
+        password_update_fail: "The password update was unsuccessful."
+        otp_invalid: "Invalid otp!"
+        register_not_allow: "You'r not allowed to register!"
+        missing_field: "Missing required fields"
+        password_incorrect: "Current password is incorrect."
+      messages:
+        password_updated: "The password has been updated."
 
     setting:
       errors:
@@ -55,11 +75,11 @@ en:
         invalid_app_name: "%{attribute} : Invalid app name provided"
         validation_failed: "Settings validation failed."
         delete_failed: "Failed to delete settings."
-        
+
       messages:
         saved: "Settings have been saved successfully."
         deleted: "Settings deleted successfully."
-    
+
     domain:
       errors:
         missing_parameters: "Domain and IP address are required."
@@ -75,7 +95,7 @@ en:
         key_not_found: "API key not found"
         already_deactivated: "API key is already deactivated"
         already_activated: "API key is already activated"
-        
+
       messages:
         rotated_successfully: "API key rotated successfully"
         activated_successfully: "API key activated successfully"
@@ -88,7 +108,7 @@ en:
         invalid_code: "Invalid invitation code."
         validation_failed: "Validation failed!"
         account_already_registered: "Account is already registered on wait list."
-        
+
       messages:
         created: "Successfully added to wait list."
         invitation_sent: "Invitation code sent to your email."
@@ -103,12 +123,12 @@ en:
         community_not_found: "Community not found"
         minimum_channels_required: "You need to join at least 5 to set as primary"
         favorited_channel_not_found: "Favourited channel not found"
-        
+
       messages:
         favorited_successfully: "Channel has been favorited successfully"
         unfavorited_successfully: "Favourited channel successfully deleted"
         primary_set_successfully: "Channel has been set as primary successfully"
-        
+
     validation:
       required: "%{attribute} is required"
       too_long: "%{attribute} is too long (maximum %{count} characters)"
@@ -137,7 +157,7 @@ en:
               too_long: "Description cannot be longer than %{count} characters"
             about:
               too_long: "About section cannot be longer than %{count} characters"
-              
+
         account:
           attributes:
             username:
@@ -153,7 +173,7 @@ en:
             password:
               blank: "Password cannot be blank"
               too_short: "Password must be at least %{count} characters"
-              
+
         api_key:
           attributes:
             key:
@@ -216,7 +236,7 @@ en:
       default: "%Y-%m-%d %H:%M:%S"
       short: "%d %b %H:%M"
       long: "%B %d, %Y %H:%M"
-      
+
   date:
     formats:
       default: "%Y-%m-%d"
