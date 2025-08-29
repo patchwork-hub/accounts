@@ -2,6 +2,8 @@
 
 module Accounts::Api::V1
   class NotificationTokensController < Api::BaseController
+    include Accounts::Concerns::ApiResponseHelper
+
     before_action :require_user!
     before_action -> { doorkeeper_authorize! :read, :write }
     before_action :set_notification_token, only: [:create, :revoke_notification_token]
@@ -9,50 +11,50 @@ module Accounts::Api::V1
     before_action :fetch_notification_tokens, only: [:update_mute, :get_mute_status]
 
     rescue_from ArgumentError do |e|
-      render json: { error: e.to_s }, status: 422
+      render_error(e.to_s, :unprocessable_entity)
     end
 
     def create
       if @notification_token.present?
-        render json: { message: 'Notification token already exists' }
+        render_result({}, 'api.notification.messages.token_already_exists')
       else
         NotificationToken.create!(notification_token_params.merge(account_id: current_account.id))
-        render json: { message: 'Notification token saved' }
+        render_success({}, 'api.notification.messages.token_saved')
       end
     end
 
     def revoke_notification_token
       if @notification_token.present?
         @notification_token.destroy!
-        render json: { message: 'Notification token deleted successfully' }
+        render_deleted('api.notification.messages.token_deleted')
       else
-        render json: { message: 'Record not found' }, status: 404
+        render_result({}, 'api.errors.not_found', :not_found)
       end
     end
 
     def get_mute_status
       if @notification_tokens.present?
-        render json: { mute: @notification_tokens.first.mute }
+        render_mute(@notification_tokens.first.mute, :ok)
       else
-        render json: { message: 'No notification tokens found' }, status: 404
+        render_result({}, 'api.notification.messages.token_not_found', :not_found)
       end
     end
 
     def update_mute
       if @notification_tokens.present?
         @notification_tokens.update_all(mute: notification_token_params[:mute])
-        render json: { message: 'Mute status updated successfully' }
+        render_updated({}, 'api.notification.messages.mute_updated')
       else
-        render json: { message: 'No notification tokens found' }, status: 404
+        render_result({}, 'api.notification.messages.token_not_found', :not_found)
       end
     end
 
     def reset_device_tokens
       if @notification_tokens.present?
         @notification_tokens.destroy_all
-        render json: { message: 'Notification token deleted successfully' }
+        render_deleted('api.notification.messages.token_deleted')
       else
-        render json: { message: 'Record not found' }, status: 404
+        render_result({}, 'api.errors.not_found', :not_found)
       end
     end
 

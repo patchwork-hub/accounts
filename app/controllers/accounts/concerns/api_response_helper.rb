@@ -3,6 +3,7 @@
 
 module Accounts::Concerns::ApiResponseHelper
   extend ActiveSupport::Concern
+  include ApiCustomResponseHelper
 
   private
   # ==================
@@ -18,7 +19,7 @@ module Accounts::Concerns::ApiResponseHelper
       message: translated_message,
       data: data
     }
-    
+
     render json: response_data, status: status
   end
 
@@ -42,7 +43,7 @@ module Accounts::Concerns::ApiResponseHelper
   def render_errors(message_key = 'api.errors.unprocessable_entity', status = :unprocessable_entity, additional_data = {})
     # Extract attribute for I18n translation if present
     attribute = additional_data.delete(:attribute) || additional_data.delete('attribute')
-    
+
     # Build translation options
     translation_options = attribute ? { attribute: attribute } : {}
     translated_message = get_translated_message(message_key, translation_options)
@@ -51,15 +52,15 @@ module Accounts::Concerns::ApiResponseHelper
       errors: translated_message,
       **additional_data
     }
-    
+
     render json: error_data, status: status
   end
 
-  # Error responses with I18n messages and single error format [Old version]
+  # Error responses with I18n messages and single error format
   def render_error(message_key = 'api.errors.unprocessable_entity', status = :unprocessable_entity, additional_data = {})
     # Extract attribute for I18n translation if present
     attribute = additional_data.delete(:attribute) || additional_data.delete('attribute')
-    
+
     # Build translation options
     translation_options = attribute ? { attribute: attribute } : {}
     translated_message = get_translated_message(message_key, translation_options)
@@ -68,7 +69,7 @@ module Accounts::Concerns::ApiResponseHelper
       error: translated_message,
       **additional_data
     }
-    
+
     render json: error_data, status: status
   end
 
@@ -92,11 +93,11 @@ module Accounts::Concerns::ApiResponseHelper
       errors: translated_message,
       details: format_validation_details(errors)
     }
-    
+
     render json: error_data, status: :unprocessable_entity
   end
 
-  # Enhanced validation error method with clean details format
+  # Validation errors with detailed messages
   def render_validation_failed(errors, message_key = 'api.errors.validation_failed')
     translated_message = get_translated_message(message_key)
 
@@ -105,10 +106,11 @@ module Accounts::Concerns::ApiResponseHelper
       errors: translated_message,
       details: extract_error_messages(errors)
     }
-    
+
     render json: error_data, status: :unprocessable_entity
   end
 
+    # Rate limit exceeded error
   def render_rate_limit_exceeded(message_key = 'api.errors.rate_limit_exceeded')
     render_errors(message_key, :too_many_requests)
   end
