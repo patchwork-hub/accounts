@@ -6,11 +6,11 @@ require 'httparty'
 class FirebaseNotificationService
   include HTTParty
 
-  BASE_URL = 'https://fcm.googleapis.com/v1/projects/newsmast-e9c24/messages:send'
+  BASE_URL = 'https://fcm.googleapis.com/v1/projects/mome-379ae/messages:send'
 
   def self.send_notification(token, title, body, data = {})
     # Path to your service account JSON file
-    service_account_file = Rails.root.join('config', 'fcm_newsmast_service.json')
+    service_account_file = Rails.root.join('config', 'fcm_mo_me_service.json')
     unless File.exist?(service_account_file)
       Rails.logger.error("Service account file not found at #{service_account_file}")
       return nil

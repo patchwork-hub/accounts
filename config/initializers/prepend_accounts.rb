@@ -4,9 +4,11 @@ Rails.application.config.to_prepare do
   Api::V1::AccountsController.prepend(Accounts::Concerns::AccountsCreation)
   Oauth::TokensController.prepend(Accounts::Concerns::CustomOauthBehavior)
   Account.include(Accounts::Concerns::AccountConcern)
-  User.include(OverrideDeviseConfirmation)
-  User.include(OverrideDevisePassword)
+  # User.include(OverrideDeviseConfirmation)
+  # User.include(OverrideDevisePassword)
+  User.include(OverrideChangedPassword)
   REST::CredentialAccountSerializer.prepend(Overrides::CredentialAccountSerializer)
   NotifyService.prepend(Overrides::NotifyServiceExtension)
+  AppSignUpService.prepend(Overrides::AppSignUpServiceExtension)
   User.include(UserConcern)
 end

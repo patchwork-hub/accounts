@@ -16,7 +16,9 @@ module Accounts::Api::V1
     def create
       user = User.find_by(email: verify_otp_params[:email])
       if user
-        user.reset_password!
+        raw, enc = Devise.token_generator.generate(User, :reset_password_token)
+        user.reset_password_token = enc
+        user.reset_password_sent_at = Time.now.utc
         user.otp_secret = generate_otp_token
         user.save!
         CustomPasswordsMailer.with(user: user).reset_password_confirmation.deliver_later
@@ -37,6 +39,7 @@ module Accounts::Api::V1
       end
 
       @user.password = password_params[:password]
+      @user.skip_password_change_notification = true
       @user.save(validate: false)
       render_updated({}, 'api.account.messages.password_updated')
     rescue ActiveSupport::MessageVerifier::InvalidSignature
@@ -87,6 +90,7 @@ module Accounts::Api::V1
       end
 
       @user.password = password_params[:password]
+      @user.skip_password_change_notification = true
       @user.save(validate: false)
 
       render_updated({}, 'api.account.messages.password_updated')
@@ -210,6 +214,7 @@ module Accounts::Api::V1
         @user.account.update!(discoverable: false)
         @user.skip_confirmation!
         @user.update!(otp_secret: nil, confirmed_at: Time.current, confirmation_sent_at: nil, confirmation_token: nil, approved: true)
+        AutoFollowDefaultAccountsService.new.call(@user.account)
         create_useage_wait_list(waitlist_entry) if @can_register
       else
         @user.update!(otp_secret: nil)

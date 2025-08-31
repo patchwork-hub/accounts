@@ -5,7 +5,14 @@ class CustomPasswordsMailer < ApplicationMailer
 
   def reset_password_confirmation
     @user = params[:user]
-    sender_name = ENV['LOCAL_DOMAIN'] ||= 'channel.org' == 'channel.org' ? 'Channel' : 'Newsmast'
+    sender_name = case ENV['LOCAL_DOMAIN']
+              when 'channel.org'
+                'Channel'
+              when 'mo-me.social'
+                'mo-me.social'
+              else
+                'Newsmast'
+              end
     if @user.present?
       @subject = 'OTP verification code'
       mail(
