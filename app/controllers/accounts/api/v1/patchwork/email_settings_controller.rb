@@ -6,7 +6,9 @@ module Accounts::Api::V1::Patchwork
     before_action :require_user!
 
     def index
-      notification_emails = current_user.settings.as_json.select { |key, _| key.to_s.start_with?('notification_emails.') }
+      notification_emails = current_user.settings.as_json.select do |key, _|
+        key.to_s.start_with?("notification_emails.")
+      end
       notification_emails.delete(:'notification_emails.software_updates')
       all_same = notification_emails.values.uniq.size == 1
       result_variable = all_same ? notification_emails.values.first : true
@@ -29,7 +31,6 @@ module Accounts::Api::V1::Patchwork
       truthy_param?(email_notification_params[:allowed])
     end
 
-
     def email_notification_params
       params.permit(:allowed)
     end
@@ -40,17 +41,17 @@ module Accounts::Api::V1::Patchwork
 
     def email_notification_attributes(enabled: false)
       {
-        'always_send_emails' => enabled,
-        'notification_emails.follow' => enabled,
-        'notification_emails.reblog' => enabled,
-        'notification_emails.favourite' => enabled,
-        'notification_emails.mention' => enabled,
-        'notification_emails.follow_request' => enabled,
-        'notification_emails.report' => enabled,
-        'notification_emails.pending_account' => enabled,
-        'notification_emails.trends' => enabled,
-        'notification_emails.appeal' => enabled,
-        'notification_emails.software_updates' => enabled ? 'critical' : 'none',
+        "always_send_emails" => enabled,
+        "notification_emails.follow" => enabled,
+        "notification_emails.reblog" => enabled,
+        "notification_emails.favourite" => enabled,
+        "notification_emails.mention" => enabled,
+        "notification_emails.follow_request" => enabled,
+        "notification_emails.report" => enabled,
+        "notification_emails.pending_account" => enabled,
+        "notification_emails.trends" => enabled,
+        "notification_emails.appeal" => enabled,
+        "notification_emails.software_updates" => enabled ? "critical" : "none"
       }
     end
   end
