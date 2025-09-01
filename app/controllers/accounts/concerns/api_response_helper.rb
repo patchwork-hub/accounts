@@ -3,7 +3,7 @@
 
 module Accounts::Concerns::ApiResponseHelper
   extend ActiveSupport::Concern
-  include ApiCustomResponseHelper
+  include Accounts::Concerns::ApiCustomResponseHelper
 
   private
   # ==================
