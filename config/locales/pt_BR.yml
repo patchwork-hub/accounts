@@ -18,7 +18,7 @@ pt_BR:
       validation_failed: "A validação falhou."
       invalid_request: "Solicitação inválida."
       rate_limit_exceeded: "Limite de taxa excedido. Tente novamente mais tarde."
-      
+
     messages:
       success: "Operação concluída com sucesso."
       created: "Recurso criado com sucesso."
@@ -35,18 +35,38 @@ pt_BR:
         name_taken: "O nome da comunidade já foi utilizado."
         slug_taken: "O identificador da comunidade já foi utilizado."
         invalid_visibility: "Configuração de visibilidade inválida."
-        
+
       messages:
         created: "Comunidade criada com sucesso."
         updated: "Comunidade atualizada com sucesso."
         visibility_updated: "Visibilidade da comunidade atualizada."
-        
+
+    notification:
+      messages:
+        token_already_exists: "Token de notificação já existe"
+        token_saved: "Token de notificação salvo"
+        token_deleted: "Token de notificação excluído com sucesso"
+        token_not_found: "Nenhum token de notificação encontrado"
+        mute_updated: "Mute status atualizado com sucesso"
+
     account:
       errors:
         invalid_credentials: "Nome de usuário ou senha inválidos."
         account_not_found: "Conta não encontrada."
         account_suspended: "A conta foi suspensa."
         email_not_verified: "Endereço de e-mail não verificado."
+        email_not_found: "E-mail não encontrado!"
+        email_invalid: "Formato de E-mail inválido."
+        email_taken: "E-mail já foi tomado"
+        email_update_fail: "A atualização por e-mail não foi bem-sucedida."
+        password_unmatch: "Senha não correspondida."
+        password_update_fail: "A atualização da senha não teve êxito."
+        otp_invalid: "OTP inválido!"
+        register_not_allow: "Você não tem permissão para se registrar!"
+        missing_field: "Faltam campos obrigatórios"
+        password_incorrect: "A senha atual está incorreta."
+      messages:
+        password_updated: "A senha foi atualizada."
 
     setting:
       errors:
@@ -55,7 +75,7 @@ pt_BR:
         invalid_app_name: "%{attribute} : Nome do aplicativo inválido fornecido."
         validation_failed: "Falha na validação das configurações."
         delete_failed: "Falha ao excluir as configurações."
-        
+
       messages:
         saved: "As configurações foram salvas com sucesso."
         deleted: "Configurações excluídas com sucesso."
@@ -64,7 +84,7 @@ pt_BR:
       errors:
         missing_parameters: "Domínio e endereço IP são obrigatórios."
         verification_failed: "Verificação do domínio falhou devido a um erro."
-        
+
       messages:
         dns_verified: "DNS configurado corretamente."
         dns_instructions: "Registro A não encontrado. Aponte seu registro A para %{ip}."
@@ -75,7 +95,7 @@ pt_BR:
         key_not_found: "Chave API não encontrada."
         already_deactivated: "A chave API já está desativada."
         already_activated: "A chave API já está ativada."
-        
+
       messages:
         rotated_successfully: "Chave API rotacionada com sucesso."
         activated_successfully: "Chave API ativada com sucesso."
@@ -88,7 +108,7 @@ pt_BR:
         invalid_code: "Código de convite inválido."
         validation_failed: "Validação falhou!"
         account_already_registered: "Conta já está registrada na lista de espera."
-        
+
       messages:
         created: "Adicionado com sucesso à lista de espera."
         invitation_sent: "Código de convite enviado para seu e-mail."
@@ -103,12 +123,12 @@ pt_BR:
         community_not_found: "Comunidade não encontrada."
         minimum_channels_required: "Você precisa participar de pelo menos 5 canais para definir um como principal."
         favorited_channel_not_found: "Canal favorito não encontrado."
-        
+
       messages:
         favorited_successfully: "Canal foi favoritado com sucesso."
         unfavorited_successfully: "Canal favorito removido com sucesso."
         primary_set_successfully: "Canal foi definido como principal com sucesso."
-        
+
     validation:
       required: "%{attribute} é obrigatório"
       too_long: "%{attribute} é muito longo (máximo de %{count} caracteres)"
@@ -137,7 +157,7 @@ pt_BR:
               too_long: "A descrição não pode ter mais que %{count} caracteres."
             about:
               too_long: "A seção 'Sobre' não pode ter mais que %{count} caracteres."
-              
+
         account:
           attributes:
             username:
@@ -153,7 +173,7 @@ pt_BR:
             password:
               blank: "A senha não pode estar vazia."
               too_short: "A senha deve ter pelo menos %{count} caracteres."
-              
+
         api_key:
           attributes:
             key:
@@ -216,7 +236,7 @@ pt_BR:
       default: "%d/%m/%Y %H:%M:%S"
       short: "%d %b %H:%M"
       long: "%d de %B de %Y às %H:%M"
-      
+
   date:
     formats:
       default: "%d/%m/%Y"

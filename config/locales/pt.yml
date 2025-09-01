@@ -18,7 +18,7 @@ pt:
       validation_failed: "A validação falhou."
       invalid_request: "Pedido inválido."
       rate_limit_exceeded: "Limite de taxa excedido. Tente novamente mais tarde."
-      
+
     messages:
       success: "Operação concluída com sucesso."
       created: "Recurso criado com sucesso."
@@ -35,18 +35,38 @@ pt:
         name_taken: "O nome da comunidade já foi utilizado."
         slug_taken: "O identificador da comunidade já foi utilizado."
         invalid_visibility: "Configuração de visibilidade inválida."
-        
+
       messages:
         created: "Comunidade criada com sucesso."
         updated: "Comunidade actualizada com sucesso."
         visibility_updated: "Visibilidade da comunidade actualizada."
-        
+
+    notification:
+      messages:
+        token_already_exists: "O token de notificação já existe"
+        token_saved: "Token de notificação guardado"
+        token_deleted: "Token de notificação eliminado com êxito"
+        token_not_found: "Não foram encontrados tokens de notificação"
+        mute_updated: "Estado de silêncio actualizado com êxito"
+
     account:
       errors:
         invalid_credentials: "Nome de utilizador ou palavra-passe inválidos."
         account_not_found: "Conta não encontrada."
         account_suspended: "A conta foi suspensa."
         email_not_verified: "Endereço de correio electrónico não verificado."
+        email_not_found: "Email não encontrado!"
+        email_invalid: "Formato de E-mail inválido."
+        email_taken: "O e-mail já foi recebido"
+        email_update_fail: "A atualização do E-mail não teve êxito."
+        password_unmatch: "Password unmatch."
+        password_update_fail: "A actualização da palavra-passe não teve êxito."
+        otp_invalid: "OTP inválido!"
+        register_not_allow: "Não está autorizado a registar-se!"
+        missing_field: "Campos obrigatórios em falta"
+        password_incorrect: "A palavra-passe actual está incorrecta."
+      messages:
+        password_updated: "A palavra-passe foi actualizada."
 
     setting:
       errors:
@@ -55,7 +75,7 @@ pt:
         invalid_app_name: "%{attribute} : Nome da aplicação inválido fornecido."
         validation_failed: "Falha na validação das configurações."
         delete_failed: "Falha ao eliminar as configurações."
-        
+
       messages:
         saved: "As configurações foram guardadas com sucesso."
         deleted: "Configurações eliminadas com sucesso."
@@ -64,7 +84,7 @@ pt:
       errors:
         missing_parameters: "Domínio e endereço IP são obrigatórios."
         verification_failed: "Verificação do domínio falhou devido a um erro."
-        
+
       messages:
         dns_verified: "DNS configurado correctamente."
         dns_instructions: "Registo A não encontrado. Aponte o seu registo A para %{ip}."
@@ -75,7 +95,7 @@ pt:
         key_not_found: "Chave da API não encontrada."
         already_deactivated: "A chave da API já está desactivada."
         already_activated: "A chave da API já está activada."
-        
+
       messages:
         rotated_successfully: "Chave da API rotacionada com sucesso."
         activated_successfully: "Chave da API activada com sucesso."
@@ -88,7 +108,7 @@ pt:
         invalid_code: "Código de convite inválido."
         validation_failed: "Validação falhada!"
         account_already_registered: "Conta já está registrada na lista de espera."
-        
+
       messages:
         created: "Adicionado com sucesso à lista de espera."
         invitation_sent: "Código de convite enviado para seu e-mail."
@@ -103,7 +123,7 @@ pt:
         community_not_found: "Comunidade não encontrada."
         minimum_channels_required: "Precisa de participar em pelo menos 5 canais para definir um como principal."
         favorited_channel_not_found: "Canal favorito não encontrado."
-        
+
       messages:
         favorited_successfully: "Canal foi adicionado aos favoritos com sucesso."
         unfavorited_successfully: "Canal favorito removido com sucesso."
@@ -137,7 +157,7 @@ pt:
               too_long: "A descrição não pode ter mais que %{count} caracteres."
             about:
               too_long: "A secção 'Acerca' não pode ter mais que %{count} caracteres."
-              
+
         account:
           attributes:
             username:
@@ -153,7 +173,7 @@ pt:
             password:
               blank: "A palavra-passe não pode estar vazia."
               too_short: "A palavra-passe deve ter pelo menos %{count} caracteres."
-              
+
         api_key:
           attributes:
             key:
@@ -216,7 +236,7 @@ pt:
       default: "%d/%m/%Y %H:%M:%S"
       short: "%d %b %H:%M"
       long: "%d de %B de %Y às %H:%M"
-      
+
   date:
     formats:
       default: "%d/%m/%Y"

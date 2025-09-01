@@ -18,7 +18,7 @@ fr:
       validation_failed: "La validation a échoué."
       invalid_request: "Demande invalide."
       rate_limit_exceeded: "Limite de débit dépassée. Veuillez réessayer plus tard."
-      
+
     messages:
       success: "Opération terminée avec succès."
       created: "Ressource créée avec succès."
@@ -35,18 +35,38 @@ fr:
         name_taken: "Le nom de la communauté est déjà pris."
         slug_taken: "L'identifiant de la communauté est déjà pris."
         invalid_visibility: "Paramètre de visibilité invalide."
-        
+
       messages:
         created: "Communauté créée avec succès."
         updated: "Communauté mise à jour avec succès."
         visibility_updated: "Visibilité de la communauté mise à jour."
-        
+
+    notification:
+      messages:
+        token_already_exists: "Le jeton de notification existe déjà"
+        token_saved: "Jeton de notification enregistré"
+        token_deleted: "Jeton de notification supprimé avec succès"
+        token_not_found: "Aucun jeton de notification trouvé"
+        mute_updated: "Statut de mise en sourdine mis à jour avec succès"
+
     account:
       errors:
         invalid_credentials: "Nom d'utilisateur ou mot de passe invalide."
         account_not_found: "Compte introuvable."
         account_suspended: "Le compte a été suspendu."
         email_not_verified: "Adresse e-mail non vérifiée."
+        email_not_found: "E-mail introuvable!"
+        email_invalid: "Format d'e-mail non valide."
+        email_taken: "L'e-mail a déjà été pris"
+        email_update_fail: "La mise à jour de l'e-mail a échoué."
+        password_unmatch: "Mot de passe non apparié."
+        password_update_fail: "La mise à jour du mot de passe a échoué."
+        otp_invalid: "Mot de passe invalide!"
+        register_not_allow: "Vous n'êtes pas autorisé à vous inscrire!"
+        missing_field: "Champs obligatoires manquants"
+        password_incorrect: "Le mot de passe actuel est incorrect."
+      messages:
+        password_updated: "Le mot de passe a été mis à jour."
 
     setting:
       errors:
@@ -55,7 +75,7 @@ fr:
         invalid_app_name: "%{attribute} : Nom d'application invalide fourni."
         validation_failed: "La validation des paramètres a échoué."
         delete_failed: "Échec de la suppression des paramètres."
-        
+
       messages:
         saved: "Les paramètres ont été sauvegardés avec succès."
         deleted: "Paramètres supprimés avec succès."
@@ -64,7 +84,7 @@ fr:
       errors:
         missing_parameters: "Le domaine et l'adresse IP sont requis."
         verification_failed: "La vérification du domaine a échoué en raison d'une erreur."
-        
+
       messages:
         dns_verified: "DNS configuré correctement."
         dns_instructions: "Enregistrement A introuvable. Veuillez pointer votre enregistrement A vers %{ip}."
@@ -75,7 +95,7 @@ fr:
         key_not_found: "Clé API introuvable."
         already_deactivated: "La clé API est déjà désactivée."
         already_activated: "La clé API est déjà activée."
-        
+
       messages:
         rotated_successfully: "Clé API pivotée avec succès."
         activated_successfully: "Clé API activée avec succès."
@@ -88,7 +108,7 @@ fr:
         invalid_code: "Code d'invitation invalide."
         validation_failed: "La validation a échoué."
         account_already_registered: "Le compte est déjà enregistré sur la liste d'attente."
-        
+
       messages:
         created: "Ajouté avec succès à la liste d'attente."
         invitation_sent: "Code d'invitation envoyé à votre e-mail."
@@ -103,18 +123,18 @@ fr:
         community_not_found: "Communauté introuvable."
         minimum_channels_required: "Vous devez rejoindre au moins 5 canaux pour en définir un comme principal."
         favorited_channel_not_found: "Canal favori introuvable."
-        
+
       messages:
         favorited_successfully: "Le canal a été mis en favori avec succès."
         unfavorited_successfully: "Canal favori supprimé avec succès."
         primary_set_successfully: "Le canal a été défini comme principal avec succès."
 
     validation:
-        required: "%{attribute} est requis"
-        too_long: "%{attribute} est trop long (maximum %{count} caractères)"
-        too_short: "%{attribute} est trop court (minimum %{count} caractères)"
-        invalid_format: "%{attribute} a un format invalide"
-        not_unique: "%{attribute} a déjà été pris"
+      required: "%{attribute} est requis"
+      too_long: "%{attribute} est trop long (maximum %{count} caractères)"
+      too_short: "%{attribute} est trop court (minimum %{count} caractères)"
+      invalid_format: "%{attribute} a un format invalide"
+      not_unique: "%{attribute} a déjà été pris"
 
   # Model validation messages
   activerecord:
@@ -137,7 +157,7 @@ fr:
               too_long: "La description ne peut pas dépasser %{count} caractères."
             about:
               too_long: "La section 'À propos' ne peut pas dépasser %{count} caractères."
-              
+
         account:
           attributes:
             username:
@@ -153,7 +173,7 @@ fr:
             password:
               blank: "Le mot de passe ne peut pas être vide."
               too_short: "Le mot de passe doit comporter au moins %{count} caractères."
-              
+
         api_key:
           attributes:
             key:
@@ -216,7 +236,7 @@ fr:
       default: "%d/%m/%Y %H:%M:%S"
       short: "%d %b %H:%M"
       long: "%d %B %Y à %H:%M"
-      
+
   date:
     formats:
       default: "%d/%m/%Y"

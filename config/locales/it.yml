@@ -18,7 +18,7 @@ it:
       validation_failed: "Validazione fallita."
       invalid_request: "Richiesta non valida."
       rate_limit_exceeded: "Limite di velocità superato. Riprova più tardi."
-      
+
     messages:
       success: "Operazione completata con successo."
       created: "Risorsa creata con successo."
@@ -35,18 +35,38 @@ it:
         name_taken: "Il nome della comunità è già stato preso."
         slug_taken: "L'identificatore della comunità è già stato preso."
         invalid_visibility: "Impostazione di visibilità non valida."
-        
+
       messages:
         created: "Comunità creata con successo."
         updated: "Comunità aggiornata con successo."
         visibility_updated: "Visibilità della comunità aggiornata."
-        
+
+    notification:
+      messages:
+        token_already_exists: "Il token di notifica esiste già"
+        token_saved: "Token di notifica salvato"
+        token_deleted: "Token di notifica eliminato correttamente"
+        token_not_found: "Nessun token di notifica trovato"
+        mute_updated: "Stato muto aggiornato correttamente"
+
     account:
       errors:
         invalid_credentials: "Nome utente o password non validi."
         account_not_found: "Account non trovato."
         account_suspended: "L'account è stato sospeso."
         email_not_verified: "Indirizzo email non verificato."
+        email_not_found: "Email non trovata!"
+        email_invalid: "Formato e-mail non valido."
+        email_taken: "L'email è già stata presa"
+        email_update_fail: "L'aggiornamento e-mail non ha avuto successo."
+        password_unmatch: "Unmatch della password."
+        password_update_fail: "L'aggiornamento della password non è riuscito."
+        otp_invalid: "OTP non valido!"
+        register_not_allow: "Non ti è permesso registrarti!"
+        missing_field: "Campi obbligatori mancanti"
+        password_incorrect: "La password corrente non è corretta."
+      messages:
+        password_updated: "La password è stata aggiornata."
 
     setting:
       errors:
@@ -55,7 +75,7 @@ it:
         invalid_app_name: "%{attribute} : Nome app non valido fornito."
         validation_failed: "Validazione delle impostazioni fallita."
         delete_failed: "Eliminazione delle impostazioni fallita."
-        
+
       messages:
         saved: "Le impostazioni sono state salvate con successo."
         deleted: "Impostazioni eliminate con successo."
@@ -64,7 +84,7 @@ it:
       errors:
         missing_parameters: "Dominio e indirizzo IP sono richiesti."
         verification_failed: "Verifica del dominio fallita a causa di un errore."
-        
+
       messages:
         dns_verified: "DNS configurato correttamente."
         dns_instructions: "Record A non trovato. Punta il tuo record A verso %{ip}."
@@ -75,7 +95,7 @@ it:
         key_not_found: "Chiave API non trovata."
         already_deactivated: "La chiave API è già disattivata."
         already_activated: "La chiave API è già attivata."
-        
+
       messages:
         rotated_successfully: "Chiave API ruotata con successo."
         activated_successfully: "Chiave API attivata con successo."
@@ -88,7 +108,7 @@ it:
         invalid_code: "Codice di invito non valido."
         validation_failed: "Validazione fallita!"
         account_already_registered: "L'account è già registrato nella lista d'attesa."
-        
+
       messages:
         created: "Aggiunto con successo alla lista d'attesa."
         invitation_sent: "Codice di invito inviato alla tua email."
@@ -103,18 +123,18 @@ it:
         community_not_found: "Comunità non trovata."
         minimum_channels_required: "Devi unirti ad almeno 5 canali per impostarne uno come principale."
         favorited_channel_not_found: "Canale preferito non trovato."
-        
+
       messages:
         favorited_successfully: "Il canale è stato aggiunto ai preferiti con successo."
         unfavorited_successfully: "Canale preferito eliminato con successo."
         primary_set_successfully: "Il canale è stato impostato come principale con successo."
 
     validation:
-        required: "%{attribute} è richiesto"
-        too_long: "%{attribute} è troppo lungo (massimo %{count} caratteri)"
-        too_short: "%{attribute} è troppo corto (minimo %{count} caratteri)"
-        invalid_format: "%{attribute} ha un formato non valido"
-        not_unique: "%{attribute} è già stato preso"
+      required: "%{attribute} è richiesto"
+      too_long: "%{attribute} è troppo lungo (massimo %{count} caratteri)"
+      too_short: "%{attribute} è troppo corto (minimo %{count} caratteri)"
+      invalid_format: "%{attribute} ha un formato non valido"
+      not_unique: "%{attribute} è già stato preso"
 
   # Model validation messages
   activerecord:
@@ -137,7 +157,7 @@ it:
               too_long: "La descrizione non può superare i %{count} caratteri."
             about:
               too_long: "La sezione 'Chi siamo' non può superare i %{count} caratteri."
-              
+
         account:
           attributes:
             username:
@@ -153,7 +173,7 @@ it:
             password:
               blank: "La password non può essere vuota."
               too_short: "La password deve essere di almeno %{count} caratteri."
-              
+
         api_key:
           attributes:
             key:
@@ -216,7 +236,7 @@ it:
       default: "%d/%m/%Y %H:%M:%S"
       short: "%d %b %H:%M"
       long: "%d %B %Y alle %H:%M"
-      
+
   date:
     formats:
       default: "%d/%m/%Y"

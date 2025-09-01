@@ -18,7 +18,7 @@ cy:
       validation_failed: "Methodd y dilysu."
       invalid_request: "Cais annilys."
       rate_limit_exceeded: "Cyfradd terfyn wedi'i ragori. Rhowch gynnig arall arni yn nes ymlaen."
-      
+
     messages:
       success: "Cwblhawyd y weithrediad yn llwyddiannus."
       created: "Crëwyd yr adnodd yn llwyddiannus."
@@ -35,18 +35,38 @@ cy:
         name_taken: "Mae enw'r gymuned eisoes wedi'i gymryd."
         slug_taken: "Mae dynodydd y gymuned eisoes wedi'i gymryd."
         invalid_visibility: "Gosodiad gwelededd annilys."
-        
+
       messages:
         created: "Crëwyd y gymuned yn llwyddiannus."
         updated: "Diweddarwyd y gymuned yn llwyddiannus."
         visibility_updated: "Diweddarwyd gwelededd y gymuned."
-        
+
+    notification:
+      messages:
+        token_already_exists: "Tocyn Hysbysiad yn bodoli eisoes"
+        token_saved: "Arbedwyd tocyn Hysbysiad"
+        token_deleted: "Dileu tocyn Hysbysiad yn llwyddiannus"
+        token_not_found: "Ni chanfuwyd unrhyw docynnau hysbysu"
+        mute_updated: "Diweddarwyd y statws Mute yn llwyddiannus"
+
     account:
       errors:
         invalid_credentials: "Enw defnyddiwr neu gyfrinair annilys."
         account_not_found: "Ni ddaethpwyd o hyd i'r cyfrif."
         account_suspended: "Mae'r cyfrif wedi'i atal."
         email_not_verified: "Nid yw'r cyfeiriad e-bost wedi'i ddilysu."
+        email_not_found: "E-Bost heb ei ganfod!"
+        email_invalid: "Fformat e-bost Annilys."
+        email_taken: "Mae E-Bost eisoes wedi'i gymryd"
+        email_update_fail: "Roedd y diweddariad e-bost yn aflwyddiannus."
+        password_unmatch: "Cyfrinair unmatch."
+        password_update_fail: "Roedd y diweddariad cyfrinair yn aflwyddiannus."
+        otp_invalid: "Otp Annilys!"
+        register_not_allow: "Ni Chaniateir i chi gofrestru!"
+        missing_field: "Meysydd gofynnol Ar Goll"
+        password_incorrect: "Mae'r cyfrinair Presennol yn anghywir."
+      messages:
+        password_updated: "Mae'r cyfrinair wedi cael ei ddiweddaru."
 
     setting:
       errors:
@@ -55,7 +75,7 @@ cy:
         invalid_app_name: "%{attribute} : Darparwyd enw ap annilys."
         validation_failed: "Methodd dilysu'r gosodiadau."
         delete_failed: "Methodd dileu'r gosodiadau."
-        
+
       messages:
         saved: "Mae'r gosodiadau wedi'u cadw'n llwyddiannus."
         deleted: "Dilëwyd y gosodiadau'n llwyddiannus."
@@ -64,7 +84,7 @@ cy:
       errors:
         missing_parameters: "Mae angen parth a chyfeiriad IP."
         verification_failed: "Methodd gwirio'r parth oherwydd gwall."
-        
+
       messages:
         dns_verified: "DNS wedi'i ffurfweddu'n gywir."
         dns_instructions: "Ni ddaethpwyd o hyd i gofnod A. Pwyntiwch eich cofnod A at %{ip}."
@@ -75,7 +95,7 @@ cy:
         key_not_found: "Ni ddaethpwyd o hyd i'r allwedd API."
         already_deactivated: "Mae'r allwedd API eisoes wedi'i hanactifadu."
         already_activated: "Mae'r allwedd API eisoes wedi'i actifadu."
-        
+
       messages:
         rotated_successfully: "Cylchdrowyd yr allwedd API yn llwyddiannus."
         activated_successfully: "Actifadwyd yr allwedd API yn llwyddiannus."
@@ -88,7 +108,7 @@ cy:
         invalid_code: "Cod gwahoddiad annilys."
         validation_failed: "Methodd dilysu!"
         account_already_registered: "Mae'r cyfrif eisoes wedi'i gofrestru ar y rhestr aros."
-        
+
       messages:
         created: "Ychwanegwyd yn llwyddiannus i'r rhestr aros."
         invitation_sent: "Anfonwyd cod gwahoddiad i'ch e-bost."
@@ -103,12 +123,12 @@ cy:
         community_not_found: "Ni ddaethpwyd o hyd i'r gymuned."
         minimum_channels_required: "Mae angen i chi ymuno ag o leiaf 5 i'w gosod fel prif sianel."
         favorited_channel_not_found: "Ni ddaethpwyd o hyd i'r sianel ffafriol."
-        
+
       messages:
         favorited_successfully: "Mae'r sianel wedi'i ffafrio'n llwyddiannus."
         unfavorited_successfully: "Dilëwyd y sianel ffafriol yn llwyddiannus."
         primary_set_successfully: "Mae'r sianel wedi'i gosod fel prif sianel yn llwyddiannus."
-        
+
     validation:
       required: "Mae %{attribute} yn ofynnol"
       too_long: "Mae %{attribute} yn rhy hir (uchafswm %{count} nod)"
@@ -137,7 +157,7 @@ cy:
               too_long: "Ni all y disgrifiad fod yn hirach na %{count} nod."
             about:
               too_long: "Ni all yr adran 'Amdanom' fod yn hirach na %{count} nod."
-              
+
         account:
           attributes:
             username:
@@ -153,7 +173,7 @@ cy:
             password:
               blank: "Ni all y cyfrinair fod yn wag."
               too_short: "Rhaid i'r cyfrinair fod o leiaf %{count} nod."
-              
+
         api_key:
           attributes:
             key:
@@ -216,7 +236,7 @@ cy:
       default: "%d/%m/%Y %H:%M:%S"
       short: "%d %b %H:%M"
       long: "%d %B %Y %H:%M"
-      
+
   date:
     formats:
       default: "%d/%m/%Y"

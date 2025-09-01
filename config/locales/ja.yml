@@ -18,7 +18,7 @@ ja:
       validation_failed: "バリデーションに失敗しました"
       invalid_request: "無効なリクエストです"
       rate_limit_exceeded: "レート制限を超えました。しばらくしてから再試行してください"
-      
+
     messages:
       success: "操作が正常に完了しました"
       created: "リソースが正常に作成されました"
@@ -35,18 +35,38 @@ ja:
         name_taken: "コミュニティ名は既に使用されています"
         slug_taken: "コミュニティ識別子は既に使用されています"
         invalid_visibility: "無効な可視性設定です"
-        
+
       messages:
         created: "コミュニティが正常に作成されました"
         updated: "コミュニティが正常に更新されました"
         visibility_updated: "コミュニティの可視性が更新されました"
-        
+
+    notification:
+      messages:
+        token_already_exists: "通知トークンは既に存在します"
+        token_saved: "通知トークンが保存されました"
+        token_deleted: "通知トークンが正常に削除されました"
+        token_not_found: "通知トークンが見つかりませんでした"
+        mute_updated: "ミュート状態が正常に更新されました"
+
     account:
       errors:
         invalid_credentials: "無効なユーザー名またはパスワードです。"
         account_not_found: "アカウントが見つかりません。"
         account_suspended: "アカウントが停止されています。"
         email_not_verified: "メールアドレスが確認されていません。"
+        email_not_found: "メールが見つかりません！"
+        email_invalid: "メール形式が無効です。"
+        email_taken: "メールは既に受信されています"
+        email_update_fail: "メールの更新に失敗しました。"
+        password_unmatch: "パスワードの一致を解除します。"
+        password_update_fail: "パスワードの更新に失敗しました。"
+        otp_invalid: "無効なotpです。"
+        register_not_allow: "あなたは登録を許可されていません！"
+        missing_field: "必須フィールドがありません"
+        password_incorrect: "現在のパスワードが正しくありません。"
+      messages:
+        password_updated: "パスワードが更新されました。"
 
     setting:
       errors:
@@ -55,7 +75,7 @@ ja:
         invalid_app_name: "%{attribute} : 無効なアプリ名が提供されました。"
         validation_failed: "設定の検証に失敗しました。"
         delete_failed: "設定の削除に失敗しました。"
-        
+
       messages:
         saved: "設定が正常に保存されました。"
         deleted: "設定が正常に削除されました。"
@@ -64,7 +84,7 @@ ja:
       errors:
         missing_parameters: "ドメインとIPアドレスが必要です。"
         verification_failed: "エラーによりドメイン検証に失敗しました。"
-        
+
       messages:
         dns_verified: "DNSが正しく設定されています。"
         dns_instructions: "Aレコードが見つかりません。Aレコードを %{ip} に向けてください。"
@@ -75,7 +95,7 @@ ja:
         key_not_found: "APIキーが見つかりません。"
         already_deactivated: "APIキーは既に無効化されています。"
         already_activated: "APIキーは既に有効化されています。"
-        
+
       messages:
         rotated_successfully: "APIキーが正常にローテーションされました。"
         activated_successfully: "APIキーが正常に有効化されました。"
@@ -88,7 +108,7 @@ ja:
         invalid_code: "無効な招待コードです。"
         validation_failed: "バリデーションに失敗しました！"
         account_already_registered: "アカウントは既にウェイトリストに登録されています。"
-        
+
       messages:
         created: "ウェイトリストに正常に追加されました。"
         invitation_sent: "招待コードをメールアドレスに送信しました。"
@@ -103,12 +123,12 @@ ja:
         community_not_found: "コミュニティが見つかりません"
         minimum_channels_required: "プライマリに設定するには最低5つのチャンネルに参加する必要があります"
         favorited_channel_not_found: "お気に入りチャンネルが見つかりません"
-        
+
       messages:
         favorited_successfully: "チャンネルが正常にお気に入りに登録されました"
         unfavorited_successfully: "お気に入りチャンネルが正常に削除されました"
         primary_set_successfully: "チャンネルが正常にプライマリに設定されました"
-        
+
     validation:
       required: "%{attribute}は必須です"
       too_long: "%{attribute}が長すぎます（最大%{count}文字）"
@@ -137,7 +157,7 @@ ja:
               too_long: "説明は%{count}文字以内で入力してください"
             about:
               too_long: "概要は%{count}文字以内で入力してください"
-              
+
         account:
           attributes:
             username:
@@ -153,7 +173,7 @@ ja:
             password:
               blank: "パスワードを入力してください"
               too_short: "パスワードは最低%{count}文字必要です"
-              
+
         api_key:
           attributes:
             key:
@@ -216,7 +236,7 @@ ja:
       default: "%Y年%m月%d日 %H:%M:%S"
       short: "%m月%d日 %H:%M"
       long: "%Y年%m月%d日 %H:%M"
-      
+
   date:
     formats:
       default: "%Y年%m月%d日"

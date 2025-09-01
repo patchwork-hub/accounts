@@ -18,7 +18,7 @@ ru:
       validation_failed: "Ошибка валидации"
       invalid_request: "Неверный запрос"
       rate_limit_exceeded: "Превышен лимит запросов. Попробуйте позже"
-      
+
     messages:
       success: "Операция выполнена успешно"
       created: "Ресурс успешно создан"
@@ -35,18 +35,38 @@ ru:
         name_taken: "Название сообщества уже занято"
         slug_taken: "Идентификатор сообщества уже занят"
         invalid_visibility: "Неверная настройка видимости"
-        
+
       messages:
         created: "Сообщество успешно создано"
         updated: "Сообщество успешно обновлено"
         visibility_updated: "Видимость сообщества обновлена"
-        
+
+    notification:
+      messages:
+        token_already_exists: "Токен уведомления уже существует"
+        token_saved: "Токен уведомления сохранен"
+        token_deleted: "Токен уведомления успешно удален"
+        token_not_found: "Токены уведомления не найдены"
+        mute_updated: "Статус отключения успешно обновлен"
+
     account:
       errors:
         invalid_credentials: "Неверное имя пользователя или пароль"
         account_not_found: "Аккаунт не найден"
         account_suspended: "Аккаунт заблокирован"
         email_not_verified: "Email адрес не подтверждён"
+        email_not_found: "Электронное письмо не найдено!"
+        email_invalid: "Неверный формат электронного письма".
+        email_taken: "Электронное письмо уже было отправлено"
+        email_update_fail: "Обновление электронной почты завершилось неудачно".
+        password_unmatch: "Пароль не соответствует".
+        password_update_fail: "Обновление пароля не удалось".
+        otp_invalid: "Недействительный otp!"
+        register_not_allow: "Вам запрещено регистрироваться!"
+        missing_field: "Отсутствуют обязательные поля"
+        password_incorrect: "Текущий пароль неверен".
+      messages:
+        password_updated: "Пароль был обновлен".
 
     setting:
       errors:
@@ -55,7 +75,7 @@ ru:
         invalid_app_name: "%{attribute} : Предоставлено неверное имя приложения."
         validation_failed: "Ошибка валидации настроек."
         delete_failed: "Не удалось удалить настройки."
-        
+
       messages:
         saved: "Настройки успешно сохранены."
         deleted: "Настройки успешно удалены."
@@ -64,7 +84,7 @@ ru:
       errors:
         missing_parameters: "Домен и IP-адрес обязательны."
         verification_failed: "Проверка домена не удалась из-за ошибки."
-        
+
       messages:
         dns_verified: "DNS настроен правильно."
         dns_instructions: "A-запись не найдена. Направьте вашу A-запись на %{ip}."
@@ -75,7 +95,7 @@ ru:
         key_not_found: "API ключ не найден"
         already_deactivated: "API ключ уже деактивирован"
         already_activated: "API ключ уже активирован"
-        
+
       messages:
         rotated_successfully: "API ключ успешно ротирован"
         activated_successfully: "API ключ успешно активирован"
@@ -88,7 +108,7 @@ ru:
         invalid_code: "Недействительный код приглашения."
         validation_failed: "Проверка не удалась!"
         account_already_registered: "Аккаунт уже зарегистрирован в списке ожидания."
-        
+
       messages:
         created: "Успешно добавлен в список ожидания."
         invitation_sent: "Код приглашения отправлен на вашу электронную почту."
@@ -103,18 +123,18 @@ ru:
         community_not_found: "Сообщество не найдено"
         minimum_channels_required: "Вам нужно присоединиться как минимум к 5 каналам, чтобы установить основной"
         favorited_channel_not_found: "Избранный канал не найден"
-        
+
       messages:
         favorited_successfully: "Канал успешно добавлен в избранное"
         unfavorited_successfully: "Избранный канал успешно удалён"
         primary_set_successfully: "Канал успешно установлен как основной"
-        
+
     validation:
       required: "%{attribute} обязательно для заполнения"
       too_long: "%{attribute} слишком длинное (максимум %{count} символов)"
       too_short: "%{attribute} слишком короткое (минимум %{count} символов)"
       invalid_format: "%{attribute} имеет неверный формат"
-      not_unique: "%{attribute} уже занято" 
+      not_unique: "%{attribute} уже занято"
 
   # Model validation messages
   activerecord:
@@ -137,7 +157,7 @@ ru:
               too_long: "Описание не может быть длиннее %{count} символов"
             about:
               too_long: "Раздел 'О нас' не может быть длиннее %{count} символов"
-              
+
         account:
           attributes:
             username:
@@ -153,7 +173,7 @@ ru:
             password:
               blank: "Пароль не может быть пустым"
               too_short: "Пароль должен содержать минимум %{count} символов"
-              
+
         api_key:
           attributes:
             key:
@@ -216,7 +236,7 @@ ru:
       default: "%d.%m.%Y %H:%M:%S"
       short: "%d %b %H:%M"
       long: "%d %B %Y г. %H:%M"
-      
+
   date:
     formats:
       default: "%d.%m.%Y"

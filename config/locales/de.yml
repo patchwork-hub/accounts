@@ -18,7 +18,7 @@ de:
       validation_failed: "Validierung fehlgeschlagen!"
       invalid_request: "Ungültige Anfrage!"
       rate_limit_exceeded: "Rate-Limit überschritten. Bitte versuchen Sie es später erneut."
-      
+
     messages:
       success: "Vorgang erfolgreich abgeschlossen."
       created: "Ressource erfolgreich erstellt."
@@ -35,18 +35,38 @@ de:
         name_taken: "Community-Name ist bereits vergeben."
         slug_taken: "Community-Bezeichner ist bereits vergeben."
         invalid_visibility: "Ungültige Sichtbarkeitseinstellung."
-        
+
       messages:
         created: "Community erfolgreich erstellt."
         updated: "Community erfolgreich aktualisiert."
         visibility_updated: "Community-Sichtbarkeit aktualisiert."
-        
+
+    notification:
+      messages:
+        token_already_exists: "Benachrichtigungstoken existiert bereits"
+        token_saved: "Benachrichtigungstoken gespeichert"
+        token_deleted: "Benachrichtigungstoken erfolgreich gelöscht"
+        token_not_found: "Keine Benachrichtigungstoken gefunden"
+        mute_updated: "Stummschaltungsstatus erfolgreich aktualisiert"
+
     account:
       errors:
         invalid_credentials: "Ungültiger Benutzername oder Passwort."
         account_not_found: "Konto nicht gefunden."
         account_suspended: "Konto wurde gesperrt."
         email_not_verified: "E-Mail-Adresse nicht verifiziert."
+        email_not_found: "E-Mail nicht gefunden!"
+        email_invalid: "Ungültiges E-Mail-Format."
+        email_taken: "E-Mail wurde bereits vergeben"
+        email_update_fail: "Die E-Mail-Aktualisierung war nicht erfolgreich."
+        password_unmatch: "Passwort stimmt nicht überein."
+        password_update_fail: "Die Kennwortaktualisierung war nicht erfolgreich."
+        otp_invalid: "Ungültiges otp!"
+        register_not_allow: "Du darfst dich nicht registrieren!"
+        missing_field: "Fehlende Pflichtfelder"
+        password_incorrect: "Das aktuelle Passwort ist falsch."
+      messages:
+        password_updated: "Das Passwort wurde aktualisiert."
 
     setting:
       errors:
@@ -55,7 +75,7 @@ de:
         invalid_app_name: "%{attribute} : Ungültiger App-Name angegeben."
         validation_failed: "Validierung der Einstellungen fehlgeschlagen."
         delete_failed: "Löschen der Einstellungen fehlgeschlagen."
-        
+
       messages:
         saved: "Einstellungen wurden erfolgreich gespeichert."
         deleted: "Einstellungen erfolgreich gelöscht."
@@ -64,7 +84,7 @@ de:
       errors:
         missing_parameters: "Domain und IP-Adresse sind erforderlich."
         verification_failed: "Domain-Verifizierung fehlgeschlagen aufgrund eines Fehlers."
-        
+
       messages:
         dns_verified: "DNS korrekt konfiguriert."
         dns_instructions: "A-Record nicht gefunden. Bitte richten Sie Ihren A-Record auf %{ip} aus."
@@ -75,7 +95,7 @@ de:
         key_not_found: "API-Schlüssel nicht gefunden."
         already_deactivated: "API-Schlüssel ist bereits deaktiviert."
         already_activated: "API-Schlüssel ist bereits aktiviert."
-        
+
       messages:
         rotated_successfully: "API-Schlüssel erfolgreich rotiert."
         activated_successfully: "API-Schlüssel erfolgreich aktiviert."
@@ -88,7 +108,7 @@ de:
         invalid_code: "Ungültiger Einladungscode."
         validation_failed: "Validierung fehlgeschlagen!"
         account_already_registered: "Konto ist bereits auf der Warteliste registriert."
-        
+
       messages:
         created: "Erfolgreich zur Warteliste hinzugefügt."
         invitation_sent: "Einladungscode an Ihre E-Mail gesendet."
@@ -103,7 +123,7 @@ de:
         community_not_found: "Community nicht gefunden."
         minimum_channels_required: "Sie müssen mindestens 5 Kanälen beitreten, um einen als primär zu setzen."
         favorited_channel_not_found: "Favorisierter Kanal nicht gefunden."
-        
+
       messages:
         favorited_successfully: "Kanal wurde erfolgreich favorisiert."
         unfavorited_successfully: "Favorisierter Kanal wurde erfolgreich gelöscht."
@@ -137,7 +157,7 @@ de:
               too_long: "Beschreibung darf nicht länger als %{count} Zeichen sein."
             about:
               too_long: "Über-Bereich darf nicht länger als %{count} Zeichen sein."
-              
+
         account:
           attributes:
             username:
@@ -153,7 +173,7 @@ de:
             password:
               blank: "Passwort darf nicht leer sein."
               too_short: "Passwort muss mindestens %{count} Zeichen haben."
-              
+
         api_key:
           attributes:
             key:
@@ -216,7 +236,7 @@ de:
       default: "%d.%m.%Y %H:%M:%S"
       short: "%d. %b %H:%M"
       long: "%d. %B %Y %H:%M"
-      
+
   date:
     formats:
       default: "%d.%m.%Y"
