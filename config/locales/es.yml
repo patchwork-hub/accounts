@@ -1,0 +1,53 @@
+# Spanish translations for Patchwork Dashboard
+# Traducciones españolas para el Panel de Control de Patchwork
+
+es:
+  # Locale information
+  locale:
+    name: "Español"
+    native_name: "Español"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "No está autorizado para realizar esta acción."
+      forbidden: "¡Acceso denegado!"
+      not_found: "Recurso no encontrado."
+      unprocessable_entity: "La solicitud no pudo ser procesada."
+      internal_server_error: "Se produjo un error interno del servidor."
+      validation_failed: "¡La validación falló!"
+      invalid_request: "¡Solicitud inválida!"
+      rate_limit_exceeded: "Límite de tasa excedido. Por favor, inténtelo de nuevo más tarde"
+
+    messages:
+      success: "Operación completada con éxito"
+      created: "Recurso creado con éxito"
+      updated: "Recurso actualizado con éxito"
+      deleted: "Recurso eliminado con éxito"
+
+    notification:
+      messages:
+        token_already_exists: "El token de notificación ya existe"
+        token_saved: "Token de notificación guardado"
+        token_deleted: "Token de notificación eliminado con éxito"
+        token_not_found: "No se encontraron tokens de notificación"
+        mute_updated: "Estado de silencio actualizado con éxito"
+
+    account:
+      errors:
+        email_not_found: "¡Correo electrónico no encontrado!"
+        email_invalid: "Formato de correo electrónico inválido."
+        email_taken: "El correo electrónico ya está en uso"
+        email_update_fail: "La actualización del correo electrónico no tuvo éxito."
+        password_unmatch: "Las contraseñas no coinciden."
+        password_update_fail: "La actualización de la contraseña no tuvo éxito."
+        otp_invalid: "¡OTP inválido!"
+        register_not_allow: "¡No tiene permiso para registrarse!"
+        missing_field: "Faltan campos requeridos"
+        password_incorrect: "La contraseña actual es incorrecta."
+      messages:
+        password_updated: "La contraseña ha sido actualizada."
+
+    domain:
+      messages:
+        dns_verified: "El DNS está configurado correctamente."
