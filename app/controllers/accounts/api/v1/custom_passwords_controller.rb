@@ -22,7 +22,7 @@ module Accounts::Api::V1
         user.otp_secret = generate_otp_token
         user.save!
         CustomPasswordsMailer.with(user: user).reset_password_confirmation.deliver_later
-        render_reset_password_token(user.reload.reset_password_token, :ok)
+        render_response(key: :reset_password_token, data: user.reload.reset_password_token, status: :ok)
       else
         render_not_found
       end
@@ -51,7 +51,7 @@ module Accounts::Api::V1
         @user.otp_secret = generate_otp_token
         @user.save!
         CustomPasswordsMailer.with(user: @user).reset_password_confirmation.deliver_later
-        render_access_token(verify_otp_params[:id], :ok)
+        render_response(key: :access_token, data: verify_otp_params[:id], status: :ok)
       else
         render_not_found('api.account.errors.email_not_found')
       end
@@ -71,7 +71,7 @@ module Accounts::Api::V1
         handle_email_change if change_email?
       end
 
-      render_generate_access_token(generate_access_token, :ok)
+      render_response(key: :message, data: generate_access_token, status: :ok)
     rescue ActiveRecord::RecordInvalid => e
       render_result({}, e.message, :unprocessable_entity)
     end
@@ -132,7 +132,7 @@ module Accounts::Api::V1
         CustomPasswordsMailer.with(user: @user).reset_password_confirmation.deliver_later
       end
 
-      render_generate_access_token(generate_access_token, :ok)
+      render_response(key: :message, data: generate_access_token, status: :ok)
     rescue ActiveSupport::MessageVerifier::InvalidSignature
       render_result({}, 'api.account.errors.email_update_fail', :unprocessable_entity)
     end

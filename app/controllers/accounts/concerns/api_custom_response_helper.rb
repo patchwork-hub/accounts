@@ -19,35 +19,10 @@ module Accounts::Concerns::ApiCustomResponseHelper
     render json: response_data, status: status
   end
 
-  # Mute responses
-  def render_mute(data, status = :ok)
-    response_data = {
-      mute: data
-    }
-    render json: response_data, status: status
-  end
+  def render_response(key:, data:, status: :ok, message_key: nil)
+    response_data = { key.to_sym => data }
+    response_data[:message] = get_translated_message(message_key) if message_key.present?
 
-  # reset_password_token responses
-  def render_reset_password_token(data, status = :ok)
-    response_data = {
-      reset_password_token: data
-    }
-    render json: response_data, status: status
-  end
-
-  # access_token responses
-  def render_access_token(data, status = :ok)
-    response_data = {
-      access_token: data
-    }
-    render json: response_data, status: status
-  end
-
-  # generate_access_token responses
-  def render_generate_access_token(data, status = :ok)
-    response_data = {
-      message: data
-    }
     render json: response_data, status: status
   end
 end

@@ -34,7 +34,7 @@ module Accounts::Api::V1
 
     def get_mute_status
       if @notification_tokens.present?
-        render_mute(@notification_tokens.first.mute, :ok)
+        render_response(key: :mute, data: @notification_tokens.first.mute, status: :ok)
       else
         render_result({}, 'api.notification.messages.token_not_found', :not_found)
       end
