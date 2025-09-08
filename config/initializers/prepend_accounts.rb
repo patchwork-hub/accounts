@@ -11,4 +11,12 @@ Rails.application.config.to_prepare do
   NotifyService.prepend(Overrides::NotifyServiceExtension)
   AppSignUpService.prepend(Overrides::AppSignUpServiceExtension)
   User.include(UserConcern)
+
+  if ["patchwork.io", "mo-me.social", "newsmast.social"].include?(ENV['LOCAL_DOMAIN'])
+    [Admin::DashboardController, Admin::ReportsController].each do |controller|
+      controller.class_eval do
+        before_action :authenticate_user!
+      end
+    end
+  end
 end
