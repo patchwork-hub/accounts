@@ -6,7 +6,7 @@ module NonChannelHelper
   def is_non_channel?
     return true if Rails.env.development?
 
-    return true if Rails.env.production? && %w[mastodon.newsmast.org newsmast.social mo-me.social patchwork.io].include?(ENV['LOCAL_DOMAIN'])
+    return true if Rails.env.production? && %w[mastodon.newsmast.org newsmast.social mo-me.social patchwork.io qlub.social qlub.channel.org].include?(ENV['LOCAL_DOMAIN'])
     
     false
   end
