@@ -36,7 +36,7 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "rails", "~> 7.1.1"
+  spec.add_dependency "rails", "~> 8.0"
   spec.add_dependency "byebug", "~> 11.1"
   spec.add_dependency 'googleauth', '~> 1.13', '>= 1.13.1'
   spec.add_dependency 'httparty', "~> 0.23.1"
