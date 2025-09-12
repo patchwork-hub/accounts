@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
 class CustomNotificationService < BaseService
-  include NewsmastHelper
+  include NonChannelHelper
 
   def call(recipient, notification)
     notification_tokens = NotificationToken.where(account_id: recipient.id)
     return nil if notification_tokens.empty? || notification_tokens.any? { |token| token.mute }
-
-    Rails.logger.info("**********CustomNotificationService_notification_tokens: #{notification_tokens.pluck(:mute, :notification_token)} **********")
 
     body = ''
     destination_id = 0
@@ -58,16 +56,24 @@ class CustomNotificationService < BaseService
     }
     # ios & android
     ios_android_devices = notification_tokens.where.not(platform_type: 'huawei').pluck(:notification_token)
+
     app_title = case ENV['LOCAL_DOMAIN']
+    when 'channel.org'
+    'Channels'
+    when 'mo-me.social'
+      'Mo Me'
     when 'patchwork.io'
       'Patchwork'
-    when 'mo-me.social'
-      'Mo-Me'
-    when 'mastodon.newsmast.org', 'newsmast.social'
+    when 'newsmast.social', 'backend.newsmast.org'
       'Newsmast'
+    when 'staging.patchwork.online'
+      'Channels staging'
+    when 'qlub.channel.org'
+      'Qlub'
     else
-      'Channels'
+      'Development'
     end
+
     ios_android_devices.each do |device|
       FirebaseNotificationService.send_notification(device, app_title, body, data)
     end

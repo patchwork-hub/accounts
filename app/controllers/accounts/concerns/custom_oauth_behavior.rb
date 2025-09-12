@@ -2,7 +2,7 @@
 
 module Accounts::Concerns::CustomOauthBehavior
   extend ActiveSupport::Concern
-  include NewsmastHelper
+  include NonChannelHelper
 
   def create
 
@@ -11,7 +11,7 @@ module Accounts::Concerns::CustomOauthBehavior
       return 
     end
 
-    error_message = if is_newsmast?
+    error_message = if is_non_channel?
       LoginService.new(oauth_params).newsmast_login || nil
     else
       LoginService.new(oauth_params).channel_login || nil
