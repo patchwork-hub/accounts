@@ -2,7 +2,7 @@
 
 module Accounts::Concerns::AccountsCreation
   extend ActiveSupport::Concern
-  include NewsmastHelper
+  include NonChannelHelper
   
   def create
     token    = AppSignUpService.new.call(doorkeeper_token.application, request.remote_ip, account_params)
@@ -12,7 +12,7 @@ module Accounts::Concerns::AccountsCreation
 
     self.response_body = Oj.dump(response.body)
     self.status        = response.status
-    create_community_admin unless is_newsmast?
+    create_community_admin unless is_non_channel?
     generate_opt_token
   rescue ActiveRecord::RecordInvalid => e
     render json: ValidationErrorFormatter.new(e, 'account.username': :username, 'invite_request.text': :reason).as_json, status: 422

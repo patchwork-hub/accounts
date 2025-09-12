@@ -10,7 +10,7 @@ module Accounts::Api::V1
     before_action :set_user, only: [:update, :verify_otp, :request_otp]
 
     include AccountableConcern
-    include NewsmastHelper
+    include NonChannelHelper
     layout 'email'
 
     def create
@@ -62,7 +62,7 @@ module Accounts::Api::V1
         return render_result({}, 'api.account.errors.otp_invalid', :unprocessable_entity)
       end
 
-      waitlist_entry = is_newsmast? ? nil : find_waitlist_entry
+      waitlist_entry = is_non_channel? ? nil : find_waitlist_entry
       @can_register = registration_allowed?(waitlist_entry)
       return render_result({}, 'api.account.errors.register_not_allow', :unprocessable_entity) unless @can_register
 
@@ -190,7 +190,7 @@ module Accounts::Api::V1
     end
 
     def registration_allowed?(waitlist_entry)
-      return true if reset_password? || change_email? || skip_waitlist? || is_newsmast?
+      return true if reset_password? || change_email? || skip_waitlist? || is_non_channel?
 
       waitlist_entry.present?
     end
