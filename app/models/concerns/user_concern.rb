@@ -3,6 +3,7 @@ module UserConcern
 
   included do
     after_create :create_user_settings
+    after_create :apply_server_setting_to_account
   end
 
   private
@@ -33,5 +34,16 @@ module UserConcern
       "notification_emails.appeal" => enabled,
       "notification_emails.software_updates" => enabled ? "critical" : "none"
     }
+  end
+
+  def apply_server_setting_to_account
+    setting = ServerSetting.find_by(name: "Search opt-out")
+    return unless setting.present? && account.present?
+
+    opt_out = ActiveModel::Type::Boolean.new.cast(setting.value)
+    account.update(
+      discoverable: opt_out,
+      indexable: opt_out
+    )
   end
 end
