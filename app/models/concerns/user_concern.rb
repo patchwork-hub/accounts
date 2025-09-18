@@ -42,8 +42,9 @@ module UserConcern
 
     opt_out = ActiveModel::Type::Boolean.new.cast(setting.value)
     account.update(
-      discoverable: opt_out,
-      indexable: opt_out
+      discoverable: !opt_out,
+      indexable: !opt_out
     )
+    update!(settings_attributes: { noindex: opt_out })
   end
 end
