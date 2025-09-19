@@ -1,6 +1,8 @@
 module OverridePrepareNewUser
   def prepare_new_user!
-    AutoFollowDefaultAccountsService.new.call(account)
+    if ENV['AUTO_FOLLOW_ENABLED'].present? && ENV['AUTO_FOLLOW_ENABLED'].to_s.downcase == 'true'
+      AutoFollowDefaultAccountsService.new.call(account)
+    end
     BootstrapTimelineWorker.perform_async(account_id)
     ActivityTracker.increment('activity:accounts:local')
     ActivityTracker.record('activity:logins', id)
