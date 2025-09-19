@@ -30,8 +30,7 @@ module Accounts::Api::V1
 
     def update
       unless @user && password_params[:password].present? && password_params[:password_confirmation].present? && @user&.otp_secret.nil?
-        return render_password_not_found
-        #return render_result({}, 'api.account.errors.missing_field', :unprocessable_entity)
+        return render_result({}, 'api.account.errors.missing_field', :unprocessable_entity)
       end
 
       unless password_params[:password].eql?(password_params[:password_confirmation])
@@ -214,7 +213,6 @@ module Accounts::Api::V1
         @user.account.update!(discoverable: false)
         @user.skip_confirmation!
         @user.update!(otp_secret: nil, confirmed_at: Time.current, confirmation_sent_at: nil, confirmation_token: nil, approved: true)
-        AutoFollowDefaultAccountsService.new.call(@user.account)
         create_useage_wait_list(waitlist_entry) if @can_register
       else
         @user.update!(otp_secret: nil)
