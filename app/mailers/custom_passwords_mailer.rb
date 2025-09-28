@@ -3,6 +3,9 @@
 class CustomPasswordsMailer < ApplicationMailer
   layout 'email'
 
+  helper BrandColorHelper
+  helper LogoHelper
+
   def reset_password_confirmation
     @user = params[:user]
 
