@@ -2,14 +2,12 @@ module UserConcern
   extend ActiveSupport::Concern
 
   included do
-    after_create :create_user_settings
-    after_create :apply_server_setting_to_account
+    after_create :create_user_settings, :apply_server_setting_to_account, :set_bluesky_bridge_enable
   end
 
   private
 
   def create_user_settings
-    Rails.logger.info "++++++++++[AccountsGem] User #{email} was created!+++++++++++++"
     notification_emails = settings.as_json.select do |key, _|
       key.to_s.start_with?("notification_emails.")
     end
@@ -46,5 +44,11 @@ module UserConcern
       indexable: !opt_out
     )
     update!(settings_attributes: { noindex: opt_out })
+  end
+
+  def set_bluesky_bridge_enable
+    return unless ServerSetting.find_by(name: "Enable bluesky bridge")&.value
+
+    update!(bluesky_bridge_enabled: true)
   end
 end
