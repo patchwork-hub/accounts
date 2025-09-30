@@ -75,7 +75,6 @@ class BristolcableLoginService
   end
 
   def find_or_create_user(membership_data)
-    byebug
     password = @params[:password]
     email = membership_data['email']
     firstname = membership_data['first_name'] || ''
