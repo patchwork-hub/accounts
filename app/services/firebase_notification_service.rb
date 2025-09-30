@@ -50,6 +50,10 @@ class FirebaseNotificationService
     response = post(BASE_URL, headers: headers, body: payload)
 
     Rails.logger.error("Error sending notification: #{response.body}") unless response.success?
-    end
+
+    response
+  rescue StandardError => e
+    Rails.logger.error("Exception sending notification: #{e.message}")
+    nil
   end
 end
