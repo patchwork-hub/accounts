@@ -47,15 +47,9 @@ class FirebaseNotificationService
         data: data,
       },
     }.to_json
-
-    Rails.logger.info("**********payload: #{payload} **********")
-
     response = post(BASE_URL, headers: headers, body: payload)
 
-    if response.success?
-      Rails.logger.info("Notification sent successfully: #{response}")
-    else
-      Rails.logger.error("Error sending notification: #{response.body}")
+    Rails.logger.error("Error sending notification: #{response.body}") unless response.success?
     end
   end
 end

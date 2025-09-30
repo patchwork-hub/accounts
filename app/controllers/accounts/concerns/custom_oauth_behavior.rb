@@ -12,7 +12,7 @@ module Accounts::Concerns::CustomOauthBehavior
     end
 
     error_message = if is_non_channel?
-      LoginService.new(oauth_params).newsmast_login || nil
+      LoginService.new(oauth_params).non_channel_login || nil
     else
       LoginService.new(oauth_params).channel_login || nil
     end
@@ -39,7 +39,8 @@ module Accounts::Concerns::CustomOauthBehavior
       :username,
       :is_web_login,
       :grant_type,
-      :code
+      :code,
+      :password
     )
   end
 
