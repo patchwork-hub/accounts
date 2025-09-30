@@ -219,19 +219,19 @@
         %tr
           %td{align: "center", valign: "middle"}
             - if sender_name == 'Channels'
-              %img.email-logo{alt: "Channel Logo", src: app_icon_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/patchwork.png"}/
+              %img.email-logo{alt: "Channel Logo", src: mail_header_logo_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/patchwork.png"}/
             - elsif sender_name == 'Mo Me'
-              %img.email-logo{alt: "mo-me.social Logo", src: app_icon_image_url.presence || "https://mome-assets.s3.eu-west-2.amazonaws.com/Mo-Me-Logo-Email.png"}/
+              %img.email-logo{alt: "mo-me.social Logo", src: mail_header_logo_image_url.presence || "https://mome-assets.s3.eu-west-2.amazonaws.com/Mo-Me-Logo-Email.png"}/
             - elsif sender_name == 'Patchwork'
-              %img.email-logo{alt: "patchwork.io Logo", src: app_icon_image_url.presence || "https://patchwork-demo-assets.s3.eu-west-2.amazonaws.com/Patchwork-Logo-Email.png"}/
+              %img.email-logo{alt: "patchwork.io Logo", src: mail_header_logo_image_url.presence || "https://patchwork-demo-assets.s3.eu-west-2.amazonaws.com/Patchwork-Logo-Email.png"}/
             - elsif sender_name == 'Newsmast'
-              %img.logo.center{alt: "Newsmast Logo", src: app_icon_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/newsmast_logo.png"}/
+              %img.logo.center{alt: "Newsmast Logo", src: mail_header_logo_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/newsmast_logo.png"}/
             - elsif sender_name == 'Channels staging'
-              %img.logo.center{alt: "Channels Staging Logo", src: app_icon_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/patchwork.png"}/
+              %img.logo.center{alt: "Channels Staging Logo", src: mail_header_logo_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/patchwork.png"}/
             - elsif sender_name == 'Qlub'
-              %img.logo.center{alt: "Qlub Logo", src: app_icon_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/patchwork.png"}/
+              %img.logo.center{alt: "Qlub Logo", src: mail_header_logo_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/patchwork.png"}/
             - else
-              %img.logo.center{alt: "Default Logo", src: app_icon_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/patchwork.png"}/
+              %img.logo.center{alt: "Default Logo", src: mail_header_logo_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/patchwork.png"}/
         %tr
           %td.horizontal-line{colspan: "100%"}
             %hr/
