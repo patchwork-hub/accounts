@@ -4,7 +4,7 @@ module LogoHelper
 
     return '' unless site_upload&.file&.respond_to?(:url)
 
-    site_upload.file.url
+    generate_image_url(site_upload)
   end
 
   def mail_footer_logo_image_url
@@ -12,6 +12,12 @@ module LogoHelper
 
     return '' unless site_upload&.file&.respond_to?(:url)
 
-    site_upload.file.url
+    generate_image_url(site_upload)
+  end
+
+  def generate_image_url(image)
+    file_url  = image.file.url
+    timestamp = image.updated_at&.to_i
+    "#{file_url}?#{timestamp}"
   end
 end
