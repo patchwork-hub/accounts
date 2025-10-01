@@ -70,6 +70,8 @@ class CustomNotificationService < BaseService
       'Channels staging'
     when 'qlub.channel.org'
       'Qlub'
+    when 'thebristolcable.social'
+      'Bristol Cable'
     else
       'Development'
     end

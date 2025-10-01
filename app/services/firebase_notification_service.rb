@@ -6,11 +6,47 @@ require 'httparty'
 class FirebaseNotificationService
   include HTTParty
 
-  BASE_URL = 'https://fcm.googleapis.com/v1/projects/patchwork-demo/messages:send'
+  BASE_URL = case ENV['LOCAL_DOMAIN']
+    when 'channel.org'
+      'https://fcm.googleapis.com/v1/projects/patchwork-279c9/messages:send'
+    when 'mo-me.social'
+      'https://fcm.googleapis.com/v1/projects/mome-379ae/messages:send'
+    when 'patchwork.io'
+      'https://fcm.googleapis.com/v1/projects/patchwork-demo/messages:send'
+    when 'newsmast.social', 'backend.newsmast.org'
+      BASE_URL = 'https://fcm.googleapis.com/v1/projects/newsmast-e9c24/messages:send'
+    when 'staging.patchwork.online'
+      nil
+    when 'qlub.channel.org'
+      nil
+    when 'thebristolcable.social'
+      'https://fcm.googleapis.com/v1/projects/bristolcable-d0b14/messages:send'
+    else
+      nil # Development enviroment
+    end
+
+    file_name  = case ENV['LOCAL_DOMAIN']
+    when 'channel.org'
+      'fcm_acc_service.json'
+    when 'mo-me.social'
+      'fcm_mo_me_service.json'
+    when 'patchwork.io'
+      'patchwork-demo-firebase-adminsdk-fbsvc-4b862033c1.json'
+    when 'newsmast.social', 'backend.newsmast.org'
+      'fcm_newsmast_service.json'
+    when 'staging.patchwork.online'
+      nil
+    when 'qlub.channel.org'
+      nil
+    when 'thebristolcable.social'
+      'bristolcable-d0b14-firebase.json'
+    else
+      nil # Development enviroment
+    end
 
   def self.send_notification(token, title, body, data = {})
     # Path to your service account JSON file
-    service_account_file = Rails.root.join('config', 'patchwork-demo-firebase-adminsdk-fbsvc-4b862033c1.json')
+    service_account_file = Rails.root.join('config', file_name)
     unless File.exist?(service_account_file)
       Rails.logger.error("Service account file not found at #{service_account_file}")
       return nil
