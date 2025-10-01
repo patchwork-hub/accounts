@@ -25,7 +25,7 @@ class FirebaseNotificationService
       nil # Development enviroment
     end
 
-    file_name  = case ENV['LOCAL_DOMAIN']
+    FILE_NAME = case ENV['LOCAL_DOMAIN']
     when 'channel.org'
       'fcm_acc_service.json'
     when 'mo-me.social'
@@ -46,7 +46,7 @@ class FirebaseNotificationService
 
   def self.send_notification(token, title, body, data = {})
     # Path to your service account JSON file
-    service_account_file = Rails.root.join('config', file_name)
+    service_account_file = Rails.root.join('config', FILE_NAME)
     unless File.exist?(service_account_file)
       Rails.logger.error("Service account file not found at #{service_account_file}")
       return nil
