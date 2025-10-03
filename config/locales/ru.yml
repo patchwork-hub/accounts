@@ -45,6 +45,7 @@ ru:
         register_not_allow: "Вам не разрешено регистрироваться!"
         missing_field: "Отсутствуют обязательные поля"
         password_incorrect: "Текущий пароль неверен."
+        username_taken: "Имя пользователя уже занято"
       messages:
         password_updated: "Пароль был обновлен."
 

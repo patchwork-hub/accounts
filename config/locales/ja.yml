@@ -45,6 +45,7 @@ ja:
         register_not_allow: "登録が許可されていません！"
         missing_field: "必須フィールドがありません"
         password_incorrect: "現在のパスワードが正しくありません。"
+        username_taken: "ユーザー名はすでに使用されています"
       messages:
         password_updated: "パスワードが更新されました。"
 

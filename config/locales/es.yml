@@ -45,6 +45,7 @@ es:
         register_not_allow: "¡No tiene permiso para registrarse!"
         missing_field: "Faltan campos requeridos"
         password_incorrect: "La contraseña actual es incorrecta."
+        username_taken: "El nombre de usuario ya está en uso"
       messages:
         password_updated: "La contraseña ha sido actualizada."
 

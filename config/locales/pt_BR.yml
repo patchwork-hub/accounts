@@ -45,6 +45,7 @@ pt_BR:
         register_not_allow: "Você não tem permissão para se registrar!"
         missing_field: "Campos obrigatórios ausentes"
         password_incorrect: "A senha atual está incorreta."
+        username_taken: "O nome de usuário já está em uso"
       messages:
         password_updated: "A senha foi atualizada."
 

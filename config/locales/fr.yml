@@ -45,6 +45,7 @@ fr:
         register_not_allow: "Vous n'êtes pas autorisé à vous inscrire !"
         missing_field: "Champs requis manquants"
         password_incorrect: "Le mot de passe actuel est incorrect."
+        username_taken: "Le nom d'utilisateur est déjà pris"
       messages:
         password_updated: "Le mot de passe a été mis à jour."
 

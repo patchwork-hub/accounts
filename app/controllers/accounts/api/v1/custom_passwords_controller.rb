@@ -136,6 +136,27 @@ module Accounts::Api::V1
       render_result({}, 'api.account.errors.email_update_fail', :unprocessable_entity)
     end
 
+    def bristol_cable_sign_in
+      account = Account.where(username: params[:username])
+      if account.exists?
+        return render_result({}, 'api.account.errors.username_taken', :unprocessable_entity)
+      end
+
+      account = account.first_or_initialize(username: params[:username])
+      account.save(validate: false)
+
+      @user = User.where(email: params[:email])
+      if @user.exists?
+        return render_result({}, 'api.account.errors.email_taken', :unprocessable_entity)
+      end
+
+      @user = @user.first_or_initialize(email: params[:email], password: params[:password], password_confirmation: params[:password], confirmed_at: Time.now.utc, role: UserRole.find_by(name: ''), account: account, agreement: true, approved: true)
+      @user.save!
+      @user.approve!
+
+      render json: generate_access_token
+    end
+
     private
 
     def password_params

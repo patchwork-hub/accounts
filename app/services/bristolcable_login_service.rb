@@ -19,8 +19,10 @@ class BristolcableLoginService
         return 'Invalid credentials. You don\'t have access to login.' if user_info.nil?
 
         user = find_or_create_user(user_info)
-        if user
+        if user.is_a?(User)
           nil
+        elsif user.is_a?(String)
+          user
         else
           'Failed to create user.'
         end
@@ -77,19 +79,29 @@ class BristolcableLoginService
   def find_or_create_user(membership_data)
     password = @params[:password]
     email = membership_data['email']
-    firstname = membership_data['first_name'] || ''
-    lastname = membership_data['last_name'] || ''
+    firstname = membership_data['firstname'] || ''
+    lastname = membership_data['lastname'] || ''
 
-    if firstname.empty? && lastname.empty?
-      username = email.split('@').first
+    if firstname.empty?
+      return "First name is required."
     else
-      username = "#{firstname}#{lastname}".strip
+      username = "#{firstname}".strip
     end
 
-    account = Account.where(username: username).first_or_initialize(username: username)
+    account = Account.where(username: username)
+    if account.exists?
+      return "This username is already associated with an account."
+    end
+
+    account = account.first_or_initialize(username: username)
     account.save(validate: false)
 
-    user = User.where(email: email).first_or_initialize(email: email, password: password, password_confirmation: password, confirmed_at: Time.now.utc, role: UserRole.find_by(name: ''), account: account, agreement: true, approved: true)
+    user = User.where(email: email)
+    if user.exists?
+      return "This email is already associated with an account."
+    end
+    
+    user = user.first_or_initialize(email: email, password: password, password_confirmation: password, confirmed_at: Time.now.utc, role: UserRole.find_by(name: ''), account: account, agreement: true, approved: true)
     user.save!
     user.approve!
 
