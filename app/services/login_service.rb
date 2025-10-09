@@ -12,11 +12,11 @@ class LoginService
   end
 
   def non_channel_login
-    if ENV.fetch('LOCAL_DOMAIN', nil) == 'thebristolcable.social' || Rails.env.development?
-      BristolcableLoginService.new(@params).login
-    else
-      nil
-    end
+    nil
+  end
+
+  def bristol_cable_login
+    BristolcableLoginService.new(@params).login if ENV.fetch('LOCAL_DOMAIN', nil) == 'thebristolcable.social' || Rails.env.development?
   end
 
   private

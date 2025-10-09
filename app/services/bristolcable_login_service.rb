@@ -88,9 +88,11 @@ class BristolcableLoginService
       username = "#{firstname}".strip
     end
 
+    data = { firstname: firstname, lastname: lastname }
+
     account = Account.where(username: username)
     if account.exists?
-      return "This username is already associated with an account."
+      return "This username is already associated with an account. data: #{data}"
     end
 
     account = account.first_or_initialize(username: username)
@@ -98,7 +100,7 @@ class BristolcableLoginService
 
     user = User.where(email: email)
     if user.exists?
-      return "This email is already associated with an account."
+      return "This email is already associated with an account. data: #{data}"
     end
     
     user = user.first_or_initialize(email: email, password: password, password_confirmation: password, confirmed_at: Time.now.utc, role: UserRole.find_by(name: ''), account: account, agreement: true, approved: true)
