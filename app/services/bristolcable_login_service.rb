@@ -16,18 +16,23 @@ class BristolcableLoginService
         cookies = result[:cookies]
         response_data = result[:response]
         user_info = fetch_user_information(cookies)
-        return 'Invalid credentials. You don\'t have access to login.' if user_info.nil?
-
-        user = find_or_create_user(user_info)
-        if user.is_a?(User)
-          nil
-        elsif user.is_a?(String)
-          user
+        if user_info.nil?
+          return 'Please try again. Invalid credentials from beebee.io'
         else
-          'Failed to create user.'
+          data = { firstname: user_info['firstname'], lastname: user_info['lastname'] }
+          return "Please register account in local. data: #{data}"
         end
+
+        # user = find_or_create_user(user_info)
+        # if user.is_a?(User)
+        #   nil
+        # elsif user.is_a?(String)
+        #   user
+        # else
+        #   'Failed to create user.'
+        # end
       else
-        'Invalid credentials. Please try again.'
+        'Please try again. Invalid credentials from beebee.io'
       end
     else
       nil
@@ -76,37 +81,37 @@ class BristolcableLoginService
     return "Error connecting to membership service: #{e.message}"
   end
 
-  def find_or_create_user(membership_data)
-    password = @params[:password]
-    email = membership_data['email']
-    firstname = membership_data['firstname'] || ''
-    lastname = membership_data['lastname'] || ''
+  # def find_or_create_user(membership_data)
+  #   password = @params[:password]
+  #   email = membership_data['email']
+  #   firstname = membership_data['firstname'] || ''
+  #   lastname = membership_data['lastname'] || ''
 
-    if firstname.empty?
-      return "First name is required."
-    else
-      username = "#{firstname}".strip
-    end
+  #   if firstname.empty?
+  #     return "First name is required."
+  #   else
+  #     username = "#{firstname}".strip
+  #   end
 
-    data = { firstname: firstname, lastname: lastname }
+  #   data = { firstname: firstname, lastname: lastname }
 
-    account = Account.where(username: username)
-    if account.exists?
-      return "This username is already associated with an account. data: #{data}"
-    end
+  #   account = Account.where(username: username)
+  #   if account.exists?
+  #     return "This username is already associated with an account. data: #{data}"
+  #   end
 
-    account = account.first_or_initialize(username: username)
-    account.save(validate: false)
+  #   account = account.first_or_initialize(username: username)
+  #   account.save(validate: false)
 
-    user = User.where(email: email)
-    if user.exists?
-      return "This email is already associated with an account. data: #{data}"
-    end
+  #   user = User.where(email: email)
+  #   if user.exists?
+  #     return "This email is already associated with an account. data: #{data}"
+  #   end
     
-    user = user.first_or_initialize(email: email, password: password, password_confirmation: password, confirmed_at: Time.now.utc, role: UserRole.find_by(name: ''), account: account, agreement: true, approved: true)
-    user.save!
-    user.approve!
+  #   user = user.first_or_initialize(email: email, password: password, password_confirmation: password, confirmed_at: Time.now.utc, role: UserRole.find_by(name: ''), account: account, agreement: true, approved: true)
+  #   user.save!
+  #   user.approve!
 
-    user
-  end
+  #   user
+  # end
 end
