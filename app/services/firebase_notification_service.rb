@@ -43,7 +43,7 @@ class FirebaseNotificationService
     when 'thebristolcable.social'
       'bristolcable-d0b14-firebase.json'
     when 'twt.channel.org'
-      'twt-cymru-firebase.json'
+      'twt-cymru-firebase-adminsdk-fbsvc-5c8badfa8c.json'
     else
       nil # Development enviroment
     end
