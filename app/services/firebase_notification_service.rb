@@ -18,9 +18,11 @@ class FirebaseNotificationService
     when 'staging.patchwork.online'
       nil
     when 'qlub.channel.org'
-      nil
+     'https://fcm.googleapis.com/v1/projects/qlub-fac62/messages:send'
     when 'thebristolcable.social'
       'https://fcm.googleapis.com/v1/projects/bristolcable-d0b14/messages:send'
+    when 'twt.channel.org'
+      'https://fcm.googleapis.com/v1/projects/twt-cymru/messages:send'
     else
       nil # Development enviroment
     end
@@ -40,6 +42,8 @@ class FirebaseNotificationService
       nil
     when 'thebristolcable.social'
       'bristolcable-d0b14-firebase.json'
+    when 'twt.channel.org'
+      'twt-cymru-firebase.json'
     else
       nil # Development enviroment
     end

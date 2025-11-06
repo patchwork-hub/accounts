@@ -24,6 +24,8 @@ class CustomPasswordsMailer < ApplicationMailer
       'Qlub'
     when 'thebristolcable.social'
       'Bristol Cable'
+    when 'twt.channel.org'
+      'Toot'
     else
       'Development'
     end

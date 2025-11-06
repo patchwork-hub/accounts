@@ -72,6 +72,8 @@ class CustomNotificationService < BaseService
       'Qlub'
     when 'thebristolcable.social'
       'Bristol Cable'
+    when 'twt.channel.org'
+      'Toot'
     else
       'Development'
     end
