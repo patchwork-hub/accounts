@@ -2,8 +2,8 @@
 
 Rails.application.config.to_prepare do
   Api::V1::AccountsController.prepend(Accounts::Concerns::AccountsCreation)
-  Auth::TokensController.prepend(Accounts::Concerns::CustomOauthBehavior) if Object.const_defined?('Oauth::TokensController')
-  Oauth::TokensController.prepend(Accounts::Concerns::CustomOauthBehavior) if Object.const_defined?('Oauth::TokensController')
+  Auth::TokensController.prepend(Accounts::Concerns::CustomAuthenticationBehavior) if Object.const_defined?('Auth::TokensController')
+  OAuth::TokensController.prepend(Accounts::Concerns::CustomAuthenticationBehavior) if Object.const_defined?('OAuth::TokensController')
   Account.include(Accounts::Concerns::AccountConcern)
   # User.include(OverrideDeviseConfirmation)
   # User.include(OverrideDevisePassword)
