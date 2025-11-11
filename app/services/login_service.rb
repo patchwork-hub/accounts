@@ -11,13 +11,12 @@ class LoginService
     end
   end
 
-  def newsmast_login
-    ## Temporarily disabled NewsMast login functionality
-    # user = fetch_user_credentials
-    # if user.nil? || user.confirmed_at.nil?
-    #   return "You don't have access to login."
-    # end
+  def non_channel_login
     nil
+  end
+
+  def bristol_cable_login
+    BristolcableLoginService.new(@params).login if ENV.fetch('LOCAL_DOMAIN', nil) == 'thebristolcable.social' || Rails.env.development?
   end
 
   private

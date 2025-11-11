@@ -45,6 +45,7 @@ cy:
         register_not_allow: "Nid ydych yn cael cofrestru!"
         missing_field: "Meysydd gofynnol ar goll"
         password_incorrect: "Mae'r cyfrinair presennol yn anghywir."
+        username_taken: "Mae'r enw defnyddiwr eisoes wedi'i gymryd" 
       messages:
         password_updated: "Mae'r cyfrinair wedi'i ddiweddaru."
 

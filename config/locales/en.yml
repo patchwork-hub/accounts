@@ -45,6 +45,7 @@ en:
         register_not_allow: "You'r not allowed to register!"
         missing_field: "Missing required fields"
         password_incorrect: "Current password is incorrect."
+        username_taken: "Username has already been taken"
       messages:
         password_updated: "The password has been updated."
 

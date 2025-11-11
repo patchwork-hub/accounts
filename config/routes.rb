@@ -10,6 +10,7 @@ Accounts::Engine.routes.draw do
           get :request_otp, to: 'custom_passwords#request_otp'
           post :change_password, to: 'custom_passwords#change_password'
           post :change_email, to: 'custom_passwords#change_email'
+          post :bristol_cable_sign_in, to: 'custom_passwords#bristol_cable_sign_in'
         end
       end
 

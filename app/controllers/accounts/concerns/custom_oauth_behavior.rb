@@ -11,8 +11,10 @@ module Accounts::Concerns::CustomOauthBehavior
       return 
     end
 
-    error_message = if is_non_channel?
-      LoginService.new(oauth_params).newsmast_login || nil
+    error_message = if ENV.fetch('LOCAL_DOMAIN', nil) == 'thebristolcable.social' || Rails.env.development?
+      LoginService.new(oauth_params).bristol_cable_login || nil
+    elsif is_non_channel?
+      LoginService.new(oauth_params).non_channel_login || nil
     else
       LoginService.new(oauth_params).channel_login || nil
     end
@@ -23,7 +25,11 @@ module Accounts::Concerns::CustomOauthBehavior
   private
 
   def render_error(error)
-    render json: { error: error }, status: 401
+    extracted = extract_error_message(error)
+    response_body = { error: extracted[:message] }
+    response_body[:data] = extracted[:data] if extracted[:data].present?
+    
+    render json: response_body, status: 401
   end
 
   def client_credentials?
@@ -39,8 +45,26 @@ module Accounts::Concerns::CustomOauthBehavior
       :username,
       :is_web_login,
       :grant_type,
-      :code
+      :code,
+      :password
     )
+  end
+
+  def extract_error_message(response)
+    if response.is_a?(String) && response.include?('data: ')
+      # Extract the error message part (before "data:")
+      message = response.split(' data: ').first.strip
+      
+      # Extract and parse the data part
+      data_match = response.match(/data: (\{.*\})/)
+      data = data_match ? eval(data_match[1]) : nil
+      
+      { message: message, data: data }
+    else
+      { message: response.to_s, data: nil }
+    end
+  rescue StandardError
+    { message: 'Invalid credentials. Please try again.', data: nil }
   end
 
 end
