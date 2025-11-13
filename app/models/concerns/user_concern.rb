@@ -35,7 +35,9 @@ module UserConcern
   end
 
   def apply_server_setting_to_account
-    setting = ServerSetting.find_by(name: "Automatic Search Opt-in")
+    return unless Object.const_defined?('Accounts::ServerSetting')
+
+    setting = Accounts::ServerSetting.find_by(name: "Automatic Search Opt-in")
     return unless setting.present? && account.present?
 
     opt_out = ActiveModel::Type::Boolean.new.cast(setting.value)
@@ -47,7 +49,9 @@ module UserConcern
   end
 
   def set_bluesky_bridge_enable
-    return unless ServerSetting.find_by(name: "Automatic Bluesky bridging for new users")&.value
+    return unless Object.const_defined?('Accounts::ServerSetting')
+
+    return unless Accounts::ServerSetting.find_by(name: "Automatic Bluesky bridging for new users")&.value
 
     update!(bluesky_bridge_enabled: true)
   end
