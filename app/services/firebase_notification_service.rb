@@ -17,7 +17,7 @@ class FirebaseNotificationService
       BASE_URL = 'https://fcm.googleapis.com/v1/projects/newsmast-e9c24/messages:send'
     when 'staging.patchwork.online'
       nil
-    when 'qlub.channel.org'
+    when 'qlub.channel.org', 'qlub.social', 'mastodon.patchwork.online'
      'https://fcm.googleapis.com/v1/projects/qlub-fac62/messages:send'
     when 'thebristolcable.social'
       'https://fcm.googleapis.com/v1/projects/bristolcable-d0b14/messages:send'
@@ -38,7 +38,7 @@ class FirebaseNotificationService
       'fcm_newsmast_service.json'
     when 'staging.patchwork.online'
       nil
-    when 'qlub.channel.org'
+    when 'qlub.channel.org', 'qlub.social', 'mastodon.patchwork.online'
       'qlub-fac62-firebase-adminsdk-fbsvc-a8213164f4.json'
     when 'thebristolcable.social'
       'bristolcable-d0b14-firebase.json'

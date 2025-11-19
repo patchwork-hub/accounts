@@ -20,7 +20,7 @@ class CustomPasswordsMailer < ApplicationMailer
       'Newsmast'
     when 'staging.patchwork.online'
       'Channels staging'
-    when 'qlub.channel.org', 'qlub.social'
+    when 'qlub.channel.org', 'qlub.social', 'mastodon.patchwork.online'
       'Qlub'
     when 'thebristolcable.social'
       'Bristol Cable'
