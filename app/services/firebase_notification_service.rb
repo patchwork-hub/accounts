@@ -39,7 +39,7 @@ class FirebaseNotificationService
     when 'staging.patchwork.online'
       nil
     when 'qlub.channel.org'
-      nil
+      'qlub-fac62-firebase-adminsdk-fbsvc-a8213164f4.json'
     when 'thebristolcable.social'
       'bristolcable-d0b14-firebase.json'
     when 'twt.channel.org'
