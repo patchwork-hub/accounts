@@ -12,8 +12,8 @@ class FirebaseNotificationService
     nil
   end
 
-  FILE_NAME = if ENV['FIREBASE_FILENAME'].present?
-    ENV['FIREBASE_FILENAME']
+  FILE_NAME = if ENV['FIREBASE_KEY_FILE_NAME'].present?
+    ENV['FIREBASE_KEY_FILE_NAME']
   else
     nil
   end
@@ -26,7 +26,7 @@ class FirebaseNotificationService
     end
 
     if FILE_NAME.blank?
-      Rails.logger.error("FIREBASE_FILENAME environment variable is not set")
+      Rails.logger.error("FIREBASE_KEY_FILE_NAME environment variable is not set")
       return nil
     end
 

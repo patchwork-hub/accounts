@@ -2,7 +2,7 @@
 %html
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title #{ENV['MAIL_HEADER'] || 'Development Patchwork'} Email
+    %title #{ENV['MAIL_SENDER_NAME'] || 'Development Patchwork'} Email
     :css
       body {
         display: flex;
@@ -203,7 +203,7 @@
       %table{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
         %tr
           %td{align: "center", valign: "middle"}
-            %img.email-logo{alt: "#{ENV['LOCAL_DOMAIN']} Logo", src: mail_header_logo_image_url.presence || ENV['MAIL_LOGO'].presence || 'https://patchwork-demo-assets.s3.eu-west-2.amazonaws.com/Patchwork-Logo-Email.png'}
+            %img.email-logo{alt: "#{ENV['LOCAL_DOMAIN']} Logo", src: mail_header_logo_image_url.presence || ENV['MAIL_LOGO_URL'].presence || 'https://patchwork-demo-assets.s3.eu-west-2.amazonaws.com/Patchwork-Logo-Email.png'}
         %tr
           %td.horizontal-line{colspan: "100%"}
             %hr/
@@ -226,7 +226,7 @@
         -#     %img.linkedin{src: "https://newsmast-assets.s3.eu-west-2.amazonaws.com/linkedin.png", alt: "Newmast Linkedin"}
         %tr
           %td.copyright{align: "center", valign: "middle"}
-            © #{ENV['MAIL_HEADER']} #{Time.zone.now.year}. All rights reserved.
+            © #{ENV['MAIL_SENDER_NAME']} #{Time.zone.now.year}. All rights reserved.
             - if ENV['LOCAL_DOMAIN'] == 'mo-me.social'
               %a{href: "https://mediarevolution.org/", style: "color: #000000 !important; text-decoration: none"} Media Revolution
         %tr

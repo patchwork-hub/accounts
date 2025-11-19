@@ -57,7 +57,7 @@ class CustomNotificationService < BaseService
     # ios & android
     ios_android_devices = notification_tokens.where.not(platform_type: 'huawei').pluck(:notification_token)
 
-    app_title = ENV['NOTIFICATION_HEADER'] || 'Development Patchwork'
+    app_title = ENV['NOTIFICATION_SENDER_NAME'] || 'Development Patchwork'
 
     ios_android_devices.each do |device|
       FirebaseNotificationService.send_notification(device, app_title, body, data)
