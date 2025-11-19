@@ -24,7 +24,10 @@
       <o:PixelsPerInch>96</o:PixelsPerInch>
       </o:OfficeDocumentSettings>
       </xml>
-    = stylesheet_pack_tag 'mailer'
+    - if respond_to?(:stylesheet_pack_tag)
+      = stylesheet_pack_tag 'mailer'
+    - elsif respond_to?(:vite_stylesheet_tag)
+      = vite_stylesheet_tag 'styles/entrypoints/mailer.scss'
   %body
     .email{ dir: locale_direction }
       %table.email-w-full{ cellspacing: 0, cellpadding: 0, border: 0, role: 'presentation' }
