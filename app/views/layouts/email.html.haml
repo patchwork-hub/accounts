@@ -2,22 +2,7 @@
 %html
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    - case ENV['LOCAL_DOMAIN']
-    - when 'channel.org'
-      - sender_name = 'Channels'
-    - when 'mo-me.social'
-      - sender_name = 'Mo Me'
-    - when 'patchwork.io'
-      - sender_name = 'Patchwork'
-    - when 'newsmast.social', 'backend.newsmast.org'
-      - sender_name = 'Newsmast'
-    - when 'staging.patchwork.online'
-      - sender_name = 'Channels staging'
-    - when 'qlub.channel.org'
-      - sender_name = 'Qlub'
-    - else
-      - sender_name = 'Development'
-    %title #{sender_name} Email
+    %title #{ENV['MAIL_HEADER'] || 'Development Patchwork'} Email
     :css
       body {
         display: flex;
@@ -218,20 +203,7 @@
       %table{border: "0", cellpadding: "0", cellspacing: "0", width: "100%"}
         %tr
           %td{align: "center", valign: "middle"}
-            - if sender_name == 'Channels'
-              %img.email-logo{alt: "Channel Logo", src: mail_header_logo_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/patchwork.png"}/
-            - elsif sender_name == 'Mo Me'
-              %img.email-logo{alt: "mo-me.social Logo", src: mail_header_logo_image_url.presence || "https://mome-assets.s3.eu-west-2.amazonaws.com/Mo-Me-Logo-Email.png"}/
-            - elsif sender_name == 'Patchwork'
-              %img.email-logo{alt: "patchwork.io Logo", src: mail_header_logo_image_url.presence || "https://patchwork-demo-assets.s3.eu-west-2.amazonaws.com/Patchwork-Logo-Email.png"}/
-            - elsif sender_name == 'Newsmast'
-              %img.logo.center{alt: "Newsmast Logo", src: mail_header_logo_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/newsmast_logo.png"}/
-            - elsif sender_name == 'Channels staging'
-              %img.logo.center{alt: "Channels Staging Logo", src: mail_header_logo_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/patchwork.png"}/
-            - elsif sender_name == 'Qlub'
-              %img.logo.center{alt: "Qlub Logo", src: mail_header_logo_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/patchwork.png"}/
-            - else
-              %img.logo.center{alt: "Default Logo", src: mail_header_logo_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/patchwork.png"}/
+            %img.email-logo{alt: "#{ENV['LOCAL_DOMAIN']} Logo", src: mail_header_logo_image_url.presence || ENV['MAIL_LOGO'].presence || 'https://patchwork-demo-assets.s3.eu-west-2.amazonaws.com/Patchwork-Logo-Email.png'}
         %tr
           %td.horizontal-line{colspan: "100%"}
             %hr/
@@ -254,8 +226,8 @@
         -#     %img.linkedin{src: "https://newsmast-assets.s3.eu-west-2.amazonaws.com/linkedin.png", alt: "Newmast Linkedin"}
         %tr
           %td.copyright{align: "center", valign: "middle"}
-            © #{sender_name} #{Time.zone.now.year}. All rights reserved.
-            - if sender_name == 'Mo Me'
+            © #{ENV['MAIL_HEADER']} #{Time.zone.now.year}. All rights reserved.
+            - if ENV['LOCAL_DOMAIN'] == 'mo-me.social'
               %a{href: "https://mediarevolution.org/", style: "color: #000000 !important; text-decoration: none"} Media Revolution
         %tr
           %td.terms{align: "center", valign: "middle"}

@@ -6,49 +6,30 @@ require 'httparty'
 class FirebaseNotificationService
   include HTTParty
 
-  BASE_URL = case ENV['LOCAL_DOMAIN']
-    when 'channel.org'
-      'https://fcm.googleapis.com/v1/projects/patchwork-279c9/messages:send'
-    when 'mo-me.social'
-      'https://fcm.googleapis.com/v1/projects/mome-379ae/messages:send'
-    when 'patchwork.io'
-      'https://fcm.googleapis.com/v1/projects/patchwork-demo/messages:send'
-    when 'newsmast.social', 'backend.newsmast.org'
-      BASE_URL = 'https://fcm.googleapis.com/v1/projects/newsmast-e9c24/messages:send'
-    when 'staging.patchwork.online'
-      nil
-    when 'qlub.channel.org'
-     'https://fcm.googleapis.com/v1/projects/qlub-fac62/messages:send'
-    when 'thebristolcable.social'
-      'https://fcm.googleapis.com/v1/projects/bristolcable-d0b14/messages:send'
-    when 'twt.channel.org'
-      'https://fcm.googleapis.com/v1/projects/twt-cymru/messages:send'
-    else
-      nil # Development enviroment
-    end
+  BASE_URL = if ENV['FIREBASE_PROJECT_ID'].present?
+    "https://fcm.googleapis.com/v1/projects/#{ENV['FIREBASE_PROJECT_ID']}/messages:send"
+  else
+    nil
+  end
 
-    FILE_NAME = case ENV['LOCAL_DOMAIN']
-    when 'channel.org'
-      'fcm_acc_service.json'
-    when 'mo-me.social'
-      'fcm_mo_me_service.json'
-    when 'patchwork.io'
-      'patchwork-demo-firebase-adminsdk-fbsvc-4b862033c1.json'
-    when 'newsmast.social', 'backend.newsmast.org'
-      'fcm_newsmast_service.json'
-    when 'staging.patchwork.online'
-      nil
-    when 'qlub.channel.org'
-      'qlub-fac62-firebase-adminsdk-fbsvc-a8213164f4.json'
-    when 'thebristolcable.social'
-      'bristolcable-d0b14-firebase.json'
-    when 'twt.channel.org'
-      'twt-cymru-firebase-adminsdk-fbsvc-5c8badfa8c.json'
-    else
-      nil # Development enviroment
-    end
+  FILE_NAME = if ENV['FIREBASE_FILENAME'].present?
+    ENV['FIREBASE_FILENAME']
+  else
+    nil
+  end
 
   def self.send_notification(token, title, body, data = {})
+
+    if BASE_URL.blank?
+      Rails.logger.error("Firebase notifications are disabled: FIREBASE_PROJECT_ID environment variable is not set")
+      return nil
+    end
+
+    if FILE_NAME.blank?
+      Rails.logger.error("FIREBASE_FILENAME environment variable is not set")
+      return nil
+    end
+
     # Path to your service account JSON file
     service_account_file = Rails.root.join('config', FILE_NAME)
     unless File.exist?(service_account_file)
@@ -67,8 +48,6 @@ class FirebaseNotificationService
 
     # Fetch the access token
     access_token = authorizer.fetch_access_token!['access_token']
-
-    Rails.logger.info("access_token: #{access_token}")
 
     return nil if access_token.blank?
 

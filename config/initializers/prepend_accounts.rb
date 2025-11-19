@@ -14,11 +14,11 @@ Rails.application.config.to_prepare do
   User.prepend(OverridePrepareNewUser)
   User.include(UserConcern)
 
-  if ["patchwork.io", "mo-me.social", "newsmast.social", "qlub.channel.org"].include?(ENV['LOCAL_DOMAIN'])
-    [Admin::DashboardController, Admin::ReportsController].each do |controller|
-      controller.class_eval do
-        before_action :authenticate_user!
-      end
-    end
-  end
+  # if ["patchwork.io", "mo-me.social", "newsmast.social", "qlub.channel.org"].include?(ENV['LOCAL_DOMAIN'])
+  #   [Admin::DashboardController, Admin::ReportsController].each do |controller|
+  #     controller.class_eval do
+  #       before_action :authenticate_user!
+  #     end
+  #   end
+  # end
 end

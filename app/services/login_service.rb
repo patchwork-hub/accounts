@@ -16,7 +16,7 @@ class LoginService
   end
 
   def bristol_cable_login
-    BristolcableLoginService.new(@params).login if ENV.fetch('LOCAL_DOMAIN', nil) == 'thebristolcable.social' || Rails.env.development?
+    BristolcableLoginService.new(@params).login if ENV.fetch('LOCAL_DOMAIN', nil) == 'thebristolcable.social'
   end
 
   private

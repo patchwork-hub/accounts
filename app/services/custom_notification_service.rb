@@ -57,26 +57,7 @@ class CustomNotificationService < BaseService
     # ios & android
     ios_android_devices = notification_tokens.where.not(platform_type: 'huawei').pluck(:notification_token)
 
-    app_title = case ENV['LOCAL_DOMAIN']
-    when 'channel.org'
-    'Channels'
-    when 'mo-me.social'
-      'Mo Me'
-    when 'patchwork.io'
-      'Patchwork'
-    when 'newsmast.social', 'backend.newsmast.org'
-      'Newsmast'
-    when 'staging.patchwork.online'
-      'Channels staging'
-    when 'qlub.channel.org'
-      'Qlub'
-    when 'thebristolcable.social'
-      'Bristol Cable'
-    when 'twt.channel.org'
-      'Toot'
-    else
-      'Development'
-    end
+    app_title = ENV['NOTIFICATION_HEADER'] || 'Development Patchwork'
 
     ios_android_devices.each do |device|
       FirebaseNotificationService.send_notification(device, app_title, body, data)

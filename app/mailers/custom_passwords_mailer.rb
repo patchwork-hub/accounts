@@ -9,26 +9,7 @@ class CustomPasswordsMailer < ApplicationMailer
   def reset_password_confirmation
     @user = params[:user]
 
-    sender_name = case ENV['LOCAL_DOMAIN']
-    when 'channel.org'
-      'Channels'
-    when 'mo-me.social'
-      'Mo Me'
-    when 'patchwork.io'
-      'Patchwork'
-    when 'newsmast.social', 'backend.newsmast.org'
-      'Newsmast'
-    when 'staging.patchwork.online'
-      'Channels staging'
-    when 'qlub.channel.org', 'qlub.social'
-      'Qlub'
-    when 'thebristolcable.social'
-      'Bristol Cable'
-    when 'twt.channel.org'
-      'Toot'
-    else
-      'Development'
-    end
+    sender_name = ENV.fetch('MAIL_HEADER', 'Development Patchwork')
 
     if @user.present?
       @subject = 'OTP verification code'
