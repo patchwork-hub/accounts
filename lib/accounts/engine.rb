@@ -4,6 +4,25 @@ module Accounts
   class Engine < ::Rails::Engine
     isolate_namespace Accounts
 
+    config.after_initialize do
+      Doorkeeper.configuration.instance_eval do
+        # Add 'password' to existing grant_flows without replacing others
+        @grant_flows = (@grant_flows || []) | ['password']
+        
+        @resource_owner_from_credentials = proc do |_routes|
+            user   = User.authenticate_with_ldap(email: request.params[:username], password: request.params[:password]) if Devise.ldap_authentication
+            user ||= User.authenticate_with_pam(email: request.params[:username], password: request.params[:password]) if Devise.pam_authentication
+
+            if user.nil?
+              user = User.find_by(email: request.params[:username])
+              user = nil unless user&.valid_password?(request.params[:password])
+            end
+
+            user unless user&.otp_required_for_login?
+          end
+        end
+    end
+
     initializer :append_migrations do |app|
       unless app.root.to_s.match root.to_s
         config.paths["db/migrate"].expanded.each do |expanded_path|
