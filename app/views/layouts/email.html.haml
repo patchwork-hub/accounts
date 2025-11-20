@@ -212,10 +212,12 @@
 
         %tr
           %td.stores{align: "center", valign: "middle"}
-            = link_to 'https://apps.apple.com/us/app/channels-your-social-web/id6578450819', style: 'text-decoration: none' do
-              %img.apple-store{src: "https://newsmast-assets.s3.eu-west-2.amazonaws.com/app-store.png", alt: 'App Sote'}
-            = link_to 'https://play.google.com/store/apps/details?id=online.patchwork.app&hl=en', style: 'text-decoration: none' do
-              %img.google-play-store{src: "https://newsmast-assets.s3.eu-west-2.amazonaws.com/google-play-store.png", alt: 'Google Play Store'}
+            - if ENV['IOS_APP_STORE_URL'].present? && ENV['IOS_APP_STORE_URL'].blank? == false
+              = link_to "#{ ENV['IOS_APP_STORE_URL'] }", style: 'text-decoration: none' do
+                %img.apple-store{src: "https://newsmast-assets.s3.eu-west-2.amazonaws.com/app-store.png", alt: 'App Sote'}
+            - if ENV['ANDROID_APP_STORE_URL'].present? && ENV['ANDROID_APP_STORE_URL'].blank? == false
+              = link_to "#{ ENV['ANDROID_APP_STORE_URL'] }", style: 'text-decoration: none' do
+                %img.google-play-store{src: "https://newsmast-assets.s3.eu-west-2.amazonaws.com/google-play-store.png", alt: 'Google Play Store'}
         %tr
           %td.horizontal-line{colspan: "100%"}
             %hr/
@@ -229,9 +231,10 @@
             © #{ENV['MAIL_SENDER_NAME']} #{Time.zone.now.year}. All rights reserved.
             - if ENV['LOCAL_DOMAIN'] == 'mo-me.social'
               %a{href: "https://mediarevolution.org/", style: "color: #000000 !important; text-decoration: none"} Media Revolution
-        %tr
-          %td.terms{align: "center", valign: "middle"}
-            %a{href: "https://newsmastfoundation.org/privacy-policy/", style: "color: #2c2d2f !important"} Privacy policy
-            %img.down-arrow{src: "https://newsmast-assets.s3.eu-west-2.amazonaws.com/down-arrow.png", alt: "Down Arrow"}
-            %a{href: "https://newsmastfoundation.org/terms-conditions/", style: "color: #2c2d2f !important"} Terms of service
-            %img.down-arrow{src: "https://newsmast-assets.s3.eu-west-2.amazonaws.com/down-arrow.png", alt: "Down Arrow"}
+        - if ENV['PRIVACY_POLICY_URL'].present? && ENV['TERMS_AND_CONDITIONS_URL'].present? && ENV['PRIVACY_POLICY_URL'].blank? == false && ENV['TERMS_AND_CONDITIONS_URL'].blank? == false
+          %tr
+            %td.terms{align: "center", valign: "middle"}
+              %a{href: "#{ ENV['PRIVACY_POLICY_URL'] }", style: "color: #2c2d2f !important"} Privacy policy
+              %img.down-arrow{src: "https://newsmast-assets.s3.eu-west-2.amazonaws.com/down-arrow.png", alt: "Down Arrow"}
+              %a{href: "#{ ENV['TERMS_AND_CONDITIONS_URL'] }", style: "color: #2c2d2f !important"} Terms of service
+              %img.down-arrow{src: "https://newsmast-assets.s3.eu-west-2.amazonaws.com/down-arrow.png", alt: "Down Arrow"}
