@@ -15,6 +15,8 @@
       - sender_name = 'Channels staging'
     - when 'qlub.channel.org', 'qlub.social', 'mastodon.patchwork.online'
       - sender_name = 'Qlub'
+    - when 'twt.channel.org'
+      - sender_name = 'Toot'
     - else
       - sender_name = 'Development'
     %title #{sender_name} Email
@@ -230,6 +232,8 @@
               %img.logo.center{alt: "Channels Staging Logo", src: mail_header_logo_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/patchwork.png"}/
             - elsif sender_name == 'Qlub'
               %img.logo.center{alt: "Qlub Logo", src: mail_header_logo_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/patchwork.png"}/
+            - elsif sender_name == 'Toot'
+              %img.logo.center{alt: "Toot Logo", src: mail_header_logo_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/twt+400.png"}/
             - else
               %img.logo.center{alt: "Default Logo", src: mail_header_logo_image_url.presence || "https://newsmast-assets.s3.eu-west-2.amazonaws.com/patchwork.png"}/
         %tr
