@@ -14,7 +14,6 @@ module Accounts::Concerns::AccountsCreation
     self.status        = response.status
     create_community_admin unless is_non_channel?
     generate_opt_token
-    auto_follow_accounts if is_non_channel?
   rescue ActiveRecord::RecordInvalid => e
     render json: ValidationErrorFormatter.new(e, 'account.username': :username, 'invite_request.text': :reason).as_json,
            status: 422
@@ -38,12 +37,5 @@ module Accounts::Concerns::AccountsCreation
       password: account_params[:password]
     )
     community_admin.save
-  end
-
-  def auto_follow_accounts
-    return unless ENV["AUTO_FOLLOW_ENABLED"].present? && ENV["AUTO_FOLLOW_ENABLED"].to_s.downcase == "true"
-
-    user = User.find_by(email: account_params[:email])
-    AutoFollowDefaultAccountsService.new.call(user.account)
   end
 end
