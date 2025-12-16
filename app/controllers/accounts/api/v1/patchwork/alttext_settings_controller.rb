@@ -12,7 +12,6 @@ module Accounts::Api::V1::Patchwork
     end
 
     def change_alttext_setting
-      # atttext_settings = enable_alttext_setting ? email_notification_attributes(enabled: true) : email_notification_attributes(enabled: false)
       if current_user.update(alttext_enabled: enable_alttext_setting)
         render_success(current_user.alttext_enabled, "api.messages.success", :ok)
       else
