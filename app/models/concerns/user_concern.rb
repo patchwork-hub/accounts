@@ -14,7 +14,9 @@ module UserConcern
 
     return if notification_emails.present?
 
-    settings = email_notification_attributes(enabled: false)
+    enabled_notification = ENV['DEFAULT_EMAIL_NOTIFICATIONS_ENABLED'] == 'true'? true : false     
+    
+    settings = email_notification_attributes(enabled: enabled_notification)
     update!(settings: settings)
   end
 
