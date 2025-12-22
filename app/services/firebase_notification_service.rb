@@ -31,7 +31,7 @@ class FirebaseNotificationService
     end
 
     # Path to your service account JSON file
-    service_account_file = Rails.root.join('config', FILE_NAME)
+    service_account_file = Rails.root.join('public/system', FILE_NAME)
     unless File.exist?(service_account_file)
       Rails.logger.error("Service account file not found at #{service_account_file}")
       return nil
