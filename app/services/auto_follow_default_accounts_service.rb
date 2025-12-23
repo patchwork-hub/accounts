@@ -11,7 +11,11 @@ class AutoFollowDefaultAccountsService < BaseService
   private
 
   def follow_account(source_account, target_acct)
+
     target_account = ResolveAccountService.new.call(target_acct)
+    if target_account.nil?
+      target_account = ResolveAccountService.new.call(target_acct, skip_webfinger: true)
+    end
     return if target_account.nil?
 
     FollowService.new.call(source_account, target_account, bypass_locked: true, bypass_limit: true)
