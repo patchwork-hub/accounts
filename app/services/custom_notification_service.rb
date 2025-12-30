@@ -18,7 +18,7 @@ class CustomNotificationService < BaseService
       body = "#{from_account_username} just posted"
       destination_id = Status.find(notification.activity_id).id
     when :update
-      body = "#{from_account_username} edited a post"
+      body = "#{from_account_username} edited a status"
       destination_id = Status.find(notification.activity_id).id
     when :reblog
       body = "#{from_account_username} boosted your status"
@@ -50,7 +50,7 @@ class CustomNotificationService < BaseService
       body = "#{from_account_username} quoted your status"
       destination_id = Status.find(notification.activity_id).id
     when :quoted_update
-      body = "#{from_account_username} edited a quoted post"
+      body = "#{from_account_username} edited a quoted status"
       destination_id = Status.find(notification.activity_id).id
     end
 
