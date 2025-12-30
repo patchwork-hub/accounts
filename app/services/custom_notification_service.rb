@@ -46,6 +46,12 @@ class CustomNotificationService < BaseService
     when :follow_request
       body = "#{from_account_username} has requested to follow you"
       destination_id = notification.from_account_id
+    when :quote
+      body = "#{from_account_username} quoted your status"
+      destination_id = Status.find(notification.activity_id).id
+    when :quoted_update
+      body = "#{from_account_username} edited a quoted post"
+      destination_id = Status.find(notification.activity_id).id
     end
 
     data = {
