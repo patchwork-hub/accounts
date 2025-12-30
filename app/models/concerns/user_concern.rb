@@ -1,5 +1,6 @@
 module UserConcern
   extend ActiveSupport::Concern
+  include EmailNotificationAttributesConcern
 
   included do
     after_create :create_user_settings, :apply_server_setting_to_account, :set_bluesky_bridge_enable
@@ -18,22 +19,6 @@ module UserConcern
     
     settings = email_notification_attributes(enabled: enabled_notification)
     update!(settings: settings)
-  end
-
-  def email_notification_attributes(enabled: false)
-    {
-      "always_send_emails" => enabled,
-      "notification_emails.follow" => enabled,
-      "notification_emails.reblog" => enabled,
-      "notification_emails.favourite" => enabled,
-      "notification_emails.mention" => enabled,
-      "notification_emails.follow_request" => enabled,
-      "notification_emails.report" => enabled,
-      "notification_emails.pending_account" => enabled,
-      "notification_emails.trends" => enabled,
-      "notification_emails.appeal" => enabled,
-      "notification_emails.software_updates" => enabled ? "critical" : "none"
-    }
   end
 
   def apply_server_setting_to_account
