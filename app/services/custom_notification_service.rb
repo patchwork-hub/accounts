@@ -48,10 +48,10 @@ class CustomNotificationService < BaseService
       destination_id = notification.from_account_id
     when :quote
       body = "#{from_account_username} quoted your status"
-      destination_id = Status.find(notification.activity_id).id
+      destination_id = Quote.find(notification.activity_id)&.status_id
     when :quoted_update
       body = "#{from_account_username} edited a quoted status"
-      destination_id = Status.find(notification.activity_id).id
+      destination_id = Quote.find(notification.activity_id)&.status_id
     end
 
     data = {
