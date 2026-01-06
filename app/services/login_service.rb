@@ -21,50 +21,66 @@ class LoginService
 
   private
 
-  def handle_web_login
-    user = fetch_user_credentials
-    if user.nil? || user&.confirmed_at.nil?
-      return 'You don\'t have access to login.'
-    end
-
-    unless %w[UserAdmin HubAdmin].include?(user.role&.name)
-      readable_role = user.role&.name&.gsub(/([a-z])([A-Z])/, '\1 \2')&.downcase&.capitalize
-      return "#{readable_role} isn\'t allowed to access login."
-    end
-
-    nil
-  end
-
   def fetch_user_credentials
     User.find_by(email: @params[:username])
   end
 
-  def handle_app_login
-    user = grant_password? ? fetch_user_credentials : fetch_access_token_grant
-    if user.nil? || user&.confirmed_at.nil?
-      return 'You don\'t have access to login.' 
-    end
+  def fetch_channel_credentials(user)
+    return unless Object.const_defined?('Accounts::CommunityAdmin')
 
-    community_admin = fetch_channel_credentials(user)
-    if community_admin.nil?
-      return 'Invalid credentials. Please make sure you\'ve created a channel.' 
+    if defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
+      Accounts::CommunityAdmin.joins(:community).find_by(
+        account_id: user.account_id,
+        is_boost_bot: true,
+        account_status: Accounts::CommunityAdmin.account_statuses['active'],
+        community: { deleted_at: nil }
+      )
     end
+  end
 
-    if community_admin&.account_status == 'deleted'
-      return 'Your account has already deleted.'
-    end
+  def channel_active?(user)
+    return false unless Object.const_defined?('Accounts::CommunityAdmin')
 
-    unless valid_permissions?(community_admin, user)
-      return 'Invalid credentials or insufficient permissions to access login.'
-    end
+    return false unless defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
+
+    community_admin = Accounts::CommunityAdmin.find_by(account_id: user.account_id, is_boost_bot: true)
+    return true if community_admin.nil? || community_admin&.account_status == Accounts::CommunityAdmin.account_statuses['active']
+
+    return true if community_admin&.community&.deleted_at.nil?
+
+    false
+  end
+
+  def handle_web_login
+    return nil if client_credentials?
+
+    user = fetch_user_credentials
+    return 'You don\'t have access to login.' if user.nil? || user&.confirmed_at.nil?
+
+    return "#{user.role&.name&.underscore&.humanize} isn't allowed to access login." unless user.role&.name.eql?('UserAdmin') || user.role&.name.eql?('HubAdmin') || user.role&.name.eql?('MasterAdmin')
+
+    return 'Your channel is not active. Please contact support.' unless channel_active?(user)
 
     nil
   end
 
-  def fetch_channel_credentials(user)
-    CommunityAdmin.find_by(account_id: user.account_id, is_boost_bot: true, account_status: CommunityAdmin.account_statuses["active"])
+  def handle_app_login
+    return nil if client_credentials?
+
+    user = grant_password? ? fetch_user_credentials : fetch_access_token_grant
+    return 'You don\'t have access to login.' if user.nil?
+
+    community_admin = fetch_channel_credentials(user)
+    return 'Invalid credentials. Please make sure you\'ve created a channel.' if community_admin.nil?
+
+    return 'Your account is already deleted.' if community_admin&.account_status == 'deleted'
+
+    return 'Invalid credentials or insufficient permissions to access login.' unless valid_permissions?(community_admin, user)
+
+    nil
   end
 
+  # This is a solution to allow the creation of a Channel feed and Hub
   def web_login?
     truthy_param?(@params[:is_web_login])
   end
@@ -79,12 +95,20 @@ class LoginService
   end
 
   def belong_any_channel?(community_admin)
-    return false unless community_admin&.patchwork_community_id.present?
+    return false if community_admin&.patchwork_community_id.blank?
 
-    Community.exists?(
+    return false unless Object.const_defined?('Accounts::Community')
+
+    return false unless defined?(Accounts::Community) && Accounts::Community.respond_to?(:find_by)
+
+    Accounts::Community.exists?(
       id: community_admin.patchwork_community_id,
-      visibility: Community.visibilities.keys
+      visibility: Accounts::Community.visibilities.keys
     )
+  end
+
+  def render_error(error)
+    render json: { error: error }, status: 401
   end
 
   def grant_password?
@@ -93,6 +117,10 @@ class LoginService
 
   def client_credentials?
     @params[:grant_type] == 'client_credentials'
+  end
+
+  def authorization_code?
+    @params[:grant_type] == 'authorization_code'
   end
 
   def fetch_access_token_grant

@@ -68,12 +68,5 @@ class CustomNotificationService < BaseService
     ios_android_devices.each do |device|
       FirebaseNotificationService.send_notification(device, app_title, body, data)
     end
-
-    # ## huawei
-    # huawei_devices = notification_tokens.where(platform_type: 'huawei').pluck(:notification_token)
-    # return unless huawei_devices.any? ## ios & android
-
-    # huawei = HuaweiCloudMessaging.new
-    # huawei.send_message(title, destination, destination_id, huawei_devices)
   end
 end

@@ -122,7 +122,7 @@ module Accounts::Api::V1
           otp_secret: generate_otp_token,
           confirmed_at: nil
         )
-
+        update_bot_email(new_email: new_email) unless is_non_channel?
         log_action :change_email, @user
 
         # Revoke all access tokens and destroy sessions
@@ -254,11 +254,25 @@ module Accounts::Api::V1
     end
 
     def find_waitlist_entry
-      WaitList.find_by(invitation_code: verify_otp_params[:invitation_code], used: false)
+      return nil unless Object.const_defined?('Accounts::WaitList')
+
+      return nil unless defined?(Accounts::WaitList) && Accounts::WaitList.respond_to?(:find_by)
+      
+      Accounts::WaitList.find_by(invitation_code: verify_otp_params[:invitation_code], used: false)
     end
 
     def create_useage_wait_list(waitlist_entry)
       waitlist_entry.update!(used: true, account_id: @user.account.id, confirmed_at: Time.current) if waitlist_entry.present?
+    end
+
+    def update_bot_email(new_email: nil)
+      return unless Object.const_defined?('Accounts::CommunityAdmin')
+
+      if defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
+        community_admin = Accounts::CommunityAdmin.find_by(account_id: @user&.account&.id)
+
+        community_admin&.update!(email: new_email)
+      end
     end
   end
 end
