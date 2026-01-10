@@ -210,7 +210,9 @@ module Accounts::Api::V1
     end
 
     def registration_allowed?(waitlist_entry)
-      return true if reset_password? || change_email? || skip_waitlist? || is_non_channel?
+      return true if reset_password? || change_email? 
+
+      return true if skip_waitlist? || params[:invitation_code].blank? || is_non_channel?
 
       waitlist_entry.present?
     end

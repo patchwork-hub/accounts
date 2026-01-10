@@ -13,4 +13,5 @@ Rails.application.config.to_prepare do
   User.include(UserConcern)
   Auth::SessionsController.prepend(Accounts::Concerns::CustomSessionBehavior) if Object.const_defined?('Auth::SessionsController')
   Api::V1::Accounts::CredentialsController.prepend(Accounts::Concerns::AccountsUpdate)
+  User::HasSettings.prepend(Accounts::Concerns::UserSettingExtend)
 end

@@ -51,5 +51,25 @@ module Accounts
                           content_type: { content_type: IMAGE_MIME_TYPES },
                           size: { less_than: LIMIT }
 
+    def self.default_privacy(user)
+      return nil unless Object.const_defined?('Accounts::CommunityAdmin')
+
+      return nil unless defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
+
+      admin = Accounts::CommunityAdmin.find_by(account_id: user.account_id, is_boost_bot: true, account_status: Accounts::CommunityAdmin.account_statuses['active'])
+      return nil unless admin
+
+      community = Accounts::Community.find_by(id: admin.patchwork_community_id)
+      return nil unless community&.content_type&.group_channel?
+
+      case community.post_visibility
+      when 'followers_only'
+        'private'
+      when 'public_visibility'
+        'public'
+      else
+        community.post_visibility
+      end
+    end
   end
 end
