@@ -42,4 +42,8 @@ module Accounts::Concerns::AccountsCreation
       community_admin.save
     end
   end
+
+  def account_params
+    params.permit(:username, :email, :password, :agreement, :locale, :reason, :time_zone, :invite_code, :date_of_birth).merge(invitation_code: params[:invitation_code], skip_waitlist: params[:skip_waitlist])
+  end
 end
