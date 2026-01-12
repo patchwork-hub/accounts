@@ -6,21 +6,34 @@ ja:
   locale:
     name: "日本語"
     native_name: "日本語"
+  
+  notification:
+    poll:
+      ended_you: "あなたの投票は終了しました"
+      ended_voted: "あなたが投票した投票は終了しました"
+    mention:
+      direct_message: "%{name}さんからメッセージが届いています"
 
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "%{name}様"
       instruction: "あなたのアカウント認証OTPコードは以下の通りです:"
-      note: "このメールに心当たりがない場合は、無視してください。"
+      note: "このメールに心当たりがない場合は、無視してください"
+
+  errors:
+    invalid_credentials: "無効な資格情報です。もう一度お試しください"
+    unauthorized_access: "ログインする権限がありません"
+    channel_not_created: "無効な資格情報です。チャンネルを作成したことを確認してください"
+    account_deleted: "あなたのアカウントはすでに削除されています"
 
   # API responses and messages
   api:
     errors:
-      unauthorized: "この操作を実行する権限がありません。"
+      unauthorized: "この操作を実行する権限がありません"
       forbidden: "アクセスが拒否されました！"
-      not_found: "リソースが見つかりません。"
-      unprocessable_entity: "リクエストを処理できませんでした。"
-      internal_server_error: "内部サーバーエラーが発生しました。"
+      not_found: "リソースが見つかりません"
+      unprocessable_entity: "リクエストを処理できませんでした"
+      internal_server_error: "内部サーバーエラーが発生しました"
       validation_failed: "検証に失敗しました！"
       invalid_request: "無効なリクエストです！"
       rate_limit_exceeded: "レート制限を超えました。後でもう一度お試しください"
@@ -42,19 +55,23 @@ ja:
     account:
       errors:
         email_not_found: "メールが見つかりません！"
-        email_invalid: "無効なメール形式です。"
+        email_invalid: "無効なメール形式です"
         email_taken: "このメールはすでに使用されています"
-        email_update_fail: "メールの更新に失敗しました。"
-        password_unmatch: "パスワードが一致しません。"
-        password_update_fail: "パスワードの更新に失敗しました。"
+        email_update_fail: "メールの更新に失敗しました"
+        password_unmatch: "パスワードが一致しません"
+        password_update_fail: "パスワードの更新に失敗しました"
         otp_invalid: "無効なOTPです！"
         register_not_allow: "登録が許可されていません！"
         missing_field: "必須フィールドがありません"
-        password_incorrect: "現在のパスワードが正しくありません。"
+        password_incorrect: "現在のパスワードが正しくありません"
         username_taken: "ユーザー名はすでに使用されています"
       messages:
-        password_updated: "パスワードが更新されました。"
+        password_updated: "パスワードが更新されました"
 
     domain:
       messages:
-        dns_verified: "DNSが正しく構成されています。"
+        dns_verified: "DNSが正しく構成されています"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} 件の会話が既読としてマークされました"

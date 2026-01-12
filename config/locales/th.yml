@@ -1,0 +1,77 @@
+# Thai translations for Patchwork Dashboard
+# This file contains all Thai translations for the application
+
+th:
+  # Locale information
+  locale:
+    name: "Thai"
+    native_name: "ไทย"
+  
+  notification:
+    poll:
+      ended_you: "โพลของคุณสิ้นสุดแล้ว"
+      ended_voted: "โพลที่คุณโหวตสิ้นสุดแล้ว"
+    mention:
+      direct_message: "%{name} ส่งข้อความถึงคุณ"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "เรียน %{name},"
+      instruction: "รหัส OTP สำหรับยืนยันบัญชีของคุณคือ:"
+      note: "หากคุณไม่ได้ร้องขอ กรุณาเพิกเฉยอีเมลนี้"
+  
+  errors:
+    invalid_credentials: "ข้อมูลประจำตัวไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง"
+    unauthorized_access: "คุณไม่มีสิทธิ์เข้าสู่ระบบ"
+    channel_not_created: "ข้อมูลประจำตัวไม่ถูกต้อง กรุณาตรวจสอบว่าคุณได้สร้างช่องแล้ว"
+    account_deleted: "บัญชีของคุณถูกลบไปแล้ว"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "คุณไม่ได้รับอนุญาตให้ดำเนินการนี้"
+      forbidden: "การเข้าถึงถูกปฏิเสธ!"
+      not_found: "ไม่พบทรัพยากร"
+      unprocessable_entity: "ไม่สามารถประมวลผลคำขอได้"
+      internal_server_error: "เกิดข้อผิดพลาดภายในเซิร์ฟเวอร์"
+      validation_failed: "การตรวจสอบล้มเหลว!"
+      invalid_request: "คำขอไม่ถูกต้อง!"
+      rate_limit_exceeded: "เกินขีดจำกัดคำขอ กรุณาลองใหม่ภายหลัง"
+
+    messages:
+      success: "ดำเนินการสำเร็จ"
+      created: "สร้างทรัพยากรสำเร็จ"
+      updated: "อัปเดตทรัพยากรสำเร็จ"
+      deleted: "ลบทรัพยากรสำเร็จ"
+
+    notification:
+      messages:
+        token_already_exists: "โทเค็นการแจ้งเตือนมีอยู่แล้ว"
+        token_saved: "บันทึกโทเค็นการแจ้งเตือนแล้ว"
+        token_deleted: "ลบโทเค็นการแจ้งเตือนสำเร็จ"
+        token_not_found: "ไม่พบโทเค็นการแจ้งเตือน"
+        mute_updated: "อัปเดตสถานะปิดเสียงสำเร็จ"
+
+    account:
+      errors:
+        email_not_found: "ไม่พบอีเมล!"
+        email_invalid: "รูปแบบอีเมลไม่ถูกต้อง"
+        email_taken: "อีเมลนี้ถูกใช้งานแล้ว"
+        email_update_fail: "การอัปเดตอีเมลไม่สำเร็จ"
+        password_unmatch: "รหัสผ่านไม่ตรงกัน"
+        password_update_fail: "การอัปเดตรหัสผ่านไม่สำเร็จ"
+        otp_invalid: "OTP ไม่ถูกต้อง!"
+        register_not_allow: "คุณไม่ได้รับอนุญาตให้ลงทะเบียน!"
+        missing_field: "ขาดข้อมูลที่จำเป็น"
+        password_incorrect: "รหัสผ่านปัจจุบันไม่ถูกต้อง"
+        username_taken: "ชื่อผู้ใช้นี้ถูกใช้งานแล้ว"
+      messages:
+        password_updated: "อัปเดตรหัสผ่านแล้ว"
+
+    domain:
+      messages:
+        dns_verified: "DNS ได้รับการกำหนดค่าอย่างถูกต้อง"
+
+    conversation:
+      messages:
+        marked_read: "ทำเครื่องหมาย %{updated_count} การสนทนาว่าอ่านแล้ว"

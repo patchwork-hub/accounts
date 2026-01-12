@@ -1,0 +1,77 @@
+# Icelandic translations for Patchwork Dashboard
+# This file contains all Icelandic translations for the application
+
+is:
+  # Locale information
+  locale:
+    name: "Icelandic"
+    native_name: "Íslenska"
+  
+  notification:
+    poll:
+      ended_you: "Könnuninni þinni er lokið"
+      ended_voted: "Könnun sem þú tókst þátt í er lokið"
+    mention:
+      direct_message: "%{name} sendi þér skilaboð"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Kæri/Kæra %{name},"
+      instruction: "OTP staðfestingarkóði reikningsins þíns er hér að neðan:"
+      note: "Ef þú baðst ekki um þetta, vinsamlegast hunsaðu þennan tölvupóst"
+  
+  errors:
+    invalid_credentials: "Ógild skilríki. Vinsamlegast reyndu aftur"
+    unauthorized_access: "Þú hefur ekki aðgang til að skrá þig inn"
+    channel_not_created: "Ógild skilríki. Vinsamlegast gakktu úr skugga um að þú hafir búið til rás"
+    account_deleted: "Reikningurinn þinn hefur þegar verið eytt"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Þú hefur ekki heimild til að framkvæma þessa aðgerð"
+      forbidden: "Aðgangi hafnað!"
+      not_found: "Auðlind fannst ekki"
+      unprocessable_entity: "Ekki var hægt að vinna úr beiðninni"
+      internal_server_error: "Innri villa kom upp á þjóni"
+      validation_failed: "Staðfesting mistókst!"
+      invalid_request: "Ógild beiðni!"
+      rate_limit_exceeded: "Beiðnatakmörk náð. Vinsamlegast reyndu aftur síðar"
+
+    messages:
+      success: "Aðgerð tókst"
+      created: "Auðlind búin til"
+      updated: "Auðlind uppfærð"
+      deleted: "Auðlind eytt"
+
+    notification:
+      messages:
+        token_already_exists: "Tilkynningatákn er þegar til"
+        token_saved: "Tilkynningatákn vistað"
+        token_deleted: "Tilkynningatákni eytt"
+        token_not_found: "Ekkert tilkynningatákn fannst"
+        mute_updated: "Þöggunarstaða uppfærð"
+
+    account:
+      errors:
+        email_not_found: "Netfang fannst ekki!"
+        email_invalid: "Ógilt netfangssnið"
+        email_taken: "Netfang er þegar í notkun"
+        email_update_fail: "Uppfærsla netfangs mistókst"
+        password_unmatch: "Lykilorð passa ekki"
+        password_update_fail: "Uppfærsla lykilorðs mistókst"
+        otp_invalid: "Ógilt OTP!"
+        register_not_allow: "Þú hefur ekki heimild til að skrá þig!"
+        missing_field: "Nauðsynlegir reitir vantar"
+        password_incorrect: "Núverandi lykilorð er rangt"
+        username_taken: "Notandanafn er þegar í notkun"
+      messages:
+        password_updated: "Lykilorð hefur verið uppfært"
+
+    domain:
+      messages:
+        dns_verified: "DNS er rétt stillt"
+
+    conversation:
+      messages:
+        marked_read: "Merkti %{updated_count} samtal/samtöl sem lesin"

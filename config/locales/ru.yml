@@ -6,21 +6,34 @@ ru:
   locale:
     name: "Русский"
     native_name: "Русский"
+
+  notification:
+    poll:
+      ended_you: "Ваш опрос завершен"
+      ended_voted: "Опрос, в котором вы голосовали, завершен"
+    mention:
+      direct_message: "%{name} отправил вам сообщение"
   
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Уважаемый(ая) %{name},"
       instruction: "Ваш OTP-код для подтверждения аккаунта:"
-      note: "Если вы не запрашивали это, просто проигнорируйте это письмо."
+      note: "Если вы не запрашивали это, просто проигнорируйте это письмо"
+
+  errors:
+    invalid_credentials: "Недействительные учетные данные. Пожалуйста, попробуйте снова"
+    unauthorized_access: "У вас нет доступа для входа"
+    channel_not_created: "Недействительные учетные данные. Пожалуйста, убедитесь, что вы создали канал"
+    account_deleted: "Ваш аккаунт уже удален"
 
   # API responses and messages
   api:
     errors:
-      unauthorized: "У вас нет прав для выполнения этого действия."
+      unauthorized: "У вас нет прав для выполнения этого действия"
       forbidden: "Доступ запрещен!"
-      not_found: "Ресурс не найден."
-      unprocessable_entity: "Запрос не может быть обработан."
-      internal_server_error: "Произошла внутренняя ошибка сервера."
+      not_found: "Ресурс не найден"
+      unprocessable_entity: "Запрос не может быть обработан"
+      internal_server_error: "Произошла внутренняя ошибка сервера"
       validation_failed: "Проверка не пройдена!"
       invalid_request: "Недействительный запрос!"
       rate_limit_exceeded: "Превышен лимит запросов. Пожалуйста, попробуйте позже"
@@ -42,19 +55,23 @@ ru:
     account:
       errors:
         email_not_found: "Электронная почта не найдена!"
-        email_invalid: "Недействительный формат электронной почты."
+        email_invalid: "Недействительный формат электронной почты"
         email_taken: "Эта электронная почта уже используется"
-        email_update_fail: "Обновление электронной почты не удалось."
-        password_unmatch: "Пароли не совпадают."
-        password_update_fail: "Обновление пароля не удалось."
+        email_update_fail: "Обновление электронной почты не удалось"
+        password_unmatch: "Пароли не совпадают"
+        password_update_fail: "Обновление пароля не удалось"
         otp_invalid: "Недействительный OTP!"
         register_not_allow: "Вам не разрешено регистрироваться!"
         missing_field: "Отсутствуют обязательные поля"
-        password_incorrect: "Текущий пароль неверен."
+        password_incorrect: "Текущий пароль неверен"
         username_taken: "Имя пользователя уже занято"
       messages:
-        password_updated: "Пароль был обновлен."
+        password_updated: "Пароль был обновлен"
 
     domain:
       messages:
-        dns_verified: "DNS настроен правильно."
+        dns_verified: "DNS настроен правильно"
+
+    conversation:
+      messages:
+        marked_read: "Отмечено %{updated_count} разговоров как прочитанные"

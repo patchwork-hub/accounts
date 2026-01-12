@@ -1,0 +1,77 @@
+# Persian translations for Patchwork Dashboard
+# This file contains all Persian translations for the application
+
+fa:
+  # Locale information
+  locale:
+    name: "Persian"
+    native_name: "فارسی"
+  
+  notification:
+    poll:
+      ended_you: "نظرسنجی شما به پایان رسید"
+      ended_voted: "نظرسنجی که در آن رأی دادید به پایان رسید"
+    mention:
+      direct_message: "%{name} برای شما پیامی فرستاد"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "%{name} عزیز،"
+      instruction: "کد تأیید یکبار مصرف حساب شما به شرح زیر است:"
+      note: "اگر این درخواست را نداده‌اید، لطفاً این ایمیل را نادیده بگیرید"
+  
+  errors:
+    invalid_credentials: "اطلاعات نامعتبر است. لطفاً دوباره تلاش کنید"
+    unauthorized_access: "شما اجازه ورود ندارید"
+    channel_not_created: "اطلاعات نامعتبر است. لطفاً مطمئن شوید که کانال خود را ایجاد کرده‌اید"
+    account_deleted: "حساب شما قبلاً حذف شده است"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "شما مجاز به انجام این عملیات نیستید"
+      forbidden: "دسترسی ممنوع!"
+      not_found: "منبع یافت نشد"
+      unprocessable_entity: "درخواست قابل پردازش نیست"
+      internal_server_error: "خطای داخلی سرور رخ داده است"
+      validation_failed: "اعتبارسنجی ناموفق بود!"
+      invalid_request: "درخواست نامعتبر!"
+      rate_limit_exceeded: "محدودیت درخواست تجاوز شده است. لطفاً بعداً دوباره تلاش کنید"
+
+    messages:
+      success: "عملیات با موفقیت انجام شد"
+      created: "منبع با موفقیت ایجاد شد"
+      updated: "منبع با موفقیت به‌روزرسانی شد"
+      deleted: "منبع با موفقیت حذف شد"
+
+    notification:
+      messages:
+        token_already_exists: "توکن اعلان از قبل وجود دارد"
+        token_saved: "توکن اعلان ذخیره شد"
+        token_deleted: "توکن اعلان با موفقیت حذف شد"
+        token_not_found: "توکن اعلانی یافت نشد"
+        mute_updated: "وضعیت بی‌صدا با موفقیت به‌روزرسانی شد"
+
+    account:
+      errors:
+        email_not_found: "ایمیل یافت نشد!"
+        email_invalid: "فرمت ایمیل نامعتبر است"
+        email_taken: "این ایمیل قبلاً استفاده شده است"
+        email_update_fail: "به‌روزرسانی ایمیل ناموفق بود"
+        password_unmatch: "رمزهای عبور مطابقت ندارند"
+        password_update_fail: "به‌روزرسانی رمز عبور ناموفق بود"
+        otp_invalid: "کد یکبار مصرف نامعتبر است!"
+        register_not_allow: "شما مجاز به ثبت‌نام نیستید!"
+        missing_field: "فیلدهای ضروری وارد نشده‌اند"
+        password_incorrect: "رمز عبور فعلی نادرست است"
+        username_taken: "این نام کاربری قبلاً استفاده شده است"
+      messages:
+        password_updated: "رمز عبور به‌روزرسانی شد"
+
+    domain:
+      messages:
+        dns_verified: "DNS به درستی پیکربندی شده است"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} مکالمه به عنوان خوانده شده علامت‌گذاری شد"

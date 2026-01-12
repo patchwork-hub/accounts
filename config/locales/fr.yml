@@ -6,21 +6,34 @@ fr:
   locale:
     name: "Français"
     native_name: "Français"
+  
+  notification:
+    poll:
+      ended_you: "Votre sondage est terminé"
+      ended_voted: "Un sondage auquel vous avez voté est terminé"
+    mention:
+      direct_message: "%{name} vous a envoyé un message"
 
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Cher/Chère %{name},"
       instruction: "Votre code OTP de vérification de compte est le suivant :"
-      note: "Si vous n'avez pas demandé cela, veuillez ignorer cet e-mail."
+      note: "Si vous n'avez pas demandé cela, veuillez ignorer cet e-mail"
+
+  errors:
+    invalid_credentials: "Identifiants invalides. Veuillez réessayer"
+    unauthorized_access: "Vous n'avez pas accès pour vous connecter"
+    channel_not_created: "Identifiants invalides. Veuillez vous assurer que vous avez créé un canal"
+    account_deleted: "Votre compte a déjà été supprimé"
 
   # API responses and messages
   api:
     errors:
-      unauthorized: "Vous n'êtes pas autorisé à effectuer cette action."
+      unauthorized: "Vous n'êtes pas autorisé à effectuer cette action"
       forbidden: "Accès refusé !"
-      not_found: "Ressource non trouvée."
-      unprocessable_entity: "La requête n'a pas pu être traitée."
-      internal_server_error: "Une erreur interne du serveur s'est produite."
+      not_found: "Ressource non trouvée"
+      unprocessable_entity: "La requête n'a pas pu être traitée"
+      internal_server_error: "Une erreur interne du serveur s'est produite"
       validation_failed: "La validation a échoué !"
       invalid_request: "Requête invalide !"
       rate_limit_exceeded: "Limite de taux dépassée. Veuillez réessayer plus tard"
@@ -42,19 +55,23 @@ fr:
     account:
       errors:
         email_not_found: "Email non trouvé !"
-        email_invalid: "Format d'email invalide."
+        email_invalid: "Format d'email invalide"
         email_taken: "Cet email est déjà utilisé"
-        email_update_fail: "La mise à jour de l'email a échoué."
-        password_unmatch: "Les mots de passe ne correspondent pas."
-        password_update_fail: "La mise à jour du mot de passe a échoué."
+        email_update_fail: "La mise à jour de l'email a échoué"
+        password_unmatch: "Les mots de passe ne correspondent pas"
+        password_update_fail: "La mise à jour du mot de passe a échoué"
         otp_invalid: "OTP invalide !"
         register_not_allow: "Vous n'êtes pas autorisé à vous inscrire !"
         missing_field: "Champs requis manquants"
-        password_incorrect: "Le mot de passe actuel est incorrect."
+        password_incorrect: "Le mot de passe actuel est incorrect"
         username_taken: "Le nom d'utilisateur est déjà pris"
       messages:
-        password_updated: "Le mot de passe a été mis à jour."
+        password_updated: "Le mot de passe a été mis à jour"
 
     domain:
       messages:
-        dns_verified: "Le DNS est correctement configuré."
+        dns_verified: "Le DNS est correctement configuré"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} conversation(s) ont été marquées comme lues"

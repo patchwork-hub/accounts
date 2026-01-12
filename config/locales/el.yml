@@ -1,0 +1,54 @@
+# Greek translations for Patchwork Dashboard
+# This file contains all Greek translations for the application
+
+el:
+  # Locale information
+  locale:
+    name: "Greek"
+    native_name: "Ελληνικά"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Δεν έχετε εξουσιοδότηση για να εκτελέσετε αυτήν την ενέργεια"
+      forbidden: "Η πρόσβαση απορρίφθηκε!"
+      not_found: "Ο πόρος δεν βρέθηκε"
+      unprocessable_entity: "Το αίτημα δεν μπόρεσε να επεξεργαστεί"
+      internal_server_error: "Παρουσιάστηκε εσωτερικό σφάλμα διακομιστή"
+      validation_failed: "Η επικύρωση απέτυχε!"
+      invalid_request: "Μη έγκυρο αίτημα!"
+      rate_limit_exceeded: "Υπέρβαση ορίου αιτημάτων. Παρακαλώ δοκιμάστε ξανά αργότερα"
+
+    messages:
+      success: "Η λειτουργία ολοκληρώθηκε με επιτυχία"
+      created: "Ο πόρος δημιουργήθηκε με επιτυχία"
+      updated: "Ο πόρος ενημερώθηκε με επιτυχία"
+      deleted: "Ο πόρος διαγράφηκε με επιτυχία"
+
+    notification:
+      messages:
+        token_already_exists: "Το διακριτικό ειδοποίησης υπάρχει ήδη"
+        token_saved: "Το διακριτικό ειδοποίησης αποθηκεύτηκε"
+        token_deleted: "Το διακριτικό ειδοποίησης διαγράφηκε με επιτυχία"
+        token_not_found: "Δεν βρέθηκαν διακριτικά ειδοποιήσεων"
+        mute_updated: "Η κατάσταση σίγασης ενημερώθηκε με επιτυχία"
+
+    account:
+      errors:
+        email_not_found: "Το email δεν βρέθηκε!"
+        email_invalid: "Μη έγκυρη μορφή email"
+        email_taken: "Το email χρησιμοποιείται ήδη"
+        email_update_fail: "Η ενημέρωση email απέτυχε"
+        password_unmatch: "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
+        password_update_fail: "Η ενημέρωση κωδικού πρόσβασης απέτυχε"
+        otp_invalid: "Μη έγκυρος κωδικός OTP!"
+        register_not_allow: "Δεν επιτρέπεται η εγγραφή σας!"
+        missing_field: "Λείπουν υποχρεωτικά πεδία"
+        password_incorrect: "Ο τρέχων κωδικός πρόσβασης είναι λανθασμένος"
+        username_taken: "Το όνομα χρήστη χρησιμοποιείται ήδη"
+      messages:
+        password_updated: "Ο κωδικός πρόσβασης ενημερώθηκε"
+
+    domain:
+      messages:
+        dns_verified: "Το DNS έχει ρυθμιστεί σωστά"

@@ -1,0 +1,77 @@
+# Albanian translations for Patchwork Dashboard
+# This file contains all Albanian translations for the application
+
+sq:
+  # Locale information
+  locale:
+    name: "Albanian"
+    native_name: "Shqip"
+  
+  notification:
+    poll:
+      ended_you: "Sondazhi juaj ka përfunduar"
+      ended_voted: "Një sondazh ku keni votuar ka përfunduar"
+    mention:
+      direct_message: "%{name} ju dërgoi një mesazh"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "I nderuar %{name},"
+      instruction: "Kodi juaj OTP i verifikimit të llogarisë është si më poshtë:"
+      note: "Nëse nuk e keni kërkuar këtë, ju lutemi injoroni këtë email"
+  
+  errors:
+    invalid_credentials: "Kredencialet e pavlefshme. Ju lutemi provoni përsëri"
+    unauthorized_access: "Nuk keni akses për t'u identifikuar"
+    channel_not_created: "Kredencialet e pavlefshme. Sigurohuni që keni krijuar një kanal"
+    account_deleted: "Llogaria juaj është fshirë tashmë"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Nuk jeni i autorizuar për të kryer këtë veprim"
+      forbidden: "Aksesi i refuzuar!"
+      not_found: "Burimi nuk u gjet"
+      unprocessable_entity: "Kërkesa nuk mund të përpunohej"
+      internal_server_error: "Ndodhi një gabim i brendshëm i serverit"
+      validation_failed: "Validimi dështoi!"
+      invalid_request: "Kërkesë e pavlefshme!"
+      rate_limit_exceeded: "Limiti i kërkesave u tejkalua. Provoni përsëri më vonë"
+
+    messages:
+      success: "Operacioni u krye me sukses"
+      created: "Burimi u krijua me sukses"
+      updated: "Burimi u përditësua me sukses"
+      deleted: "Burimi u fshi me sukses"
+
+    notification:
+      messages:
+        token_already_exists: "Tokeni i njoftimit ekziston tashmë"
+        token_saved: "Tokeni i njoftimit u ruajt"
+        token_deleted: "Tokeni i njoftimit u fshi me sukses"
+        token_not_found: "Nuk u gjetën tokenë njoftimi"
+        mute_updated: "Statusi i heshtjes u përditësua me sukses"
+
+    account:
+      errors:
+        email_not_found: "Email-i nuk u gjet!"
+        email_invalid: "Format i pavlefshëm email-i"
+        email_taken: "Email-i është përdorur tashmë"
+        email_update_fail: "Përditësimi i email-it dështoi"
+        password_unmatch: "Fjalëkalimet nuk përputhen"
+        password_update_fail: "Përditësimi i fjalëkalimit dështoi"
+        otp_invalid: "OTP e pavlefshme!"
+        register_not_allow: "Nuk ju lejohet të regjistroheni!"
+        missing_field: "Mungojnë fushat e detyrueshme"
+        password_incorrect: "Fjalëkalimi aktual është i gabuar"
+        username_taken: "Emri i përdoruesit është përdorur tashmë"
+      messages:
+        password_updated: "Fjalëkalimi është përditësuar"
+
+    domain:
+      messages:
+        dns_verified: "DNS është konfiguruar saktë"
+
+    conversation:
+      messages:
+        marked_read: "U shënuan %{updated_count} biseda si të lexuara"

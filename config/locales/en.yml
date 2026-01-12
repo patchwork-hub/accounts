@@ -18,22 +18,22 @@ en:
     reset_password_confirmation:
       greeting: "Dear %{name},"
       instruction: "Your account verification OTP code is as below:"
-      note: "If you didn't request this, please ignore this email."
+      note: "If you didn't request this, please ignore this email"
   
   errors:
     invalid_credentials: "Invalid credentials. Please try again"
     unauthorized_access: "You don't have access to login"
     channel_not_created: "Invalid credentials. Please make sure you've created a channel"
-    account_deleted: "Your account is already deleted."
+    account_deleted: "Your account is already deleted"
 
   # API responses and messages
   api:
     errors:
-      unauthorized: "You are not authorized to perform this action."
+      unauthorized: "You are not authorized to perform this action"
       forbidden: "Access denied!"
-      not_found: "Resource not found."
-      unprocessable_entity: "The request could not be processed."
-      internal_server_error: "An internal server error occurred."
+      not_found: "Resource not found"
+      unprocessable_entity: "The request could not be processed"
+      internal_server_error: "An internal server error occurred"
       validation_failed: "Validation failed!"
       invalid_request: "Invalid request!"
       rate_limit_exceeded: "Rate limit exceeded. Please try again later"
@@ -55,19 +55,23 @@ en:
     account:
       errors:
         email_not_found: "Email not found!"
-        email_invalid: "Invalid email format."
+        email_invalid: "Invalid email format"
         email_taken: "Email has already been taken"
-        email_update_fail: "The email update was unsuccessful."
-        password_unmatch: "Password unmatch."
-        password_update_fail: "The password update was unsuccessful."
+        email_update_fail: "The email update was unsuccessful"
+        password_unmatch: "Password unmatch"
+        password_update_fail: "The password update was unsuccessful"
         otp_invalid: "Invalid otp!"
         register_not_allow: "You'r not allowed to register!"
         missing_field: "Missing required fields"
-        password_incorrect: "Current password is incorrect."
+        password_incorrect: "Current password is incorrect"
         username_taken: "Username has already been taken"
       messages:
-        password_updated: "The password has been updated."
+        password_updated: "The password has been updated"
 
     domain:
       messages:
-        dns_verified: "DNS is correctly configured."
+        dns_verified: "DNS is correctly configured"
+
+    conversation:
+      messages:
+        marked_read: "Marked %{updated_count} conversation(s) as read"

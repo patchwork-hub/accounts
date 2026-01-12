@@ -1,0 +1,77 @@
+# Turkish translations for Patchwork Dashboard
+# This file contains all Turkish translations for the application
+
+tr:
+  # Locale information
+  locale:
+    name: "Turkish"
+    native_name: "Türkçe"
+  
+  notification:
+    poll:
+      ended_you: "Anketiniz sona erdi"
+      ended_voted: "Oy verdiğiniz bir anket sona erdi"
+    mention:
+      direct_message: "%{name} size bir mesaj gönderdi"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Sayın %{name},"
+      instruction: "Hesap doğrulama OTP kodunuz aşağıdadır:"
+      note: "Bu talebi siz yapmadıysanız, lütfen bu e-postayı dikkate almayın"
+  
+  errors:
+    invalid_credentials: "Geçersiz kimlik bilgileri. Lütfen tekrar deneyin"
+    unauthorized_access: "Giriş yapma yetkiniz yok"
+    channel_not_created: "Geçersiz kimlik bilgileri. Lütfen bir kanal oluşturduğunuzdan emin olun"
+    account_deleted: "Hesabınız zaten silinmiş"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Bu işlemi gerçekleştirme yetkiniz yok"
+      forbidden: "Erişim reddedildi!"
+      not_found: "Kaynak bulunamadı"
+      unprocessable_entity: "İstek işlenemedi"
+      internal_server_error: "Dahili sunucu hatası oluştu"
+      validation_failed: "Doğrulama başarısız!"
+      invalid_request: "Geçersiz istek!"
+      rate_limit_exceeded: "İstek limiti aşıldı. Lütfen daha sonra tekrar deneyin"
+
+    messages:
+      success: "İşlem başarıyla tamamlandı"
+      created: "Kaynak başarıyla oluşturuldu"
+      updated: "Kaynak başarıyla güncellendi"
+      deleted: "Kaynak başarıyla silindi"
+
+    notification:
+      messages:
+        token_already_exists: "Bildirim jetonu zaten mevcut"
+        token_saved: "Bildirim jetonu kaydedildi"
+        token_deleted: "Bildirim jetonu başarıyla silindi"
+        token_not_found: "Bildirim jetonu bulunamadı"
+        mute_updated: "Sessiz durumu başarıyla güncellendi"
+
+    account:
+      errors:
+        email_not_found: "E-posta bulunamadı!"
+        email_invalid: "Geçersiz e-posta formatı"
+        email_taken: "E-posta zaten kullanılıyor"
+        email_update_fail: "E-posta güncellemesi başarısız oldu"
+        password_unmatch: "Şifreler uyuşmuyor"
+        password_update_fail: "Şifre güncellemesi başarısız oldu"
+        otp_invalid: "Geçersiz OTP!"
+        register_not_allow: "Kayıt olmanıza izin verilmiyor!"
+        missing_field: "Gerekli alanlar eksik"
+        password_incorrect: "Mevcut şifre yanlış"
+        username_taken: "Kullanıcı adı zaten kullanılıyor"
+      messages:
+        password_updated: "Şifre güncellendi"
+
+    domain:
+      messages:
+        dns_verified: "DNS doğru şekilde yapılandırılmış"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} konuşma okundu olarak işaretlendi"

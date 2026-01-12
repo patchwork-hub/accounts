@@ -1,0 +1,54 @@
+# Esperanto translations for Patchwork Dashboard
+# This file contains all Esperanto translations for the application
+
+eo:
+  # Locale information
+  locale:
+    name: "Esperanto"
+    native_name: "Esperanto"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Vi ne estas rajtigita plenumi ĉi tiun agon"
+      forbidden: "Aliro rifuzita!"
+      not_found: "Rimedo ne trovita"
+      unprocessable_entity: "La peto ne povis esti procesita"
+      internal_server_error: "Okazis interna servila eraro"
+      validation_failed: "Validigo malsukcesis!"
+      invalid_request: "Nevalida peto!"
+      rate_limit_exceeded: "Rapidlimo superita. Bonvolu reprovi poste"
+
+    messages:
+      success: "Operacio sukcese finita"
+      created: "Rimedo sukcese kreita"
+      updated: "Rimedo sukcese ĝisdatigita"
+      deleted: "Rimedo sukcese forigita"
+
+    notification:
+      messages:
+        token_already_exists: "Sciiga ĵetono jam ekzistas"
+        token_saved: "Sciiga ĵetono konservita"
+        token_deleted: "Sciiga ĵetono sukcese forigita"
+        token_not_found: "Neniuj sciigaj ĵetonoj trovitaj"
+        mute_updated: "Silentiga stato sukcese ĝisdatigita"
+
+    account:
+      errors:
+        email_not_found: "Retpoŝto ne trovita!"
+        email_invalid: "Nevalida retpoŝta formato"
+        email_taken: "Retpoŝto jam estas uzata"
+        email_update_fail: "Ĝisdatigo de retpoŝto malsukcesis"
+        password_unmatch: "Pasvortoj ne kongruas"
+        password_update_fail: "Ĝisdatigo de pasvorto malsukcesis"
+        otp_invalid: "Nevalida unufoja kodo!"
+        register_not_allow: "Vi ne rajtas registriĝi!"
+        missing_field: "Mankas devigaj kampoj"
+        password_incorrect: "Nuna pasvorto estas malĝusta"
+        username_taken: "Uzantnomo jam estas uzata"
+      messages:
+        password_updated: "La pasvorto estis ĝisdatigita"
+
+    domain:
+      messages:
+        dns_verified: "DNS estas ĝuste agordita"

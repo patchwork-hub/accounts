@@ -24,12 +24,12 @@ class LoginService
   def handle_web_login
     user = fetch_user_credentials
     if user.nil? || user&.confirmed_at.nil?
-      return 'You don\'t have access to login.'
+      return I18n.t('errors.unauthorized_access')
     end
 
     unless %w[UserAdmin HubAdmin].include?(user.role&.name)
       readable_role = user.role&.name&.gsub(/([a-z])([A-Z])/, '\1 \2')&.downcase&.capitalize
-      return "#{readable_role} isn\'t allowed to access login."
+      return I18n.t('errors.unauthorized_access')
     end
 
     nil
@@ -71,9 +71,9 @@ class LoginService
     user = fetch_user_credentials
     return I18n.t('errors.unauthorized_access') if user.nil? || user&.confirmed_at.nil?
 
-    return "#{user.role&.name&.underscore&.humanize} isn't allowed to access login." unless user.role&.name.eql?('UserAdmin') || user.role&.name.eql?('HubAdmin') || user.role&.name.eql?('MasterAdmin')
+    return I18n.t('errors.invalid_credentials') unless user.role&.name.eql?('UserAdmin') || user.role&.name.eql?('HubAdmin') || user.role&.name.eql?('MasterAdmin')
 
-    return 'Your channel is not active. Please contact support.' unless channel_active?(user)
+    return I18n.t('errors.channel_not_created') unless channel_active?(user)
 
     nil
   end

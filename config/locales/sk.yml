@@ -1,0 +1,77 @@
+# Slovak translations for Patchwork Dashboard
+# This file contains all Slovak translations for the application
+
+sk:
+  # Locale information
+  locale:
+    name: "Slovak"
+    native_name: "Slovenčina"
+  
+  notification:
+    poll:
+      ended_you: "Vaša anketa sa skončila"
+      ended_voted: "Anketa, v ktorej ste hlasovali, sa skončila"
+    mention:
+      direct_message: "%{name} vám poslal správu"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Vážený/á %{name},"
+      instruction: "Váš overovací OTP kód účtu je uvedený nižšie:"
+      note: "Ak ste o to nepožiadali, ignorujte tento e-mail"
+  
+  errors:
+    invalid_credentials: "Neplatné prihlasovacie údaje. Skúste to znova"
+    unauthorized_access: "Nemáte prístup na prihlásenie"
+    channel_not_created: "Neplatné prihlasovacie údaje. Uistite sa, že ste vytvorili kanál"
+    account_deleted: "Váš účet je už odstránený"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Nemáte oprávnenie vykonať túto akciu"
+      forbidden: "Prístup zamietnutý!"
+      not_found: "Zdroj sa nenašiel"
+      unprocessable_entity: "Požiadavku nebolo možné spracovať"
+      internal_server_error: "Vyskytla sa interná chyba servera"
+      validation_failed: "Overenie zlyhalo!"
+      invalid_request: "Neplatná požiadavka!"
+      rate_limit_exceeded: "Prekročený limit požiadaviek. Skúste to neskôr"
+
+    messages:
+      success: "Operácia bola úspešne dokončená"
+      created: "Zdroj bol úspešne vytvorený"
+      updated: "Zdroj bol úspešne aktualizovaný"
+      deleted: "Zdroj bol úspešne odstránený"
+
+    notification:
+      messages:
+        token_already_exists: "Token oznámení už existuje"
+        token_saved: "Token oznámení bol uložený"
+        token_deleted: "Token oznámení bol úspešne odstránený"
+        token_not_found: "Tokeny oznámení sa nenašli"
+        mute_updated: "Stav stlmenia bol úspešne aktualizovaný"
+
+    account:
+      errors:
+        email_not_found: "E-mail sa nenašiel!"
+        email_invalid: "Neplatný formát e-mailu"
+        email_taken: "E-mail je už obsadený"
+        email_update_fail: "Aktualizácia e-mailu bola neúspešná"
+        password_unmatch: "Heslá sa nezhodujú"
+        password_update_fail: "Aktualizácia hesla bola neúspešná"
+        otp_invalid: "Neplatné OTP!"
+        register_not_allow: "Registrácia nie je povolená!"
+        missing_field: "Chýbajú povinné polia"
+        password_incorrect: "Aktuálne heslo je nesprávne"
+        username_taken: "Používateľské meno je už obsadené"
+      messages:
+        password_updated: "Heslo bolo aktualizované"
+
+    domain:
+      messages:
+        dns_verified: "DNS je správne nakonfigurované"
+
+    conversation:
+      messages:
+        marked_read: "Označených %{updated_count} konverzácií ako prečítané"

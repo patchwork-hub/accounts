@@ -1,0 +1,54 @@
+# Danish translations for Patchwork Dashboard
+# This file contains all Danish translations for the application
+
+da:
+  # Locale information
+  locale:
+    name: "Danish"
+    native_name: "Dansk"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Du har ikke tilladelse til at udføre denne handling"
+      forbidden: "Adgang nægtet!"
+      not_found: "Ressource ikke fundet"
+      unprocessable_entity: "Anmodningen kunne ikke behandles"
+      internal_server_error: "Der opstod en intern serverfejl"
+      validation_failed: "Validering mislykkedes!"
+      invalid_request: "Ugyldig anmodning!"
+      rate_limit_exceeded: "Hastighedsgrænse overskredet. Prøv venligst igen senere"
+
+    messages:
+      success: "Handlingen blev gennemført"
+      created: "Ressource oprettet"
+      updated: "Ressource opdateret"
+      deleted: "Ressource slettet"
+
+    notification:
+      messages:
+        token_already_exists: "Notifikationstoken findes allerede"
+        token_saved: "Notifikationstoken gemt"
+        token_deleted: "Notifikationstoken slettet"
+        token_not_found: "Ingen notifikationstokens fundet"
+        mute_updated: "Lydløs-status opdateret"
+
+    account:
+      errors:
+        email_not_found: "E-mail ikke fundet!"
+        email_invalid: "Ugyldigt e-mail-format"
+        email_taken: "E-mail er allerede i brug"
+        email_update_fail: "E-mail-opdatering mislykkedes"
+        password_unmatch: "Adgangskoderne stemmer ikke overens"
+        password_update_fail: "Adgangskodeopdatering mislykkedes"
+        otp_invalid: "Ugyldig engangskode!"
+        register_not_allow: "Du har ikke tilladelse til at registrere dig!"
+        missing_field: "Manglende påkrævede felter"
+        password_incorrect: "Nuværende adgangskode er forkert"
+        username_taken: "Brugernavn er allerede i brug"
+      messages:
+        password_updated: "Adgangskoden er blevet opdateret"
+
+    domain:
+      messages:
+        dns_verified: "DNS er korrekt konfigureret"

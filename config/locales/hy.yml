@@ -1,0 +1,77 @@
+# Armenian translations for Patchwork Dashboard
+# This file contains all Armenian translations for the application
+
+hy:
+  # Locale information
+  locale:
+    name: "Armenian"
+    native_name: "Hayeren"
+  
+  notification:
+    poll:
+      ended_you: "Dzer hartsumy avartvel e"
+      ended_voted: "Hartsumy, vorum masnaktsel eq, avartvel e"
+    mention:
+      direct_message: "%{name}-y dzez haghordagrutjun ugharkets"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Hargens %{name},"
+      instruction: "Dzer hashvi stugman OTP kody storev nerkayjatsvel e:"
+      note: "Yete duk ches hajtsel sa, khndrumem anktesel ays el. namaky"
+  
+  errors:
+    invalid_credentials: "Anvaver havataramagrer. Khndrumem krkin porvek"
+    unauthorized_access: "Duk chek karoh mutk gortsarel"
+    channel_not_created: "Anvaver havataramagrer. Khndrumem hamozvek, vor steghtsel ek alik"
+    account_deleted: "Dzer hashivy arden jnchvel e"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Duk chek litsazorvel ays gortsoghutyuny katarel"
+      forbidden: "Mtnelutjuny mervats e!"
+      not_found: "Resursy chtngvel"
+      unprocessable_entity: "Hartsumy hnar che mshakvel"
+      internal_server_error: "Serveri nervkin skhal e tegh unetsav"
+      validation_failed: "Stugumny tsakhogel e!"
+      invalid_request: "Anvaver hartsadrum!"
+      rate_limit_exceeded: "Hartsumneri sahmanachapn anglel e. Khndrumem porvek aveli ush"
+
+    messages:
+      success: "Gortsoghutyuny hajoghutyamb avartvel e"
+      created: "Resursy hajoghutyamb steghtvel e"
+      updated: "Resursy hajoghutyamb tarmatsvel e"
+      deleted: "Resursy hajoghutyamb jnchvel e"
+
+    notification:
+      messages:
+        token_already_exists: "Tsanucagneri tokeny arden goyutjun uni"
+        token_saved: "Tsanucagneri tokeny pahpanvel e"
+        token_deleted: "Tsanucagneri tokeny hajoghutyamb jnchvel e"
+        token_not_found: "Tsanucagneri token chtngvets"
+        mute_updated: "Lratsaky hajoghutyamb tarmatsvel e"
+
+    account:
+      errors:
+        email_not_found: "El. namaky chtngvav!"
+        email_invalid: "Anvaver el. namaki format"
+        email_taken: "El. namaky arden ogtagortsvel e"
+        email_update_fail: "El. namaki tarmatsumny anhajog egav"
+        password_unmatch: "Gakhtnabary chki hamapataskhanum"
+        password_update_fail: "Gakhtnabari tarmatsumny anhajog egav"
+        otp_invalid: "Anvaver OTP!"
+        register_not_allow: "Duk iravunk chunek grantsvelu!"
+        missing_field: "Pakhanjvats dashtery batsaakum en"
+        password_incorrect: "Yntatsi gakhtnabary skhal e"
+        username_taken: "Ogtateri anunny arden ogtagortsvel e"
+      messages:
+        password_updated: "Gakhtnabary tarmatsvel e"
+
+    domain:
+      messages:
+        dns_verified: "DNS-y yuysh kerpov kargatsvats e"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} zroyts(ner) nshvel e(n) vorpes kardatsats"

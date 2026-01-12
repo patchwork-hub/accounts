@@ -1,0 +1,77 @@
+# Dutch translations for Patchwork Dashboard
+# This file contains all Dutch translations for the application
+
+nl:
+  # Locale information
+  locale:
+    name: "Dutch"
+    native_name: "Nederlands"
+  
+  notification:
+    poll:
+      ended_you: "Je peiling is beëindigd"
+      ended_voted: "Een peiling waarop je hebt gestemd is beëindigd"
+    mention:
+      direct_message: "%{name} heeft je een bericht gestuurd"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Beste %{name},"
+      instruction: "Je OTP-verificatiecode voor je account is hieronder:"
+      note: "Als je dit niet hebt aangevraagd, negeer dan deze e-mail"
+  
+  errors:
+    invalid_credentials: "Ongeldige inloggegevens. Probeer het opnieuw"
+    unauthorized_access: "Je hebt geen toegang om in te loggen"
+    channel_not_created: "Ongeldige inloggegevens. Zorg ervoor dat je een kanaal hebt aangemaakt"
+    account_deleted: "Je account is al verwijderd"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Je bent niet bevoegd om deze actie uit te voeren"
+      forbidden: "Toegang geweigerd!"
+      not_found: "Bron niet gevonden"
+      unprocessable_entity: "Het verzoek kon niet worden verwerkt"
+      internal_server_error: "Er is een interne serverfout opgetreden"
+      validation_failed: "Validatie mislukt!"
+      invalid_request: "Ongeldig verzoek!"
+      rate_limit_exceeded: "Limiet overschreden. Probeer het later opnieuw"
+
+    messages:
+      success: "Operatie succesvol voltooid"
+      created: "Bron succesvol aangemaakt"
+      updated: "Bron succesvol bijgewerkt"
+      deleted: "Bron succesvol verwijderd"
+
+    notification:
+      messages:
+        token_already_exists: "Notificatietoken bestaat al"
+        token_saved: "Notificatietoken opgeslagen"
+        token_deleted: "Notificatietoken succesvol verwijderd"
+        token_not_found: "Geen notificatietokens gevonden"
+        mute_updated: "Dempstatus succesvol bijgewerkt"
+
+    account:
+      errors:
+        email_not_found: "E-mail niet gevonden!"
+        email_invalid: "Ongeldig e-mailformaat"
+        email_taken: "E-mail is al in gebruik"
+        email_update_fail: "De e-mailupdate was niet succesvol"
+        password_unmatch: "Wachtwoorden komen niet overeen"
+        password_update_fail: "De wachtwoordupdate was niet succesvol"
+        otp_invalid: "Ongeldige OTP!"
+        register_not_allow: "Je mag je niet registreren!"
+        missing_field: "Verplichte velden ontbreken"
+        password_incorrect: "Huidig wachtwoord is onjuist"
+        username_taken: "Gebruikersnaam is al in gebruik"
+      messages:
+        password_updated: "Het wachtwoord is bijgewerkt"
+
+    domain:
+      messages:
+        dns_verified: "DNS is correct geconfigureerd"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} gesprek(ken) als gelezen gemarkeerd"

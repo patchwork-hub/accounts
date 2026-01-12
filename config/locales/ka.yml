@@ -1,0 +1,77 @@
+# Georgian translations for Patchwork Dashboard
+# This file contains all Georgian translations for the application
+
+ka:
+  # Locale information
+  locale:
+    name: "Georgian"
+    native_name: "ქართული"
+  
+  notification:
+    poll:
+      ended_you: "თქვენი გამოკითხვა დასრულდა"
+      ended_voted: "გამოკითხვა, რომელშიც მონაწილეობდით, დასრულდა"
+    mention:
+      direct_message: "%{name}-მა გამოგიგზავნათ შეტყობინება"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "ძვირფასო %{name},"
+      instruction: "თქვენი ანგარიშის დადასტურების OTP კოდია:"
+      note: "თუ ეს თქვენ არ მოითხოვეთ, გთხოვთ უგულებელყოთ ეს ელფოსტა"
+  
+  errors:
+    invalid_credentials: "არასწორი მონაცემები. გთხოვთ სცადოთ ხელახლა"
+    unauthorized_access: "თქვენ არ გაქვთ შესვლის უფლება"
+    channel_not_created: "არასწორი მონაცემები. გთხოვთ დარწმუნდეთ, რომ შექმენით არხი"
+    account_deleted: "თქვენი ანგარიში უკვე წაშლილია"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "თქვენ არ გაქვთ ამ მოქმედების შესრულების უფლება"
+      forbidden: "წვდომა აკრძალულია!"
+      not_found: "რესურსი ვერ მოიძებნა"
+      unprocessable_entity: "მოთხოვნის დამუშავება ვერ მოხერხდა"
+      internal_server_error: "სერვერის შიდა შეცდომა"
+      validation_failed: "ვალიდაცია ვერ მოხერხდა!"
+      invalid_request: "არასწორი მოთხოვნა!"
+      rate_limit_exceeded: "მოთხოვნის ლიმიტი გადაჭარბებულია. გთხოვთ სცადოთ მოგვიანებით"
+
+    messages:
+      success: "ოპერაცია წარმატებით დასრულდა"
+      created: "რესურსი წარმატებით შეიქმნა"
+      updated: "რესურსი წარმატებით განახლდა"
+      deleted: "რესურსი წარმატებით წაიშალა"
+
+    notification:
+      messages:
+        token_already_exists: "შეტყობინების ტოკენი უკვე არსებობს"
+        token_saved: "შეტყობინების ტოკენი შენახულია"
+        token_deleted: "შეტყობინების ტოკენი წარმატებით წაიშალა"
+        token_not_found: "შეტყობინების ტოკენები ვერ მოიძებნა"
+        mute_updated: "დადუმების სტატუსი წარმატებით განახლდა"
+
+    account:
+      errors:
+        email_not_found: "ელფოსტა ვერ მოიძებნა!"
+        email_invalid: "არასწორი ელფოსტის ფორმატი"
+        email_taken: "ელფოსტა უკვე გამოყენებულია"
+        email_update_fail: "ელფოსტის განახლება ვერ მოხერხდა"
+        password_unmatch: "პაროლები არ ემთხვევა"
+        password_update_fail: "პაროლის განახლება ვერ მოხერხდა"
+        otp_invalid: "არასწორი OTP!"
+        register_not_allow: "რეგისტრაცია არ გაქვთ ნებადართული!"
+        missing_field: "აუცილებელი ველები არ არის შევსებული"
+        password_incorrect: "მიმდინარე პაროლი არასწორია"
+        username_taken: "მომხმარებლის სახელი უკვე გამოყენებულია"
+      messages:
+        password_updated: "პაროლი განახლდა"
+
+    domain:
+      messages:
+        dns_verified: "DNS სწორად არის კონფიგურირებული"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} საუბარი მონიშნულია წაკითხულად"

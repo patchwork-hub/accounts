@@ -1,0 +1,77 @@
+# Hungarian translations for Patchwork Dashboard
+# This file contains all Hungarian translations for the application
+
+hu:
+  # Locale information
+  locale:
+    name: "Hungarian"
+    native_name: "Magyar"
+  
+  notification:
+    poll:
+      ended_you: "A szavazásod véget ért"
+      ended_voted: "Egy szavazás, amelyen részt vettél, véget ért"
+    mention:
+      direct_message: "%{name} üzenetet küldött neked"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Kedves %{name}!"
+      instruction: "A fiókod ellenőrzési OTP kódja az alábbi:"
+      note: "Ha nem te kérted ezt, kérjük, hagyd figyelmen kívül ezt az e-mailt"
+  
+  errors:
+    invalid_credentials: "Érvénytelen hitelesítő adatok. Kérjük, próbáld újra"
+    unauthorized_access: "Nincs hozzáférésed a bejelentkezéshez"
+    channel_not_created: "Érvénytelen hitelesítő adatok. Kérjük, győződj meg róla, hogy létrehoztál egy csatornát"
+    account_deleted: "A fiókod már törölve van"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Nincs jogosultságod ehhez a művelethez"
+      forbidden: "Hozzáférés megtagadva!"
+      not_found: "Az erőforrás nem található"
+      unprocessable_entity: "A kérés nem dolgozható fel"
+      internal_server_error: "Belső szerverhiba történt"
+      validation_failed: "Az ellenőrzés sikertelen!"
+      invalid_request: "Érvénytelen kérés!"
+      rate_limit_exceeded: "Túllépte a kérések számát. Kérjük, próbálja újra később"
+
+    messages:
+      success: "A művelet sikeresen befejeződött"
+      created: "Az erőforrás sikeresen létrehozva"
+      updated: "Az erőforrás sikeresen frissítve"
+      deleted: "Az erőforrás sikeresen törölve"
+
+    notification:
+      messages:
+        token_already_exists: "Az értesítési token már létezik"
+        token_saved: "Az értesítési token mentve"
+        token_deleted: "Az értesítési token sikeresen törölve"
+        token_not_found: "Nem található értesítési token"
+        mute_updated: "A némítási állapot sikeresen frissítve"
+
+    account:
+      errors:
+        email_not_found: "Az e-mail cím nem található!"
+        email_invalid: "Érvénytelen e-mail formátum"
+        email_taken: "Ez az e-mail cím már foglalt"
+        email_update_fail: "Az e-mail frissítése sikertelen volt"
+        password_unmatch: "A jelszavak nem egyeznek"
+        password_update_fail: "A jelszó frissítése sikertelen volt"
+        otp_invalid: "Érvénytelen OTP!"
+        register_not_allow: "Nincs jogosultságod a regisztrációhoz!"
+        missing_field: "Hiányzó kötelező mezők"
+        password_incorrect: "A jelenlegi jelszó helytelen"
+        username_taken: "Ez a felhasználónév már foglalt"
+      messages:
+        password_updated: "A jelszó frissítve lett"
+
+    domain:
+      messages:
+        dns_verified: "A DNS megfelelően konfigurálva van"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} beszélgetés olvasottként megjelölve"

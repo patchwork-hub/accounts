@@ -6,21 +6,34 @@ cy:
   locale:
     name: "Cymraeg"
     native_name: "Cymraeg"
+  
+  notification:
+    poll:
+      ended_you: "Mae eich pleidlais wedi dod i ben"
+      ended_voted: "Mae pleidlais y gwnaethoch bleidleisio ynddi wedi dod i ben"
+    mention:
+      direct_message: "Mae %{name} wedi anfon neges atoch"
 
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Annwyl %{name},"
       instruction: "Eich cod OTP dilysu cyfrif yw:"
-      note: "Os nad ydych wedi gwneud y cais hwn, anwybyddwch y neges e-bost hon."
+      note: "Os nad ydych wedi gwneud y cais hwn, anwybyddwch y neges e-bost hon"
+  
+  errors:
+    invalid_credentials: "Cyn credentials annilys. Rhowch gynnig arall arni"
+    unauthorized_access: "Nid oes gennych fynediad i fewngofnodi"
+    channel_not_created: "Cyn credentials annilys. Gwnewch yn siŵr eich bod wedi creu sianel"
+    account_deleted: "Mae eich cyfrif eisoes wedi'i ddileu"
 
   # API responses and messages
   api:
     errors:
-      unauthorized: "Nid oes gennych awdurdod i wneud y weithred hon."
+      unauthorized: "Nid oes gennych awdurdod i wneud y weithred hon"
       forbidden: "Mynediad wedi'i wrthod!"
-      not_found: "Ni chanfuwyd yr adnodd."
-      unprocessable_entity: "Ni ellid prosesu'r cais."
-      internal_server_error: "Digwyddodd gwall mewnol y gweinydd."
+      not_found: "Ni chanfuwyd yr adnodd"
+      unprocessable_entity: "Ni ellid prosesu'r cais"
+      internal_server_error: "Digwyddodd gwall mewnol y gweinydd"
       validation_failed: "Methodd y dilysu!"
       invalid_request: "Cais annilys!"
       rate_limit_exceeded: "Rhedeg dros y terfyn cyfradd. Ceisiwch eto'n hwyrach"
@@ -42,19 +55,23 @@ cy:
     account:
       errors:
         email_not_found: "Ni chanfuwyd yr e-bost!"
-        email_invalid: "Fformat e-bost annilys."
+        email_invalid: "Fformat e-bost annilys"
         email_taken: "Mae'r e-bost eisoes wedi'i gymryd"
-        email_update_fail: "Methodd y diweddariad e-bost."
-        password_unmatch: "Nid yw'r cyfrineiriau'n cyfateb."
-        password_update_fail: "Methodd y diweddariad cyfrinair."
+        email_update_fail: "Methodd y diweddariad e-bost"
+        password_unmatch: "Nid yw'r cyfrineiriau'n cyfateb"
+        password_update_fail: "Methodd y diweddariad cyfrinair"
         otp_invalid: "OTP annilys!"
         register_not_allow: "Nid ydych yn cael cofrestru!"
         missing_field: "Meysydd gofynnol ar goll"
-        password_incorrect: "Mae'r cyfrinair presennol yn anghywir."
+        password_incorrect: "Mae'r cyfrinair presennol yn anghywir"
         username_taken: "Mae'r enw defnyddiwr eisoes wedi'i gymryd" 
       messages:
-        password_updated: "Mae'r cyfrinair wedi'i ddiweddaru."
+        password_updated: "Mae'r cyfrinair wedi'i ddiweddaru"
 
     domain:
       messages:
-        dns_verified: "Mae'r DNS wedi'i ffurfweddu'n gywir."
+        dns_verified: "Mae'r DNS wedi'i ffurfweddu'n gywir"
+
+    conversation:
+      messages:
+        marked_read: "Wedi marcio %{updated_count} sgwrs(iau) fel wedi'u darllen"
