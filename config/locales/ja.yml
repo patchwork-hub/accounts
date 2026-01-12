@@ -7,6 +7,12 @@ ja:
     name: "日本語"
     native_name: "日本語"
 
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "%{name}様"
+      instruction: "あなたのアカウント認証OTPコードは以下の通りです:"
+      note: "このメールに心当たりがない場合は、無視してください。"
+
   # API responses and messages
   api:
     errors:

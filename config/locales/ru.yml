@@ -6,6 +6,12 @@ ru:
   locale:
     name: "Русский"
     native_name: "Русский"
+  
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Уважаемый(ая) %{name},"
+      instruction: "Ваш OTP-код для подтверждения аккаунта:"
+      note: "Если вы не запрашивали это, просто проигнорируйте это письмо."
 
   # API responses and messages
   api:

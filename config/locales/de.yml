@@ -7,6 +7,12 @@ de:
     name: "Deutsch"
     native_name: "Deutsch"
 
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Sehr geehrte/r %{name},"
+      instruction: "Ihr Verifizierungs-OTP-Code lautet:"
+      note: "Wenn Sie dies nicht angefordert haben, ignorieren Sie bitte diese E-Mail."
+
   # API responses and messages
   api:
     errors:

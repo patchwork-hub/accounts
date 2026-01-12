@@ -6,6 +6,12 @@ it:
   locale:
     name: "Italiano"
     native_name: "Italiano"
+  
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Caro/a %{name},"
+      instruction: "Il codice OTP di verifica del tuo account è il seguente:"
+      note: "Se non hai richiesto questo, ignora questa email."
 
   # API responses and messages
   api:

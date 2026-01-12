@@ -7,6 +7,12 @@ es:
     name: "Español"
     native_name: "Español"
 
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Estimado/a %{name},"
+      instruction: "Su código OTP de verificación de cuenta es el siguiente:"
+      note: "Si no solicitó esto, por favor ignore este correo electrónico."
+
   # API responses and messages
   api:
     errors:

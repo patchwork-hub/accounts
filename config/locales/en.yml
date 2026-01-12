@@ -6,6 +6,25 @@ en:
   locale:
     name: "English"
     native_name: "English"
+  
+  notification:
+    poll:
+      ended_you: "Your poll has ended"
+      ended_voted: "A poll you voted in has ended"
+    mention:
+      direct_message: "%{name} send you a message"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Dear %{name},"
+      instruction: "Your account verification OTP code is as below:"
+      note: "If you didn't request this, please ignore this email."
+  
+  errors:
+    invalid_credentials: "Invalid credentials. Please try again"
+    unauthorized_access: "You don't have access to login"
+    channel_not_created: "Invalid credentials. Please make sure you've created a channel"
+    account_deleted: "Your account is already deleted."
 
   # API responses and messages
   api:

@@ -15,37 +15,42 @@ class CustomNotificationService < BaseService
 
     case notification.type
     when :status
-      body = "#{from_account_username} just posted"
+      body = I18n.t('notification_mailer.status.subject', name: from_account_username)
       destination_id = Status.find(notification.activity_id).id
     when :update
-      body = "#{from_account_username} edited a post"
+      body = I18n.t('notification_mailer.update.subject', name: from_account_username)
       destination_id = Status.find(notification.activity_id).id
     when :reblog
-      body = "#{from_account_username} boosted your status"
+      body = I18n.t('notification_mailer.reblog.subject', name: from_account_username)
       status = Status.find(notification.activity_id)
       destination_id = status.id
       reblogged_id = status.reblog_of_id
     when :favourite
-      body = "#{from_account_username} favourited your status"
+      body = I18n.t('notification_mailer.favourite.subject', name: from_account_username)
       favourite = Favourite.find(notification.activity_id)
       destination_id = Status.find(favourite.status_id).id
     when :mention
       mention = Mention.find(notification.activity_id)
       status = Status.find(mention.status_id)
-      message = status.visibility === Status.visibilities[:direct] ? "#{from_account_username} send you a message" : "#{from_account_username} mentioned you"
-      body = message
+      body = status.visibility === Status.visibilities[:direct] ? I18n.t('notification.mention.direct_message', name: from_account_username) : I18n.t('notification_mailer.mention.subject', name: from_account_username)
       destination_id = status.id
       visibility = status.visibility
     when :poll
       poll = Poll.find(notification.activity_id)
-      body = notification.from_account_id == poll.account_id ? 'Your poll has ended' : 'A poll you voted in has ended'
+      body = notification.from_account_id == poll.account_id ? I18n.t('notification.poll.ended_you') : I18n.t('notification.poll.ended_voted')
       destination_id = Status.find(poll.status_id).id
     when :follow
-      body = "#{from_account_username} followed you"
+      body = I18n.t('notification_mailer.follow.subject', name: from_account_username)
       destination_id = notification.from_account_id
     when :follow_request
-      body = "#{from_account_username} has requested to follow you"
+      body = I18n.t('notification_mailer.follow_request.subject', name: from_account_username)
       destination_id = notification.from_account_id
+    when :quote
+      body = I18n.t('notification_mailer.quote.subject', name: from_account_username)
+      destination_id = Quote.find(notification.activity_id)&.status_id
+    when :quoted_update
+      body = I18n.t('notification_mailer.update.subject', name: from_account_username)
+      destination_id = Quote.find(notification.activity_id)&.status_id
     end
 
     data = {

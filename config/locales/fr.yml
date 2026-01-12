@@ -7,6 +7,12 @@ fr:
     name: "Français"
     native_name: "Français"
 
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Cher/Chère %{name},"
+      instruction: "Votre code OTP de vérification de compte est le suivant :"
+      note: "Si vous n'avez pas demandé cela, veuillez ignorer cet e-mail."
+
   # API responses and messages
   api:
     errors:

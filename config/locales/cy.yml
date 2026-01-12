@@ -7,6 +7,12 @@ cy:
     name: "Cymraeg"
     native_name: "Cymraeg"
 
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Annwyl %{name},"
+      instruction: "Eich cod OTP dilysu cyfrif yw:"
+      note: "Os nad ydych wedi gwneud y cais hwn, anwybyddwch y neges e-bost hon."
+
   # API responses and messages
   api:
     errors:

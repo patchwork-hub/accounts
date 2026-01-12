@@ -6,6 +6,12 @@ pt_BR:
   locale:
     name: "Português (Brasil)"
     native_name: "Português (Brasil)"
+  
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Caro(a) %{name},"
+      instruction: "O código OTP de verificação da sua conta é o seguinte:"
+      note: "Se você não solicitou isso, por favor ignore este e-mail."
 
   # API responses and messages
   api:
