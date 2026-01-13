@@ -14,6 +14,11 @@ Rails.application.config.to_prepare do
   User.prepend(OverridePrepareNewUser)
   User.include(UserConcern)
 
+  # Temporary timeline fix for Qlub
+  Feed.prepend(Accounts::Concerns::FeedConcern)
+  Status.include(Accounts::Concerns::StatusConcern)
+  Api::V1::Timelines::HomeController.prepend(Accounts::Overrides::HomeExtendedTimeline)
+  Api::V1::Timelines::PublicController.prepend(Accounts::Overrides::PublicExtendedTimeline)
   # if ["patchwork.io", "mo-me.social", "newsmast.social", "qlub.channel.org"].include?(ENV['LOCAL_DOMAIN'])
   #   [Admin::DashboardController, Admin::ReportsController].each do |controller|
   #     controller.class_eval do
