@@ -1,0 +1,77 @@
+# Serbian translations for Patchwork Dashboard
+# This file contains all Serbian translations for the application
+
+sr:
+  # Locale information
+  locale:
+    name: "Serbian"
+    native_name: "Српски"
+  
+  notification:
+    poll:
+      ended_you: "Ваша анкета је завршена"
+      ended_voted: "Анкета у којој сте гласали је завршена"
+    mention:
+      direct_message: "%{name} вам је послао поруку"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Поштовани %{name},"
+      instruction: "Ваш OTP код за верификацију налога је наведен испод:"
+      note: "Ако ово нисте затражили, молимо игноришите овај имејл"
+  
+  errors:
+    invalid_credentials: "Неважећи акредитиви. Молимо покушајте поново"
+    unauthorized_access: "Немате приступ за пријаву"
+    channel_not_created: "Неважећи акредитиви. Уверите се да сте креирали канал"
+    account_deleted: "Ваш налог је већ обрисан"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Нисте овлашћени да извршите ову акцију"
+      forbidden: "Приступ одбијен!"
+      not_found: "Ресурс није пронађен"
+      unprocessable_entity: "Захтев није могао бити обрађен"
+      internal_server_error: "Дошло је до интерне грешке сервера"
+      validation_failed: "Валидација није успела!"
+      invalid_request: "Неважећи захтев!"
+      rate_limit_exceeded: "Прекорачен лимит захтева. Покушајте касније"
+
+    messages:
+      success: "Операција успешно завршена"
+      created: "Ресурс успешно креиран"
+      updated: "Ресурс успешно ажуриран"
+      deleted: "Ресурс успешно обрисан"
+
+    notification:
+      messages:
+        token_already_exists: "Токен обавештења већ постоји"
+        token_saved: "Токен обавештења сачуван"
+        token_deleted: "Токен обавештења успешно обрисан"
+        token_not_found: "Токени обавештења нису пронађени"
+        mute_updated: "Статус искључивања звука успешно ажуриран"
+
+    account:
+      errors:
+        email_not_found: "Имејл није пронађен!"
+        email_invalid: "Неважећи формат имејла"
+        email_taken: "Имејл је већ заузет"
+        email_update_fail: "Ажурирање имејла није успело"
+        password_unmatch: "Лозинке се не подударају"
+        password_update_fail: "Ажурирање лозинке није успело"
+        otp_invalid: "Неважећи OTP!"
+        register_not_allow: "Није вам дозвољена регистрација!"
+        missing_field: "Недостају обавезна поља"
+        password_incorrect: "Тренутна лозинка је нетачна"
+        username_taken: "Корисничко име је већ заузето"
+      messages:
+        password_updated: "Лозинка је ажурирана"
+
+    domain:
+      messages:
+        dns_verified: "DNS је исправно конфигурисан"
+
+    conversation:
+      messages:
+        marked_read: "Означено %{updated_count} разговора као прочитано"

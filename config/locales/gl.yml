@@ -1,0 +1,77 @@
+# Galician translations for Patchwork Dashboard
+# This file contains all Galician translations for the application
+
+gl:
+  # Locale information
+  locale:
+    name: "Galician"
+    native_name: "Galego"
+  
+  notification:
+    poll:
+      ended_you: "A túa enquisa rematou"
+      ended_voted: "Unha enquisa na que votaches rematou"
+    mention:
+      direct_message: "%{name} enviouche unha mensaxe"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Estimado/a %{name},"
+      instruction: "O código OTP de verificación da túa conta é o seguinte:"
+      note: "Se non solicitaches isto, ignora este correo electrónico"
+  
+  errors:
+    invalid_credentials: "Credenciais non válidas. Por favor, inténtao de novo"
+    unauthorized_access: "Non tes acceso para iniciar sesión"
+    channel_not_created: "Credenciais non válidas. Asegúrate de ter creado unha canle"
+    account_deleted: "A túa conta xa foi eliminada"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Non estás autorizado/a para realizar esta acción"
+      forbidden: "Acceso denegado!"
+      not_found: "Recurso non atopado"
+      unprocessable_entity: "Non se puido procesar a solicitude"
+      internal_server_error: "Produciuse un erro interno do servidor"
+      validation_failed: "A validación fallou!"
+      invalid_request: "Solicitude non válida!"
+      rate_limit_exceeded: "Límite de solicitudes excedido. Por favor, inténtao máis tarde"
+
+    messages:
+      success: "Operación completada con éxito"
+      created: "Recurso creado con éxito"
+      updated: "Recurso actualizado con éxito"
+      deleted: "Recurso eliminado con éxito"
+
+    notification:
+      messages:
+        token_already_exists: "O token de notificación xa existe"
+        token_saved: "Token de notificación gardado"
+        token_deleted: "Token de notificación eliminado con éxito"
+        token_not_found: "Non se atoparon tokens de notificación"
+        mute_updated: "Estado de silencio actualizado con éxito"
+
+    account:
+      errors:
+        email_not_found: "Correo electrónico non atopado!"
+        email_invalid: "Formato de correo electrónico non válido"
+        email_taken: "O correo electrónico xa está en uso"
+        email_update_fail: "A actualización do correo electrónico non tivo éxito"
+        password_unmatch: "Os contrasinais non coinciden"
+        password_update_fail: "A actualización do contrasinal non tivo éxito"
+        otp_invalid: "OTP non válido!"
+        register_not_allow: "Non tes permiso para rexistrarte!"
+        missing_field: "Faltan campos obrigatorios"
+        password_incorrect: "O contrasinal actual é incorrecto"
+        username_taken: "O nome de usuario xa está en uso"
+      messages:
+        password_updated: "O contrasinal foi actualizado"
+
+    domain:
+      messages:
+        dns_verified: "O DNS está configurado correctamente"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} conversa(s) marcada(s) como lida(s)"

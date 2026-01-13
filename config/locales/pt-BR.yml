@@ -1,0 +1,77 @@
+# Brazilian Portuguese translations for Patchwork Dashboard
+# This file contains all Brazilian Portuguese translations for the application
+
+pt-BR:
+  # Locale information
+  locale:
+    name: "Brazilian Portuguese"
+    native_name: "Português (Brasil)"
+  
+  notification:
+    poll:
+      ended_you: "Sua enquete terminou"
+      ended_voted: "Uma enquete em que você votou terminou"
+    mention:
+      direct_message: "%{name} enviou uma mensagem para você"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Prezado(a) %{name},"
+      instruction: "Seu código OTP de verificação de conta é o seguinte:"
+      note: "Se você não solicitou isso, por favor ignore este e-mail"
+  
+  errors:
+    invalid_credentials: "Credenciais inválidas. Por favor, tente novamente"
+    unauthorized_access: "Você não tem acesso para fazer login"
+    channel_not_created: "Credenciais inválidas. Certifique-se de que você criou um canal"
+    account_deleted: "Sua conta já foi excluída"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Você não está autorizado a realizar esta ação"
+      forbidden: "Acesso negado!"
+      not_found: "Recurso não encontrado"
+      unprocessable_entity: "A solicitação não pôde ser processada"
+      internal_server_error: "Ocorreu um erro interno no servidor"
+      validation_failed: "Falha na validação!"
+      invalid_request: "Solicitação inválida!"
+      rate_limit_exceeded: "Limite de requisições excedido. Por favor, tente novamente mais tarde"
+
+    messages:
+      success: "Operação concluída com sucesso"
+      created: "Recurso criado com sucesso"
+      updated: "Recurso atualizado com sucesso"
+      deleted: "Recurso excluído com sucesso"
+
+    notification:
+      messages:
+        token_already_exists: "Token de notificação já existe"
+        token_saved: "Token de notificação salvo"
+        token_deleted: "Token de notificação excluído com sucesso"
+        token_not_found: "Nenhum token de notificação encontrado"
+        mute_updated: "Status de silenciamento atualizado com sucesso"
+
+    account:
+      errors:
+        email_not_found: "E-mail não encontrado!"
+        email_invalid: "Formato de e-mail inválido"
+        email_taken: "E-mail já está em uso"
+        email_update_fail: "A atualização do e-mail não foi bem-sucedida"
+        password_unmatch: "Senhas não correspondem"
+        password_update_fail: "A atualização da senha não foi bem-sucedida"
+        otp_invalid: "OTP inválido!"
+        register_not_allow: "Você não tem permissão para se registrar!"
+        missing_field: "Campos obrigatórios ausentes"
+        password_incorrect: "Senha atual está incorreta"
+        username_taken: "Nome de usuário já está em uso"
+      messages:
+        password_updated: "A senha foi atualizada"
+
+    domain:
+      messages:
+        dns_verified: "DNS está configurado corretamente"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} conversa(s) marcada(s) como lida(s)"

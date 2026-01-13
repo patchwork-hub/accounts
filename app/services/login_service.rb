@@ -24,12 +24,12 @@ class LoginService
   def handle_web_login
     user = fetch_user_credentials
     if user.nil? || user&.confirmed_at.nil?
-      return 'You don\'t have access to login.'
+      return I18n.t('errors.unauthorized_access')
     end
 
     unless %w[UserAdmin HubAdmin].include?(user.role&.name)
       readable_role = user.role&.name&.gsub(/([a-z])([A-Z])/, '\1 \2')&.downcase&.capitalize
-      return "#{readable_role} isn\'t allowed to access login."
+      return I18n.t('errors.unauthorized_access')
     end
 
     nil
@@ -39,25 +39,55 @@ class LoginService
     User.find_by(email: @params[:username])
   end
 
+  def fetch_channel_credentials(user)
+    return unless Object.const_defined?('Accounts::CommunityAdmin')
+
+    if defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
+      Accounts::CommunityAdmin.joins(:community).find_by(
+        account_id: user.account_id,
+        is_boost_bot: true,
+        account_status: Accounts::CommunityAdmin.account_statuses['active'],
+        community: { deleted_at: nil }
+      )
+    end
+  end
+
+  def channel_active?(user)
+    return false unless Object.const_defined?('Accounts::CommunityAdmin')
+
+    return false unless defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
+
+    community_admin = Accounts::CommunityAdmin.find_by(account_id: user.account_id, is_boost_bot: true)
+    return true if community_admin.nil? || community_admin&.account_status == Accounts::CommunityAdmin.account_statuses['active']
+
+    return true if community_admin&.community&.deleted_at.nil?
+
+    false
+  end
+
+  def handle_web_login
+    return nil if client_credentials?
+
+    user = fetch_user_credentials
+    return I18n.t('errors.unauthorized_access') if user.nil? || user&.confirmed_at.nil?
+
+    return I18n.t('errors.invalid_credentials') unless user.role&.name.eql?('UserAdmin') || user.role&.name.eql?('HubAdmin') || user.role&.name.eql?('MasterAdmin')
+
+    return I18n.t('errors.channel_not_created') unless channel_active?(user)
+
+    nil
+  end
+
   def handle_app_login
     user = grant_password? ? fetch_user_credentials : fetch_access_token_grant
-    if user.nil? || user&.confirmed_at.nil?
-      return 'You don\'t have access to login.' 
-    end
+    return I18n.t('errors.unauthorized_access') if user.nil?
 
     community_admin = fetch_channel_credentials(user)
-    if community_admin.nil?
-      return 'Invalid credentials. Please make sure you\'ve created a channel.' 
-    end
+    return I18n.t('errors.channel_not_created') if community_admin.nil?
 
-    if community_admin&.account_status == 'deleted'
-      return 'Your account has already deleted.'
-    end
+    return I18n.t('errors.account_deleted') if community_admin&.account_status == 'deleted'
 
-    unless valid_permissions?(community_admin, user)
-      return 'Invalid credentials or insufficient permissions to access login.'
-    end
-
+    return I18n.t('api.errors.unauthorized') unless valid_permissions?(community_admin, user)
     nil
   end
 

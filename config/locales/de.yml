@@ -7,14 +7,33 @@ de:
     name: "Deutsch"
     native_name: "Deutsch"
 
+  notification:
+    poll:
+      ended_you: "Ihre Umfrage ist beendet"
+      ended_voted: "Eine Umfrage, an der Sie teilgenommen haben, ist beendet"
+    mention:
+      direct_message: "%{name} hat Ihnen eine Nachricht gesendet"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Sehr geehrte/r %{name},"
+      instruction: "Ihr Verifizierungs-OTP-Code lautet:"
+      note: "Wenn Sie dies nicht angefordert haben, ignorieren Sie bitte diese E-Mail"
+
+  errors:
+    invalid_credentials: "Ungültige Anmeldeinformationen. Bitte versuchen Sie es erneut"
+    unauthorized_access: "Sie haben keinen Zugriff zum Einloggen"
+    channel_not_created: "Ungültige Anmeldeinformationen. Bitte stellen Sie sicher, dass Sie einen Kanal erstellt haben"
+    account_deleted: "Ihr Konto wurde bereits gelöscht"
+
   # API responses and messages
   api:
     errors:
-      unauthorized: "Sie sind nicht berechtigt, diese Aktion durchzuführen."
+      unauthorized: "Sie sind nicht berechtigt, diese Aktion durchzuführen"
       forbidden: "Zugriff verweigert!"
-      not_found: "Ressource nicht gefunden."
-      unprocessable_entity: "Die Anfrage konnte nicht verarbeitet werden."
-      internal_server_error: "Ein interner Serverfehler ist aufgetreten."
+      not_found: "Ressource nicht gefunden"
+      unprocessable_entity: "Die Anfrage konnte nicht verarbeitet werden"
+      internal_server_error: "Ein interner Serverfehler ist aufgetreten"
       validation_failed: "Validierung fehlgeschlagen!"
       invalid_request: "Ungültige Anfrage!"
       rate_limit_exceeded: "Ratelimit überschritten. Bitte versuchen Sie es später erneut"
@@ -36,19 +55,23 @@ de:
     account:
       errors:
         email_not_found: "E-Mail nicht gefunden!"
-        email_invalid: "Ungültiges E-Mail-Format."
+        email_invalid: "Ungültiges E-Mail-Format"
         email_taken: "E-Mail wird bereits verwendet"
-        email_update_fail: "Die E-Mail-Aktualisierung war nicht erfolgreich."
-        password_unmatch: "Passwörter stimmen nicht überein."
-        password_update_fail: "Die Passwortaktualisierung war nicht erfolgreich."
+        email_update_fail: "Die E-Mail-Aktualisierung war nicht erfolgreich"
+        password_unmatch: "Passwörter stimmen nicht überein"
+        password_update_fail: "Die Passwortaktualisierung war nicht erfolgreich"
         otp_invalid: "Ungültiges OTP!"
         register_not_allow: "Sie sind nicht zur Registrierung berechtigt!"
         missing_field: "Erforderliche Felder fehlen"
-        password_incorrect: "Aktuelles Passwort ist falsch."
+        password_incorrect: "Aktuelles Passwort ist falsch"
         username_taken: "Der Benutzername ist bereits vergeben"
       messages:
-        password_updated: "Das Passwort wurde aktualisiert."
+        password_updated: "Das Passwort wurde aktualisiert"
 
     domain:
       messages:
-        dns_verified: "DNS ist korrekt konfiguriert."
+        dns_verified: "DNS ist korrekt konfiguriert"
+
+    conversation:
+      messages:
+        marked_read: "Habe %{updated_count} Konversation(en) als gelesen markiert"

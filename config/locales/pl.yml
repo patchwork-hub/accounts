@@ -1,0 +1,77 @@
+# Polish translations for Patchwork Dashboard
+# This file contains all Polish translations for the application
+
+pl:
+  # Locale information
+  locale:
+    name: "Polish"
+    native_name: "Polski"
+  
+  notification:
+    poll:
+      ended_you: "Twoja ankieta się zakończyła"
+      ended_voted: "Ankieta, w której głosowałeś, zakończyła się"
+    mention:
+      direct_message: "%{name} wysłał Ci wiadomość"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Drogi/Droga %{name},"
+      instruction: "Twój kod weryfikacyjny OTP to:"
+      note: "Jeśli nie prosiłeś o to, zignoruj ten e-mail"
+  
+  errors:
+    invalid_credentials: "Nieprawidłowe dane logowania. Spróbuj ponownie"
+    unauthorized_access: "Nie masz dostępu do logowania"
+    channel_not_created: "Nieprawidłowe dane logowania. Upewnij się, że utworzyłeś kanał"
+    account_deleted: "Twoje konto zostało już usunięte"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Nie masz uprawnień do wykonania tej czynności"
+      forbidden: "Dostęp zabroniony!"
+      not_found: "Nie znaleziono zasobu"
+      unprocessable_entity: "Żądanie nie mogło zostać przetworzone"
+      internal_server_error: "Wystąpił wewnętrzny błąd serwera"
+      validation_failed: "Walidacja nie powiodła się!"
+      invalid_request: "Nieprawidłowe żądanie!"
+      rate_limit_exceeded: "Przekroczono limit żądań. Spróbuj ponownie później"
+
+    messages:
+      success: "Operacja zakończona pomyślnie"
+      created: "Zasób utworzony pomyślnie"
+      updated: "Zasób zaktualizowany pomyślnie"
+      deleted: "Zasób usunięty pomyślnie"
+
+    notification:
+      messages:
+        token_already_exists: "Token powiadomienia już istnieje"
+        token_saved: "Token powiadomienia zapisany"
+        token_deleted: "Token powiadomienia usunięty pomyślnie"
+        token_not_found: "Nie znaleziono tokenów powiadomień"
+        mute_updated: "Status wyciszenia zaktualizowany pomyślnie"
+
+    account:
+      errors:
+        email_not_found: "Nie znaleziono adresu e-mail!"
+        email_invalid: "Nieprawidłowy format adresu e-mail"
+        email_taken: "Adres e-mail jest już zajęty"
+        email_update_fail: "Aktualizacja adresu e-mail nie powiodła się"
+        password_unmatch: "Hasła nie są zgodne"
+        password_update_fail: "Aktualizacja hasła nie powiodła się"
+        otp_invalid: "Nieprawidłowy kod OTP!"
+        register_not_allow: "Nie masz uprawnień do rejestracji!"
+        missing_field: "Brakuje wymaganych pól"
+        password_incorrect: "Aktualne hasło jest nieprawidłowe"
+        username_taken: "Nazwa użytkownika jest już zajęta"
+      messages:
+        password_updated: "Hasło zostało zaktualizowane"
+
+    domain:
+      messages:
+        dns_verified: "DNS jest poprawnie skonfigurowany"
+
+    conversation:
+      messages:
+        marked_read: "Oznaczono %{updated_count} rozmów(y) jako przeczytane"

@@ -1,0 +1,77 @@
+# Hebrew translations for Patchwork Dashboard
+# This file contains all Hebrew translations for the application
+
+he:
+  # Locale information
+  locale:
+    name: "Hebrew"
+    native_name: "עברית"
+  
+  notification:
+    poll:
+      ended_you: "הסקר שלך הסתיים"
+      ended_voted: "סקר שהצבעת בו הסתיים"
+    mention:
+      direct_message: "%{name} שלח/ה לך הודעה"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "%{name} יקר/ה,"
+      instruction: "קוד האימות החד-פעמי שלך הוא:"
+      note: "אם לא ביקשת זאת, אנא התעלם/י מדוא\"ל זה"
+  
+  errors:
+    invalid_credentials: "פרטי התחברות שגויים. אנא נסה/י שוב"
+    unauthorized_access: "אין לך גישה להתחברות"
+    channel_not_created: "פרטי התחברות שגויים. אנא וודא/י שיצרת ערוץ"
+    account_deleted: "החשבון שלך כבר נמחק"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "אין לך הרשאה לבצע פעולה זו"
+      forbidden: "הגישה נדחתה!"
+      not_found: "המשאב לא נמצא"
+      unprocessable_entity: "לא ניתן לעבד את הבקשה"
+      internal_server_error: "אירעה שגיאת שרת פנימית"
+      validation_failed: "האימות נכשל!"
+      invalid_request: "בקשה לא תקינה!"
+      rate_limit_exceeded: "חריגה ממגבלת הבקשות. אנא נסה/י שוב מאוחר יותר"
+
+    messages:
+      success: "הפעולה הושלמה בהצלחה"
+      created: "המשאב נוצר בהצלחה"
+      updated: "המשאב עודכן בהצלחה"
+      deleted: "המשאב נמחק בהצלחה"
+
+    notification:
+      messages:
+        token_already_exists: "טוקן ההתראה כבר קיים"
+        token_saved: "טוקן ההתראה נשמר"
+        token_deleted: "טוקן ההתראה נמחק בהצלחה"
+        token_not_found: "לא נמצאו טוקני התראה"
+        mute_updated: "מצב ההשתקה עודכן בהצלחה"
+
+    account:
+      errors:
+        email_not_found: "הדוא\"ל לא נמצא!"
+        email_invalid: "פורמט דוא\"ל לא תקין"
+        email_taken: "הדוא\"ל כבר בשימוש"
+        email_update_fail: "עדכון הדוא\"ל לא הצליח"
+        password_unmatch: "הסיסמאות אינן תואמות"
+        password_update_fail: "עדכון הסיסמה לא הצליח"
+        otp_invalid: "קוד OTP לא תקין!"
+        register_not_allow: "אין לך הרשאה להירשם!"
+        missing_field: "שדות חובה חסרים"
+        password_incorrect: "הסיסמה הנוכחית שגויה"
+        username_taken: "שם המשתמש כבר בשימוש"
+      messages:
+        password_updated: "הסיסמה עודכנה"
+
+    domain:
+      messages:
+        dns_verified: "ה-DNS מוגדר כראוי"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} שיחה/ות סומנו כנקראו"

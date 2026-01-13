@@ -1,0 +1,77 @@
+# Hindi translations for Patchwork Dashboard
+# This file contains all Hindi translations for the application
+
+hi:
+  # Locale information
+  locale:
+    name: "Hindi"
+    native_name: "हिन्दी"
+  
+  notification:
+    poll:
+      ended_you: "आपका पोल समाप्त हो गया है"
+      ended_voted: "जिस पोल में आपने वोट किया था वह समाप्त हो गया है"
+    mention:
+      direct_message: "%{name} ने आपको एक संदेश भेजा"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "प्रिय %{name},"
+      instruction: "आपके खाते के सत्यापन का OTP कोड नीचे है:"
+      note: "यदि आपने यह अनुरोध नहीं किया है, तो कृपया इस ईमेल को अनदेखा करें।"
+  
+  errors:
+    invalid_credentials: "अमान्य क्रेडेंशियल। कृपया पुनः प्रयास करें"
+    unauthorized_access: "आपके पास लॉगिन करने की पहुँच नहीं है"
+    channel_not_created: "अमान्य क्रेडेंशियल। कृपया सुनिश्चित करें कि आपने एक चैनल बनाया है"
+    account_deleted: "आपका खाता पहले ही हटा दिया गया है।"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "आप इस क्रिया को करने के लिए अधिकृत नहीं हैं।"
+      forbidden: "पहुँच अस्वीकृत!"
+      not_found: "संसाधन नहीं मिला।"
+      unprocessable_entity: "अनुरोध संसाधित नहीं किया जा सका।"
+      internal_server_error: "एक आंतरिक सर्वर त्रुटि हुई।"
+      validation_failed: "सत्यापन विफल!"
+      invalid_request: "अमान्य अनुरोध!"
+      rate_limit_exceeded: "दर सीमा पार हो गई। कृपया बाद में पुनः प्रयास करें"
+
+    messages:
+      success: "ऑपरेशन सफलतापूर्वक पूर्ण हुआ"
+      created: "संसाधन सफलतापूर्वक बनाया गया"
+      updated: "संसाधन सफलतापूर्वक अपडेट किया गया"
+      deleted: "संसाधन सफलतापूर्वक हटाया गया"
+
+    notification:
+      messages:
+        token_already_exists: "नोटिफिकेशन टोकन पहले से मौजूद है"
+        token_saved: "नोटिफिकेशन टोकन सहेजा गया"
+        token_deleted: "नोटिफिकेशन टोकन सफलतापूर्वक हटाया गया"
+        token_not_found: "कोई नोटिफिकेशन टोकन नहीं मिला"
+        mute_updated: "म्यूट स्थिति सफलतापूर्वक अपडेट की गई"
+
+    account:
+      errors:
+        email_not_found: "ईमेल नहीं मिला!"
+        email_invalid: "अमान्य ईमेल प्रारूप।"
+        email_taken: "ईमेल पहले से उपयोग में है"
+        email_update_fail: "ईमेल अपडेट असफल रहा।"
+        password_unmatch: "पासवर्ड मेल नहीं खाते।"
+        password_update_fail: "पासवर्ड अपडेट असफल रहा।"
+        otp_invalid: "अमान्य OTP!"
+        register_not_allow: "आपको पंजीकरण करने की अनुमति नहीं है!"
+        missing_field: "आवश्यक फ़ील्ड गायब हैं"
+        password_incorrect: "वर्तमान पासवर्ड गलत है।"
+        username_taken: "उपयोगकर्ता नाम पहले से उपयोग में है"
+      messages:
+        password_updated: "पासवर्ड अपडेट किया गया।"
+
+    domain:
+      messages:
+        dns_verified: "DNS सही तरीके से कॉन्फ़िगर किया गया है।"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} वार्तालाप पढ़े गए के रूप में चिह्नित"

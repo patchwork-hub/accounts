@@ -1,0 +1,77 @@
+# Lithuanian translations for Patchwork Dashboard
+# This file contains all Lithuanian translations for the application
+
+lt:
+  # Locale information
+  locale:
+    name: "Lithuanian"
+    native_name: "Lietuvių"
+  
+  notification:
+    poll:
+      ended_you: "Jūsų apklausa baigėsi"
+      ended_voted: "Apklausa, kurioje balsavote, baigėsi"
+    mention:
+      direct_message: "%{name} atsiuntė jums žinutę"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Gerbiamas(-a) %{name},"
+      instruction: "Jūsų paskyros patvirtinimo OTP kodas yra žemiau:"
+      note: "Jei to neprašėte, prašome ignoruoti šį el. laišką"
+  
+  errors:
+    invalid_credentials: "Neteisingi prisijungimo duomenys. Bandykite dar kartą"
+    unauthorized_access: "Neturite prieigos prisijungti"
+    channel_not_created: "Neteisingi prisijungimo duomenys. Įsitikinkite, kad sukūrėte kanalą"
+    account_deleted: "Jūsų paskyra jau ištrinta"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Jūs neturite teisės atlikti šį veiksmą"
+      forbidden: "Prieiga uždrausta!"
+      not_found: "Išteklius nerastas"
+      unprocessable_entity: "Užklausa negali būti apdorota"
+      internal_server_error: "Įvyko vidinė serverio klaida"
+      validation_failed: "Patvirtinimas nepavyko!"
+      invalid_request: "Neteisinga užklausa!"
+      rate_limit_exceeded: "Viršytas užklausų limitas. Bandykite vėliau"
+
+    messages:
+      success: "Operacija sėkmingai baigta"
+      created: "Išteklius sėkmingai sukurtas"
+      updated: "Išteklius sėkmingai atnaujintas"
+      deleted: "Išteklius sėkmingai ištrintas"
+
+    notification:
+      messages:
+        token_already_exists: "Pranešimų žetonas jau egzistuoja"
+        token_saved: "Pranešimų žetonas išsaugotas"
+        token_deleted: "Pranešimų žetonas sėkmingai ištrintas"
+        token_not_found: "Pranešimų žetonai nerasti"
+        mute_updated: "Nutildymo būsena sėkmingai atnaujinta"
+
+    account:
+      errors:
+        email_not_found: "El. paštas nerastas!"
+        email_invalid: "Neteisingas el. pašto formatas"
+        email_taken: "El. paštas jau užimtas"
+        email_update_fail: "El. pašto atnaujinimas nepavyko"
+        password_unmatch: "Slaptažodžiai nesutampa"
+        password_update_fail: "Slaptažodžio atnaujinimas nepavyko"
+        otp_invalid: "Neteisingas OTP!"
+        register_not_allow: "Jums neleidžiama registruotis!"
+        missing_field: "Trūksta privalomų laukų"
+        password_incorrect: "Dabartinis slaptažodis neteisingas"
+        username_taken: "Vartotojo vardas jau užimtas"
+      messages:
+        password_updated: "Slaptažodis atnaujintas"
+
+    domain:
+      messages:
+        dns_verified: "DNS teisingai sukonfigūruotas"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} pokalbis(-iai) pažymėtas(-i) kaip perskaitytas(-i)"

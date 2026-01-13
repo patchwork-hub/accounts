@@ -1,0 +1,77 @@
+# Slovenian translations for Patchwork Dashboard
+# This file contains all Slovenian translations for the application
+
+sl:
+  # Locale information
+  locale:
+    name: "Slovenian"
+    native_name: "Slovenščina"
+  
+  notification:
+    poll:
+      ended_you: "Vaša anketa se je končala"
+      ended_voted: "Anketa, v kateri ste glasovali, se je končala"
+    mention:
+      direct_message: "%{name} vam je poslal sporočilo"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Spoštovani %{name},"
+      instruction: "Vaša OTP koda za preverjanje računa je naslednja:"
+      note: "Če tega niste zahtevali, prosimo prezrite to e-pošto"
+  
+  errors:
+    invalid_credentials: "Neveljavne poverilnice. Poskusite znova"
+    unauthorized_access: "Nimate dostopa za prijavo"
+    channel_not_created: "Neveljavne poverilnice. Prepričajte se, da ste ustvarili kanal"
+    account_deleted: "Vaš račun je že izbrisan"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Nimate pooblastila za izvedbo tega dejanja"
+      forbidden: "Dostop zavrnjen!"
+      not_found: "Vir ni najden"
+      unprocessable_entity: "Zahteve ni bilo mogoče obdelati"
+      internal_server_error: "Prišlo je do notranje napake strežnika"
+      validation_failed: "Preverjanje ni uspelo!"
+      invalid_request: "Neveljavna zahteva!"
+      rate_limit_exceeded: "Presežena omejitev zahtev. Poskusite znova pozneje"
+
+    messages:
+      success: "Operacija uspešno zaključena"
+      created: "Vir uspešno ustvarjen"
+      updated: "Vir uspešno posodobljen"
+      deleted: "Vir uspešno izbrisan"
+
+    notification:
+      messages:
+        token_already_exists: "Žeton za obvestila že obstaja"
+        token_saved: "Žeton za obvestila shranjen"
+        token_deleted: "Žeton za obvestila uspešno izbrisan"
+        token_not_found: "Žetoni za obvestila niso najdeni"
+        mute_updated: "Stanje utišanja uspešno posodobljeno"
+
+    account:
+      errors:
+        email_not_found: "E-pošta ni najdena!"
+        email_invalid: "Neveljavna oblika e-pošte"
+        email_taken: "E-pošta je že zasedena"
+        email_update_fail: "Posodobitev e-pošte ni uspela"
+        password_unmatch: "Gesli se ne ujemata"
+        password_update_fail: "Posodobitev gesla ni uspela"
+        otp_invalid: "Neveljavna OTP!"
+        register_not_allow: "Registracija ni dovoljena!"
+        missing_field: "Manjkajoča obvezna polja"
+        password_incorrect: "Trenutno geslo je napačno"
+        username_taken: "Uporabniško ime je že zasedeno"
+      messages:
+        password_updated: "Geslo je bilo posodobljeno"
+
+    domain:
+      messages:
+        dns_verified: "DNS je pravilno konfiguriran"
+
+    conversation:
+      messages:
+        marked_read: "Označenih %{updated_count} pogovorov kot prebrano"

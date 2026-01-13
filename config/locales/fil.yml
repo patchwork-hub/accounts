@@ -1,0 +1,77 @@
+# Filipino translations for Patchwork Dashboard
+# This file contains all Filipino translations for the application
+
+fil:
+  # Locale information
+  locale:
+    name: "Filipino"
+    native_name: "Filipino"
+  
+  notification:
+    poll:
+      ended_you: "Natapos na ang iyong poll"
+      ended_voted: "Natapos na ang poll na iyong binotohan"
+    mention:
+      direct_message: "Nagpadala sa iyo ng mensahe si %{name}"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Mahal na %{name},"
+      instruction: "Ang iyong OTP code para sa pag-verify ng account ay nasa ibaba:"
+      note: "Kung hindi mo ito hiniling, huwag pansinin ang email na ito"
+  
+  errors:
+    invalid_credentials: "Hindi wastong kredensyal. Pakisubukang muli"
+    unauthorized_access: "Wala kang access para mag-login"
+    channel_not_created: "Hindi wastong kredensyal. Siguraduhing nakagawa ka na ng channel"
+    account_deleted: "Ang iyong account ay nabura na"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Hindi ka awtorisadong gumawa ng aksyong ito"
+      forbidden: "Ipinagbabawal ang access!"
+      not_found: "Hindi nahanap ang resource"
+      unprocessable_entity: "Hindi maproseso ang kahilingan"
+      internal_server_error: "May nangyaring internal na error sa server"
+      validation_failed: "Nabigo ang validation!"
+      invalid_request: "Hindi wastong kahilingan!"
+      rate_limit_exceeded: "Nalampasan na ang rate limit. Pakisubukang muli mamaya"
+
+    messages:
+      success: "Matagumpay na nakumpleto ang operasyon"
+      created: "Matagumpay na nagawa ang resource"
+      updated: "Matagumpay na na-update ang resource"
+      deleted: "Matagumpay na nabura ang resource"
+
+    notification:
+      messages:
+        token_already_exists: "Mayroon nang notification token"
+        token_saved: "Na-save ang notification token"
+        token_deleted: "Matagumpay na nabura ang notification token"
+        token_not_found: "Walang nahanap na notification tokens"
+        mute_updated: "Matagumpay na na-update ang mute status"
+
+    account:
+      errors:
+        email_not_found: "Hindi nahanap ang email!"
+        email_invalid: "Hindi wastong format ng email"
+        email_taken: "Ginagamit na ang email"
+        email_update_fail: "Hindi matagumpay ang pag-update ng email"
+        password_unmatch: "Hindi magkatugma ang password"
+        password_update_fail: "Hindi matagumpay ang pag-update ng password"
+        otp_invalid: "Hindi wastong OTP!"
+        register_not_allow: "Hindi ka pinapayagang mag-register!"
+        missing_field: "Kulang ang mga kinakailangang field"
+        password_incorrect: "Hindi tama ang kasalukuyang password"
+        username_taken: "Ginagamit na ang username"
+      messages:
+        password_updated: "Na-update na ang password"
+
+    domain:
+      messages:
+        dns_verified: "Tama ang configuration ng DNS"
+
+    conversation:
+      messages:
+        marked_read: "Minarkahan bilang nabasa ang %{updated_count} (na) conversation"

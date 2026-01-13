@@ -7,14 +7,33 @@ pt:
     name: "Português"
     native_name: "Português"
 
+  notification:
+    poll:
+      ended_you: "Sua enquete terminou"
+      ended_voted: "Uma enquete na qual você votou terminou"
+    mention:
+      direct_message: "%{name} enviou uma mensagem para você"
+  
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Caro(a) %{name},"
+      instruction: "O código OTP de verificação da sua conta é o seguinte:"
+      note: "Se você não solicitou isso, por favor ignore este e-mail"
+  
+  errors:
+    invalid_credentials: "Credenciais inválidas. Por favor, tente novamente"
+    unauthorized_access: "Você não tem acesso para fazer login"
+    channel_not_created: "Credenciais inválidas. Por favor, certifique-se de que você criou um canal"
+    account_deleted: "Sua conta já foi excluída"
+
   # API responses and messages
   api:
     errors:
-      unauthorized: "Não está autorizado a realizar esta ação."
+      unauthorized: "Não está autorizado a realizar esta ação"
       forbidden: "Acesso negado!"
-      not_found: "Recurso não encontrado."
-      unprocessable_entity: "O pedido não pôde ser processado."
-      internal_server_error: "Ocorreu um erro interno no servidor."
+      not_found: "Recurso não encontrado"
+      unprocessable_entity: "O pedido não pôde ser processado"
+      internal_server_error: "Ocorreu um erro interno no servidor"
       validation_failed: "A validação falhou!"
       invalid_request: "Pedido inválido!"
       rate_limit_exceeded: "Limite de taxa excedido. Tente novamente mais tarde"
@@ -36,19 +55,23 @@ pt:
     account:
       errors:
         email_not_found: "Email não encontrado!"
-        email_invalid: "Formato de email inválido."
+        email_invalid: "Formato de email inválido"
         email_taken: "Este email já está a ser utilizado"
-        email_update_fail: "A atualização do email não foi bem-sucedida."
-        password_unmatch: "As senhas não correspondem."
-        password_update_fail: "A atualização da senha não foi bem-sucedida."
+        email_update_fail: "A atualização do email não foi bem-sucedida"
+        password_unmatch: "As senhas não correspondem"
+        password_update_fail: "A atualização da senha não foi bem-sucedida"
         otp_invalid: "OTP inválido!"
         register_not_allow: "Não tem permissão para se registar!"
         missing_field: "Campos obrigatórios em falta"
-        password_incorrect: "A senha atual está incorreta."
+        password_incorrect: "A senha atual está incorreta"
         username_taken: "O nome de usuário já está em uso"
       messages:
-        password_updated: "A senha foi atualizada."
+        password_updated: "A senha foi atualizada"
 
     domain:
       messages:
-        dns_verified: "O DNS está corretamente configurado."
+        dns_verified: "O DNS está corretamente configurado"
+    
+    conversation:
+      messages:
+        marked_read: "%{updated_count} conversas marcadas como lidas"

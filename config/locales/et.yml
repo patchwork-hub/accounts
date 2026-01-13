@@ -1,0 +1,54 @@
+# Estonian translations for Patchwork Dashboard
+# This file contains all Estonian translations for the application
+
+et:
+  # Locale information
+  locale:
+    name: "Estonian"
+    native_name: "Eesti"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Teil pole selle toimingu tegemiseks õigust"
+      forbidden: "Juurdepääs keelatud!"
+      not_found: "Ressurssi ei leitud"
+      unprocessable_entity: "Päringut ei saanud töödelda"
+      internal_server_error: "Tekkis serveri sisemine viga"
+      validation_failed: "Valideerimine ebaõnnestus!"
+      invalid_request: "Vigane päring!"
+      rate_limit_exceeded: "Päringute limiit ületatud. Palun proovige hiljem uuesti"
+
+    messages:
+      success: "Toiming õnnestus"
+      created: "Ressurss edukalt loodud"
+      updated: "Ressurss edukalt uuendatud"
+      deleted: "Ressurss edukalt kustutatud"
+
+    notification:
+      messages:
+        token_already_exists: "Teavituse tunnus on juba olemas"
+        token_saved: "Teavituse tunnus salvestatud"
+        token_deleted: "Teavituse tunnus edukalt kustutatud"
+        token_not_found: "Teavituse tunnuseid ei leitud"
+        mute_updated: "Vaigistamise olek edukalt uuendatud"
+
+    account:
+      errors:
+        email_not_found: "E-posti ei leitud!"
+        email_invalid: "Vigane e-posti vorming"
+        email_taken: "E-post on juba kasutusel"
+        email_update_fail: "E-posti uuendamine ebaõnnestus"
+        password_unmatch: "Paroolid ei kattu"
+        password_update_fail: "Parooli uuendamine ebaõnnestus"
+        otp_invalid: "Vigane ühekordne kood!"
+        register_not_allow: "Teil pole lubatud registreeruda!"
+        missing_field: "Puuduvad kohustuslikud väljad"
+        password_incorrect: "Praegune parool on vale"
+        username_taken: "Kasutajanimi on juba võetud"
+      messages:
+        password_updated: "Parool on uuendatud"
+
+    domain:
+      messages:
+        dns_verified: "DNS on õigesti seadistatud"

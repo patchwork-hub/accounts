@@ -1,0 +1,54 @@
+# Basque translations for Patchwork Dashboard
+# This file contains all Basque translations for the application
+
+eu:
+  # Locale information
+  locale:
+    name: "Basque"
+    native_name: "Euskara"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Ez duzu ekintza hau burutzeko baimenik"
+      forbidden: "Sarbidea ukatua!"
+      not_found: "Baliabidea ez da aurkitu"
+      unprocessable_entity: "Eskaera ezin izan da prozesatu"
+      internal_server_error: "Zerbitzariaren barne-errore bat gertatu da"
+      validation_failed: "Baliozkotzeak huts egin du!"
+      invalid_request: "Eskaera baliogabea!"
+      rate_limit_exceeded: "Eskaera-muga gainditua. Saiatu berriro geroago"
+
+    messages:
+      success: "Eragiketa ongi burutu da"
+      created: "Baliabidea ongi sortu da"
+      updated: "Baliabidea ongi eguneratu da"
+      deleted: "Baliabidea ongi ezabatu da"
+
+    notification:
+      messages:
+        token_already_exists: "Jakinarazpen-tokena dagoeneko existitzen da"
+        token_saved: "Jakinarazpen-tokena gordeta"
+        token_deleted: "Jakinarazpen-tokena ongi ezabatu da"
+        token_not_found: "Ez da jakinarazpen-tokenik aurkitu"
+        mute_updated: "Isilarazte-egoera ongi eguneratu da"
+
+    account:
+      errors:
+        email_not_found: "Ez da posta elektronikoa aurkitu!"
+        email_invalid: "Posta elektronikoaren formatu baliogabea"
+        email_taken: "Posta elektronikoa dagoeneko hartuta dago"
+        email_update_fail: "Posta elektronikoaren eguneratzeak huts egin du"
+        password_unmatch: "Pasahitzak ez datoz bat"
+        password_update_fail: "Pasahitzaren eguneratzeak huts egin du"
+        otp_invalid: "OTP kodea baliogabea!"
+        register_not_allow: "Ez duzu erregistratzeko baimenik!"
+        missing_field: "Derrigorrezko eremuak falta dira"
+        password_incorrect: "Uneko pasahitza okerra da"
+        username_taken: "Erabiltzaile-izena dagoeneko hartuta dago"
+      messages:
+        password_updated: "Pasahitza eguneratu da"
+
+    domain:
+      messages:
+        dns_verified: "DNS-a behar bezala konfiguratuta dago"
