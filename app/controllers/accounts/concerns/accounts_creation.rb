@@ -3,6 +3,7 @@
 module Accounts::Concerns::AccountsCreation
   extend ActiveSupport::Concern
   include NonChannelHelper
+  include PatchworkHelper
   
   def create
     token    = AppSignUpService.new.call(doorkeeper_token.application, request.remote_ip, account_params)
@@ -13,14 +14,14 @@ module Accounts::Concerns::AccountsCreation
     self.response_body = Oj.dump(response.body)
     self.status        = response.status
     create_community_admin unless is_non_channel?
-    generate_opt_token
+    generate_otp_token
   rescue ActiveRecord::RecordInvalid => e
     render json: ValidationErrorFormatter.new(e, 'account.username': :username, 'invite_request.text': :reason).as_json, status: 422
   end
 
     private
 
-    def generate_opt_token
+    def generate_otp_token
       user = User.find_by(email: account_params[:email])
       return unless user && defined?(CustomPasswordsMailer)
 
@@ -30,9 +31,7 @@ module Accounts::Concerns::AccountsCreation
     end
 
     def create_community_admin
-    return unless Object.const_defined?('Accounts::CommunityAdmin')
-
-    return unless defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
+    return unless patchwork_community_admin_exist?
 
       community_admin = Accounts::CommunityAdmin.new(
         email: account_params[:email],
