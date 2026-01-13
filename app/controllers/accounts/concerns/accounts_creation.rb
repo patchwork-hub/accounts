@@ -30,7 +30,11 @@ module Accounts::Concerns::AccountsCreation
     end
 
     def create_community_admin
-      community_admin = CommunityAdmin.new(
+    return unless Object.const_defined?('Accounts::CommunityAdmin')
+
+    return unless defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
+
+      community_admin = Accounts::CommunityAdmin.new(
         email: account_params[:email],
         username: account_params[:username],
         password: account_params[:password]
