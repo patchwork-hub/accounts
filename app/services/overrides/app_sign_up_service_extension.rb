@@ -8,13 +8,13 @@ module Overrides::AppSignUpServiceExtension
     @user.skip_confirmation!
   end
 
-  def invite_request_params
-    {
-      text: mo_me_invite_text
-    }
-  end
+  # def invite_request_params
+  #   {
+  #     text: mo_me_invite_text
+  #   }
+  # end
 
-  def mo_me_invite_text
-    is_mo_me? ? "Signing up via Mo-Me App" : @params[:reason]
-  end
+  # def mo_me_invite_text
+  #   is_mo_me? ? "Signing up via Mo-Me App" : @params[:reason]
+  # end
 end

@@ -10,7 +10,7 @@ Rails.application.config.to_prepare do
   User.include(OverrideChangedPassword)
   REST::CredentialAccountSerializer.prepend(Overrides::CredentialAccountSerializer)
   NotifyService.prepend(Overrides::NotifyServiceExtension)
-  # AppSignUpService.prepend(Overrides::AppSignUpServiceExtension)
+  AppSignUpService.prepend(Overrides::AppSignUpServiceExtension)
   User.prepend(OverridePrepareNewUser)
   User.include(UserConcern)
 
