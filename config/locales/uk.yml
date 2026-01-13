@@ -1,0 +1,77 @@
+# Ukrainian translations for Patchwork Dashboard
+# This file contains all Ukrainian translations for the application
+
+uk:
+  # Locale information
+  locale:
+    name: "Ukrainian"
+    native_name: "Українська"
+  
+  notification:
+    poll:
+      ended_you: "Ваше опитування завершилося"
+      ended_voted: "Опитування, в якому ви брали участь, завершилося"
+    mention:
+      direct_message: "%{name} надіслав вам повідомлення"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Шановний(а) %{name},"
+      instruction: "Ваш OTP-код для підтвердження облікового запису:"
+      note: "Якщо ви не надсилали цей запит, будь ласка, ігноруйте цей лист"
+  
+  errors:
+    invalid_credentials: "Невірні облікові дані. Спробуйте ще раз"
+    unauthorized_access: "У вас немає доступу для входу"
+    channel_not_created: "Невірні облікові дані. Переконайтеся, що ви створили канал"
+    account_deleted: "Ваш обліковий запис вже видалено"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Ви не авторизовані для виконання цієї дії"
+      forbidden: "Доступ заборонено!"
+      not_found: "Ресурс не знайдено"
+      unprocessable_entity: "Запит не може бути оброблено"
+      internal_server_error: "Виникла внутрішня помилка сервера"
+      validation_failed: "Перевірка не пройдена!"
+      invalid_request: "Недійсний запит!"
+      rate_limit_exceeded: "Перевищено ліміт запитів. Спробуйте пізніше"
+
+    messages:
+      success: "Операція успішно завершена"
+      created: "Ресурс успішно створено"
+      updated: "Ресурс успішно оновлено"
+      deleted: "Ресурс успішно видалено"
+
+    notification:
+      messages:
+        token_already_exists: "Токен сповіщень вже існує"
+        token_saved: "Токен сповіщень збережено"
+        token_deleted: "Токен сповіщень успішно видалено"
+        token_not_found: "Токени сповіщень не знайдено"
+        mute_updated: "Статус вимкнення звуку успішно оновлено"
+
+    account:
+      errors:
+        email_not_found: "Електронну пошту не знайдено!"
+        email_invalid: "Невірний формат електронної пошти"
+        email_taken: "Ця електронна пошта вже використовується"
+        email_update_fail: "Не вдалося оновити електронну пошту"
+        password_unmatch: "Паролі не збігаються"
+        password_update_fail: "Не вдалося оновити пароль"
+        otp_invalid: "Недійсний OTP!"
+        register_not_allow: "Вам не дозволено реєструватися!"
+        missing_field: "Відсутні обов'язкові поля"
+        password_incorrect: "Поточний пароль невірний"
+        username_taken: "Це ім'я користувача вже зайнято"
+      messages:
+        password_updated: "Пароль оновлено"
+
+    domain:
+      messages:
+        dns_verified: "DNS налаштовано правильно"
+
+    conversation:
+      messages:
+        marked_read: "Позначено %{updated_count} розмов(у) як прочитані"

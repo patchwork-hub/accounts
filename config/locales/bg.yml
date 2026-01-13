@@ -1,0 +1,54 @@
+# Bulgarian translations for Patchwork Dashboard
+# This file contains all Bulgarian translations for the application
+
+bg:
+  # Locale information
+  locale:
+    name: "Bulgarian"
+    native_name: "Български"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Нямате право да извършите това действие"
+      forbidden: "Достъпът е отказан!"
+      not_found: "Ресурсът не е намерен"
+      unprocessable_entity: "Заявката не може да бъде обработена"
+      internal_server_error: "Възникна вътрешна грешка на сървъра"
+      validation_failed: "Валидацията е неуспешна!"
+      invalid_request: "Невалидна заявка!"
+      rate_limit_exceeded: "Превишен лимит на заявките. Моля, опитайте отново по-късно"
+
+    messages:
+      success: "Операцията е завършена успешно"
+      created: "Ресурсът е създаден успешно"
+      updated: "Ресурсът е актуализиран успешно"
+      deleted: "Ресурсът е изтрит успешно"
+
+    notification:
+      messages:
+        token_already_exists: "Токенът за известия вече съществува"
+        token_saved: "Токенът за известия е запазен"
+        token_deleted: "Токенът за известия е изтрит успешно"
+        token_not_found: "Не са намерени токени за известия"
+        mute_updated: "Статусът на заглушаване е актуализиран успешно"
+
+    account:
+      errors:
+        email_not_found: "Имейлът не е намерен!"
+        email_invalid: "Невалиден формат на имейла"
+        email_taken: "Имейлът вече е зает"
+        email_update_fail: "Актуализацията на имейла е неуспешна"
+        password_unmatch: "Паролите не съвпадат"
+        password_update_fail: "Актуализацията на паролата е неуспешна"
+        otp_invalid: "Невалиден еднократен код!"
+        register_not_allow: "Нямате право да се регистрирате!"
+        missing_field: "Липсват задължителни полета"
+        password_incorrect: "Текущата парола е грешна"
+        username_taken: "Потребителското име вече е заето"
+      messages:
+        password_updated: "Паролата е актуализирана"
+
+    domain:
+      messages:
+        dns_verified: "DNS е конфигуриран правилно"

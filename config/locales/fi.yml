@@ -1,0 +1,77 @@
+# Finnish translations for Patchwork Dashboard
+# This file contains all Finnish translations for the application
+
+fi:
+  # Locale information
+  locale:
+    name: "Finnish"
+    native_name: "Suomi"
+  
+  notification:
+    poll:
+      ended_you: "Kyselysi on päättynyt"
+      ended_voted: "Kysely, johon äänestit, on päättynyt"
+    mention:
+      direct_message: "%{name} lähetti sinulle viestin"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Hyvä %{name},"
+      instruction: "Tilisi vahvistuksen kertakäyttökoodi on alla:"
+      note: "Jos et pyytänyt tätä, ohita tämä sähköposti"
+  
+  errors:
+    invalid_credentials: "Virheelliset tunnukset. Yritä uudelleen"
+    unauthorized_access: "Sinulla ei ole pääsyoikeutta kirjautumiseen"
+    channel_not_created: "Virheelliset tunnukset. Varmista, että olet luonut kanavan"
+    account_deleted: "Tilisi on jo poistettu"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Sinulla ei ole valtuuksia suorittaa tätä toimintoa"
+      forbidden: "Pääsy estetty!"
+      not_found: "Resurssia ei löytynyt"
+      unprocessable_entity: "Pyyntöä ei voitu käsitellä"
+      internal_server_error: "Sisäinen palvelinvirhe tapahtui"
+      validation_failed: "Vahvistus epäonnistui!"
+      invalid_request: "Virheellinen pyyntö!"
+      rate_limit_exceeded: "Pyyntöraja ylitetty. Yritä myöhemmin uudelleen"
+
+    messages:
+      success: "Toiminto suoritettu onnistuneesti"
+      created: "Resurssi luotu onnistuneesti"
+      updated: "Resurssi päivitetty onnistuneesti"
+      deleted: "Resurssi poistettu onnistuneesti"
+
+    notification:
+      messages:
+        token_already_exists: "Ilmoitustunnus on jo olemassa"
+        token_saved: "Ilmoitustunnus tallennettu"
+        token_deleted: "Ilmoitustunnus poistettu onnistuneesti"
+        token_not_found: "Ilmoitustunnuksia ei löytynyt"
+        mute_updated: "Mykistystila päivitetty onnistuneesti"
+
+    account:
+      errors:
+        email_not_found: "Sähköpostia ei löytynyt!"
+        email_invalid: "Virheellinen sähköpostimuoto"
+        email_taken: "Sähköposti on jo käytössä"
+        email_update_fail: "Sähköpostin päivitys epäonnistui"
+        password_unmatch: "Salasanat eivät täsmää"
+        password_update_fail: "Salasanan päivitys epäonnistui"
+        otp_invalid: "Virheellinen kertakäyttökoodi!"
+        register_not_allow: "Sinulla ei ole rekisteröitymisoikeutta!"
+        missing_field: "Pakolliset kentät puuttuvat"
+        password_incorrect: "Nykyinen salasana on virheellinen"
+        username_taken: "Käyttäjänimi on jo käytössä"
+      messages:
+        password_updated: "Salasana on päivitetty"
+
+    domain:
+      messages:
+        dns_verified: "DNS on oikein määritetty"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} keskustelua merkitty luetuksi"

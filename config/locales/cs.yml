@@ -1,0 +1,54 @@
+# Czech translations for Patchwork Dashboard
+# This file contains all Czech translations for the application
+
+cs:
+  # Locale information
+  locale:
+    name: "Czech"
+    native_name: "Čeština"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Nemáte oprávnění k provedení této akce"
+      forbidden: "Přístup odepřen!"
+      not_found: "Zdroj nebyl nalezen"
+      unprocessable_entity: "Požadavek nelze zpracovat"
+      internal_server_error: "Došlo k interní chybě serveru"
+      validation_failed: "Ověření selhalo!"
+      invalid_request: "Neplatný požadavek!"
+      rate_limit_exceeded: "Překročen limit požadavků. Zkuste to prosím znovu později"
+
+    messages:
+      success: "Operace byla úspěšně dokončena"
+      created: "Zdroj byl úspěšně vytvořen"
+      updated: "Zdroj byl úspěšně aktualizován"
+      deleted: "Zdroj byl úspěšně smazán"
+
+    notification:
+      messages:
+        token_already_exists: "Token oznámení již existuje"
+        token_saved: "Token oznámení byl uložen"
+        token_deleted: "Token oznámení byl úspěšně smazán"
+        token_not_found: "Nebyly nalezeny žádné tokeny oznámení"
+        mute_updated: "Stav ztlumení byl úspěšně aktualizován"
+
+    account:
+      errors:
+        email_not_found: "E-mail nebyl nalezen!"
+        email_invalid: "Neplatný formát e-mailu"
+        email_taken: "E-mail je již obsazen"
+        email_update_fail: "Aktualizace e-mailu se nezdařila"
+        password_unmatch: "Hesla se neshodují"
+        password_update_fail: "Aktualizace hesla se nezdařila"
+        otp_invalid: "Neplatný jednorázový kód!"
+        register_not_allow: "Registrace není povolena!"
+        missing_field: "Chybí povinná pole"
+        password_incorrect: "Aktuální heslo je nesprávné"
+        username_taken: "Uživatelské jméno je již obsazeno"
+      messages:
+        password_updated: "Heslo bylo aktualizováno"
+
+    domain:
+      messages:
+        dns_verified: "DNS je správně nakonfigurováno"

@@ -1,0 +1,77 @@
+# Swedish translations for Patchwork Dashboard
+# This file contains all Swedish translations for the application
+
+sv:
+  # Locale information
+  locale:
+    name: "Swedish"
+    native_name: "Svenska"
+  
+  notification:
+    poll:
+      ended_you: "Din omröstning har avslutats"
+      ended_voted: "En omröstning du röstade i har avslutats"
+    mention:
+      direct_message: "%{name} skickade ett meddelande till dig"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Kära %{name},"
+      instruction: "Din OTP-kod för kontoverifiering är:"
+      note: "Om du inte begärde detta, vänligen ignorera detta e-postmeddelande"
+  
+  errors:
+    invalid_credentials: "Ogiltiga inloggningsuppgifter. Försök igen"
+    unauthorized_access: "Du har inte åtkomst att logga in"
+    channel_not_created: "Ogiltiga inloggningsuppgifter. Se till att du har skapat en kanal"
+    account_deleted: "Ditt konto är redan raderat"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Du är inte behörig att utföra denna åtgärd"
+      forbidden: "Åtkomst nekad!"
+      not_found: "Resursen hittades inte"
+      unprocessable_entity: "Begäran kunde inte bearbetas"
+      internal_server_error: "Ett internt serverfel uppstod"
+      validation_failed: "Validering misslyckades!"
+      invalid_request: "Ogiltig begäran!"
+      rate_limit_exceeded: "Förfrågningsgränsen har överskridits. Försök igen senare"
+
+    messages:
+      success: "Åtgärden slutfördes framgångsrikt"
+      created: "Resursen skapades framgångsrikt"
+      updated: "Resursen uppdaterades framgångsrikt"
+      deleted: "Resursen raderades framgångsrikt"
+
+    notification:
+      messages:
+        token_already_exists: "Notifieringstoken finns redan"
+        token_saved: "Notifieringstoken sparad"
+        token_deleted: "Notifieringstoken raderades framgångsrikt"
+        token_not_found: "Inga notifieringstokens hittades"
+        mute_updated: "Tystnadsstatus uppdaterades framgångsrikt"
+
+    account:
+      errors:
+        email_not_found: "E-post hittades inte!"
+        email_invalid: "Ogiltigt e-postformat"
+        email_taken: "E-postadressen är redan tagen"
+        email_update_fail: "E-postuppdateringen misslyckades"
+        password_unmatch: "Lösenorden matchar inte"
+        password_update_fail: "Lösenordsuppdateringen misslyckades"
+        otp_invalid: "Ogiltig OTP!"
+        register_not_allow: "Du får inte registrera dig!"
+        missing_field: "Obligatoriska fält saknas"
+        password_incorrect: "Nuvarande lösenord är felaktigt"
+        username_taken: "Användarnamnet är redan taget"
+      messages:
+        password_updated: "Lösenordet har uppdaterats"
+
+    domain:
+      messages:
+        dns_verified: "DNS är korrekt konfigurerat"
+
+    conversation:
+      messages:
+        marked_read: "Markerade %{updated_count} konversation(er) som läst"

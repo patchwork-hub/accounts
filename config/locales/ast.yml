@@ -1,0 +1,54 @@
+# Asturian translations for Patchwork Dashboard
+# This file contains all Asturian translations for the application
+
+ast:
+  # Locale information
+  locale:
+    name: "Asturian"
+    native_name: "Asturianu"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Nun tas autorizáu pa facer esta aición"
+      forbidden: "¡Accesu denegáu!"
+      not_found: "Nun s'atopó'l recursu"
+      unprocessable_entity: "Nun pudo procesase la solicitú"
+      internal_server_error: "Asocedió un error internu del sirvidor"
+      validation_failed: "¡Falló la validación!"
+      invalid_request: "¡Solicitú non válida!"
+      rate_limit_exceeded: "Perpasóse'l llímite de tasa. Volvi tentalo más sero"
+
+    messages:
+      success: "Operación completada con ésitu"
+      created: "Recursu creáu con ésitu"
+      updated: "Recursu anovadu con ésitu"
+      deleted: "Recursu desaniciáu con ésitu"
+
+    notification:
+      messages:
+        token_already_exists: "El pase de notificación yá existe"
+        token_saved: "Pase de notificación guardáu"
+        token_deleted: "Pase de notificación desaniciáu con ésitu"
+        token_not_found: "Nun s'atoparon pases de notificación"
+        mute_updated: "Estáu de silenciamientu anovadu con ésitu"
+
+    account:
+      errors:
+        email_not_found: "¡Nun s'atopó'l corréu electrónicu!"
+        email_invalid: "Formatu de corréu electrónicu non válidu"
+        email_taken: "El corréu electrónicu yá ta n'usu"
+        email_update_fail: "Nun pudo anovase'l corréu electrónicu"
+        password_unmatch: "Les contraseñes nun concasen"
+        password_update_fail: "Nun pudo anovase la contraseña"
+        otp_invalid: "¡Códigu OTP non válidu!"
+        register_not_allow: "¡Nun tienes permisu pa rexistrate!"
+        missing_field: "Falten campos obligatorios"
+        password_incorrect: "La contraseña actual ye incorreuta"
+        username_taken: "El nome d'usuariu yá ta n'usu"
+      messages:
+        password_updated: "Anovóse la contraseña"
+
+    domain:
+      messages:
+        dns_verified: "El DNS ta configuráu correutamente"

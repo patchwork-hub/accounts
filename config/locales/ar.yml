@@ -1,0 +1,54 @@
+# Arabic translations for Patchwork Dashboard
+# This file contains all Arabic translations for the application
+
+ar:
+  # Locale information
+  locale:
+    name: "Arabic"
+    native_name: "العربية"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "ليس لديك صلاحية لتنفيذ هذا الإجراء"
+      forbidden: "تم رفض الوصول!"
+      not_found: "المورد غير موجود"
+      unprocessable_entity: "تعذر معالجة الطلب"
+      internal_server_error: "حدث خطأ داخلي في الخادم"
+      validation_failed: "فشل التحقق!"
+      invalid_request: "طلب غير صالح!"
+      rate_limit_exceeded: "تم تجاوز حد المعدل. يرجى المحاولة مرة أخرى لاحقًا"
+
+    messages:
+      success: "تمت العملية بنجاح"
+      created: "تم إنشاء المورد بنجاح"
+      updated: "تم تحديث المورد بنجاح"
+      deleted: "تم حذف المورد بنجاح"
+
+    notification:
+      messages:
+        token_already_exists: "رمز الإشعار موجود بالفعل"
+        token_saved: "تم حفظ رمز الإشعار"
+        token_deleted: "تم حذف رمز الإشعار بنجاح"
+        token_not_found: "لم يتم العثور على رموز إشعارات"
+        mute_updated: "تم تحديث حالة الكتم بنجاح"
+
+    account:
+      errors:
+        email_not_found: "البريد الإلكتروني غير موجود!"
+        email_invalid: "تنسيق البريد الإلكتروني غير صالح"
+        email_taken: "البريد الإلكتروني مستخدم بالفعل"
+        email_update_fail: "فشل تحديث البريد الإلكتروني"
+        password_unmatch: "كلمات المرور غير متطابقة"
+        password_update_fail: "فشل تحديث كلمة المرور"
+        otp_invalid: "رمز OTP غير صالح!"
+        register_not_allow: "غير مسموح لك بالتسجيل!"
+        missing_field: "حقول مطلوبة مفقودة"
+        password_incorrect: "كلمة المرور الحالية غير صحيحة"
+        username_taken: "اسم المستخدم مستخدم بالفعل"
+      messages:
+        password_updated: "تم تحديث كلمة المرور"
+
+    domain:
+      messages:
+        dns_verified: "تم تكوين DNS بشكل صحيح"

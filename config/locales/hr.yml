@@ -1,0 +1,77 @@
+# Croatian translations for Patchwork Dashboard
+# This file contains all Croatian translations for the application
+
+hr:
+  # Locale information
+  locale:
+    name: "Croatian"
+    native_name: "Hrvatski"
+  
+  notification:
+    poll:
+      ended_you: "Vaša anketa je završila"
+      ended_voted: "Anketa u kojoj ste glasali je završila"
+    mention:
+      direct_message: "%{name} vam je poslao/la poruku"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Poštovani/a %{name},"
+      instruction: "Vaš OTP kod za potvrdu računa je u nastavku:"
+      note: "Ako niste zatražili ovo, molimo zanemarite ovu e-poštu"
+  
+  errors:
+    invalid_credentials: "Nevažeći podaci za prijavu. Molimo pokušajte ponovno"
+    unauthorized_access: "Nemate pristup za prijavu"
+    channel_not_created: "Nevažeći podaci za prijavu. Provjerite jeste li stvorili kanal"
+    account_deleted: "Vaš račun je već izbrisan"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Niste ovlašteni za izvršavanje ove radnje"
+      forbidden: "Pristup odbijen!"
+      not_found: "Resurs nije pronađen"
+      unprocessable_entity: "Zahtjev se nije mogao obraditi"
+      internal_server_error: "Došlo je do interne pogreške poslužitelja"
+      validation_failed: "Provjera valjanosti nije uspjela!"
+      invalid_request: "Nevažeći zahtjev!"
+      rate_limit_exceeded: "Prekoračeno ograničenje zahtjeva. Molimo pokušajte kasnije"
+
+    messages:
+      success: "Operacija uspješno dovršena"
+      created: "Resurs uspješno stvoren"
+      updated: "Resurs uspješno ažuriran"
+      deleted: "Resurs uspješno izbrisan"
+
+    notification:
+      messages:
+        token_already_exists: "Token za obavijesti već postoji"
+        token_saved: "Token za obavijesti spremljen"
+        token_deleted: "Token za obavijesti uspješno izbrisan"
+        token_not_found: "Tokeni za obavijesti nisu pronađeni"
+        mute_updated: "Status utišavanja uspješno ažuriran"
+
+    account:
+      errors:
+        email_not_found: "E-pošta nije pronađena!"
+        email_invalid: "Nevažeći format e-pošte"
+        email_taken: "E-pošta je već zauzeta"
+        email_update_fail: "Ažuriranje e-pošte nije uspjelo"
+        password_unmatch: "Lozinke se ne podudaraju"
+        password_update_fail: "Ažuriranje lozinke nije uspjelo"
+        otp_invalid: "Nevažeći OTP!"
+        register_not_allow: "Nije vam dopuštena registracija!"
+        missing_field: "Nedostaju obavezna polja"
+        password_incorrect: "Trenutna lozinka je netočna"
+        username_taken: "Korisničko ime je već zauzeto"
+      messages:
+        password_updated: "Lozinka je ažurirana"
+
+    domain:
+      messages:
+        dns_verified: "DNS je ispravno konfiguriran"
+
+    conversation:
+      messages:
+        marked_read: "Označeno %{updated_count} razgovor(a) kao pročitano"

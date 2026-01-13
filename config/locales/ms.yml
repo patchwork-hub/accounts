@@ -1,0 +1,77 @@
+# Malay translations for Patchwork Dashboard
+# This file contains all Malay translations for the application
+
+ms:
+  # Locale information
+  locale:
+    name: "Malay"
+    native_name: "Bahasa Melayu"
+  
+  notification:
+    poll:
+      ended_you: "Undian anda telah tamat"
+      ended_voted: "Undian yang anda undi telah tamat"
+    mention:
+      direct_message: "%{name} menghantar mesej kepada anda"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "%{name} yang dihormati,"
+      instruction: "Kod OTP pengesahan akaun anda adalah seperti berikut:"
+      note: "Jika anda tidak meminta ini, sila abaikan e-mel ini"
+  
+  errors:
+    invalid_credentials: "Kelayakan tidak sah. Sila cuba lagi"
+    unauthorized_access: "Anda tidak mempunyai akses untuk log masuk"
+    channel_not_created: "Kelayakan tidak sah. Sila pastikan anda telah membuat saluran"
+    account_deleted: "Akaun anda telah dipadamkan"
+
+  # API responses and messages
+  api:
+    errors:
+      unauthorized: "Anda tidak dibenarkan untuk melakukan tindakan ini"
+      forbidden: "Akses ditolak!"
+      not_found: "Sumber tidak dijumpai"
+      unprocessable_entity: "Permintaan tidak dapat diproses"
+      internal_server_error: "Ralat pelayan dalaman telah berlaku"
+      validation_failed: "Pengesahan gagal!"
+      invalid_request: "Permintaan tidak sah!"
+      rate_limit_exceeded: "Had kadar melebihi. Sila cuba lagi kemudian"
+
+    messages:
+      success: "Operasi berjaya diselesaikan"
+      created: "Sumber berjaya dicipta"
+      updated: "Sumber berjaya dikemas kini"
+      deleted: "Sumber berjaya dipadam"
+
+    notification:
+      messages:
+        token_already_exists: "Token pemberitahuan sudah wujud"
+        token_saved: "Token pemberitahuan disimpan"
+        token_deleted: "Token pemberitahuan berjaya dipadam"
+        token_not_found: "Token pemberitahuan tidak dijumpai"
+        mute_updated: "Status senyap berjaya dikemas kini"
+
+    account:
+      errors:
+        email_not_found: "E-mel tidak dijumpai!"
+        email_invalid: "Format e-mel tidak sah"
+        email_taken: "E-mel telah digunakan"
+        email_update_fail: "Kemas kini e-mel tidak berjaya"
+        password_unmatch: "Kata laluan tidak sepadan"
+        password_update_fail: "Kemas kini kata laluan tidak berjaya"
+        otp_invalid: "OTP tidak sah!"
+        register_not_allow: "Anda tidak dibenarkan mendaftar!"
+        missing_field: "Medan wajib tidak diisi"
+        password_incorrect: "Kata laluan semasa tidak betul"
+        username_taken: "Nama pengguna telah digunakan"
+      messages:
+        password_updated: "Kata laluan telah dikemas kini"
+
+    domain:
+      messages:
+        dns_verified: "DNS dikonfigurasi dengan betul"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} perbualan ditanda sebagai dibaca"
