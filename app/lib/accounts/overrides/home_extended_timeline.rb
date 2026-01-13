@@ -9,7 +9,7 @@ module Accounts::Overrides::HomeExtendedTimeline
         params[:since_id],
         params[:min_id],
         current_account,
-        truthy_param?(:exclude_directs),
+        truthy_param?(:exclude_direct_statuses),
         truthy_param?(:exclude_followed_tags),
         truthy_param?(:exclude_replies)
       )
