@@ -92,6 +92,10 @@ class LoginService
   end
 
   def fetch_channel_credentials(user)
+    return nil unless Object.const_defined?('Accounts::CommunityAdmin')
+
+    return nil unless defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
+
     CommunityAdmin.find_by(account_id: user.account_id, is_boost_bot: true, account_status: CommunityAdmin.account_statuses["active"])
   end
 
