@@ -1,4 +1,4 @@
-module Accounts::Concerns::Concerns::FeedConcern
+module Accounts::Concerns::FeedConcern
     extend ActiveSupport::Concern  
     include Redisable
 
