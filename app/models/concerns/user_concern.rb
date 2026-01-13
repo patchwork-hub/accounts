@@ -1,6 +1,8 @@
 module UserConcern
   extend ActiveSupport::Concern
 
+  include PatchworkHelper
+  
   included do
     after_create :create_user_settings, :apply_server_setting_to_account, :set_bluesky_bridge_enable
   end
@@ -35,7 +37,7 @@ module UserConcern
   end
 
   def apply_server_setting_to_account
-    return unless Object.const_defined?('Accounts::ServerSetting')
+    return unless patchwork_server_settings_exist?
 
     setting = Accounts::ServerSetting.find_by(name: "Automatic Search Opt-in")
     return unless setting.present? && account.present?
@@ -49,7 +51,7 @@ module UserConcern
   end
 
   def set_bluesky_bridge_enable
-    return unless Object.const_defined?('Accounts::ServerSetting')
+    return unless patchwork_server_settings_exist?
 
     return unless Accounts::ServerSetting.find_by(name: "Automatic Bluesky bridging for new users")&.value
 

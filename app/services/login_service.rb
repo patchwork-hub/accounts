@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class LoginService
+  include PatchworkHelper
+
   def initialize(params)
     @params = params
   end
@@ -40,22 +42,18 @@ class LoginService
   end
 
   def fetch_channel_credentials(user)
-    return unless Object.const_defined?('Accounts::CommunityAdmin')
+    return unless patchwork_community_admin_exist?
 
-    if defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
-      Accounts::CommunityAdmin.joins(:community).find_by(
-        account_id: user.account_id,
-        is_boost_bot: true,
-        account_status: Accounts::CommunityAdmin.account_statuses['active'],
-        community: { deleted_at: nil }
-      )
-    end
+    Accounts::CommunityAdmin.joins(:community).find_by(
+      account_id: user.account_id,
+      is_boost_bot: true,
+      account_status: Accounts::CommunityAdmin.account_statuses['active'],
+      community: { deleted_at: nil }
+    )
   end
 
   def channel_active?(user)
-    return false unless Object.const_defined?('Accounts::CommunityAdmin')
-
-    return false unless defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
+    return false unless patchwork_community_admin_exist?
 
     community_admin = Accounts::CommunityAdmin.find_by(account_id: user.account_id, is_boost_bot: true)
     return true if community_admin.nil? || community_admin&.account_status == Accounts::CommunityAdmin.account_statuses['active']
@@ -92,11 +90,9 @@ class LoginService
   end
 
   def fetch_channel_credentials(user)
-    return nil unless Object.const_defined?('Accounts::CommunityAdmin')
+    return nil unless patchwork_community_admin_exist?
 
-    return nil unless defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
-
-    CommunityAdmin.find_by(account_id: user.account_id, is_boost_bot: true, account_status: CommunityAdmin.account_statuses["active"])
+    Accounts::CommunityAdmin.find_by(account_id: user.account_id, is_boost_bot: true, account_status: Accounts::CommunityAdmin.account_statuses["active"])
   end
 
   def web_login?
