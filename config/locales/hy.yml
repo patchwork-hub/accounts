@@ -1,0 +1,75 @@
+hy:
+  locale:
+    name: "Armenian"
+    native_name: "Հայերեն"
+  
+  notification:
+    poll:
+      ended_you: "Ձեր հարցումը ավարտվեց"
+      ended_voted: "Հարցումը, որում դուք քվեարկել եք, ավարտվեց"
+    mention:
+      direct_message: "%{name} ձեզ ուղարկեց հաղորդագրություն"
+
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Հարգելի %{name},"
+      instruction: "Ձեր հաշվի հաստատման OTP կոդն է՝"
+      note: "Եթե դուք չեք խնդրել սա, խնդրում ենք անտեսել այս էլ.փոստը"
+  
+  login_service:
+    errors:
+      invalid_credentials: "Անվավեր տվյալներ։ Խնդրում ենք փորձել կրկին"
+      unauthorized_access: "Դուք մուտք գործելու իրավունք չունեք"
+      channel_not_created: "Անվավեր տվյալներ։ Խնդրում ենք համոզվել, որ ստեղծել եք ալիք"
+      account_deleted: "Ձեր հաշիվն արդեն ջնջված է"
+      invalid_role_access: "%{role}-ը մուտք գործելու իրավունք չունի"
+      deactivated_channel: "Ձեր ալիքը ապաակտիվացված է։ Խնդրում ենք կապվել աջակցությանը"
+
+  api:
+    errors:
+      unauthorized: "Դուք իրավունք չունեք կատարել այս գործողությունը"
+      forbidden: "Մուտքը արգելված է!"
+      not_found: "Ռեսուրսը չի գտնվել"
+      unprocessable_entity: "Հարցումը հնարավոր չէ մշակել"
+      internal_server_error: "Ներքին սերվերի սխալ տեղի ունեցավ"
+      validation_failed: "Վավերացումը ձախողվեց!"
+      invalid_request: "Անվավեր հարցում!"
+      rate_limit_exceeded: "Հարցումների սահմանաչափը գերազանցված է։ Խնդրում ենք փորձել ավելի ուշ"
+
+    messages:
+      success: "Գործողությունը հաջողությամբ ավարտվեց"
+      created: "Ռեսուրսը հաջողությամբ ստեղծվեց"
+      updated: "Ռեսուրսը հաջողությամբ թարմացվեց"
+      deleted: "Ռեսուրսը հաջողությամբ ջնջվեց"
+
+    notification:
+      messages:
+        token_already_exists: "Ծանուցման նշանը արդեն գոյություն ունի"
+        token_saved: "Ծանուցման նշանը պահպանված է"
+        token_deleted: "Ծանուցման նշանը հաջողությամբ ջնջվեց"
+        token_not_found: "Ծանուցման նշաններ չեն գտնվել"
+        mute_updated: "Լռեցման կարգավիճակը հաջողությամբ թարմացվեց"
+
+    account:
+      errors:
+        email_not_found: "Էլ.փոստը չի գտնվել!"
+        email_invalid: "Էլ.փոստի անվավեր ձևաչափ"
+        email_taken: "Էլ.փոստը արդեն օգտագործվում է"
+        email_update_fail: "Էլ.փոստի թարմացումը ձախողվեց"
+        password_unmatch: "Գաղտնաբառերը չեն համընկնում"
+        password_update_fail: "Գաղտնաբառի թարմացումը ձախողվեց"
+        otp_invalid: "Անվավեր OTP!"
+        register_not_allow: "Դուք իրավունք չունեք գրանցվելու!"
+        missing_field: "Պահանջվող դաշտերը բացակայում են"
+        password_incorrect: "Ընթացիկ գաղտնաբառը սխալ է"
+        username_taken: "Օգտագործողի անունը արդեն օգտագործվում է"
+      messages:
+        password_updated: "Գաղտնաբառը թարմացվել է"
+
+    domain:
+      messages:
+        dns_verified: "DNS-ը ճիշտ է կարգավորված"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} զրույց(ներ) նշված է որպես կարդացված"

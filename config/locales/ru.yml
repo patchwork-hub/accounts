@@ -1,54 +1,75 @@
-# Russian translations for Patchwork Dashboard
-# Русские переводы для панели управления Patchwork
-
 ru:
-  # Locale information
   locale:
-    name: "Русский"
+    name: "Russian"
     native_name: "Русский"
 
-  # API responses and messages
+  notification:
+    poll:
+      ended_you: "Ваш опрос завершён"
+      ended_voted: "Опрос, в котором вы участвовали, завершён"
+    mention:
+      direct_message: "%{name} отправил(а) вам сообщение"
+  
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Уважаемый(ая) %{name},"
+      instruction: "Ваш OTP-код для подтверждения аккаунта:"
+      note: "Если вы не запрашивали это, проигнорируйте это письмо"
+
+  login_service:
+    errors:
+      invalid_credentials: "Неверные учетные данные. Попробуйте снова"
+      unauthorized_access: "У вас нет доступа для входа"
+      channel_not_created: "Неверные учетные данные. Убедитесь, что вы создали канал"
+      account_deleted: "Ваш аккаунт уже удалён"
+      invalid_role_access: "%{role} не имеет доступа для входа"
+      deactivated_channel: "Ваш канал деактивирован. Обратитесь в поддержку"
+
   api:
     errors:
-      unauthorized: "У вас нет прав для выполнения этого действия."
-      forbidden: "Доступ запрещен!"
-      not_found: "Ресурс не найден."
-      unprocessable_entity: "Запрос не может быть обработан."
-      internal_server_error: "Произошла внутренняя ошибка сервера."
-      validation_failed: "Проверка не пройдена!"
-      invalid_request: "Недействительный запрос!"
-      rate_limit_exceeded: "Превышен лимит запросов. Пожалуйста, попробуйте позже"
+      unauthorized: "У вас нет прав для выполнения этого действия"
+      forbidden: "Доступ запрещён!"
+      not_found: "Ресурс не найден"
+      unprocessable_entity: "Запрос не может быть обработан"
+      internal_server_error: "Произошла внутренняя ошибка сервера"
+      validation_failed: "Ошибка валидации!"
+      invalid_request: "Неверный запрос!"
+      rate_limit_exceeded: "Превышен лимит запросов. Попробуйте позже"
 
     messages:
       success: "Операция успешно завершена"
       created: "Ресурс успешно создан"
-      updated: "Ресурс успешно обновлен"
-      deleted: "Ресурс успешно удален"
+      updated: "Ресурс успешно обновлён"
+      deleted: "Ресурс успешно удалён"
 
     notification:
       messages:
         token_already_exists: "Токен уведомлений уже существует"
-        token_saved: "Токен уведомлений сохранен"
-        token_deleted: "Токен уведомлений успешно удален"
+        token_saved: "Токен уведомлений сохранён"
+        token_deleted: "Токен уведомлений успешно удалён"
         token_not_found: "Токены уведомлений не найдены"
-        mute_updated: "Статус отключения звука успешно обновлен"
+        mute_updated: "Статус беззвучного режима успешно обновлён"
 
     account:
       errors:
-        email_not_found: "Электронная почта не найдена!"
-        email_invalid: "Недействительный формат электронной почты."
-        email_taken: "Эта электронная почта уже используется"
-        email_update_fail: "Обновление электронной почты не удалось."
-        password_unmatch: "Пароли не совпадают."
-        password_update_fail: "Обновление пароля не удалось."
-        otp_invalid: "Недействительный OTP!"
+        email_not_found: "E-mail не найден!"
+        email_invalid: "Неверный формат e-mail"
+        email_taken: "E-mail уже используется"
+        email_update_fail: "Не удалось обновить e-mail"
+        password_unmatch: "Пароли не совпадают"
+        password_update_fail: "Не удалось обновить пароль"
+        otp_invalid: "Неверный OTP!"
         register_not_allow: "Вам не разрешено регистрироваться!"
         missing_field: "Отсутствуют обязательные поля"
-        password_incorrect: "Текущий пароль неверен."
+        password_incorrect: "Текущий пароль неверен"
         username_taken: "Имя пользователя уже занято"
       messages:
-        password_updated: "Пароль был обновлен."
+        password_updated: "Пароль был обновлён"
 
     domain:
       messages:
-        dns_verified: "DNS настроен правильно."
+        dns_verified: "DNS настроен правильно"
+
+    conversation:
+      messages:
+        marked_read: "%{updated_count} беседа(ы) отмечена(ы) как прочитанная(ые)"

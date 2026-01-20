@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class LoginService
+  include PatchworkHelper
+
   def initialize(params)
     @params = params
   end
@@ -26,22 +28,18 @@ class LoginService
   end
 
   def fetch_channel_credentials(user)
-    return unless Object.const_defined?('Accounts::CommunityAdmin')
+    return unless patchwork_community_admin_exist?
 
-    if defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
-      Accounts::CommunityAdmin.joins(:community).find_by(
-        account_id: user.account_id,
-        is_boost_bot: true,
-        account_status: Accounts::CommunityAdmin.account_statuses['active'],
-        community: { deleted_at: nil }
-      )
-    end
+    Accounts::CommunityAdmin.joins(:community).find_by(
+      account_id: user.account_id,
+      is_boost_bot: true,
+      account_status: Accounts::CommunityAdmin.account_statuses['active'],
+      community: { deleted_at: nil }
+    )
   end
 
   def channel_active?(user)
-    return false unless Object.const_defined?('Accounts::CommunityAdmin')
-
-    return false unless defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
+    return false unless patchwork_community_admin_exist?
 
     community_admin = Accounts::CommunityAdmin.find_by(account_id: user.account_id, is_boost_bot: true)
     return true if community_admin.nil? || community_admin&.account_status == Accounts::CommunityAdmin.account_statuses['active']
@@ -55,11 +53,11 @@ class LoginService
     return nil if client_credentials?
 
     user = fetch_user_credentials
-    return 'You don\'t have access to login.' if user.nil? || user&.confirmed_at.nil?
+    return I18n.t('login_service.errors.unauthorized_access') if user.nil? || user&.confirmed_at.nil?
 
-    return "#{user.role&.name&.underscore&.humanize} isn't allowed to access login." unless user.role&.name.eql?('UserAdmin') || user.role&.name.eql?('HubAdmin') || user.role&.name.eql?('MasterAdmin')
+    return I18n.t('login_service.errors.invalid_role_access', role: user.role&.name&.underscore&.humanize) unless user.role&.name.eql?('UserAdmin') || user.role&.name.eql?('HubAdmin') || user.role&.name.eql?('MasterAdmin')
 
-    return 'Your channel is not active. Please contact support.' unless channel_active?(user)
+    return I18n.t('login_service.errors.deactivated_channel') unless channel_active?(user)
 
     nil
   end
@@ -68,14 +66,14 @@ class LoginService
     return nil if client_credentials?
 
     user = grant_password? ? fetch_user_credentials : fetch_access_token_grant
-    return 'You don\'t have access to login.' if user.nil?
+    return I18n.t('login_service.errors.unauthorized_access') if user.nil?
 
     community_admin = fetch_channel_credentials(user)
-    return 'Invalid credentials. Please make sure you\'ve created a channel.' if community_admin.nil?
+    return I18n.t('login_service.errors.channel_not_created') if community_admin.nil?
 
-    return 'Your account is already deleted.' if community_admin&.account_status == 'deleted'
+    return I18n.t('login_service.errors.account_deleted') if community_admin&.account_status == 'deleted'
 
-    return 'Invalid credentials or insufficient permissions to access login.' unless valid_permissions?(community_admin, user)
+    return I18n.t('login_service.errors.invalid_credentials') unless valid_permissions?(community_admin, user)
 
     nil
   end
@@ -95,11 +93,9 @@ class LoginService
   end
 
   def belong_any_channel?(community_admin)
+    return false unless patchwork_community_exist?
+
     return false if community_admin&.patchwork_community_id.blank?
-
-    return false unless Object.const_defined?('Accounts::Community')
-
-    return false unless defined?(Accounts::Community) && Accounts::Community.respond_to?(:find_by)
 
     Accounts::Community.exists?(
       id: community_admin.patchwork_community_id,
