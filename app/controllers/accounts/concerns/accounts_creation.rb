@@ -4,9 +4,11 @@ module Accounts::Concerns::AccountsCreation
   extend ActiveSupport::Concern
   include NonChannelHelper
   include PatchworkHelper
+  include MoMeHelper
 
   def create
-    token    = AppSignUpService.new.call(doorkeeper_token.application, request.remote_ip, account_params)
+    params_with_reason = is_mo_me? ? account_params.merge(reason: 'Signing up via Mo-Me App') : account_params
+    token    = AppSignUpService.new.call(doorkeeper_token.application, request.remote_ip, params_with_reason)
     response = Doorkeeper::OAuth::TokenResponse.new(token)
 
     headers.merge!(response.headers)
