@@ -22,14 +22,14 @@ module UserConcern
     update!(settings_attributes: settings)
   end
 
-  # Configures user searchability and discoverability based on the 'search-opt' ServerSetting.
+  # Configures user searchability and discoverability based on the Dashboard's 'search-opt' ServerSetting.
   #
   # Enabled search-opt: The user becomes hidden from search results (noindex: true).
   # Disabled search-opt: The user remains visible and discoverable (noindex: false).
   def apply_server_setting_to_account
     return unless patchwork_server_settings_exist?
 
-    setting = Accounts::ServerSetting.find_by(name: "Automatic Search Opt-in")
+    setting = Accounts::ServerSetting.find_by(name: "Automatic Search Opt-out")
     return unless setting.present? && account.present?
 
     opt_out = ActiveModel::Type::Boolean.new.cast(setting.value)
