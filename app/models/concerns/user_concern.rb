@@ -1,8 +1,8 @@
 module UserConcern
   extend ActiveSupport::Concern
-
+  include EmailNotificationAttributesConcern
   include PatchworkHelper
-  
+
   included do
     after_create :create_user_settings, :apply_server_setting_to_account, :set_bluesky_bridge_enable
   end
@@ -16,30 +16,20 @@ module UserConcern
 
     return if notification_emails.present?
 
-    settings = email_notification_attributes(enabled: false)
-    update!(settings: settings)
+    enabled_notification = ENV['DEFAULT_EMAIL_NOTIFICATIONS_ENABLED'] == 'true'? true : false
+
+    settings = email_notification_attributes(enabled: enabled_notification)
+    update!(settings_attributes: settings)
   end
 
-  def email_notification_attributes(enabled: false)
-    {
-      "always_send_emails" => enabled,
-      "notification_emails.follow" => enabled,
-      "notification_emails.reblog" => enabled,
-      "notification_emails.favourite" => enabled,
-      "notification_emails.mention" => enabled,
-      "notification_emails.follow_request" => enabled,
-      "notification_emails.report" => enabled,
-      "notification_emails.pending_account" => enabled,
-      "notification_emails.trends" => enabled,
-      "notification_emails.appeal" => enabled,
-      "notification_emails.software_updates" => enabled ? "critical" : "none"
-    }
-  end
-
+  # Configures user searchability and discoverability based on the Dashboard's 'search-opt' ServerSetting.
+  #
+  # Enabled search-opt: The user becomes hidden from search results (noindex: true).
+  # Disabled search-opt: The user remains visible and discoverable (noindex: false).
   def apply_server_setting_to_account
     return unless patchwork_server_settings_exist?
 
-    setting = Accounts::ServerSetting.find_by(name: "Automatic Search Opt-in")
+    setting = Accounts::ServerSetting.find_by(name: "Automatic Search Opt-out")
     return unless setting.present? && account.present?
 
     opt_out = ActiveModel::Type::Boolean.new.cast(setting.value)
