@@ -1,77 +1,66 @@
-# Welsh translations for Patchwork Dashboard
-# Cyfieithiadau Cymraeg ar gyfer Patchwork Dashboard
-
 cy:
-  # Locale information
   locale:
-    name: "Cymraeg"
+    name: "Welsh"
     native_name: "Cymraeg"
-  
   notification:
     poll:
-      ended_you: "Mae eich pleidlais wedi dod i ben"
-      ended_voted: "Mae pleidlais y gwnaethoch bleidleisio ynddi wedi dod i ben"
+      ended_you: "Mae eich pôl wedi dod i ben"
+      ended_voted: "Mae pôl y gwnaethoch bleidleisio ynddo wedi dod i ben"
     mention:
-      direct_message: "Mae %{name} wedi anfon neges atoch"
-
+      direct_message: "%{name} anfonodd neges atoch chi"
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Annwyl %{name},"
       instruction: "Eich cod OTP dilysu cyfrif yw:"
-      note: "Os nad ydych wedi gwneud y cais hwn, anwybyddwch y neges e-bost hon"
-  
-  errors:
-    invalid_credentials: "Cyn credentials annilys. Rhowch gynnig arall arni"
-    unauthorized_access: "Nid oes gennych fynediad i fewngofnodi"
-    channel_not_created: "Cyn credentials annilys. Gwnewch yn siŵr eich bod wedi creu sianel"
-    account_deleted: "Mae eich cyfrif eisoes wedi'i ddileu"
-
-  # API responses and messages
+      note: "Os nad ydych wedi gofyn am hyn, anwybyddwch yr e-bost hwn"
+  login_service:
+    errors:
+      invalid_credentials: "Cynadleddau annilys. Ceisiwch eto"
+      unauthorized_access: "Nid oes gennych fynediad i fewngofnodi"
+      channel_not_created: "Cynadleddau annilys. Gwnewch yn siŵr eich bod wedi creu sianel"
+      account_deleted: "Mae eich cyfrif eisoes wedi'i ddileu"
+      invalid_role_access: "Nid oes gan %{role} ganiatâd i fewngofnodi"
+      deactivated_channel: "Mae eich sianel wedi'i analluogi. Cysylltwch â chefnogaeth"
   api:
     errors:
-      unauthorized: "Nid oes gennych awdurdod i wneud y weithred hon"
-      forbidden: "Mynediad wedi'i wrthod!"
-      not_found: "Ni chanfuwyd yr adnodd"
-      unprocessable_entity: "Ni ellid prosesu'r cais"
-      internal_server_error: "Digwyddodd gwall mewnol y gweinydd"
-      validation_failed: "Methodd y dilysu!"
+      unauthorized: "Nid ydych wedi'ch awdurdodi i gyflawni'r weithred hon"
+      forbidden: "Gwahardd mynediad!"
+      not_found: "Heb ddod o hyd i'r adnodd"
+      unprocessable_entity: "Methu prosesu'r cais"
+      internal_server_error: "Digwyddodd gwall gweinydd mewnol"
+      validation_failed: "Methodd y dilysiad!"
       invalid_request: "Cais annilys!"
-      rate_limit_exceeded: "Rhedeg dros y terfyn cyfradd. Ceisiwch eto'n hwyrach"
-
+      rate_limit_exceeded: "Wedi rhagori ar y terfyn ceisiadau. Ceisiwch eto yn nes ymlaen"
     messages:
-      success: "Cwblhawyd y weithred yn llwyddiannus"
+      success: "Cwblhawyd y gweithrediad yn llwyddiannus"
       created: "Crëwyd yr adnodd yn llwyddiannus"
       updated: "Diweddarwyd yr adnodd yn llwyddiannus"
-      deleted: "Dilëwyd yr adnodd yn llwyddiannus"
-
+      deleted: "Dilewyd yr adnodd yn llwyddiannus"
     notification:
       messages:
-        token_already_exists: "Mae'r tocyn hysbysiad yn bodoli eisoes"
-        token_saved: "Tocyn hysbysiad wedi'i gadw"
-        token_deleted: "Dilëwyd y tocyn hysbysiad yn llwyddiannus"
-        token_not_found: "Ni chanfuwyd tocynnau hysbysiad"
-        mute_updated: "Diweddarwyd statws tawelu yn llwyddiannus"
-
+        token_already_exists: "Mae tocyn hysbysu eisoes yn bodoli"
+        token_saved: "Tocyn hysbysu wedi'i gadw"
+        token_deleted: "Tocyn hysbysu wedi'i ddileu'n llwyddiannus"
+        token_not_found: "Heb ddod o hyd i docynnau hysbysu"
+        mute_updated: "Diweddarwyd statws tawel yn llwyddiannus"
     account:
       errors:
-        email_not_found: "Ni chanfuwyd yr e-bost!"
+        email_not_found: "Heb ddod o hyd i e-bost!"
         email_invalid: "Fformat e-bost annilys"
         email_taken: "Mae'r e-bost eisoes wedi'i gymryd"
-        email_update_fail: "Methodd y diweddariad e-bost"
+        email_update_fail: "Methodd diweddaru'r e-bost"
         password_unmatch: "Nid yw'r cyfrineiriau'n cyfateb"
-        password_update_fail: "Methodd y diweddariad cyfrinair"
+        password_update_fail: "Methodd diweddaru'r cyfrinair"
         otp_invalid: "OTP annilys!"
-        register_not_allow: "Nid ydych yn cael cofrestru!"
-        missing_field: "Meysydd gofynnol ar goll"
+        register_not_allow: "Nid oes gennych ganiatâd i gofrestru!"
+        missing_field: "Mae meysydd gofynnol ar goll"
         password_incorrect: "Mae'r cyfrinair presennol yn anghywir"
-        username_taken: "Mae'r enw defnyddiwr eisoes wedi'i gymryd" 
+        username_taken: "Mae'r enw defnyddiwr eisoes wedi'i gymryd"
       messages:
-        password_updated: "Mae'r cyfrinair wedi'i ddiweddaru"
-
+        password_updated: "Diweddarwyd y cyfrinair"
     domain:
       messages:
-        dns_verified: "Mae'r DNS wedi'i ffurfweddu'n gywir"
-
+        dns_verified: "Mae DNS wedi'i ffurfweddu'n gywir"
     conversation:
       messages:
-        marked_read: "Wedi marcio %{updated_count} sgwrs(iau) fel wedi'u darllen"
+        marked_read: "Wedi marcio %{updated_count} sgwrs fel wedi'u darllen"

@@ -1,8 +1,4 @@
-# Norwegian Bokmål translations for Patchwork Dashboard
-# This file contains all Norwegian Bokmål translations for the application
-
 nb:
-  # Locale information
   locale:
     name: "Norwegian Bokmål"
     native_name: "Norsk bokmål"
@@ -20,13 +16,15 @@ nb:
       instruction: "Din kontoverifiserings-OTP-kode er som følger:"
       note: "Hvis du ikke ba om dette, vennligst ignorer denne e-posten"
   
-  errors:
-    invalid_credentials: "Ugyldige legitimasjonsopplysninger. Vennligst prøv igjen"
-    unauthorized_access: "Du har ikke tilgang til å logge inn"
-    channel_not_created: "Ugyldige legitimasjonsopplysninger. Vennligst sørg for at du har opprettet en kanal"
-    account_deleted: "Kontoen din er allerede slettet"
+  login_service:
+    errors:
+      invalid_credentials: "Ugyldige legitimasjonsopplysninger. Vennligst prøv igjen"
+      unauthorized_access: "Du har ikke tilgang til å logge inn"
+      channel_not_created: "Ugyldige legitimasjonsopplysninger. Vennligst sørg for at du har opprettet en kanal"
+      account_deleted: "Kontoen din er allerede slettet"
+      invalid_role_access: "%{role} har ikke tillatelse til å logge inn"
+      deactivated_channel: "Kanalen din er deaktivert. Vennligst kontakt støtte"
 
-  # API responses and messages
   api:
     errors:
       unauthorized: "Du har ikke tillatelse til å utføre denne handlingen"

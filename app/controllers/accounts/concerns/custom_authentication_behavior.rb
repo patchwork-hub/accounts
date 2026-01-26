@@ -64,7 +64,7 @@ module Accounts::Concerns::CustomAuthenticationBehavior
       { message: response.to_s, data: nil }
     end
   rescue StandardError
-    { message: I18n.t('errors.invalid_credentials'), data: nil }
+    { message: I18n.t('login_service.errors.invalid_credentials'), data: nil }
   end
 
 end

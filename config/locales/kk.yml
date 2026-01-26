@@ -1,8 +1,4 @@
-# Kazakh translations for Patchwork Dashboard
-# This file contains all Kazakh translations for the application
-
 kk:
-  # Locale information
   locale:
     name: "Kazakh"
     native_name: "Қазақша"
@@ -20,13 +16,15 @@ kk:
       instruction: "Сіздің тіркелгіні растау OTP коды төменде:"
       note: "Егер сіз мұны сұрамаған болсаңыз, бұл хатты елемеңіз"
   
-  errors:
-    invalid_credentials: "Жарамсыз тіркелгі деректері. Қайталап көріңіз"
-    unauthorized_access: "Сізге кіруге рұқсат жоқ"
-    channel_not_created: "Жарамсыз тіркелгі деректері. Арна жасағаныңызға көз жеткізіңіз"
-    account_deleted: "Сіздің тіркелгіңіз жойылған"
+  login_service:
+    errors:
+      invalid_credentials: "Жарамсыз тіркелгі деректері. Қайталап көріңіз"
+      unauthorized_access: "Сізге кіруге рұқсат жоқ"
+      channel_not_created: "Жарамсыз тіркелгі деректері. Арна жасағаныңызға көз жеткізіңіз"
+      account_deleted: "Сіздің тіркелгіңіз жойылған"
+      invalid_role_access: "%{role} кіруге рұқсат етілмеген"
+      deactivated_channel: "Сіздің арнаңыз өшірілген. Қолдау қызметіне хабарласыңыз"
 
-  # API responses and messages
   api:
     errors:
       unauthorized: "Сізге бұл әрекетті орындауға рұқсат жоқ"

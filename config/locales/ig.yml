@@ -1,0 +1,66 @@
+ig:
+  locale:
+    name: "Igbo"
+    native_name: "Igbo"
+  notification:
+    poll:
+      ended_you: "Ajụjụ ọnụ gị agwụla"
+      ended_voted: "Ajụjụ ọnụ ị voturu agwụla"
+    mention:
+      direct_message: "%{name} zitere gị ozi"
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Ndewo %{name},"
+      instruction: "Koodu OTP nkwenye akaụntụ gị bụ:"
+      note: "Ọ bụrụ na ị rụghị arịrịọ a, biko leghara email a anya"
+  login_service:
+    errors:
+      invalid_credentials: "Akwụkwọ ikike ezighi ezi. Biko gbalịa ọzọ"
+      unauthorized_access: "Ị nweghị ikike ịbanye"
+      channel_not_created: "Akwụkwọ ikike ezighi ezi. Jide n'aka na ị mepụtara ọwa"
+      account_deleted: "Akaụntụ gị ehichapụla"
+      invalid_role_access: "%{role} enyiereghị ikike ịbanye"
+      deactivated_channel: "Ọwa gị kwụsịrị. Kpọtụrụ nkwado"
+  api:
+    errors:
+      unauthorized: "Ị nweghị ikike ime ihe a"
+      forbidden: "Enyereghị ohere!"
+      not_found: "Enweghị ihe a chọtara"
+      unprocessable_entity: "Enweghị ike ịrụ ọrụ arịrịọ a"
+      internal_server_error: "Njehie sava ime ime mere"
+      validation_failed: "Nlele emeghị nke ọma!"
+      invalid_request: "Arịrịọ ezighi ezi!"
+      rate_limit_exceeded: "Agafeela oke arịrịọ. Biko gbalịa ọzọ emechaa"
+    messages:
+      success: "Ọrụ agwụla nke ọma"
+      created: "E mepụtara ihe a nke ọma"
+      updated: "E melite ihe a nke ọma"
+      deleted: "E hichapụ ihe a nke ọma"
+    notification:
+      messages:
+        token_already_exists: "Token nkwupụta adịlarị"
+        token_saved: "Token nkwupụta echekwara"
+        token_deleted: "Token nkwupụta ehichapụla nke ọma"
+        token_not_found: "Enweghị token nkwupụta a hụrụ"
+        mute_updated: "Emelitere ọnọdụ ndina nke ọma"
+    account:
+      errors:
+        email_not_found: "Enweghị email a hụrụ!"
+        email_invalid: "Ụdị email ezighi ezi"
+        email_taken: "Email adịlarị"
+        email_update_fail: "Emelitere email adịghị eme"
+        password_unmatch: "Okwuntughe adịghị agbanwe"
+        password_update_fail: "Emelitere okwuntughe adịghị eme"
+        otp_invalid: "OTP ezighi ezi!"
+        register_not_allow: "Ị nweghị ikike idebanye aha!"
+        missing_field: "Ebe a chọrọ adịghị"
+        password_incorrect: "Okwuntughe ugbu a ezighi ezi"
+        username_taken: "Aha njirimara adịlarị"
+      messages:
+        password_updated: "Emelitere okwuntughe"
+    domain:
+      messages:
+        dns_verified: "DNS edozila nke ọma"
+    conversation:
+      messages:
+        marked_read: "%{updated_count} mkparịta ụka edere dị ka agụchara"

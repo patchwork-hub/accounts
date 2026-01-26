@@ -1,8 +1,4 @@
-# English translations for Patchwork Dashboard
-# This file contains all English translations for the application
-
 en:
-  # Locale information
   locale:
     name: "English"
     native_name: "English"
@@ -20,13 +16,15 @@ en:
       instruction: "Your account verification OTP code is as below:"
       note: "If you didn't request this, please ignore this email"
   
-  errors:
-    invalid_credentials: "Invalid credentials. Please try again"
-    unauthorized_access: "You don't have access to login"
-    channel_not_created: "Invalid credentials. Please make sure you've created a channel"
-    account_deleted: "Your account is already deleted"
+  login_service:
+    errors:
+      invalid_credentials: "Invalid credentials. Please try again"
+      unauthorized_access: "You don't have access to login"
+      channel_not_created: "Invalid credentials. Please make sure you've created a channel"
+      account_deleted: "Your account is already deleted"
+      invalid_role_access: "%{role} isn't allowed to access login"
+      deactivated_channel: "Your channel is deactivated. Please contact support"
 
-  # API responses and messages
   api:
     errors:
       unauthorized: "You are not authorized to perform this action"

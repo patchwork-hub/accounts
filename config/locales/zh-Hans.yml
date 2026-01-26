@@ -1,8 +1,4 @@
-# Simplified Chinese translations for Patchwork Dashboard
-# This file contains all Simplified Chinese translations for the application
-
 zh-Hans:
-  # Locale information
   locale:
     name: "Chinese (Simplified)"
     native_name: "简体中文"
@@ -20,13 +16,15 @@ zh-Hans:
       instruction: "您的账户验证OTP代码如下："
       note: "如果您没有请求此操作，请忽略此邮件"
   
-  errors:
-    invalid_credentials: "凭据无效，请重试"
-    unauthorized_access: "您没有登录权限"
-    channel_not_created: "凭据无效，请确保您已创建频道"
-    account_deleted: "您的账户已被删除"
+  login_service:
+    errors:
+      invalid_credentials: "凭据无效，请重试"
+      unauthorized_access: "您没有登录权限"
+      channel_not_created: "凭据无效，请确保您已创建频道"
+      account_deleted: "您的账户已被删除"
+      invalid_role_access: "%{role} 不允许登录"
+      deactivated_channel: "您的频道已被停用。请联系客服"
 
-  # API responses and messages
   api:
     errors:
       unauthorized: "您无权执行此操作"

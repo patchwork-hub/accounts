@@ -1,8 +1,4 @@
-# Portuguese translations for Patchwork Dashboard
-# Traduções em português para o Patchwork Dashboard
-
 pt:
-  # Locale information
   locale:
     name: "Português"
     native_name: "Português"
@@ -20,13 +16,15 @@ pt:
       instruction: "O código OTP de verificação da sua conta é o seguinte:"
       note: "Se você não solicitou isso, por favor ignore este e-mail"
   
-  errors:
-    invalid_credentials: "Credenciais inválidas. Por favor, tente novamente"
-    unauthorized_access: "Você não tem acesso para fazer login"
-    channel_not_created: "Credenciais inválidas. Por favor, certifique-se de que você criou um canal"
-    account_deleted: "Sua conta já foi excluída"
+  login_service:
+    errors:
+      invalid_credentials: "Credenciais inválidas. Por favor, tente novamente"
+      unauthorized_access: "Você não tem acesso para fazer login"
+      channel_not_created: "Credenciais inválidas. Por favor, certifique-se de que você criou um canal"
+      account_deleted: "Sua conta já foi excluída"
+      invalid_role_access: "%{role} não tem permissão para fazer login"
+      deactivated_channel: "O seu canal está desativado. Entre em contato com o suporte"
 
-  # API responses and messages
   api:
     errors:
       unauthorized: "Não está autorizado a realizar esta ação"

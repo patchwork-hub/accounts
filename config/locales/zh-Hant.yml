@@ -1,8 +1,4 @@
-# Traditional Chinese translations for Patchwork Dashboard
-# This file contains all Traditional Chinese translations for the application
-
 zh-Hant:
-  # Locale information
   locale:
     name: "Chinese (Traditional)"
     native_name: "繁體中文"
@@ -20,13 +16,15 @@ zh-Hant:
       instruction: "您的帳戶驗證OTP代碼如下："
       note: "如果您沒有請求此操作，請忽略此郵件"
   
-  errors:
-    invalid_credentials: "憑據無效，請重試"
-    unauthorized_access: "您沒有登入權限"
-    channel_not_created: "憑據無效，請確保您已建立頻道"
-    account_deleted: "您的帳戶已被刪除"
+  login_service:
+    errors:
+      invalid_credentials: "憑據無效，請重試"
+      unauthorized_access: "您沒有登入權限"
+      channel_not_created: "憑據無效，請確保您已建立頻道"
+      account_deleted: "您的帳戶已被刪除"
+      invalid_role_access: "%{role} 不允許登入"
+      deactivated_channel: "您的頻道已被停用。請聯繫客服"
 
-  # API responses and messages
   api:
     errors:
       unauthorized: "您無權執行此操作"

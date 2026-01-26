@@ -1,8 +1,4 @@
-# Korean translations for Patchwork Dashboard
-# This file contains all Korean translations for the application
-
 ko:
-  # Locale information
   locale:
     name: "Korean"
     native_name: "한국어"
@@ -20,13 +16,15 @@ ko:
       instruction: "계정 인증 OTP 코드는 다음과 같습니다:"
       note: "요청하지 않으셨다면 이 이메일을 무시해 주세요"
   
-  errors:
-    invalid_credentials: "잘못된 자격 증명입니다. 다시 시도해 주세요"
-    unauthorized_access: "로그인 권한이 없습니다"
-    channel_not_created: "잘못된 자격 증명입니다. 채널을 생성했는지 확인해 주세요"
-    account_deleted: "계정이 이미 삭제되었습니다"
+  login_service:
+    errors:
+      invalid_credentials: "잘못된 자격 증명입니다. 다시 시도해 주세요"
+      unauthorized_access: "로그인 권한이 없습니다"
+      channel_not_created: "잘못된 자격 증명입니다. 채널을 생성했는지 확인해 주세요"
+      account_deleted: "계정이 이미 삭제되었습니다"
+      invalid_role_access: "%{role}은(는) 로그인이 허용되지 않습니다"
+      deactivated_channel: "채널이 비활성화되었습니다. 지원팀에 문의해 주세요"
 
-  # API responses and messages
   api:
     errors:
       unauthorized: "이 작업을 수행할 권한이 없습니다"

@@ -1,54 +1,66 @@
-# Danish translations for Patchwork Dashboard
-# This file contains all Danish translations for the application
-
 da:
-  # Locale information
   locale:
     name: "Danish"
     native_name: "Dansk"
-
-  # API responses and messages
+  notification:
+    poll:
+      ended_you: "Din afstemning er afsluttet"
+      ended_voted: "En afstemning, du har stemt i, er afsluttet"
+    mention:
+      direct_message: "%{name} har sendt dig en besked"
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Kære %{name},"
+      instruction: "Din OTP-kode til kontobekræftelse er:"
+      note: "Hvis du ikke har anmodet om dette, bedes du ignorere denne e-mail"
+  login_service:
+    errors:
+      invalid_credentials: "Ugyldige legitimationsoplysninger. Prøv igen"
+      unauthorized_access: "Du har ikke adgang til at logge ind"
+      channel_not_created: "Ugyldige legitimationsoplysninger. Sørg for, at du har oprettet en kanal"
+      account_deleted: "Din konto er allerede blevet slettet"
+      invalid_role_access: "%{role} har ikke tilladelse til at logge ind"
+      deactivated_channel: "Din kanal er deaktiveret. Kontakt supporten"
   api:
     errors:
-      unauthorized: "Du har ikke tilladelse til at udføre denne handling"
+      unauthorized: "Du er ikke autoriseret til at udføre denne handling"
       forbidden: "Adgang nægtet!"
       not_found: "Ressource ikke fundet"
       unprocessable_entity: "Anmodningen kunne ikke behandles"
       internal_server_error: "Der opstod en intern serverfejl"
       validation_failed: "Validering mislykkedes!"
       invalid_request: "Ugyldig anmodning!"
-      rate_limit_exceeded: "Hastighedsgrænse overskredet. Prøv venligst igen senere"
-
+      rate_limit_exceeded: "Grænsen for anmodninger er overskredet. Prøv igen senere"
     messages:
-      success: "Handlingen blev gennemført"
-      created: "Ressource oprettet"
-      updated: "Ressource opdateret"
-      deleted: "Ressource slettet"
-
+      success: "Handlingen blev gennemført med succes"
+      created: "Ressourcen blev oprettet med succes"
+      updated: "Ressourcen blev opdateret med succes"
+      deleted: "Ressourcen blev slettet med succes"
     notification:
       messages:
         token_already_exists: "Notifikationstoken findes allerede"
         token_saved: "Notifikationstoken gemt"
-        token_deleted: "Notifikationstoken slettet"
-        token_not_found: "Ingen notifikationstokens fundet"
-        mute_updated: "Lydløs-status opdateret"
-
+        token_deleted: "Notifikationstoken blev slettet med succes"
+        token_not_found: "Ingen notifikationstokener fundet"
+        mute_updated: "Lydløs status blev opdateret med succes"
     account:
       errors:
         email_not_found: "E-mail ikke fundet!"
-        email_invalid: "Ugyldigt e-mail-format"
-        email_taken: "E-mail er allerede i brug"
-        email_update_fail: "E-mail-opdatering mislykkedes"
+        email_invalid: "Ugyldigt e-mailformat"
+        email_taken: "E-mailen er allerede taget"
+        email_update_fail: "Opdatering af e-mailen mislykkedes"
         password_unmatch: "Adgangskoderne stemmer ikke overens"
-        password_update_fail: "Adgangskodeopdatering mislykkedes"
-        otp_invalid: "Ugyldig engangskode!"
+        password_update_fail: "Opdatering af adgangskoden mislykkedes"
+        otp_invalid: "Ugyldig OTP!"
         register_not_allow: "Du har ikke tilladelse til at registrere dig!"
-        missing_field: "Manglende påkrævede felter"
+        missing_field: "Påkrævede felter mangler"
         password_incorrect: "Nuværende adgangskode er forkert"
-        username_taken: "Brugernavn er allerede i brug"
+        username_taken: "Brugernavnet er allerede taget"
       messages:
         password_updated: "Adgangskoden er blevet opdateret"
-
     domain:
       messages:
         dns_verified: "DNS er korrekt konfigureret"
+    conversation:
+      messages:
+        marked_read: "Markerede %{updated_count} samtale(r) som læst"
