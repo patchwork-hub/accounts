@@ -13,7 +13,6 @@ module EmailNotificationAttributesConcern
       "notification_emails.pending_account" => enabled,
       "notification_emails.trends" => enabled,
       "notification_emails.appeal" => enabled,
-      "notification_emails.quote" => enabled,
       "notification_emails.software_updates" => enabled ? "critical" : "none"
     }
   end
