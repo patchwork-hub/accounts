@@ -15,8 +15,7 @@ class CustomPasswordsMailer < ApplicationMailer
       @subject = 'OTP verification code'
       mail(
         to: @user.email,
-        subject: @subject,
-        from: "#{sender_name} <#{ENV['SMTP_FROM_ADDRESS']}>"
+        subject: @subject
       )
     end
   end
