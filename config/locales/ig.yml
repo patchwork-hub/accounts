@@ -21,6 +21,12 @@ ig:
       account_deleted: "Akaụntụ gị ehichapụla"
       invalid_role_access: "%{role} enyiereghị ikike ịbanye"
       deactivated_channel: "Ọwa gị kwụsịrị. Kpọtụrụ nkwado"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Biko gbalịa ọzọ. Akwụkwọ ikike ezighi ezi site na beebee.io"
+      registration_required: "Biko debanye aha akaụntụ mpaghara. data: %{data}"
+      connection_error: "Njehie ịjikọ na ọrụ ndị otu: %{error}"
   api:
     errors:
       unauthorized: "Ị nweghị ikike ime ihe a"

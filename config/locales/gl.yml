@@ -21,6 +21,12 @@ gl:
       account_deleted: "A túa conta xa foi eliminada"
       invalid_role_access: "%{role} non ten permiso para iniciar sesión"
       deactivated_channel: "O teu canal está desactivado. Contacta co soporte"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Inténtao de novo. Credenciais non válidas de beebee.io"
+      registration_required: "Por favor, rexistra unha conta local. datos: %{data}"
+      connection_error: "Erro ao conectar co servizo de membros: %{error}"
   api:
     errors:
       unauthorized: "Non tes autorización para realizar esta acción"

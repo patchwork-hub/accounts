@@ -21,6 +21,12 @@ ka:
       account_deleted: "თქვენი ანგარიში უკვე წაშლილია"
       invalid_role_access: "%{role} არ არის დაშვებული შესვლაზე"
       deactivated_channel: "თქვენი არხი დეაქტივირებულია. დაუკავშირდით მხარდაჭერას"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "გთხოვთ, სცადეთ თავიდან. არასწორი ავტორიზაცია beebee.io-დან"
+      registration_required: "გთხოვთ, დარეგისტრიროთ ლოკალური ანგარიში. მონაცემები: %{data}"
+      connection_error: "შეცდომა წევრობის სერვისთან დაკავშირებისას: %{error}"
   api:
     errors:
       unauthorized: "თქვენ არ გაქვთ ამ ქმედების შესრულების უფლება"

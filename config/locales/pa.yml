@@ -21,6 +21,12 @@ pa:
       account_deleted: "ਤੁਹਾਡਾ ਖਾਤਾ ਪਹਿਲਾਂ ਹੀ ਹਟਾਇਆ ਜਾ ਚੁੱਕਾ ਹੈ"
       invalid_role_access: "%{role} ਨੂੰ ਲੌਗਇਨ ਕਰਨ ਦੀ ਆਗਿਆ ਨਹੀਂ ਹੈ"
       deactivated_channel: "ਤੁਹਾਡਾ ਚੈਨਲ ਨਿਸ਼ਕ੍ਰਿਆ ਹੈ। ਸਹਾਇਤਾ ਨਾਲ ਸੰਪਰਕ ਕਰੋ"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ। beebee.io ਤੋਂ ਅਵੈਧ ਪ੍ਰਮਾਣ ਪੱਤਰ"
+      registration_required: "ਕਿਰਪਾ ਕਰਕੇ ਸਥਾਨਕ ਖਾਤਾ ਰਜਿਸਟਰ ਕਰੋ। ਡਾਟਾ: %{data}"
+      connection_error: "ਸਦੱਸਤਾ ਸੇਵਾ ਨਾਲ ਕਨੈਕਟ ਕਰਨ ਵਿੱਚ ਗਲਤੀ: %{error}"
   api:
     errors:
       unauthorized: "ਤੁਹਾਨੂੰ ਇਹ ਕਾਰਵਾਈ ਕਰਨ ਦੀ ਆਗਿਆ ਨਹੀਂ ਹੈ"

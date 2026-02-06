@@ -21,6 +21,12 @@ be:
       account_deleted: "Ваш акаўнт ужо выдалены"
       invalid_role_access: "%{role} не мае доступу для ўваходу"
       deactivated_channel: "Ваш канал дэактываваны. Звярніцеся ў падтрымку"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Паспрабуйце яшчэ раз. Няправільныя дадзеныя з beebee.io"
+      registration_required: "Калі ласка, зарэгіструйце лакальны акаўнт. дадзеныя: %{data}"
+      connection_error: "Памылка падключэння да сэрвісу членства: %{error}"
   api:
     errors:
       unauthorized: "У вас няма дазволу на выкананне гэтай дзеяння"

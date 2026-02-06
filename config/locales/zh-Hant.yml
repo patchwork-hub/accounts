@@ -25,6 +25,12 @@ zh-Hant:
       invalid_role_access: "%{role} 不允許登入"
       deactivated_channel: "您的頻道已被停用。請聯繫客服"
 
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "請重試。來自 beebee.io 的憑據無效"
+      registration_required: "請註冊本地帳戶。資料：%{data}"
+      connection_error: "連線至會員服務時發生錯誤：%{error}"
+
   api:
     errors:
       unauthorized: "您無權執行此操作"

@@ -21,6 +21,12 @@ de:
       account_deleted: "Dein Konto wurde bereits gelöscht"
       invalid_role_access: "%{role} ist nicht zum Einloggen berechtigt"
       deactivated_channel: "Dein Kanal ist deaktiviert. Bitte kontaktiere den Support"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Bitte versuche es erneut. Ungültige Zugangsdaten von beebee.io"
+      registration_required: "Bitte registriere ein lokales Konto. Daten: %{data}"
+      connection_error: "Fehler beim Verbinden mit dem Mitgliedschaftsdienst: %{error}"
   api:
     errors:
       unauthorized: "Du bist nicht berechtigt, diese Aktion auszuführen"

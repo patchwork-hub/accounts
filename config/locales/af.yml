@@ -21,6 +21,12 @@ af:
       account_deleted: "Jou rekening is reeds uitgevee"
       invalid_role_access: "%{role} mag nie aanmeld nie"
       deactivated_channel: "Jou kanaal is gedeaktiveer. Kontak asseblief ondersteuning"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Probeer asseblief weer. Ongeldige besonderhede van beebee.io"
+      registration_required: "Registreer asseblief 'n plaaslike rekening. data: %{data}"
+      connection_error: "Fout met verbinding aan lidmaatskapdiens: %{error}"
   api:
     errors:
       unauthorized: "Jy is nie gemagtig om hierdie aksie uit te voer nie"

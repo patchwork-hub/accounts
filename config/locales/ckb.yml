@@ -25,6 +25,12 @@ ckb:
       invalid_role_access: "%{role} دەسەڵات نییە بۆ چوونەژوورەوە"
       deactivated_channel: "کەنالت ناچالاکە. تکایە پەیوەندی بکە بە پشتیوانی"
 
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "تکایە دووبارە هەوڵ بدەوە. زانیاری نادروست لە beebee.io"
+      registration_required: "تکایە هەژمارێکی ناوخۆیی تۆمار بکە. زانیاری: %{data}"
+      connection_error: "هەڵە لە پەیوەندی بە خزمەتگوزاری ئەندامیەتی: %{error}"
+
   api:
     errors:
       unauthorized: "دەسەڵاتت نییە بۆ ئەم کردارە"

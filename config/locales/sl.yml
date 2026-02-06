@@ -21,6 +21,12 @@ sl:
       account_deleted: "Vaš račun je že izbrisan"
       invalid_role_access: "%{role} nima dovoljenja za prijavo"
       deactivated_channel: "Vaš kanal je deaktiviran. Obrnite se na podporo"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Poskusite znova. Neveljavni podatki za prijavo iz beebee.io"
+      registration_required: "Prosimo, registrirajte lokalni račun. podatki: %{data}"
+      connection_error: "Napaka pri povezovanju s člansko storitev: %{error}"
   api:
     errors:
       unauthorized: "Nimate dovoljenja za to dejanje"

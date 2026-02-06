@@ -21,6 +21,12 @@ et:
       account_deleted: "Sinu konto on juba kustutatud"
       invalid_role_access: "%{role} ei ole lubatud sisse logida"
       deactivated_channel: "Sinu kanal on deaktiveeritud. Palun võta ühendust toega"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Palun proovi uuesti. Vigased andmed beebee.io-st"
+      registration_required: "Palun registreeri kohalik konto. andmed: %{data}"
+      connection_error: "Viga liikmesuse teenusega ühendamisel: %{error}"
   api:
     errors:
       unauthorized: "Sul ei ole õigust seda toimingut teha"

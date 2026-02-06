@@ -21,6 +21,12 @@ fil:
       account_deleted: "Ang iyong account ay nabura na"
       invalid_role_access: "Hindi pinapayagan si %{role} na mag-login"
       deactivated_channel: "Na-deactivate ang iyong channel. Makipag-ugnayan sa suporta"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Pakisubukang muli. Di-wastong kredensyal mula sa beebee.io"
+      registration_required: "Pakipagrehistro ng lokal na account. datos: %{data}"
+      connection_error: "Error sa pagkonekta sa membership service: %{error}"
   api:
     errors:
       unauthorized: "Wala kang pahintulot na gawin ito"

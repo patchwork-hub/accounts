@@ -21,6 +21,12 @@ he:
       account_deleted: "החשבון שלך כבר נמחק"
       invalid_role_access: "%{role} אינו מורשה להתחבר"
       deactivated_channel: "הערוץ שלך מושבת. פנה לתמיכה"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "נסה שוב. פרטי התחברות לא תקינים מ-beebee.io"
+      registration_required: "אנא צור חשבון מקומי. נתונים: %{data}"
+      connection_error: "שגיאה בחיבור לשירות החברות: %{error}"
   api:
     errors:
       unauthorized: "אין לך הרשאה לבצע פעולה זו"

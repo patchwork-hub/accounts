@@ -21,6 +21,12 @@ id:
       account_deleted: "Akun Anda sudah dihapus"
       invalid_role_access: "%{role} tidak diizinkan untuk login"
       deactivated_channel: "Saluran Anda dinonaktifkan. Silakan hubungi dukungan"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Silakan coba lagi. Kredensial tidak valid dari beebee.io"
+      registration_required: "Silakan daftarkan akun lokal. data: %{data}"
+      connection_error: "Kesalahan menghubungkan ke layanan keanggotaan: %{error}"
   api:
     errors:
       unauthorized: "Anda tidak diizinkan untuk melakukan tindakan ini"

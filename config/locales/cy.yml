@@ -21,6 +21,12 @@ cy:
       account_deleted: "Mae eich cyfrif eisoes wedi'i ddileu"
       invalid_role_access: "Nid oes gan %{role} ganiatâd i fewngofnodi"
       deactivated_channel: "Mae eich sianel wedi'i analluogi. Cysylltwch â chefnogaeth"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Ceisiwch eto. Cynadleddau annilys o beebee.io"
+      registration_required: "Cofrestrwch gyfrif lleol. data: %{data}"
+      connection_error: "Gwall wrth gysylltu â gwasanaeth aelodaeth: %{error}"
   api:
     errors:
       unauthorized: "Nid ydych wedi'ch awdurdodi i gyflawni'r weithred hon"

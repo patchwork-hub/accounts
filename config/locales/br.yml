@@ -21,6 +21,11 @@ br:
       account_deleted: "Dilamet eo bet ho kont dija"
       invalid_role_access: "N'eo ket aotreet %{role} da kevreañ"
       deactivated_channel: "Diweredekaet eo ho chadenn. Kit e darempred gant ar sikour mar plij"
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Klaskit en-dro mar plij. Titouroù direizh eus beebee.io"
+      registration_required: "Krouit ur gont lec'hel mar plij. roadennoù: %{data}"
+      connection_error: "Fazi o kennaskañ d'ar servij ezel: %{error}"  
   api:
     errors:
       unauthorized: "N'oc'h ket aotreet da seveniñ an ober-mañ"

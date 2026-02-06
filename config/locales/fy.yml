@@ -21,6 +21,12 @@ fy:
       account_deleted: "Jo akkount is al fuorthelle"
       invalid_role_access: "%{role} hat gjin tastimming om yn te loggen"
       deactivated_channel: "Jo kanaal is deaktivearre. Nim kontakt op mei stipe"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Besykje it nochris. Unjildige credentials fan beebee.io"
+      registration_required: "Registrearje in lokaal akkount. gegevens: %{data}"
+      connection_error: "Flater by ferbining mei lidmaatskipstsjinst: %{error}"
   api:
     errors:
       unauthorized: "Jo binne net autorisearre om dizze aksje út te fieren"

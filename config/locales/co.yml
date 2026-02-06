@@ -21,6 +21,12 @@ co:
       account_deleted: "U vostru contu hè digià statu eliminatu"
       invalid_role_access: "%{role} ùn hè micca permessu d'accede"
       deactivated_channel: "U vostru canale hè disattivatu. Cuntattate u supportu"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Pruvate torna. Credenziali invalide da beebee.io"
+      registration_required: "Registrate un contu lucale. dati: %{data}"
+      connection_error: "Errore di cunnessione à u serviziu di membri: %{error}"
   api:
     errors:
       unauthorized: "Ùn site micca autorizatu à fà questa azzione"

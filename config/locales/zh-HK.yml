@@ -21,6 +21,12 @@ zh-HK:
       account_deleted: "您的帳戶已被刪除"
       invalid_role_access: "%{role} 無權登錄"
       deactivated_channel: "您的頻道已停用。請聯繫支持"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "請重試。來自 beebee.io 的憑證無效"
+      registration_required: "請在本地註冊帳戶。數據：%{data}"
+      connection_error: "連接會員服務時出錯：%{error}"
   api:
     errors:
       unauthorized: "您無權執行此操作"

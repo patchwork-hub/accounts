@@ -21,6 +21,12 @@ no:
       account_deleted: "Kontoen din er allerede slettet"
       invalid_role_access: "%{role} har ikke tilgang til å logge inn"
       deactivated_channel: "Kanalen din er deaktivert. Kontakt brukerstøtte"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Prøv igjen. Ugyldige påloggingsdetaljer fra beebee.io"
+      registration_required: "Vennligst registrer en lokal konto. data: %{data}"
+      connection_error: "Feil ved tilkobling til medlemstjeneste: %{error}"
   api:
     errors:
       unauthorized: "Du har ikke tillatelse til å utføre denne handlingen"

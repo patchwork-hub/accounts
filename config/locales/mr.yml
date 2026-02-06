@@ -21,6 +21,12 @@ mr:
       account_deleted: "तुमचे खाते आधीच हटवले आहे"
       invalid_role_access: "%{role} ला लॉगिन करण्याची परवानगी नाही"
       deactivated_channel: "तुमचा चॅनेल निष्क्रिय आहे. कृपया समर्थनाशी संपर्क करा"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "कृपया पुन्हा प्रयत्न करा. beebee.io कडून अवैध क्रेडेन्शियल्स"
+      registration_required: "कृपया स्थानिक खाते नोंदणी करा. डेटा: %{data}"
+      connection_error: "सदस्यत्व सेवा शी जोडताना त्रुटी: %{error}"
   api:
     errors:
       unauthorized: "तुम्हाला ही क्रिया करण्याची परवानगी नाही"

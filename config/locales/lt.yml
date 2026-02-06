@@ -21,6 +21,12 @@ lt:
       account_deleted: "Jūsų paskyra jau ištrinta"
       invalid_role_access: "%{role} neturi teisės prisijungti"
       deactivated_channel: "Jūsų kanalas išjungtas. Susisiekite su palaikymu"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Bandykite dar kartą. Neteisingi prisijungimo duomenys iš beebee.io"
+      registration_required: "Prašome užregistruoti vietinę paskyrą. duomenys: %{data}"
+      connection_error: "Klaida jungiantis prie narių paslaugos: %{error}"
   api:
     errors:
       unauthorized: "Jūs neturite teisės atlikti šio veiksmo"

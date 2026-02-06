@@ -21,6 +21,12 @@ bg:
       account_deleted: "Вашият акаунт вече е изтрит"
       invalid_role_access: "%{role} няма достъп до вход"
       deactivated_channel: "Вашият канал е деактивиран. Моля, свържете се с поддръжка"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Моля, опитайте отново. Невалидни данни от beebee.io"
+      registration_required: "Моля, регистрирайте локален акаунт. данни: %{data}"
+      connection_error: "Грешка при свързване със службата за членство: %{error}"
   api:
     errors:
       unauthorized: "Нямате разрешение за това действие"

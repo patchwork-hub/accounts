@@ -21,6 +21,12 @@ ia:
       account_deleted: "Tu conto es jam delite"
       invalid_role_access: "%{role} non es permittite acceder"
       deactivated_channel: "Tu canal es deactivate. Contacta le supporto"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Per favor prova de novo. Credentiales invalide de beebee.io"
+      registration_required: "Per favor registra un conto local. datos: %{data}"
+      connection_error: "Error connectente al servicio de membros: %{error}"
   api:
     errors:
       unauthorized: "Tu non es autorizate pro facer iste action"

@@ -25,6 +25,12 @@ pt:
       invalid_role_access: "%{role} não tem permissão para fazer login"
       deactivated_channel: "O seu canal está desativado. Entre em contato com o suporte"
 
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Por favor, tente novamente. Credenciais inválidas de beebee.io"
+      registration_required: "Por favor, registe uma conta local. dados: %{data}"
+      connection_error: "Erro ao conectar ao serviço de associação: %{error}"
+
   api:
     errors:
       unauthorized: "Não está autorizado a realizar esta ação"

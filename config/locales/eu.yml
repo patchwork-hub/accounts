@@ -21,6 +21,12 @@ eu:
       account_deleted: "Zure kontua dagoeneko ezabatuta dago"
       invalid_role_access: "%{role}k ez du saioa hasteko baimenik"
       deactivated_channel: "Zure kanala desaktibatuta dago. Jarri harremanetan laguntzarekin"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Saiatu berriro. Baliogabeko kredentzialak beebee.io-tik"
+      registration_required: "Mesedez, erregistratu kontu lokal bat. datuak: %{data}"
+      connection_error: "Errorea kide zerbitzuarekin konektatzean: %{error}"
   api:
     errors:
       unauthorized: "Ez duzu ekintza hau egiteko baimenik"

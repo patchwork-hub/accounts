@@ -21,6 +21,12 @@ nl:
       account_deleted: "Je account is al verwijderd"
       invalid_role_access: "%{role} mag niet inloggen"
       deactivated_channel: "Je kanaal is gedeactiveerd. Neem contact op met support"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Probeer het opnieuw. Ongeldige inloggegevens van beebee.io"
+      registration_required: "Registreer een lokaal account. gegevens: %{data}"
+      connection_error: "Fout bij verbinden met lidmaatschapsservice: %{error}"
   api:
     errors:
       unauthorized: "Je bent niet gemachtigd om deze actie uit te voeren"

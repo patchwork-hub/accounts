@@ -21,6 +21,12 @@ ga:
       account_deleted: "Tá do chuntas scriosta cheana féin"
       invalid_role_access: "Níl cead ag %{role} logáil isteach"
       deactivated_channel: "Tá do chainéal díghníomhachtaithe. Déan teagmháil le tacaíocht"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Bain triail eile as. Dintiúir neamhbhailí ó beebee.io"
+      registration_required: "Cláraigh cuntas áitiúil. sonraí: %{data}"
+      connection_error: "Earráid ag ceangal le seirbhís ballraíochta: %{error}"
   api:
     errors:
       unauthorized: "Níl cead agat an gníomh seo a dhéanamh"

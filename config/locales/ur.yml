@@ -21,6 +21,12 @@ ur:
       account_deleted: "آپ کا اکاؤنٹ پہلے ہی حذف ہو چکا ہے"
       invalid_role_access: "%{role} کو لاگ ان کرنے کی اجازت نہیں ہے"
       deactivated_channel: "آپ کا چینل غیر فعال ہے۔ براہ کرم سپورٹ سے رابطہ کریں"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "دوبارہ کوشش کریں۔ beebee.io سے غلط اسناد"
+      registration_required: "براہ کرم مقامی اکاؤنٹ رجسٹر کریں۔ ڈیٹا: %{data}"
+      connection_error: "رکنیت کی خدمت سے منسلک ہونے میں خرابی: %{error}"
   api:
     errors:
       unauthorized: "آپ کو یہ عمل کرنے کی اجازت نہیں ہے"
