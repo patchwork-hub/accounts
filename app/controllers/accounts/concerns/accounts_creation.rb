@@ -3,9 +3,12 @@
 module Accounts::Concerns::AccountsCreation
   extend ActiveSupport::Concern
   include NonChannelHelper
+  include PatchworkHelper
+  include MoMeHelper
 
   def create
-    token    = AppSignUpService.new.call(doorkeeper_token.application, request.remote_ip, account_params)
+    params_with_reason = account_params.merge(reason: "Signing up via #{ ENV.fetch('LOCAL_DOMAIN', nil) } App")
+    token    = AppSignUpService.new.call(doorkeeper_token.application, request.remote_ip, params_with_reason)
     response = Doorkeeper::OAuth::TokenResponse.new(token)
 
     headers.merge!(response.headers)
@@ -31,15 +34,17 @@ module Accounts::Concerns::AccountsCreation
   end
 
   def create_community_admin
-    return unless Object.const_defined?('Accounts::CommunityAdmin')
+    return unless patchwork_community_admin_exist?
 
-    return unless defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
+    community_admin = Accounts::CommunityAdmin.new(
+      email: account_params[:email],
+      username: account_params[:username],
+      password: account_params[:password]
+    )
+    community_admin.save
+  end
 
-      community_admin = Accounts::CommunityAdmin.new(
-        email: account_params[:email],
-        username: account_params[:username],
-        password: account_params[:password]
-      )
-      community_admin.save
-    end
+  def account_params
+    params.permit(:username, :email, :password, :agreement, :locale, :reason, :time_zone, :invite_code, :date_of_birth).merge(invitation_code: params[:invitation_code], skip_waitlist: params[:skip_waitlist])
+  end
 end

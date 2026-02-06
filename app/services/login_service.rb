@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class LoginService
+  include PatchworkHelper
+
   def initialize(params)
     @params = params
   end
@@ -21,41 +23,23 @@ class LoginService
 
   private
 
-  def handle_web_login
-    user = fetch_user_credentials
-    if user.nil? || user&.confirmed_at.nil?
-      return I18n.t('errors.unauthorized_access')
-    end
-
-    unless %w[UserAdmin HubAdmin].include?(user.role&.name)
-      readable_role = user.role&.name&.gsub(/([a-z])([A-Z])/, '\1 \2')&.downcase&.capitalize
-      return I18n.t('errors.unauthorized_access')
-    end
-
-    nil
-  end
-
   def fetch_user_credentials
     User.find_by(email: @params[:username])
   end
 
   def fetch_channel_credentials(user)
-    return unless Object.const_defined?('Accounts::CommunityAdmin')
+    return unless patchwork_community_admin_exist?
 
-    if defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
-      Accounts::CommunityAdmin.joins(:community).find_by(
-        account_id: user.account_id,
-        is_boost_bot: true,
-        account_status: Accounts::CommunityAdmin.account_statuses['active'],
-        community: { deleted_at: nil }
-      )
-    end
+    Accounts::CommunityAdmin.joins(:community).find_by(
+      account_id: user.account_id,
+      is_boost_bot: true,
+      account_status: Accounts::CommunityAdmin.account_statuses['active'],
+      community: { deleted_at: nil }
+    )
   end
 
   def channel_active?(user)
-    return false unless Object.const_defined?('Accounts::CommunityAdmin')
-
-    return false unless defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
+    return false unless patchwork_community_admin_exist?
 
     community_admin = Accounts::CommunityAdmin.find_by(account_id: user.account_id, is_boost_bot: true)
     return true if community_admin.nil? || community_admin&.account_status == Accounts::CommunityAdmin.account_statuses['active']
@@ -69,36 +53,32 @@ class LoginService
     return nil if client_credentials?
 
     user = fetch_user_credentials
-    return I18n.t('errors.unauthorized_access') if user.nil? || user&.confirmed_at.nil?
+    return I18n.t('login_service.errors.unauthorized_access') if user.nil? || user&.confirmed_at.nil?
 
-    return I18n.t('errors.invalid_credentials') unless user.role&.name.eql?('UserAdmin') || user.role&.name.eql?('HubAdmin') || user.role&.name.eql?('MasterAdmin')
+    return I18n.t('login_service.errors.invalid_role_access', role: user.role&.name&.underscore&.humanize) unless user.role&.name.eql?('UserAdmin') || user.role&.name.eql?('HubAdmin') || user.role&.name.eql?('MasterAdmin')
 
-    return I18n.t('errors.channel_not_created') unless channel_active?(user)
+    return I18n.t('login_service.errors.deactivated_channel') unless channel_active?(user)
 
     nil
   end
 
   def handle_app_login
+    return nil if client_credentials?
+
     user = grant_password? ? fetch_user_credentials : fetch_access_token_grant
-    return I18n.t('errors.unauthorized_access') if user.nil?
+    return I18n.t('login_service.errors.unauthorized_access') if user.nil?
 
     community_admin = fetch_channel_credentials(user)
-    return I18n.t('errors.channel_not_created') if community_admin.nil?
+    return I18n.t('login_service.errors.channel_not_created') if community_admin.nil?
 
-    return I18n.t('errors.account_deleted') if community_admin&.account_status == 'deleted'
+    return I18n.t('login_service.errors.account_deleted') if community_admin&.account_status == 'deleted'
 
-    return I18n.t('api.errors.unauthorized') unless valid_permissions?(community_admin, user)
+    return I18n.t('login_service.errors.invalid_credentials') unless valid_permissions?(community_admin, user)
+
     nil
   end
 
-  def fetch_channel_credentials(user)
-    return nil unless Object.const_defined?('Accounts::CommunityAdmin')
-
-    return nil unless defined?(Accounts::CommunityAdmin) && Accounts::CommunityAdmin.respond_to?(:find_by)
-
-    CommunityAdmin.find_by(account_id: user.account_id, is_boost_bot: true, account_status: CommunityAdmin.account_statuses["active"])
-  end
-
+  # This is a solution to allow the creation of a Channel feed and Hub
   def web_login?
     truthy_param?(@params[:is_web_login])
   end
@@ -113,12 +93,18 @@ class LoginService
   end
 
   def belong_any_channel?(community_admin)
-    return false unless community_admin&.patchwork_community_id.present?
+    return false unless patchwork_community_exist?
 
-    Community.exists?(
+    return false if community_admin&.patchwork_community_id.blank?
+
+    Accounts::Community.exists?(
       id: community_admin.patchwork_community_id,
-      visibility: Community.visibilities.keys
+      visibility: Accounts::Community.visibilities.keys
     )
+  end
+
+  def render_error(error)
+    render json: { error: error }, status: 401
   end
 
   def grant_password?
@@ -127,6 +113,10 @@ class LoginService
 
   def client_credentials?
     @params[:grant_type] == 'client_credentials'
+  end
+
+  def authorization_code?
+    @params[:grant_type] == 'authorization_code'
   end
 
   def fetch_access_token_grant

@@ -1,77 +1,72 @@
-# Slovak translations for Patchwork Dashboard
-# This file contains all Slovak translations for the application
-
 sk:
-  # Locale information
   locale:
     name: "Slovak"
     native_name: "Slovenčina"
-  
   notification:
     poll:
       ended_you: "Vaša anketa sa skončila"
       ended_voted: "Anketa, v ktorej ste hlasovali, sa skončila"
     mention:
       direct_message: "%{name} vám poslal správu"
-
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Vážený/á %{name},"
-      instruction: "Váš overovací OTP kód účtu je uvedený nižšie:"
+      instruction: "Váš overovací OTP kód účtu je:"
       note: "Ak ste o to nepožiadali, ignorujte tento e-mail"
-  
-  errors:
-    invalid_credentials: "Neplatné prihlasovacie údaje. Skúste to znova"
-    unauthorized_access: "Nemáte prístup na prihlásenie"
-    channel_not_created: "Neplatné prihlasovacie údaje. Uistite sa, že ste vytvorili kanál"
-    account_deleted: "Váš účet je už odstránený"
+  login_service:
+    errors:
+      invalid_credentials: "Neplatné prihlasovacie údaje. Skúste to znova"
+      unauthorized_access: "Nemáte prístup na prihlásenie"
+      channel_not_created: "Neplatné prihlasovacie údaje. Uistite sa, že ste vytvorili kanál"
+      account_deleted: "Váš účet už bol odstránený"
+      invalid_role_access: "%{role} nemá povolenie na prihlásenie"
+      deactivated_channel: "Váš kanál je deaktivovaný. Kontaktujte podporu"
 
-  # API responses and messages
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Skúste to znova. Neplatné prihlasovacie údaje z beebee.io"
+      registration_required: "Prosím zaregistrujte lokálny účet. údaje: %{data}"
+      connection_error: "Chyba pripojenia k službe členstva: %{error}"
   api:
     errors:
       unauthorized: "Nemáte oprávnenie vykonať túto akciu"
       forbidden: "Prístup zamietnutý!"
       not_found: "Zdroj sa nenašiel"
       unprocessable_entity: "Požiadavku nebolo možné spracovať"
-      internal_server_error: "Vyskytla sa interná chyba servera"
-      validation_failed: "Overenie zlyhalo!"
+      internal_server_error: "Došlo k internej chybe servera"
+      validation_failed: "Validácia zlyhala!"
       invalid_request: "Neplatná požiadavka!"
-      rate_limit_exceeded: "Prekročený limit požiadaviek. Skúste to neskôr"
-
+      rate_limit_exceeded: "Limit požiadaviek bol prekročený. Skúste to znova neskôr"
     messages:
       success: "Operácia bola úspešne dokončená"
       created: "Zdroj bol úspešne vytvorený"
       updated: "Zdroj bol úspešne aktualizovaný"
       deleted: "Zdroj bol úspešne odstránený"
-
     notification:
       messages:
-        token_already_exists: "Token oznámení už existuje"
-        token_saved: "Token oznámení bol uložený"
-        token_deleted: "Token oznámení bol úspešne odstránený"
-        token_not_found: "Tokeny oznámení sa nenašli"
+        token_already_exists: "Token oznámenia už existuje"
+        token_saved: "Token oznámenia bol uložený"
+        token_deleted: "Token oznámenia bol úspešne odstránený"
+        token_not_found: "Nenašli sa žiadne tokeny oznámenia"
         mute_updated: "Stav stlmenia bol úspešne aktualizovaný"
-
     account:
       errors:
-        email_not_found: "E-mail sa nenašiel!"
+        email_not_found: "E-mail nebol nájdený!"
         email_invalid: "Neplatný formát e-mailu"
-        email_taken: "E-mail je už obsadený"
-        email_update_fail: "Aktualizácia e-mailu bola neúspešná"
+        email_taken: "E-mail je už použitý"
+        email_update_fail: "Aktualizácia e-mailu zlyhala"
         password_unmatch: "Heslá sa nezhodujú"
-        password_update_fail: "Aktualizácia hesla bola neúspešná"
+        password_update_fail: "Aktualizácia hesla zlyhala"
         otp_invalid: "Neplatné OTP!"
-        register_not_allow: "Registrácia nie je povolená!"
+        register_not_allow: "Nemáte povolenie na registráciu!"
         missing_field: "Chýbajú povinné polia"
         password_incorrect: "Aktuálne heslo je nesprávne"
-        username_taken: "Používateľské meno je už obsadené"
+        username_taken: "Používateľské meno je už použité"
       messages:
         password_updated: "Heslo bolo aktualizované"
-
     domain:
       messages:
-        dns_verified: "DNS je správne nakonfigurované"
-
+        dns_verified: "DNS je správne nakonfigurovaný"
     conversation:
       messages:
-        marked_read: "Označených %{updated_count} konverzácií ako prečítané"
+        marked_read: "%{updated_count} konverzácia(ie) označená(é) ako prečítaná(é)"

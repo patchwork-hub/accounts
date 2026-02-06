@@ -1,77 +1,72 @@
-# Icelandic translations for Patchwork Dashboard
-# This file contains all Icelandic translations for the application
-
 is:
-  # Locale information
   locale:
     name: "Icelandic"
     native_name: "Íslenska"
-  
   notification:
     poll:
-      ended_you: "Könnuninni þinni er lokið"
+      ended_you: "Könnun þín er lokið"
       ended_voted: "Könnun sem þú tókst þátt í er lokið"
     mention:
       direct_message: "%{name} sendi þér skilaboð"
-
   custom_passwords_mailer:
     reset_password_confirmation:
-      greeting: "Kæri/Kæra %{name},"
-      instruction: "OTP staðfestingarkóði reikningsins þíns er hér að neðan:"
-      note: "Ef þú baðst ekki um þetta, vinsamlegast hunsaðu þennan tölvupóst"
-  
-  errors:
-    invalid_credentials: "Ógild skilríki. Vinsamlegast reyndu aftur"
-    unauthorized_access: "Þú hefur ekki aðgang til að skrá þig inn"
-    channel_not_created: "Ógild skilríki. Vinsamlegast gakktu úr skugga um að þú hafir búið til rás"
-    account_deleted: "Reikningurinn þinn hefur þegar verið eytt"
+      greeting: "Kæri %{name},"
+      instruction: "OTP kóðinn þinn fyrir staðfestingu reiknings er:"
+      note: "Ef þú baðst ekki um þetta, hunsaðu þennan tölvupóst"
+  login_service:
+    errors:
+      invalid_credentials: "Ógild auðkenni. Reyndu aftur"
+      unauthorized_access: "Þú hefur ekki aðgang til að skrá þig inn"
+      channel_not_created: "Ógild auðkenni. Gakktu úr skugga um að þú hafir búið til rás"
+      account_deleted: "Reikningurinn þinn hefur þegar verið eytt"
+      invalid_role_access: "%{role} hefur ekki leyfi til að skrá sig inn"
+      deactivated_channel: "Rásin þín er óvirk. Hafðu samband við þjónustuver"
 
-  # API responses and messages
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Reyndu aftur. Ógild auðkenni frá beebee.io"
+      registration_required: "Vinsamlegast skráðu þér í staðbundinn reikning. gögn: %{data}"
+      connection_error: "Villa við að tengjast félagsskaþþjónustu: %{error}"
   api:
     errors:
       unauthorized: "Þú hefur ekki heimild til að framkvæma þessa aðgerð"
       forbidden: "Aðgangi hafnað!"
       not_found: "Auðlind fannst ekki"
       unprocessable_entity: "Ekki var hægt að vinna úr beiðninni"
-      internal_server_error: "Innri villa kom upp á þjóni"
+      internal_server_error: "Innri þjónustuvilla kom upp"
       validation_failed: "Staðfesting mistókst!"
       invalid_request: "Ógild beiðni!"
-      rate_limit_exceeded: "Beiðnatakmörk náð. Vinsamlegast reyndu aftur síðar"
-
+      rate_limit_exceeded: "Fjöldatakmörkun beiðna náð. Reyndu aftur síðar"
     messages:
-      success: "Aðgerð tókst"
-      created: "Auðlind búin til"
-      updated: "Auðlind uppfærð"
-      deleted: "Auðlind eytt"
-
+      success: "Aðgerð lokið með góðum árangri"
+      created: "Auðlind búin til með góðum árangri"
+      updated: "Auðlind uppfærð með góðum árangri"
+      deleted: "Auðlind eytt með góðum árangri"
     notification:
       messages:
-        token_already_exists: "Tilkynningatákn er þegar til"
-        token_saved: "Tilkynningatákn vistað"
-        token_deleted: "Tilkynningatákni eytt"
-        token_not_found: "Ekkert tilkynningatákn fannst"
-        mute_updated: "Þöggunarstaða uppfærð"
-
+        token_already_exists: "Tilkynningartákn er þegar til"
+        token_saved: "Tilkynningartákn vistað"
+        token_deleted: "Tilkynningartákn eytt með góðum árangri"
+        token_not_found: "Engin tilkynningartákn fundust"
+        mute_updated: "Þöggunarstaða uppfærð með góðum árangri"
     account:
       errors:
         email_not_found: "Netfang fannst ekki!"
-        email_invalid: "Ógilt netfangssnið"
+        email_invalid: "Ógilt netfangsform"
         email_taken: "Netfang er þegar í notkun"
         email_update_fail: "Uppfærsla netfangs mistókst"
-        password_unmatch: "Lykilorð passa ekki"
+        password_unmatch: "Lykilorð stemma ekki"
         password_update_fail: "Uppfærsla lykilorðs mistókst"
         otp_invalid: "Ógilt OTP!"
-        register_not_allow: "Þú hefur ekki heimild til að skrá þig!"
-        missing_field: "Nauðsynlegir reitir vantar"
+        register_not_allow: "Þú hefur ekki leyfi til að skrá þig!"
+        missing_field: "Vantar nauðsynlegar upplýsingar"
         password_incorrect: "Núverandi lykilorð er rangt"
         username_taken: "Notandanafn er þegar í notkun"
       messages:
         password_updated: "Lykilorð hefur verið uppfært"
-
     domain:
       messages:
         dns_verified: "DNS er rétt stillt"
-
     conversation:
       messages:
-        marked_read: "Merkti %{updated_count} samtal/samtöl sem lesin"
+        marked_read: "%{updated_count} samtal merkt sem lesið"

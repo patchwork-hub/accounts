@@ -1,0 +1,66 @@
+ug:
+  locale:
+    name: "Uyghur"
+    native_name: "ئۇيغۇرچە"
+  notification:
+    poll:
+      ended_you: "سىزنىڭ سايلامىڭىز تامام بولدى"
+      ended_voted: "سىز ئاۋاز بەرگەن سايلام تامام بولدى"
+    mention:
+      direct_message: "%{name} سىزگە ئۇچۇر يوللىدى"
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "ھۆرمەتلىك %{name},"
+      instruction: "ھېساباتنى دەلىللەش OTP كودى تۆۋەندىكىدەك:"
+      note: "ئەگەر بۇنى تەلەپ قىلمايدىغان بولسىڭىز، بۇ ئېلخەتنى پەرۋا قىلماڭ"
+  login_service:
+    errors:
+      invalid_credentials: "ئىناۋەتسىز ئۇچۇرلار. قايتا سىناڭ"
+      unauthorized_access: "سىزگە كىرىش ھوقۇقى يوق"
+      channel_not_created: "ئىناۋەتسىز ئۇچۇرلار. ئالدى بىلەن بىر كانال قۇرغىنىڭىزغا كاپالەتلىك قىلىڭ"
+      account_deleted: "ھېساباتىڭىز ئاللىقاچان ئۆچۈرۈلگەن"
+      invalid_role_access: "%{role} كىرىش ھوقۇقى يوق"
+      deactivated_channel: "كانالىڭىز ئاكتىپ ئەمەس. قوللاش بىلەن ئالاقىلىشىڭ"
+  api:
+    errors:
+      unauthorized: "سىز بۇ مەشغۇلاتنى قىلىش ھوقۇقىغا ئىگە ئەمەس"
+      forbidden: "زىيارەت رەت قىلىندى!"
+      not_found: "مەنبە تېپىلمىدى"
+      unprocessable_entity: "تەلەپنى ئىجرا قىلىش مەمكىن ئەمەس"
+      internal_server_error: "ئىچكى مۇلازىمەتچى خاتالىقى كۆرۈلدى"
+      validation_failed: "دەلىللەش مەغلۇپ بولدى!"
+      invalid_request: "ئىناۋەتسىز تەلەپ!"
+      rate_limit_exceeded: "تەلەپ چەكلىمىسىدىن ئۆتتى. كېيىنراق سىناڭ"
+    messages:
+      success: "مەشغۇلات مۇۋەپپەقىيەتلىك تامام بولدى"
+      created: "مەنبە مۇۋەپپەقىيەتلىك قۇرۇلدى"
+      updated: "مەنبە مۇۋەپپەقىيەتلىك يېڭىلاندى"
+      deleted: "مەنبە مۇۋەپپەقىيەتلىك ئۆچۈرۈلدى"
+    notification:
+      messages:
+        token_already_exists: "ئۇقتۇرۇش token ئاللىقاچان مەۋجۇت"
+        token_saved: "ئۇقتۇرۇش token ساقلاندى"
+        token_deleted: "ئۇقتۇرۇش token مۇۋەپپەقىيەتلىك ئۆچۈرۈلدى"
+        token_not_found: "ئۇقتۇرۇش token تېپىلمىدى"
+        mute_updated: "مۇت ھالىتى مۇۋەپپەقىيەتلىك يېڭىلاندى"
+    account:
+      errors:
+        email_not_found: "ئېلخەت تېپىلمىدى!"
+        email_invalid: "ئىناۋەتسىز ئېلخەت فورماتى"
+        email_taken: "ئېلخەت ئاللىقاچان ئىشلىتىلگەن"
+        email_update_fail: "ئېلخەت يېڭىلاش مەغلۇپ بولدى"
+        password_unmatch: "پاروللار ماس كەلمىدى"
+        password_update_fail: "پارول يېڭىلاش مەغلۇپ بولدى"
+        otp_invalid: "ئىناۋەتسىز OTP!"
+        register_not_allow: "سىزگە تىزىملىتىش ھوقۇقى يوق!"
+        missing_field: "زۆرۈر مەيدانلار يوق"
+        password_incorrect: "نۆۋەتتىكى پارول خاتا"
+        username_taken: "ئىشلەتكۈچى نامى ئاللىقاچان ئىشلىتىلگەن"
+      messages:
+        password_updated: "پارول يېڭىلاندى"
+    domain:
+      messages:
+        dns_verified: "DNS توغرا كونفىگۇراتسىيە قىلىنغان"
+    conversation:
+      messages:
+        marked_read: "%{updated_count} سۆزلەشۈك ئوقۇلدى دەپ بەلگىلەندى"

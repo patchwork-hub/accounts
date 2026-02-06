@@ -1,54 +1,72 @@
-# Asturian translations for Patchwork Dashboard
-# This file contains all Asturian translations for the application
-
 ast:
-  # Locale information
   locale:
     name: "Asturian"
     native_name: "Asturianu"
+  notification:
+    poll:
+      ended_you: "La to encuesta remató"
+      ended_voted: "Remató una encuesta na que votasti"
+    mention:
+      direct_message: "%{name} unvióte un mensaxe"
+  custom_passwords_mailer:
+    reset_password_confirmation:
+      greeting: "Queríu/a %{name},"
+      instruction: "El to códigu OTP de verificación de cuenta ye:"
+      note: "Si nun solicitasti esto, por favor, iguora esti corréu"
+  login_service:
+    errors:
+      invalid_credentials: "Credenciales non válides. Inténtalo de nuevu"
+      unauthorized_access: "Nun tienes permisu pa aniciar sesión"
+      channel_not_created: "Credenciales non válides. Asegúrate de crear un canal"
+      account_deleted: "La to cuenta yá ta desaniciada"
+      invalid_role_access: "%{role} nun tien permisu pa aniciar sesión"
+      deactivated_channel: "El to canal ta desactiváu. Contauta col soporte"
 
-  # API responses and messages
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Inténtalo de nuevu. Credenciales non válides de beebee.io"
+      registration_required: "Rexistra una cuenta llocal. datos: %{data}"
+      connection_error: "Fallu al coneutase col serviciu de miembros: %{error}"
   api:
     errors:
-      unauthorized: "Nun tas autorizáu pa facer esta aición"
+      unauthorized: "Nun tienes permisu pa realizar esta aición"
       forbidden: "¡Accesu denegáu!"
-      not_found: "Nun s'atopó'l recursu"
-      unprocessable_entity: "Nun pudo procesase la solicitú"
-      internal_server_error: "Asocedió un error internu del sirvidor"
+      not_found: "Recurso non atopáu"
+      unprocessable_entity: "Nun se pudo procesar la solicitú"
+      internal_server_error: "Ocurrió un error internu nel sirvidor"
       validation_failed: "¡Falló la validación!"
       invalid_request: "¡Solicitú non válida!"
-      rate_limit_exceeded: "Perpasóse'l llímite de tasa. Volvi tentalo más sero"
-
+      rate_limit_exceeded: "Llímiti de solicitúes superáu. Inténtalo más tarde"
     messages:
       success: "Operación completada con ésitu"
-      created: "Recursu creáu con ésitu"
-      updated: "Recursu anovadu con ésitu"
-      deleted: "Recursu desaniciáu con ésitu"
-
+      created: "Recurso creáu con ésitu"
+      updated: "Recurso actualizáu con ésitu"
+      deleted: "Recurso desaniciáu con ésitu"
     notification:
       messages:
-        token_already_exists: "El pase de notificación yá existe"
-        token_saved: "Pase de notificación guardáu"
-        token_deleted: "Pase de notificación desaniciáu con ésitu"
-        token_not_found: "Nun s'atoparon pases de notificación"
-        mute_updated: "Estáu de silenciamientu anovadu con ésitu"
-
+        token_already_exists: "El token de notificación yá existe"
+        token_saved: "Token de notificación guardáu"
+        token_deleted: "Token de notificación desaniciáu con ésitu"
+        token_not_found: "Nun s'atoparon tokens de notificación"
+        mute_updated: "Estáu de silenciu actualizáu con ésitu"
     account:
       errors:
-        email_not_found: "¡Nun s'atopó'l corréu electrónicu!"
+        email_not_found: "¡Corréu electrónicu non atopáu!"
         email_invalid: "Formatu de corréu electrónicu non válidu"
-        email_taken: "El corréu electrónicu yá ta n'usu"
-        email_update_fail: "Nun pudo anovase'l corréu electrónicu"
-        password_unmatch: "Les contraseñes nun concasen"
-        password_update_fail: "Nun pudo anovase la contraseña"
-        otp_invalid: "¡Códigu OTP non válidu!"
+        email_taken: "El corréu electrónicu yá ta usáu"
+        email_update_fail: "La actualización del corréu electrónicu falló"
+        password_unmatch: "Les contraseñes nun coinciden"
+        password_update_fail: "La actualización de la contraseña falló"
+        otp_invalid: "¡OTP non válidu!"
         register_not_allow: "¡Nun tienes permisu pa rexistrate!"
-        missing_field: "Falten campos obligatorios"
+        missing_field: "Falten campos requeríos"
         password_incorrect: "La contraseña actual ye incorreuta"
-        username_taken: "El nome d'usuariu yá ta n'usu"
+        username_taken: "El nome d'usuariu yá ta usáu"
       messages:
-        password_updated: "Anovóse la contraseña"
-
+        password_updated: "La contraseña foi actualizada"
     domain:
       messages:
         dns_verified: "El DNS ta configuráu correutamente"
+    conversation:
+      messages:
+        marked_read: "Marcáronse %{updated_count} conversación(es) como lleíes"
