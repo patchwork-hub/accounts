@@ -24,6 +24,15 @@ Accounts::Engine.routes.draw do
 
       resources :user_locales, only: [:create]
 
+      resources :channels, only: [] do
+        collection do
+          get :starter_packs_channels
+        end
+        member do
+          get :starter_packs_detail
+        end
+      end
+
       namespace :patchwork do
         resources :alttext_settings, only: [:index] do
           collection do
