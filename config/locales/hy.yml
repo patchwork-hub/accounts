@@ -25,6 +25,12 @@ hy:
       invalid_role_access: "%{role}-ը մուտք գործելու իրավունք չունի"
       deactivated_channel: "Ձեր ալիքը ապաակտիվացված է։ Խնդրում ենք կապվել աջակցությանը"
 
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Խնդրում ենք փորձել կրկին։ Անվավեր տվյալներ beebee.io-ից"
+      registration_required: "Խնդրում ենք գրանցել տեղական հաշիվ։ տվյալներ: %{data}"
+      connection_error: "Սփալ անդամակցական խմբակի ծառայությանն միանալու իս: %{error}"
+
   api:
     errors:
       unauthorized: "Դուք իրավունք չունեք կատարել այս գործողությունը"

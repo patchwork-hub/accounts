@@ -21,6 +21,12 @@ az:
       account_deleted: "Hesabınız artıq silinib"
       invalid_role_access: "%{role} daxil olmaq üçün icazəsi yoxdur"
       deactivated_channel: "Kanalınız deaktiv edilib. Dəstəyə müraciət edin"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Yenidən cəhd edin. beebee.io-dan yanlış məlumat"
+      registration_required: "Zəhmət olmasa yerli hesab yaradın. məlumat: %{data}"
+      connection_error: "Üzvlük xidmətinə qoşulma xətası: %{error}"
   api:
     errors:
       unauthorized: "Bu əməliyyatı yerinə yetirməyə icazəniz yoxdur"

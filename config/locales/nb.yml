@@ -25,6 +25,12 @@ nb:
       invalid_role_access: "%{role} har ikke tillatelse til å logge inn"
       deactivated_channel: "Kanalen din er deaktivert. Vennligst kontakt støtte"
 
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Vennligst prøv igjen. Ugyldige legitimasjonsopplysninger fra beebee.io"
+      registration_required: "Vennligst registrer en lokal konto. data: %{data}"
+      connection_error: "Feil ved tilkobling til medlemstjeneste: %{error}"
+
   api:
     errors:
       unauthorized: "Du har ikke tillatelse til å utføre denne handlingen"

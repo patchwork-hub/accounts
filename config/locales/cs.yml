@@ -21,6 +21,12 @@ cs:
       account_deleted: "Váš účet byl již smazán"
       invalid_role_access: "%{role} nemá oprávnění k přihlášení"
       deactivated_channel: "Váš kanál je deaktivován. Kontaktujte podporu"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Zkuste to prosím znovu. Neplatné přihlašovací údaje z beebee.io"
+      registration_required: "Prosím zaregistrujte lokální účet. data: %{data}"
+      connection_error: "Chyba připojení ke členské službě: %{error}"
   api:
     errors:
       unauthorized: "Nejste oprávněni provést tuto akci"

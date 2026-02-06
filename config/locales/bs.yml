@@ -21,6 +21,12 @@ bs:
       account_deleted: "Vaš nalog je već obrisan"
       invalid_role_access: "%{role} nema dozvolu za prijavu"
       deactivated_channel: "Vaš kanal je deaktiviran. Kontaktirajte podršku"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Pokušajte ponovo. Neispravni podaci sa beebee.io"
+      registration_required: "Molimo registrujte lokalni nalog. podaci: %{data}"
+      connection_error: "Greška povezivanja sa servisom članstva: %{error}"
   api:
     errors:
       unauthorized: "Niste ovlašteni za ovu radnju"

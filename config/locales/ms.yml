@@ -21,6 +21,12 @@ ms:
       account_deleted: "Akaun anda telah dipadamkan"
       invalid_role_access: "%{role} tidak dibenarkan untuk log masuk"
       deactivated_channel: "Saluran anda dinyahaktifkan. Sila hubungi sokongan"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Sila cuba lagi. Kelayakan tidak sah daripada beebee.io"
+      registration_required: "Sila daftarkan akaun tempatan. data: %{data}"
+      connection_error: "Ralat menyambung ke perkhidmatan keahlian: %{error}"
   api:
     errors:
       unauthorized: "Anda tidak dibenarkan untuk melakukan tindakan ini"

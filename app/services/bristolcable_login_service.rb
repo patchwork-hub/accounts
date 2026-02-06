@@ -17,13 +17,13 @@ class BristolcableLoginService
         response_data = result[:response]
         user_info = fetch_user_information(cookies)
         if user_info.nil?
-          return 'Please try again. Invalid credentials from beebee.io'
+          return I18n.t('bristolcable_login_service.errors.invalid_credentials')
         else
           data = { firstname: user_info['firstname'], lastname: user_info['lastname'] }
-          return "Please register account in local. data: #{data}"
+          return I18n.t('bristolcable_login_service.errors.registration_required', data: data)
         end
       else
-        'Please try again. Invalid credentials from beebee.io'
+        I18n.t('bristolcable_login_service.errors.invalid_credentials')
       end
     else
       nil
@@ -54,7 +54,7 @@ class BristolcableLoginService
       nil
     end
   rescue StandardError => e
-    return "Error connecting to membership service: #{e.message}"
+    return I18n.t('bristolcable_login_service.errors.connection_error', error: e.message)
   end
 
   def fetch_user_information(cookies)
@@ -69,6 +69,6 @@ class BristolcableLoginService
       nil
     end
   rescue StandardError => e
-    return "Error connecting to membership service: #{e.message}"
+    return I18n.t('bristolcable_login_service.errors.connection_error', error: e.message)
   end
 end

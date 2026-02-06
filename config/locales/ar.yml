@@ -21,6 +21,12 @@ ar:
       account_deleted: "تم حذف حسابك بالفعل"
       invalid_role_access: "%{role} غير مسموح له بتسجيل الدخول"
       deactivated_channel: "قناتك معطلة. يرجى التواصل مع الدعم"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "يرجى المحاولة مرة أخرى. بيانات اعتماد غير صحيحة من beebee.io"
+      registration_required: "يرجى تسجيل حساب محلي. البيانات: %{data}"
+      connection_error: "خطأ في الاتصال بخدمة العضوية: %{error}"
   api:
     errors:
       unauthorized: "غير مصرح لك بتنفيذ هذا الإجراء"

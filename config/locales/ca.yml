@@ -21,6 +21,12 @@ ca:
       account_deleted: "El teu compte ja ha estat eliminat"
       invalid_role_access: "%{role} no té permís per iniciar sessió"
       deactivated_channel: "El teu canal està desactivat. Contacta amb el suport"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Torna-ho a provar. Credencials no vàlides de beebee.io"
+      registration_required: "Si us plau, registra un compte local. dades: %{data}"
+      connection_error: "Error en connectar amb el servei de membres: %{error}"
   api:
     errors:
       unauthorized: "No estàs autoritzat a realitzar aquesta acció"

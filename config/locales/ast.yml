@@ -21,6 +21,12 @@ ast:
       account_deleted: "La to cuenta yá ta desaniciada"
       invalid_role_access: "%{role} nun tien permisu pa aniciar sesión"
       deactivated_channel: "El to canal ta desactiváu. Contauta col soporte"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Inténtalo de nuevu. Credenciales non válides de beebee.io"
+      registration_required: "Rexistra una cuenta llocal. datos: %{data}"
+      connection_error: "Fallu al coneutase col serviciu de miembros: %{error}"
   api:
     errors:
       unauthorized: "Nun tienes permisu pa realizar esta aición"

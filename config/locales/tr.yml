@@ -21,6 +21,12 @@ tr:
       account_deleted: "Hesabınız zaten silinmiş"
       invalid_role_access: "%{role} giriş yapmaya yetkili değil"
       deactivated_channel: "Kanalınız devre dışı bırakıldı. Lütfen destek ile iletişime geçin"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Lütfen tekrar deneyin. beebee.io'dan geçersiz kimlik bilgileri"
+      registration_required: "Lütfen yerel hesap oluşturun. veri: %{data}"
+      connection_error: "Üyelik hizmetine bağlanırken hata oluştu: %{error}"
   api:
     errors:
       unauthorized: "Bu işlemi yapmaya yetkiniz yok"

@@ -25,6 +25,12 @@ kn:
       invalid_role_access: "%{role} ಲಾಗಿನ್ ಮಾಡಲು ಅನುಮತಿ ಇಲ್ಲ"
       deactivated_channel: "ನಿಮ್ಮ ಚಾನಲ್ ನಿಷ್ಕ್ರಿಯವಾಗಿದೆ. ದಯವಿಟ್ಟು ಬೆಂಬಲವನ್ನು ಸಂಪರ್ಕಿಸಿ"
 
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ. beebee.io ನಿಂದ ಅಮಾನ್ಯವಾದ ಪ್ರಮಾಣಪತ್ರಗಳು"
+      registration_required: "ದಯವಿಟ್ಟು ಸ್ಥಾನಿಕ ಖಾತೆಯನ್ನು ನೋಂದಾಯಿಸಿ. ಡೇಟಾ: %{data}"
+      connection_error: "ಸದಸ್ಯತ್ವ ಸೇವೆಗೆ ಕನೆಕ್ಟ್ ಮಾಡುವಲ್ಲಿ ತಪ್ಪು: %{error}"
+
   api:
     errors:
       unauthorized: "ನೀವು ಈ ಕ್ರಿಯೆಯನ್ನು ಮಾಡಲು ಅನುಮತಿ ಇಲ್ಲ"

@@ -21,6 +21,12 @@ sq:
       account_deleted: "Llogaria juaj është fshirë tashmë"
       invalid_role_access: "%{role} nuk lejohet të hyjë"
       deactivated_channel: "Kanali juaj është çaktivizuar. Kontaktoni mbështetjen"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Ju lutemi provoni përsëri. Kredenciale të pavlefshme nga beebee.io"
+      registration_required: "Ju lutemi regjistroni një llogari lokale. të dhëna: %{data}"
+      connection_error: "Gabim në lidhjen me shërbimin e anëtarimit: %{error}"
   api:
     errors:
       unauthorized: "Nuk jeni të autorizuar të kryeni këtë veprim"

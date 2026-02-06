@@ -21,6 +21,12 @@ el:
       account_deleted: "Ο λογαριασμός σας έχει ήδη διαγραφεί"
       invalid_role_access: "Ο/Η %{role} δεν έχει δικαίωμα πρόσβασης"
       deactivated_channel: "Το κανάλι σας είναι απενεργοποιημένο. Επικοινωνήστε με την υποστήριξη"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Παρακαλώ δοκιμάστε ξανά. Μη έγκυρα στοιχεία από beebee.io"
+      registration_required: "Παρακαλώ εγγραφείτε τοπικό λογαριασμό. δεδομένα: %{data}"
+      connection_error: "Σφάλμα σύνδεσης με την υπηρεσία μελών: %{error}"
   api:
     errors:
       unauthorized: "Δεν έχετε εξουσιοδότηση για αυτήν την ενέργεια"

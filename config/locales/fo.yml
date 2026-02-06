@@ -21,6 +21,12 @@ fo:
       account_deleted: "Kontan tín er longu strikað"
       invalid_role_access: "%{role} hevur ikki loyvi at logga inn"
       deactivated_channel: "Rásin tín er óvirkin. Vinarliga set teg í samband við stuðul"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Vinarliga royn aftur. Ógyldig loyniorð frá beebee.io"
+      registration_required: "Vinarliga skrásett eina lokala kontu. dáta: %{data}"
+      connection_error: "Villa við at sambinda við limalimstænastu: %{error}"
   api:
     errors:
       unauthorized: "Tú hevur ikki loyvi at gera hetta"

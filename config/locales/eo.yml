@@ -21,6 +21,12 @@ eo:
       account_deleted: "Via konto jam estas forigita"
       invalid_role_access: "%{role} ne rajtas ensaluti"
       deactivated_channel: "Via kanalo estas malaktivigita. Bonvolu kontakti subtenon"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Bonvolu provi denove. Nevalidaj akreditaĵoj de beebee.io"
+      registration_required: "Bonvolu registri lokan konton. datumoj: %{data}"
+      connection_error: "Eraro konektante al membraro-servo: %{error}"
   api:
     errors:
       unauthorized: "Vi ne estas rajtigita plenumi ĉi tiun agon"

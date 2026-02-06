@@ -21,6 +21,12 @@ ro:
       account_deleted: "Contul tău a fost deja șters"
       invalid_role_access: "%{role} nu are permisiunea de a se autentifica"
       deactivated_channel: "Canalul tău este dezactivat. Contactează suportul"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Încearcă din nou. Date de autentificare invalide de la beebee.io"
+      registration_required: "Creează un cont local. date: %{data}"
+      connection_error: "Eroare la conectarea la serviciul de membru: %{error}"
   api:
     errors:
       unauthorized: "Nu ești autorizat să efectuezi această acțiune"

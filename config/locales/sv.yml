@@ -21,6 +21,12 @@ sv:
       account_deleted: "Ditt konto har redan raderats"
       invalid_role_access: "%{role} har inte behörighet att logga in"
       deactivated_channel: "Din kanal är inaktiverad. Kontakta support"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Försök igen. Ogiltiga inloggningsuppgifter från beebee.io"
+      registration_required: "Registrera ett lokalt konto. data: %{data}"
+      connection_error: "Fel vid anslutning till medlemskapstjänst: %{error}"
   api:
     errors:
       unauthorized: "Du har inte behörighet att utföra denna åtgärd"

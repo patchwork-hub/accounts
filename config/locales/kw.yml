@@ -25,6 +25,12 @@ kw:
       invalid_role_access: "Nyns eus kevrin dhe %{role} omgelwel"
       deactivated_channel: "Kanol ow kelwel. Gwra omwul an skoodh"
 
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Piwgh an gath. Kredensyow didhys a beebee.io"
+      registration_required: "Gwra omgelmi akont leel. data: %{data}"
+      connection_error: "Gwall ow kelmya dhe servys eseleth: %{error}"
+
   api:
     errors:
       unauthorized: "Nyns eus kevrin dhis dhe wul an ober-ma"

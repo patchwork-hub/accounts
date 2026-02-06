@@ -21,6 +21,12 @@ it:
       account_deleted: "Il tuo account è già stato eliminato"
       invalid_role_access: "%{role} non è autorizzato ad accedere"
       deactivated_channel: "Il tuo canale è disattivato. Contatta il supporto"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Riprova. Credenziali non valide da beebee.io"
+      registration_required: "Registra un account locale. dati: %{data}"
+      connection_error: "Errore di connessione al servizio di iscrizione: %{error}"
   api:
     errors:
       unauthorized: "Non sei autorizzato a eseguire questa azione"

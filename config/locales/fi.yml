@@ -21,6 +21,12 @@ fi:
       account_deleted: "Tilisi on jo poistettu"
       invalid_role_access: "%{role} ei saa kirjautua sisään"
       deactivated_channel: "Kanavasi on deaktivoitu. Ota yhteyttä tukeen"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Yritä uudelleen. Virheelliset tunnistetiedot beebee.io:sta"
+      registration_required: "Rekisteröi paikallinen tili. tiedot: %{data}"
+      connection_error: "Virhe yhdistäessä jäsenpalveluun: %{error}"
   api:
     errors:
       unauthorized: "Sinulla ei ole oikeutta suorittaa tätä toimintoa"

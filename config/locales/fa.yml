@@ -21,6 +21,12 @@ fa:
       account_deleted: "حساب شما قبلاً حذف شده است"
       invalid_role_access: "%{role} اجازه ورود ندارد"
       deactivated_channel: "کانال شما غیرفعال است. لطفاً با پشتیبانی تماس بگیرید"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "لطفاً دوباره تلاش کنید. اطلاعات نامعتبر از beebee.io"
+      registration_required: "لطفاً حساب محلی ثبت کنید. داده‌ها: %{data}"
+      connection_error: "خطا در اتصال به سرویس عضویت: %{error}"
   api:
     errors:
       unauthorized: "شما مجاز به انجام این عملیات نیستید"

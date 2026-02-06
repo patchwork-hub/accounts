@@ -21,6 +21,11 @@ ml:
       account_deleted: "നിങ്ങളുടെ അക്കൗണ്ട് ഇതിനകം ഇല്ലാതാക്കി"
       invalid_role_access: "%{role} ലോഗിൻ ചെയ്യാൻ അനുവദനീയമല്ല"
       deactivated_channel: "നിങ്ങളുടെ ചാനൽ പ്രവർത്തനരഹിതമാണ്. സഹായത്തിനായി ബന്ധപ്പെടുക"
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "ദയവായി വീണ്ടും ശ്രമിക്കുക. beebee.io യിൽനിന്ന് അസാധുവായ ക്രെഡൻഷ്യലുകൾ"
+      registration_required: "ദയവായി സ്ഥലത്തെ അക്കൗണ്ട് രജിസ്റ്റർ ചെയ്യുക. ഡാറ്റ: %{data}"
+      connection_error: "അംഗത്വ സേവനവുമായി കനക്ട് ചെയ്യുന്നതിൽ പ്രശ്നം: %{error}"
   api:
     errors:
       unauthorized: "ഈ പ്രവർത്തനം നടത്താൻ നിങ്ങൾക്ക് അനുമതിയില്ല"

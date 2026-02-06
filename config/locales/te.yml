@@ -21,6 +21,12 @@ te:
       account_deleted: "మీ ఖాతా ఇప్పటికే తొలగించబడింది"
       invalid_role_access: "%{role} లాగిన్ చేయడానికి అనుమతి లేదు"
       deactivated_channel: "మీ ఛానల్ నిలిపివేయబడింది. సహాయానికి సంప్రదించండి"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "దయచేసి మళ్లీ ప్రయత్నించండి. beebee.io నుండి చెల్లని వివరాలు"
+      registration_required: "దయచేసి స్థానిక ఖాతాను రిజిస్టర్ చేయండి. డేటా: %{data}"
+      connection_error: "సదస్యత్వ సేవకు కనెక్ట్ చేయడంలో తప్పు: %{error}"
   api:
     errors:
       unauthorized: "మీకు ఈ చర్యను చేయడానికి అనుమతి లేదు"

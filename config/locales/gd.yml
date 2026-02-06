@@ -21,6 +21,12 @@ gd:
       account_deleted: "Tha do chunntas air a sguabadh às mar-thà"
       invalid_role_access: "Chan eil cead aig %{role} logadh a-steach"
       deactivated_channel: "Tha do shianal air a chur à comas. Cuir fios gu taic"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Feuch ris a-rithist. Cothrom-freagairt mì-dhligheach bho beebee.io"
+      registration_required: "Clàraich cunntas ionadail. dàta: %{data}"
+      connection_error: "Mearachd a' ceangal ri seirbheis ballrachd: %{error}"
   api:
     errors:
       unauthorized: "Chan eil cead agad an gnìomh seo a dhèanamh"

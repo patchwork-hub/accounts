@@ -25,6 +25,12 @@ ru:
       invalid_role_access: "%{role} не имеет доступа для входа"
       deactivated_channel: "Ваш канал деактивирован. Обратитесь в поддержку"
 
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Попробуйте снова. Неверные учетные данные от beebee.io"
+      registration_required: "Пожалуйста, зарегистрируйте локальную учетную запись. данные: %{data}"
+      connection_error: "Ошибка подключения к службе членства: %{error}"
+
   api:
     errors:
       unauthorized: "У вас нет прав для выполнения этого действия"

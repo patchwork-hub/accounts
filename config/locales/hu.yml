@@ -21,6 +21,12 @@ hu:
       account_deleted: "A fiókod már törölve lett"
       invalid_role_access: "%{role} nem jogosult bejelentkezni"
       deactivated_channel: "A csatornád deaktiválva van. Lépj kapcsolatba a támogatással"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Próbáld újra. Érvénytelen hitelesítő adatok a beebee.io-tól"
+      registration_required: "Kérjük, regisztrálj helyi fiókot. adatok: %{data}"
+      connection_error: "Hiba a tagsági szolgáltatáshoz való csatlakozás során: %{error}"
   api:
     errors:
       unauthorized: "Nincs jogosultságod végrehajtani ezt a műveletet"

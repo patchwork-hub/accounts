@@ -21,6 +21,12 @@ ja:
       account_deleted: "あなたのアカウントはすでに削除されています"
       invalid_role_access: "%{role} はログインできません"
       deactivated_channel: "あなたのチャンネルは無効化されています。サポートに連絡してください"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "もう一度お試しください。beebee.ioからの認証情報が無効です"
+      registration_required: "ローカルアカウントを登録してください。データ: %{data}"
+      connection_error: "メンバーシップサービスへの接続エラー: %{error}"
   api:
     errors:
       unauthorized: "この操作を行う権限がありません"

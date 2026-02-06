@@ -21,6 +21,12 @@ zh-CN:
       account_deleted: "您的账户已被删除"
       invalid_role_access: "%{role} 无权登录"
       deactivated_channel: "您的频道已停用。请联系支持"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "请重试。来自 beebee.io 的凭证无效"
+      registration_required: "请在本地注册账户。数据：%{data}"
+      connection_error: "连接会员服务时出错：%{error}"
   api:
     errors:
       unauthorized: "您无权执行此操作"

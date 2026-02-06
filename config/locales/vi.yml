@@ -21,6 +21,12 @@ vi:
       account_deleted: "Tài khoản của bạn đã bị xóa"
       invalid_role_access: "%{role} không được phép đăng nhập"
       deactivated_channel: "Kênh của bạn đã bị vô hiệu hóa. Vui lòng liên hệ hỗ trợ"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Vui lòng thử lại. Thông tin đăng nhập không hợp lệ từ beebee.io"
+      registration_required: "Vui lòng đăng ký tài khoản cục bộ. dữ liệu: %{data}"
+      connection_error: "Lỗi kết nối đến dịch vụ thành viên: %{error}"
   api:
     errors:
       unauthorized: "Bạn không được phép thực hiện hành động này"

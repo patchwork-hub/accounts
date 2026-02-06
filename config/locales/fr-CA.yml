@@ -21,6 +21,12 @@ fr-CA:
       account_deleted: "Votre compte a déjà été supprimé"
       invalid_role_access: "%{role} n'est pas autorisé à se connecter"
       deactivated_channel: "Votre chaîne est désactivée. Veuillez contacter le support"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Veuillez réessayer. Identifiants invalides de beebee.io"
+      registration_required: "Veuillez créer un compte local. données: %{data}"
+      connection_error: "Erreur de connexion au service d'adhésion: %{error}"
   api:
     errors:
       unauthorized: "Vous n'êtes pas autorisé à effectuer cette action"

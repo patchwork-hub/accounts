@@ -21,6 +21,11 @@ bn:
       account_deleted: "আপনার অ্যাকাউন্ট ইতিমধ্যে মুছে ফেলা হয়েছে"
       invalid_role_access: "%{role} লগইন করার অনুমতি নেই"
       deactivated_channel: "আপনার চ্যানেল নিষ্ক্রিয়। অনুগ্রহ করে সহায়তার সাথে যোগাযোগ করুন"
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "অনুগ্রহ করে আবার চেষ্টা করুন। beebee.io থেকে অবৈধ শংসাপত্র"
+      registration_required: "অনুগ্রহ করে স্থানীয় অ্যাকাউন্ট নিবন্ধন করুন। ডেটা: %{data}"
+      connection_error: "সদস্যতা সেবার সাথে সংযোগ করতে ত্রুটি: %{error}"
   api:
     errors:
       unauthorized: "আপনি এই কাজটি করার অনুমতি নেই"

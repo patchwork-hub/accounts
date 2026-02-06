@@ -21,6 +21,12 @@ sk:
       account_deleted: "Váš účet už bol odstránený"
       invalid_role_access: "%{role} nemá povolenie na prihlásenie"
       deactivated_channel: "Váš kanál je deaktivovaný. Kontaktujte podporu"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Skúste to znova. Neplatné prihlasovacie údaje z beebee.io"
+      registration_required: "Prosím zaregistrujte lokálny účet. údaje: %{data}"
+      connection_error: "Chyba pripojenia k službe členstva: %{error}"
   api:
     errors:
       unauthorized: "Nemáte oprávnenie vykonať túto akciu"

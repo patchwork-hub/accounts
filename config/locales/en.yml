@@ -25,6 +25,12 @@ en:
       invalid_role_access: "%{role} isn't allowed to access login"
       deactivated_channel: "Your channel is deactivated. Please contact support"
 
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Please try again. Invalid credentials from beebee.io"
+      registration_required: "Please register account in local. data: %{data}"
+      connection_error: "Error connecting to membership service: %{error}"
+
   api:
     errors:
       unauthorized: "You are not authorized to perform this action"

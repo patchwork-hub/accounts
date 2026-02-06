@@ -21,6 +21,12 @@ uk:
       account_deleted: "Ваш акаунт вже видалено"
       invalid_role_access: "%{role} не має доступу до входу"
       deactivated_channel: "Ваш канал деактивовано. Зверніться до підтримки"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "Спробуйте ще раз. Невірні облікові дані від beebee.io"
+      registration_required: "Будь ласка, зареєструйте локальний обліковий запис. дані: %{data}"
+      connection_error: "Помилка підключення до служби членства: %{error}"
   api:
     errors:
       unauthorized: "Ви не маєте права виконувати цю дію"

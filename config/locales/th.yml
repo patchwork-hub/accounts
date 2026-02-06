@@ -21,6 +21,12 @@ th:
       account_deleted: "บัญชีของคุณถูกลบแล้ว"
       invalid_role_access: "%{role} ไม่ได้รับอนุญาตให้เข้าสู่ระบบ"
       deactivated_channel: "ช่องทางของคุณถูกปิดใช้งาน กรุณาติดต่อฝ่ายสนับสนุน"
+
+  bristolcable_login_service:
+    errors:
+      invalid_credentials: "กรุณาลองใหม่ ข้อมูลเข้าสู่ระบบไม่ถูกต้องจาก beebee.io"
+      registration_required: "กรุณาลงทะเบียนบัญชีในเครื่อง ข้อมูล: %{data}"
+      connection_error: "เกิดข้อผิดพลาดในการเชื่อมต่อกับบริการสมาชิก: %{error}"
   api:
     errors:
       unauthorized: "คุณไม่ได้รับอนุญาตให้ดำเนินการนี้"
