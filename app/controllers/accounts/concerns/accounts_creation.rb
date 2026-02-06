@@ -7,7 +7,7 @@ module Accounts::Concerns::AccountsCreation
   include MoMeHelper
 
   def create
-    params_with_reason = is_mo_me? ? account_params.merge(reason: 'Signing up via Mo-Me App') : account_params
+    params_with_reason = account_params.merge(reason: "Signing up via #{ ENV.fetch('LOCAL_DOMAIN', nil) } App")
     token    = AppSignUpService.new.call(doorkeeper_token.application, request.remote_ip, params_with_reason)
     response = Doorkeeper::OAuth::TokenResponse.new(token)
 
