@@ -2,6 +2,8 @@
 
 module Accounts::Api::V1
   class ChannelsController < Api::BaseController
+    before_action :require_user!
+    before_action -> { doorkeeper_authorize! :read, :write }
     # GET /api/v1/channels/starter_packs_channels
     # Returns the list of starter pack channels from JSON data
     def starter_packs_channels
