@@ -2,7 +2,7 @@
 
 module Accounts::Api::V1::Patchwork
   class EmailSettingsController < Api::BaseController
-    include Accounts::Concerns::ApiResponseHelper
+    include ::Accounts::Concerns::ApiResponseHelper
     include EmailNotificationAttributesConcern
 
     before_action -> { doorkeeper_authorize! :read, :write }

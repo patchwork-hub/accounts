@@ -3,7 +3,7 @@ require 'jwt'
 
 module Accounts::Api::V1::Accounts
   class GhostSubscriptionsController < Api::BaseController
-    include Accounts::Concerns::ApiResponseHelper
+    include ::Accounts::Concerns::ApiResponseHelper
     before_action -> { doorkeeper_authorize! :read, :write }
     before_action :require_user!
 
