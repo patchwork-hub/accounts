@@ -2,6 +2,8 @@
 
 module Accounts::Api::V1
   class ChannelsController < Api::BaseController
+    include Redisable
+
     before_action :require_user!
     before_action -> { doorkeeper_authorize! :read, :write }
     # GET /api/v1/channels/starter_packs_channels
@@ -20,7 +22,7 @@ module Accounts::Api::V1
       if stale?(last_modified: last_modified, etag: "#{starter_pack_namespace}-#{last_modified.to_i}")
         starter_packs_channels = load_json_data(file_path)
         
-        expires_in 5.minutes, public: true
+        expires_in 24.hours, public: true
         
         render json: { data: starter_packs_channels }
       end
@@ -54,7 +56,7 @@ module Accounts::Api::V1
 
         followers = load_json_data(followers_file)
         
-        expires_in 5.minutes, public: true
+        expires_in 24.hours, public: true
         
         render json: {
           channel: channel,
@@ -66,14 +68,26 @@ module Accounts::Api::V1
     private
 
     def load_json_data(filename)
-      cache_key = "starter_pack_#{starter_pack_namespace}_#{filename.gsub('/', '_').gsub('.json', '')}"
-      
-      Rails.cache.fetch(cache_key, expires_in: 1.hour) do
-        file_path = Accounts::Engine.root.join('config', 'data', filename)
-        
-        next [] unless File.exist?(file_path)
-        
-        JSON.parse(File.read(file_path))
+      file_path = Accounts::Engine.root.join('config', 'data', filename)
+      return [] unless File.exist?(file_path)
+
+      file_mtime = File.mtime(file_path).to_i
+      cache_key = "accounts:starter_pack_#{starter_pack_namespace}_#{filename.gsub('/', '_').gsub('.json', '')}"
+
+      with_redis do |redis|
+        cached = redis.get(cache_key)
+        if cached.present?
+          parsed_cache = JSON.parse(cached)
+          if parsed_cache['mtime'] == file_mtime
+            return parsed_cache['data']
+          end
+        end
+
+        json_string = File.read(file_path)
+        data = JSON.parse(json_string)
+        cache_value = { mtime: file_mtime, data: data }.to_json
+        redis.set(cache_key, cache_value, ex: 24.hour.to_i)
+        data
       end
     end
 
