@@ -45,6 +45,8 @@ Accounts::Engine.routes.draw do
           end
         end
       end
+
+      post "/delete_account", to: "accounts#delete_account"
     end
   end
 end
