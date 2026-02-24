@@ -2,7 +2,7 @@
 
 module Accounts::Api::V1::Patchwork
   class AlttextSettingsController < Api::BaseController
-    include Accounts::Concerns::ApiResponseHelper
+    include ::Accounts::Concerns::ApiResponseHelper
 
     before_action -> { doorkeeper_authorize! :read, :write }
     before_action :require_user!

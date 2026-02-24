@@ -2,7 +2,7 @@
 
 module Accounts::Api::V1
   class CustomPasswordsController < Api::BaseController
-    include Accounts::Concerns::ApiResponseHelper
+    include ::Accounts::Concerns::ApiResponseHelper
 
     ACCESS_TOKEN_SCOPES = 'read write follow push profile'
     skip_before_action :require_authenticated_user!, except: [:change_password, :change_email]
