@@ -11,6 +11,7 @@ module Accounts
     def rake_db
       rake("accounts:install:migrations")
       rake("db:migrate")
+      rake("domain_block:import")
     end
     
   end
