@@ -10,8 +10,8 @@ module Accounts::Api::V1
     # Returns the list of starter pack channels from JSON data
     def starter_packs_channels
       file_path = starter_pack_data_path('starter_pack_list.json')
-      full_path = Accounts::Engine.root.join('config', 'data', file_path)
-      
+      full_path = ::Accounts::Engine.root.join('config', 'data', file_path)
+
       # Return empty response if file doesn't exist
       unless File.exist?(full_path)
         render json: { data: [] } and return
@@ -21,9 +21,9 @@ module Accounts::Api::V1
       last_modified = File.mtime(full_path)
       if stale?(last_modified: last_modified, etag: "#{starter_pack_namespace}-#{last_modified.to_i}")
         starter_packs_channels = load_json_data(file_path)
-        
+
         expires_in 24.hours, public: true
-        
+
         render json: { data: starter_packs_channels }
       end
     end
@@ -33,19 +33,19 @@ module Accounts::Api::V1
     def starter_packs_detail
       channel_id = params[:id]
       list_file = starter_pack_data_path('starter_pack_list.json')
-      list_path = Accounts::Engine.root.join('config', 'data', list_file)
-      
+      list_path = ::Accounts::Engine.root.join('config', 'data', list_file)
+
       unless File.exist?(list_path)
         render json: { error: "Channel not found" }, status: :not_found and return
       end
 
       followers_file = starter_pack_data_path("starter_pack_#{channel_id}.json")
-      followers_path = Accounts::Engine.root.join('config', 'data', followers_file)
-      
+      followers_path = ::Accounts::Engine.root.join('config', 'data', followers_file)
+
       list_mtime = File.mtime(list_path)
       followers_mtime = File.exist?(followers_path) ? File.mtime(followers_path) : list_mtime
       last_modified = [list_mtime, followers_mtime].max
-      
+
       if stale?(last_modified: last_modified, etag: "#{starter_pack_namespace}-#{channel_id}-#{last_modified.to_i}")
         starter_packs_channels = load_json_data(list_file)
         channel = starter_packs_channels.find { |ch| ch["id"] == channel_id }
@@ -55,9 +55,9 @@ module Accounts::Api::V1
         end
 
         followers = load_json_data(followers_file)
-        
+
         expires_in 24.hours, public: true
-        
+
         render json: {
           channel: channel,
           followers: followers
@@ -68,7 +68,7 @@ module Accounts::Api::V1
     private
 
     def load_json_data(filename)
-      file_path = Accounts::Engine.root.join('config', 'data', filename)
+      file_path = ::Accounts::Engine.root.join('config', 'data', filename)
       return [] unless File.exist?(file_path)
 
       file_mtime = File.mtime(file_path).to_i
@@ -107,6 +107,8 @@ module Accounts::Api::V1
         'twt'
       when 'findout'
         'findout'
+      when 'leicestergazette'
+        'leicestergazette'
       else
         'twt'
       end

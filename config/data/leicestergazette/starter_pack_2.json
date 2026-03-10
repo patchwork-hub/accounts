@@ -1,0 +1,117 @@
+[
+  {
+    "id": "116175688381976760",
+    "username": "bylinetimes",
+    "acct": "bylinetimes@threads.net",
+    "display_name": "Byline Times",
+    "locked": false,
+    "bot": false,
+    "discoverable": false,
+    "indexable": false,
+    "group": false,
+    "created_at": "2026-03-05T00:00:00.000Z",
+    "note": "\u003cp\u003eNo oligarchs, subsidies or online ads. Just journalism. Funded by our readers. Outside of the system. \u003ca href=\"https://subscribe.bylinetimes.com/\" rel=\"nofollow noopener\" target=\"_blank\"\u003esubscribe.bylinetimes.com\u003c/a\u003e\u003c/p\u003e",
+    "url": "https://threads.net/@bylinetimes/",
+    "uri": "https://threads.net/ap/users/17841410759463796/",
+    "avatar": "https://s3-eu-west-2.amazonaws.com/leicester-mastodon/cache/accounts/avatars/116/175/688/381/976/760/original/0db70d5c668d1120.jpg",
+    "avatar_static": "https://s3-eu-west-2.amazonaws.com/leicester-mastodon/cache/accounts/avatars/116/175/688/381/976/760/original/0db70d5c668d1120.jpg",
+    "header": "https://leicester.chat/headers/original/missing.png",
+    "header_static": "https://leicester.chat/headers/original/missing.png",
+    "followers_count": 40894,
+    "following_count": 194,
+    "statuses_count": 2142,
+    "last_status_at": null,
+    "hide_collections": true,
+    "emojis": [],
+    "fields": []
+  },
+  {
+    "id": "116059098258844161",
+    "username": "openDemocracy",
+    "acct": "openDemocracy@newsie.social",
+    "display_name": "openDemocracy",
+    "locked": false,
+    "bot": false,
+    "discoverable": true,
+    "indexable": false,
+    "group": false,
+    "created_at": "2022-11-23T00:00:00.000Z",
+    "note": "\u003cp\u003eFree thinking for the world 🌍 We're an independent media organisation covering world affairs and ideas.\u003c/p\u003e",
+    "url": "https://newsie.social/@openDemocracy",
+    "uri": "https://newsie.social/users/openDemocracy",
+    "avatar": "https://s3-eu-west-2.amazonaws.com/leicester-mastodon/cache/accounts/avatars/116/059/098/258/844/161/original/9ffeb15f0c5c7828.png",
+    "avatar_static": "https://s3-eu-west-2.amazonaws.com/leicester-mastodon/cache/accounts/avatars/116/059/098/258/844/161/original/9ffeb15f0c5c7828.png",
+    "header": "https://s3-eu-west-2.amazonaws.com/leicester-mastodon/cache/accounts/headers/116/059/098/258/844/161/original/ffaa23eef2ff49e3.jpg",
+    "header_static": "https://s3-eu-west-2.amazonaws.com/leicester-mastodon/cache/accounts/headers/116/059/098/258/844/161/original/ffaa23eef2ff49e3.jpg",
+    "followers_count": 5713,
+    "following_count": 59,
+    "statuses_count": 1469,
+    "last_status_at": "2026-03-06",
+    "hide_collections": false,
+    "emojis": [],
+    "fields": [
+      {
+        "name": "Website",
+        "value": "\u003ca href=\"https://opendemocracy.net\" rel=\"nofollow noopener\" translate=\"no\" target=\"_blank\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003eopendemocracy.net\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+        "verified_at": null
+      },
+      {
+        "name": "Support us",
+        "value": "\u003ca href=\"https://support.opendemocracy.net/project/home?utm_source=social\u0026amp;utm_medium=mastodon\u0026amp;utm_content=mastodon_profile_link\" rel=\"nofollow noopener\" translate=\"no\" target=\"_blank\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003esupport.opendemocracy.net/proj\u003c/span\u003e\u003cspan class=\"invisible\"\u003eect/home?utm_source=social\u0026amp;utm_medium=mastodon\u0026amp;utm_content=mastodon_profile_link\u003c/span\u003e\u003c/a\u003e",
+        "verified_at": null
+      },
+      {
+        "name": "Newsletters",
+        "value": "\u003ca href=\"https://www.opendemocracy.net/en/newsletters/?utm_source=social\u0026amp;utm_medium=mastodon\u0026amp;utm_content=mastodon_profile_link\" rel=\"nofollow noopener\" translate=\"no\" target=\"_blank\"\u003e\u003cspan class=\"invisible\"\u003ehttps://www.\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003eopendemocracy.net/en/newslette\u003c/span\u003e\u003cspan class=\"invisible\"\u003ers/?utm_source=social\u0026amp;utm_medium=mastodon\u0026amp;utm_content=mastodon_profile_link\u003c/span\u003e\u003c/a\u003e",
+        "verified_at": null
+      },
+      {
+        "name": "YouTube",
+        "value": "\u003ca href=\"https://www.youtube.com/channel/UCKTPks8QcY-i8l7YeW5OdjA\" rel=\"nofollow noopener\" translate=\"no\" target=\"_blank\"\u003e\u003cspan class=\"invisible\"\u003ehttps://www.\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003eyoutube.com/channel/UCKTPks8Qc\u003c/span\u003e\u003cspan class=\"invisible\"\u003eY-i8l7YeW5OdjA\u003c/span\u003e\u003c/a\u003e",
+        "verified_at": null
+      }
+    ]
+  },
+  {
+    "id": "116029369083567386",
+    "username": "TheConversationUK",
+    "acct": "TheConversationUK@newsie.social",
+    "display_name": "The Conversation UK",
+    "locked": false,
+    "bot": false,
+    "discoverable": true,
+    "indexable": false,
+    "group": false,
+    "created_at": "2022-11-22T00:00:00.000Z",
+    "note": "\u003cp\u003eIndependent news website. Only publishes articles written by academics and researchers. No paywall, no ads. We need experts.\u003c/p\u003e",
+    "url": "https://newsie.social/@TheConversationUK",
+    "uri": "https://newsie.social/users/TheConversationUK",
+    "avatar": "https://s3-eu-west-2.amazonaws.com/leicester-mastodon/cache/accounts/avatars/116/029/369/083/567/386/original/a196910b778c1bfd.png",
+    "avatar_static": "https://s3-eu-west-2.amazonaws.com/leicester-mastodon/cache/accounts/avatars/116/029/369/083/567/386/original/a196910b778c1bfd.png",
+    "header": "https://s3-eu-west-2.amazonaws.com/leicester-mastodon/cache/accounts/headers/116/029/369/083/567/386/original/7b11c1ab82b35b53.jpeg",
+    "header_static": "https://s3-eu-west-2.amazonaws.com/leicester-mastodon/cache/accounts/headers/116/029/369/083/567/386/original/7b11c1ab82b35b53.jpeg",
+    "followers_count": 3817,
+    "following_count": 10,
+    "statuses_count": 7577,
+    "last_status_at": "2026-03-07",
+    "hide_collections": false,
+    "emojis": [],
+    "fields": [
+      {
+        "name": "Website",
+        "value": "\u003ca href=\"https://theconversation.com/uk/\" rel=\"nofollow noopener\" translate=\"no\" target=\"_blank\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003etheconversation.com/uk/\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+        "verified_at": null
+      },
+      {
+        "name": "Newsletter",
+        "value": "\u003ca href=\"https://theconversation.com/uk/newsletters/the-daily-2\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003etheconversation.com/uk/newslet\u003c/span\u003e\u003cspan class=\"invisible\"\u003eters/the-daily-2\u003c/span\u003e\u003c/a\u003e",
+        "verified_at": "2026-03-07T09:37:13.360+00:00"
+      },
+      {
+        "name": "Donate",
+        "value": "\u003ca href=\"https://donate.theconversation.com/uk?frequency=monthly\u0026amp;amount=12\" rel=\"nofollow noopener\" translate=\"no\" target=\"_blank\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003edonate.theconversation.com/uk?\u003c/span\u003e\u003cspan class=\"invisible\"\u003efrequency=monthly\u0026amp;amount=12\u003c/span\u003e\u003c/a\u003e",
+        "verified_at": null
+      }
+    ]
+  }
+]
