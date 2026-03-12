@@ -12,12 +12,7 @@ module Accounts::Api::V1::Accounts
       email = subscription_params[:email]
       is_subscribe = ActiveModel::Type::Boolean.new.cast(subscription_params[:subscribe])
       member = find_member_by_email(email)
-
-      if is_subscribe
-        member ? update_member_subscribe(member['id'], is_subscribe) : create_ghost_member(email)
-      else
-        member ? update_member_subscribe(member['id'], is_subscribe) : render_errors("Member not found", :not_found)
-      end
+      member ? update_member_subscribe(member['id'], is_subscribe) : create_ghost_member(email, is_subscribe)
     rescue => e
       render_errors(e.message, :internal_server_error)
     end
@@ -39,11 +34,12 @@ module Accounts::Api::V1::Accounts
       handle_response(response, "Update successfully", :ok)
     end
 
-    # email subscribe to Ghost Site
-    def create_ghost_member(email)
+    # create a member on Ghost Site
+    def create_ghost_member(email, is_subscribe)
       body = {
         members: [{
-          email: email
+          email: email,
+          subscribed: is_subscribe
         }]
       }.to_json
       response = HTTParty.post(ghost_member_url, headers: ghost_headers, body: body)
