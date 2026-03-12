@@ -31,12 +31,12 @@
 			"roles": [],
 			"fields": []
 		},
-		"total_accounts": 24
+		"total_accounts": 4
 	},
 	{
 		"id": "2",
-		"title": "Independent Media",
-		"description": "A curated collection of the UK’s leading independent newsrooms, investigative outlets, and grassroots media cooperatives. From investigative deep-dives to climate justice and media reform, these voices prioritize public interest over corporate agendas.",
+		"title": "Co-operatives Around the World",
+		"description": "List the cooperatives and movement promoting cooperation around the world.",
 		"collected_by": {
 			"id": "116084814564761790",
 			"username": "rhys",
@@ -65,7 +65,7 @@
 			"roles": [],
 			"fields": []
 		},
-		"total_accounts": 24
+		"total_accounts": 58
 	},
 	{
 		"id": "3",
@@ -99,6 +99,6 @@
 			"roles": [],
 			"fields": []
 		},
-		"total_accounts": 24
+		"total_accounts": 15
 	}
 ]
