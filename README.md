@@ -112,7 +112,6 @@ POST /api/v1/user_locales
 ### Environment Variables
 
 #### Account Management
-- `LOCAL_DOMAIN` - Instance domain used for platform-specific behaviors and feature flags (e.g., `mo-me.social`, `thebristolcable.social`, `channel.org`)
 - `AUTO_FOLLOW_ENABLED` - Enable auto-follow on signup (`true` or `false`, defaults to disabled)
 - `AUTO_FOLLOW_ACCOUNTS` - Comma-separated list of account handles to auto-follow after signup
 - `WELCOME_EMAIL_DISABLED` - Disable welcome email sent to new users after signup (set to `true` to disable, defaults to enabled)
