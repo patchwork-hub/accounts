@@ -13,6 +13,9 @@ class CustomNotificationService < BaseService
     visibility = ''
     from_account_username = Account.find(notification.from_account_id).username
 
+    # To skip sending notification when the status is reblogged by the Group channels and local_only is true
+    return nil if skip_local_only_notify?(notification)
+
     case notification.type
     when :status
       body = I18n.t('notification_mailer.status.subject', name: from_account_username)
@@ -67,5 +70,13 @@ class CustomNotificationService < BaseService
     ios_android_devices.each do |device|
       FirebaseNotificationService.send_notification(device, app_title, body, data)
     end
+  end
+
+  private
+
+  def skip_local_only_notify?(notification)
+    return false unless Status.column_names.include?('local_only')
+    
+    return notification.type == :reblog && Status.find_by(id: notification.activity_id)&.local_only == true
   end
 end
