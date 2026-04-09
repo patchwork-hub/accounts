@@ -99,16 +99,37 @@ POST /api/v1/user_locales
 ## Configuration
 
 ### Environment Variables
-- `AUTO_FOLLOW_ENABLED` - Enable auto-follow on signup
-- `AUTO_FOLLOW_ACCOUNTS` - Comma-separated list of accounts to auto-follow
-- `FIREBASE_PROJECT_ID` - Firebase project ID for push notifications
-- `FIREBASE_KEY_FILE_NAME` - Firebase service account key filename
-- `NOTIFICATION_SENDER_NAME` - App name for push notifications
-- `MAIL_SENDER_NAME` - Sender name for emails
-- `MAIL_LOGO_URL` - Default logo URL for emails
-- `LOCAL_DOMAIN` - Instance domain for platform detection
-- `MAIN_CHANNEL` - Enable channel-based authentication
-- `DEFAULT_EMAIL_NOTIFICATIONS_ENABLED` - Default email notification state
+
+#### Account Management
+
+- `AUTO_FOLLOW_ENABLED` - Enable auto-follow on signup (`true` or `false`, defaults to disabled)
+- `AUTO_FOLLOW_ACCOUNTS` - Comma-separated list of account handles to auto-follow after signup
+- `WELCOME_EMAIL_DISABLED` - Disable welcome email sent to new users after signup (set to `true` to disable, defaults to enabled)
+
+#### Push Notifications
+
+- `FIREBASE_PROJECT_ID` - Firebase project ID for FCM push notifications (required for push notifications to work)
+- `FIREBASE_KEY_FILE_NAME` - Path to Firebase service account JSON key file (required for push notifications to work)
+- `NOTIFICATION_SENDER_NAME` - App name displayed in push notification titles (defaults to `Development Patchwork`)
+
+#### Email Configuration
+
+- `MAIL_SENDER_NAME` - Name used as sender for all outgoing emails (defaults to `Development Patchwork`)
+- `MAIL_LOGO_URL` - Default URL for logo image in email templates (defaults to Patchwork demo logo)
+- `IOS_APP_STORE_URL` - URL to iOS app in App Store; when set, displays app store link in email footer
+- `ANDROID_APP_STORE_URL` - URL to Android app in Google Play; when set, displays app store link in email footer
+- `PRIVACY_POLICY_URL` - URL to privacy policy; when set along with `TERMS_AND_CONDITIONS_URL`, displays policy links in email footer
+- `TERMS_AND_CONDITIONS_URL` - URL to terms of service; when set along with `PRIVACY_POLICY_URL`, displays policy links in email footer
+
+#### User Preferences
+
+- `DEFAULT_EMAIL_NOTIFICATIONS_ENABLED` - Default email notification state for new users (`true` or `false`)
+- `DASHBOARD_INSTANCE_URL` - Mastodon connected Dashboard URL
+
+#### Ghost Integration (Optional)
+
+- `GHOST_URL` - Base URL of Ghost CMS instance (required only if using Ghost subscriptions feature, e.g., `https://newsletter.example.com`)
+- `GHOST_ADMIN_API_KEY` - Ghost Admin API key in format `id:secret` for authentication (required only if using Ghost subscriptions feature)
 
 ## Development
 
