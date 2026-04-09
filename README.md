@@ -112,6 +112,7 @@ POST /api/v1/user_locales
 ### Environment Variables
 
 #### Account Management
+
 - `AUTO_FOLLOW_ENABLED` - Enable auto-follow on signup (`true` or `false`, defaults to disabled)
 - `AUTO_FOLLOW_ACCOUNTS` - Comma-separated list of account handles to auto-follow after signup
 - `WELCOME_EMAIL_DISABLED` - Disable welcome email sent to new users after signup (set to `true` to disable, defaults to enabled)
@@ -134,6 +135,7 @@ POST /api/v1/user_locales
 #### User Preferences
 
 - `DEFAULT_EMAIL_NOTIFICATIONS_ENABLED` - Default email notification state for new users (`true` or `false`)
+- `DASHBOARD_INSTANCE_URL` - Mastodon connected Dashboard URL
 
 #### Ghost Integration (Optional)
 
