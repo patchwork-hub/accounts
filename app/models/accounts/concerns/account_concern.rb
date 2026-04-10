@@ -6,5 +6,8 @@ module Accounts::Concerns::AccountConcern
   included do
     has_many :notification_tokens, class_name: 'NotificationToken', dependent: :delete_all, inverse_of: :account
     has_many :patchwork_settings, class_name: 'PatchworkSetting', foreign_key: :account_id, dependent: :destroy
+
+    # Tag follows (via TagFollow model) — followed tags convenience association
+    has_many :followed_tags, through: :tag_follows, source: :tag
   end
 end

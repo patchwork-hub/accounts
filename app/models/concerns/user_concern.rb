@@ -3,6 +3,8 @@ module UserConcern
   include EmailNotificationAttributesConcern
   include PatchworkHelper
 
+  include PatchworkHelper
+  
   included do
     after_create :create_user_settings, :apply_server_setting_to_account, :set_bluesky_bridge_enable
   end

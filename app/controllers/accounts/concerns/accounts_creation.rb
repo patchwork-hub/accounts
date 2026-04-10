@@ -16,7 +16,7 @@ module Accounts::Concerns::AccountsCreation
     self.response_body = Oj.dump(response.body)
     self.status        = response.status
     create_community_admin unless is_non_channel?
-    generate_opt_token
+    generate_otp_token
   rescue ActiveRecord::RecordInvalid => e
     render json: ValidationErrorFormatter.new(e, 'account.username': :username, 'invite_request.text': :reason).as_json,
            status: 422
