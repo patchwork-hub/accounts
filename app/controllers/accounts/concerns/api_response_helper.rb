@@ -1,7 +1,7 @@
 # API Response Helper for internationalized API responses
 # This module provides standardized response methods with I18n support for API controllers
 
-module Accounts::Concerns::ApiResponseHelper
+module ::Accounts::Concerns::ApiResponseHelper
   extend ActiveSupport::Concern
   include Accounts::Concerns::ApiCustomResponseHelper
 
