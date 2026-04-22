@@ -19,6 +19,7 @@ module Overrides::NotifyServiceExtension
 
     if @notification.filtered?
       update_notification_request!
+      CustomNotificationService.new.call(@recipient, @notification) if @notification.type == :mention
     else
       push_notification!
       push_to_conversation! if direct_message?
