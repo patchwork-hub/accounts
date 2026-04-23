@@ -35,7 +35,14 @@ class CustomNotificationService < BaseService
     when :mention
       mention = Mention.find(notification.activity_id)
       status = Status.find(mention.status_id)
-      body = status.visibility === Status.visibilities[:direct] ? I18n.t('notification.mention.direct_message', name: from_account_username) : I18n.t('notification_mailer.mention.subject', name: from_account_username)
+      notification_request = NotificationRequest.find_by(account_id: notification.account_id)
+      body = if notification_request.present?
+               "You have a new conversation request."
+             elsif status.visibility == Status.visibilities[:direct]
+               I18n.t('notification.mention.direct_message', name: from_account_username)
+             else
+               I18n.t('notification_mailer.mention.subject', name: from_account_username)
+             end
       destination_id = status.id
       visibility = status.visibility
     when :poll
@@ -62,6 +69,8 @@ class CustomNotificationService < BaseService
       reblogged_id: reblogged_id.to_s,
       visibility: visibility,
     }
+    data.merge!(conversation_request: true) if notification_request.present?
+
     # ios & android
     ios_android_devices = notification_tokens.where.not(platform_type: 'huawei').pluck(:notification_token)
 
