@@ -8,6 +8,7 @@ ar:
       ended_voted: "انتهى الاستطلاع الذي صوت فيه"
     mention:
       direct_message: "%{name} أرسل لك رسالة"
+      conversation_request: "لديك طلب محادثة جديد."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "عزيزي %{name}،"

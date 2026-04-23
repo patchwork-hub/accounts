@@ -8,6 +8,7 @@ fo:
       ended_voted: "Ein atkvøðugreiðsla, sum tú atkvøddi í, er liðug"
     mention:
       direct_message: "%{name} sendi tær eini boð"
+      conversation_request: "Tú hevur eina nýggja samtalu umbøn."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Góði %{name},"

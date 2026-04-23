@@ -8,6 +8,7 @@ sa:
       ended_voted: "यत्र त्वया मतदानं कृतं तत् मतदानं समाप्तम् अभवत्"
     mention:
       direct_message: "%{name} त्वां सन्देशं प्रेषितवान्"
+      conversation_request: "भवतः नूतनं संवादप्रार्थनम् अस्ति।"
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "प्रिय %{name},"

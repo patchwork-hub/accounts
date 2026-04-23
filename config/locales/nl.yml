@@ -8,6 +8,7 @@ nl:
       ended_voted: "Een poll waarin je hebt gestemd is beëindigd"
     mention:
       direct_message: "%{name} heeft je een bericht gestuurd"
+      conversation_request: "Je hebt een nieuw gespreksverzoek."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Beste %{name},"

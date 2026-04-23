@@ -8,6 +8,7 @@ tlh:
       ended_voted: "A poll you voted in has ended"
     mention:
       direct_message: "%{name} send you a message"
+      conversation_request: "naDev QoQ QIn chu' Daghaj."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Dear %{name},"

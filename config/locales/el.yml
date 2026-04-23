@@ -8,6 +8,7 @@ el:
       ended_voted: "Μια δημοσκόπηση στην οποία ψηφίσατε ολοκληρώθηκε"
     mention:
       direct_message: "%{name} σας έστειλε ένα μήνυμα"
+      conversation_request: "Έχετε ένα νέο αίτημα συνομιλίας."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Αγαπητέ/ή %{name},"

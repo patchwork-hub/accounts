@@ -8,6 +8,7 @@ af:
       ended_voted: "'n Peiling waarin jy gestem het, het geëindig"
     mention:
       direct_message: "%{name} het vir jou 'n boodskap gestuur"
+      conversation_request: "Jy het 'n nuwe gesprekversoek."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Beste %{name},"

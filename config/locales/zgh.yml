@@ -8,6 +8,7 @@ zgh:
       ended_voted: "A poll you voted in has ended"
     mention:
       direct_message: "%{name} send you a message"
+      conversation_request: "ⵖⵓⵔⴽ ⵜⵓⵜⵔⴰ ⵏ ⵓⵎⵙⴰⵡⴰⵍ ⴰⵎⴰⵢⵏⵓ."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Dear %{name},"

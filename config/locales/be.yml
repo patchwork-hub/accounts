@@ -8,6 +8,7 @@ be:
       ended_voted: "Апытанне, у якім вы галасавалі, завершана"
     mention:
       direct_message: "%{name} даслаў вам паведамленне"
+      conversation_request: "У вас новы запыт на размову."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Паважаны %{name},"

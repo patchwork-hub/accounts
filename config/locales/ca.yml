@@ -8,6 +8,7 @@ ca:
       ended_voted: "Una enquesta en la qual has votat ha finalitzat"
     mention:
       direct_message: "%{name} t'ha enviat un missatge"
+      conversation_request: "Tens una nova sol·licitud de conversa."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Benvolgut/da %{name},"

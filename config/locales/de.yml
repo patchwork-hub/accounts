@@ -8,6 +8,7 @@ de:
       ended_voted: "Eine Umfrage, an der du teilgenommen hast, ist beendet"
     mention:
       direct_message: "%{name} hat dir eine Nachricht gesendet"
+      conversation_request: "Du hast eine neue Konversationsanfrage."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Lieber %{name},"

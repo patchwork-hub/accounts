@@ -8,6 +8,7 @@ ro:
       ended_voted: "Un sondaj la care ai votat s-a încheiat"
     mention:
       direct_message: "%{name} ți-a trimis un mesaj"
+      conversation_request: "Aveți o nouă cerere de conversație."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Dragă %{name},"

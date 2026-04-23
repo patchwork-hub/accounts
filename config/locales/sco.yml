@@ -8,6 +8,7 @@ sco:
       ended_voted: "A poll ye votit in haes endit"
     mention:
       direct_message: "%{name} sent ye a message"
+      conversation_request: "Ye hae a new conversation request."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Dear %{name},"

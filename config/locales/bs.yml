@@ -8,6 +8,7 @@ bs:
       ended_voted: "Anketa u kojoj ste glasali je završena"
     mention:
       direct_message: "%{name} vam je poslao poruku"
+      conversation_request: "Imate novi zahtjev za razgovor."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Dragi %{name},"

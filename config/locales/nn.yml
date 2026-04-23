@@ -8,6 +8,7 @@ nn:
       ended_voted: "Ei avstemming du stemte i er avslutta"
     mention:
       direct_message: "%{name} sende deg ei melding"
+      conversation_request: "Du har ei ny samtaleførespurnad."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Kjære %{name},"

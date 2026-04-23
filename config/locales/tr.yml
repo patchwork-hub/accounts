@@ -8,6 +8,7 @@ tr:
       ended_voted: "Oy verdiğiniz anket sona erdi"
     mention:
       direct_message: "%{name} size bir mesaj gönderdi"
+      conversation_request: "Yeni bir konuşma isteğiniz var."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Sayın %{name},"

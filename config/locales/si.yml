@@ -8,6 +8,7 @@ si:
       ended_voted: "ඔබ ඡන්දය දුන් විමසුම අවසන්විය"
     mention:
       direct_message: "%{name} ඔබට පණිවිඩයක් එවීය"
+      conversation_request: "ඔබට නව සංවාද ඉල්ලීමක් ඇත."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "ප්‍රිය %{name},"

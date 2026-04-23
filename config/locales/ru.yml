@@ -9,6 +9,7 @@ ru:
       ended_voted: "Опрос, в котором вы участвовали, завершён"
     mention:
       direct_message: "%{name} отправил(а) вам сообщение"
+      conversation_request: "У вас новый запрос на разговор."
   
   custom_passwords_mailer:
     reset_password_confirmation:

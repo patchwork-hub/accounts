@@ -8,6 +8,7 @@ szl:
       ended_voted: "Ankieta, w kerej głosowołś, sie skończyła"
     mention:
       direct_message: "%{name} posłał ci wiadōmość"
+      conversation_request: "Mosz nowe żōndanie kōnwersacyje."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Drogi %{name},"

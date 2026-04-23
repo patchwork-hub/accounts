@@ -8,6 +8,7 @@ co:
       ended_voted: "Un sondaghju induve avete vutatu hè finitu"
     mention:
       direct_message: "%{name} vi hà mandatu un missaghju"
+      conversation_request: "Avete una nova dumanda di cunversazione."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Caru %{name},"

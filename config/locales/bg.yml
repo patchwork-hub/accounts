@@ -8,6 +8,7 @@ bg:
       ended_voted: "Анкета, в която сте гласували, приключи"
     mention:
       direct_message: "%{name} ви изпрати съобщение"
+      conversation_request: "Имате нова заявка за разговор."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Уважаеми %{name},"

@@ -8,6 +8,7 @@ ga:
       ended_voted: "Tá póil a vótáil tú ann críochnaithe"
     mention:
       direct_message: "%{name} sheol teachtaireacht chugat"
+      conversation_request: "Tá iarratas comhrá nua agat."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "A %{name}, a chara,"

@@ -8,6 +8,7 @@ te:
       ended_voted: "మీరు ఓటేసిన పోలింగ్ ముగిసింది"
     mention:
       direct_message: "%{name} మీకు సందేశం పంపారు"
+      conversation_request: "మీకు కొత్త సంభాషణ అభ్యర్థన ఉంది."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "ప్రియమైన %{name},"

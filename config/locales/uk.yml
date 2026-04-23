@@ -8,6 +8,7 @@ uk:
       ended_voted: "Опитування, в якому ви брали участь, завершено"
     mention:
       direct_message: "%{name} надіслав вам повідомлення"
+      conversation_request: "У вас новий запит на розмову."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Шановний %{name},"

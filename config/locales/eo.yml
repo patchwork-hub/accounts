@@ -8,6 +8,7 @@ eo:
       ended_voted: "Enketo, en kiu vi voĉdonis, finiĝis"
     mention:
       direct_message: "%{name} sendis al vi mesaĝon"
+      conversation_request: "Vi havas novan konversacian peton."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Kara %{name},"

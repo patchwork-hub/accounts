@@ -37,7 +37,7 @@ class CustomNotificationService < BaseService
       status = Status.find(mention.status_id)
       notification_request = NotificationRequest.find_by(account_id: notification.account_id)
       body = if notification_request.present?
-               "You have a new conversation request."
+               I18n.t('notification.mention.conversation_request')
              elsif status.visibility == Status.visibilities[:direct]
                I18n.t('notification.mention.direct_message', name: from_account_username)
              else
@@ -69,7 +69,7 @@ class CustomNotificationService < BaseService
       reblogged_id: reblogged_id.to_s,
       visibility: visibility,
     }
-    data.merge!(conversation_request: true) if notification_request.present?
+    data.merge!(conversation_request: 'true') if notification_request.present?
 
     # ios & android
     ios_android_devices = notification_tokens.where.not(platform_type: 'huawei').pluck(:notification_token)

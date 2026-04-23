@@ -8,6 +8,7 @@ ja:
       ended_voted: "あなたが投票した投票が終了しました"
     mention:
       direct_message: "%{name} さんがあなたにメッセージを送りました"
+      conversation_request: "新しい会話リクエストがあります。"
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "%{name} 様、"

@@ -8,6 +8,7 @@ fy:
       ended_voted: "In peiling dêr't jo yn stimd hawwe is ôfrûn"
     mention:
       direct_message: "%{name} hat jo in berjocht stjoerd"
+      conversation_request: "Jo hawwe in nij petear fersyk."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Achte %{name},"

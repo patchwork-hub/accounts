@@ -8,6 +8,7 @@ fa:
       ended_voted: "نظرسنجی که در آن رأی داده‌اید به پایان رسید"
     mention:
       direct_message: "%{name} برای شما پیامی ارسال کرد"
+      conversation_request: "شما یک درخواست مکالمه جدید دارید."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "کاربر گرامی %{name}،"

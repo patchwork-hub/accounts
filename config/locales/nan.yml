@@ -8,6 +8,7 @@ nan:
       ended_voted: "Lí ū thiaⁿ pió-chhó͘ kái-sio̍k liáu"
     mention:
       direct_message: "%{name} hō͘ lí chhòng chi̍t ê sìn-sik"
+      conversation_request: "你有一个新的对话请求。"
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Chhiáⁿ %{name},"

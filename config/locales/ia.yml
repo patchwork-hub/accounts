@@ -8,6 +8,7 @@ ia:
       ended_voted: "Un sondage ubi tu ha votate ha finite"
     mention:
       direct_message: "%{name} te ha inviate un message"
+      conversation_request: "Tu ha un nove requesta de conversation."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Car %{name},"

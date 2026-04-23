@@ -8,6 +8,7 @@ gl:
       ended_voted: "Unha enquisa na que votaches rematou"
     mention:
       direct_message: "%{name} enviouche unha mensaxe"
+      conversation_request: "Tes unha nova solicitude de conversa."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Estimado/a %{name},"

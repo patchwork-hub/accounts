@@ -8,6 +8,7 @@ lt:
       ended_voted: "Apklausa, kurioje balsavote, baigėsi"
     mention:
       direct_message: "%{name} atsiuntė jums žinutę"
+      conversation_request: "Turite naują pokalbio užklausą."
   custom_passwords_mailer:
     reset_password_confirmation:
       greeting: "Gerb. %{name},"
