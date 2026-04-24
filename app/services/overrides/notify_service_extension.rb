@@ -19,7 +19,12 @@ module Overrides::NotifyServiceExtension
 
     if @notification.filtered?
       update_notification_request!
-      CustomNotificationService.new.call(@recipient, @notification) if @notification.type == :mention
+      if @notification.type == :mention
+        mention = Mention.find(@notification.activity_id)
+        status = Status.find(mention.status_id)
+        notification_request = NotificationRequest.find_by(account_id: @notification.account_id)
+        CustomNotificationService.new.call(@recipient, @notification) if notification_request.present? && notification_request.last_status_id == status.id
+      end
     else
       push_notification!
       push_to_conversation! if direct_message?

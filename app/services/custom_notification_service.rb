@@ -38,7 +38,7 @@ class CustomNotificationService < BaseService
       mention = Mention.find(notification.activity_id)
       status = Status.find(mention.status_id)
       notification_request = NotificationRequest.find_by(account_id: notification.account_id)
-      body = if notification_request.present?
+      body = if notification_request.present? && notification_request.last_status_id == status.id
                I18n.t('notification.mention.conversation_request')
              elsif status.visibility == Status.visibilities[:direct]
                I18n.t('notification.mention.direct_message', name: from_account_username)
@@ -82,7 +82,7 @@ class CustomNotificationService < BaseService
       reblogged_id: reblogged_id.to_s,
       visibility: visibility,
     }
-    data.merge!(conversation_request: 'true') if notification_request.present?
+    data.merge!(conversation_request: 'true') if notification_request.present? && notification_request.last_status_id == status.id
 
     # ios & android
     ios_android_devices = notification_tokens.where.not(platform_type: 'huawei').pluck(:notification_token)
