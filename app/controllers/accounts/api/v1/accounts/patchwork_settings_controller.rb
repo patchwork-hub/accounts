@@ -31,9 +31,38 @@ module Accounts::Api::V1::Accounts
       end
     end
 
+    # get article notifications setting
+    def article_notifications
+      @patchwork_setting = Accounts::PatchworkSetting.find_by(account: @account, app_name: @app_name)
+      settings_hash = @patchwork_setting&.settings || {}
+      is_allowed = settings_hash.dig("article_notifications") || false
+
+      render_success({ article_notifications: is_allowed }, 'api.messages.success', :ok)
+    end
+
+    # update article notifications setting
+    def update_article_notifications
+      is_allowed = ActiveModel::Type::Boolean.new.cast(article_notifications_params[:allowed])
+      @patchwork_setting = Accounts::PatchworkSetting.find_or_initialize_by(account: @account, app_name: @app_name)
+      current_settings = (@patchwork_setting.settings || {}).with_indifferent_access
+      updated_settings = current_settings.deep_merge(
+        article_notifications: is_allowed
+      )
+
+      if @patchwork_setting.update(settings: updated_settings)
+        render_success({ article_notifications: is_allowed }, 'api.messages.success', :ok)
+      else
+        render_errors('api.errors.unprocessable_entity', :unprocessable_entity)
+      end
+    end
+
     private
 
     def leicester_notification_params
+      params.permit(:allowed)
+    end
+
+    def article_notifications_params
       params.permit(:allowed)
     end
 

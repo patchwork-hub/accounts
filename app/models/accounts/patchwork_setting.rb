@@ -8,7 +8,7 @@ module Accounts
 
     belongs_to :account
 
-    enum :app_name, { patchwork: 0, newsmast: 1, leicester: 2 }, default: :patchwork
+    enum :app_name, { patchwork: 0, newsmast: 1, leicester: 2, findout: 3 }, default: :patchwork
 
     validates :account, presence: true, uniqueness: { scope: :app_name, case_sensitive: false }
     validates :app_name, presence: true
