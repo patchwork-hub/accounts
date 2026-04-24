@@ -11,12 +11,14 @@ class CustomNotificationService < BaseService
     destination_id = 0
     reblogged_id = 0
     visibility = ''
+    notification_request = nil
+    notification_type = notification.type&.to_sym
     from_account_username = Account.find(notification.from_account_id).username
 
     # To skip sending notification when the status is reblogged by the Group channels and local_only is true
     return nil if skip_local_only_notify?(notification)
 
-    case notification.type
+    case notification_type
     when :status
       body = I18n.t('notification_mailer.status.subject', name: from_account_username)
       destination_id = Status.find(notification.activity_id).id
@@ -61,10 +63,21 @@ class CustomNotificationService < BaseService
     when :quoted_update
       body = I18n.t('notification_mailer.update.subject', name: from_account_username)
       destination_id = Quote.find(notification.activity_id)&.status_id
+    when :'admin.sign_up'
+      body = I18n.t('notification_mailer.admin.sign_up.subject', name: from_account_username)
+      destination_id = notification.from_account_id
+    when :'admin.report'
+      body = I18n.t('notification_mailer.admin.report.subject', name: from_account_username)
+      destination_id = notification.activity_id
+    else
+      Rails.logger.warn "[CustomNotificationService] Unhandled notification type: #{notification.type}"
+      return nil
     end
 
+    return nil if body.blank?
+
     data = {
-      noti_type: notification.type,
+      noti_type: notification_type,
       destination_id: destination_id.to_s,
       reblogged_id: reblogged_id.to_s,
       visibility: visibility,
