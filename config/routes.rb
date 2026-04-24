@@ -52,6 +52,10 @@ Accounts::Engine.routes.draw do
         get "leicester_notification", to: "patchwork_settings#leicester_news_notification"
         post "leicester_notification", to: "patchwork_settings#update_leicester_news_notification"
         post "subscribe_leicester", to: "ghost_subscriptions#manage_subscription"
+
+        # Receive new article notifications
+        get "article_notifications", to: "patchwork_settings#article_notifications"
+        post "article_notifications", to: "patchwork_settings#update_article_notifications"
       end
     end
   end
