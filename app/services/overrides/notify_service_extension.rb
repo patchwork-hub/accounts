@@ -22,7 +22,7 @@ module Overrides::NotifyServiceExtension
       if @notification.type == :mention && notification_request.present?
         mention = Mention.find(@notification.activity_id)
         status = Status.find(mention.status_id)
-        CustomNotificationService.new.call(@recipient, @notification) if notification_request.last_status_id == status.id
+        CustomNotificationService.new.call(@recipient, @notification, notification_request) if notification_request.last_status_id == status.id
       end
     else
       push_notification!

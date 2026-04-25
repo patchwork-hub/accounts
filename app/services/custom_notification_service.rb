@@ -3,7 +3,7 @@
 class CustomNotificationService < BaseService
   include NonChannelHelper
 
-  def call(recipient, notification)
+  def call(recipient, notification, noti_request = nil)
     notification_tokens = NotificationToken.where(account_id: recipient.id)
     return nil if notification_tokens.empty? || notification_tokens.any? { |token| token.mute }
 
@@ -37,8 +37,7 @@ class CustomNotificationService < BaseService
     when :mention
       mention = Mention.find(notification.activity_id)
       status = Status.find(mention.status_id)
-      notification_request = NotificationRequest.find_by(account_id: notification.account_id)
-      body = if notification_request.present? && notification_request.last_status_id == status.id
+      body = if noti_request.present? && noti_request.last_status_id == status.id
                I18n.t('notification.mention.conversation_request')
              elsif status.visibility == Status.visibilities[:direct]
                I18n.t('notification.mention.direct_message', name: from_account_username)
