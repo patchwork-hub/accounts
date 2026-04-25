@@ -18,14 +18,11 @@ module Overrides::NotifyServiceExtension
     return if @notification.activity.nil?
 
     if @notification.filtered?
-      update_notification_request!
-      if @notification.type == :mention
+      notification_request = update_noti_request!
+      if @notification.type == :mention && notification_request.present?
         mention = Mention.find(@notification.activity_id)
         status = Status.find(mention.status_id)
-        notification_request = NotificationRequest.find_by(account_id: @notification.account_id)
-        ActiveRecord.after_all_transactions_commit do
-          CustomNotificationService.new.call(@recipient, @notification) if notification_request.present? && notification_request.last_status_id == status.id
-        end
+        CustomNotificationService.new.call(@recipient, @notification) if notification_request.last_status_id == status.id
       end
     else
       push_notification!
@@ -44,5 +41,17 @@ module Overrides::NotifyServiceExtension
       .with(recipient: @recipient, notification: @notification)
       .public_send(@notification.type)
       .deliver_later
+  end
+
+  private
+
+  def update_noti_request!
+    return unless %i(mention quote).include?(@notification.type)
+
+    notification_request = NotificationRequest.find_or_initialize_by(account_id: @recipient.id, from_account_id: @notification.from_account_id)
+    notification_request.last_status_id = @notification.target_status.id
+    notification_request.save
+
+    notification_request
   end
 end
