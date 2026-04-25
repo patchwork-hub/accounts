@@ -81,7 +81,7 @@ class CustomNotificationService < BaseService
       reblogged_id: reblogged_id.to_s,
       visibility: visibility,
     }
-    data.merge!(conversation_request: 'true') if notification_request.present? && notification_request.last_status_id == status.id
+    data.merge!(conversation_request: 'true') if noti_request.present? && noti_request.last_status_id == status.id
 
     # ios & android
     ios_android_devices = notification_tokens.where.not(platform_type: 'huawei').pluck(:notification_token)
