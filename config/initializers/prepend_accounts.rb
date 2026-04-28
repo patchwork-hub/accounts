@@ -15,4 +15,11 @@ Rails.application.config.to_prepare do
   Api::V1::Accounts::CredentialsController.prepend(Accounts::Concerns::AccountsUpdate)
   User::HasSettings.prepend(Accounts::Concerns::UserSettingExtend)
   Settings::ProfilesController.prepend(Accounts::Concerns::SettingProfilesUpdate)
+
+  # Ensure authentication for Admin Moderation and Administration routes
+  [Admin::DashboardController, Admin::ReportsController].each do |controller|
+    controller.class_eval do
+      before_action :authenticate_user!
+    end
+  end
 end
