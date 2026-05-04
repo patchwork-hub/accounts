@@ -112,6 +112,7 @@ POST /api/v1/user_locales
 ### Environment Variables
 
 #### Account Management
+
 - `AUTO_FOLLOW_ENABLED` - Enable auto-follow on signup (`true` or `false`, defaults to disabled)
 - `AUTO_FOLLOW_ACCOUNTS` - Comma-separated list of account handles to auto-follow after signup
 - `WELCOME_EMAIL_DISABLED` - Disable welcome email sent to new users after signup (set to `true` to disable, defaults to enabled)
@@ -130,6 +131,7 @@ POST /api/v1/user_locales
 - `ANDROID_APP_STORE_URL` - URL to Android app in Google Play; when set, displays app store link in email footer
 - `PRIVACY_POLICY_URL` - URL to privacy policy; when set along with `TERMS_AND_CONDITIONS_URL`, displays policy links in email footer
 - `TERMS_AND_CONDITIONS_URL` - URL to terms of service; when set along with `PRIVACY_POLICY_URL`, displays policy links in email footer
+- `DEFAULT_VERIFICATION_ENABLED` - Use default verification or customized verification for whether new user registration is verified (`true` = default, `false` = customized)
 
 #### User Preferences
 
