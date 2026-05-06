@@ -44,6 +44,7 @@ Accounts::Engine.routes.draw do
             post "/notification", to: "email_settings#email_notification"
           end
         end
+        resources :account_deletion, only: [:destroy]
       end
 
       post "/delete_account", to: "accounts#delete_account"
