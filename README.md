@@ -121,6 +121,7 @@ POST /api/v1/user_locales
 - `FIREBASE_PROJECT_ID` - Firebase project ID for FCM push notifications (required for push notifications to work)
 - `FIREBASE_KEY_FILE_NAME` - Path to Firebase service account JSON key file (required for push notifications to work)
 - `NOTIFICATION_SENDER_NAME` - App name displayed in push notification titles (defaults to `Development Patchwork`)
+- `SKIP_SIGNUP_PUSH_NOTI` - Skip sending push notifications for new user sign-ups (`admin.sign_up` notification type). Must be present and set to `true` to disable (defaults to enable)
 
 #### Email Configuration
 

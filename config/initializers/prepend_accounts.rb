@@ -14,6 +14,9 @@ Rails.application.config.to_prepare do
   Auth::SessionsController.prepend(Accounts::Concerns::CustomSessionBehavior) if Object.const_defined?('Auth::SessionsController')
   Api::V1::Accounts::CredentialsController.prepend(Accounts::Concerns::AccountsUpdate)
   User::HasSettings.prepend(Accounts::Concerns::UserSettingExtend)
+  Api::V2::SearchController.prepend(Accounts::Concerns::SearchControllerExtension)
+  SearchService.prepend(Overrides::SearchServiceExtension)
+  AccountSearchService.prepend(Overrides::AccountSearchServiceExtension)
 
   # Ensure authentication for Admin Moderation and Administration routes
   [Admin::DashboardController, Admin::ReportsController].each do |controller|
