@@ -12,11 +12,7 @@ module Accounts::Api::V1::Patchwork
         return
       end
 
-      AccountDeletionWorker.perform_async(account.id,
-      {
-        'reserve_username' => false,
-        'reserve_email' => false,
-      })
+      AccountDeletionWorker.perform_async(account.id, { 'reserve_username' => false })
       render_success({}, 'api.messages.deleted', :accepted)
     end
 
