@@ -6,13 +6,12 @@ module Accounts::Api::V1::Patchwork
     before_action :set_account, only: [:destroy]
 
     def destroy
-      account = @account
-      if account.nil?
+      if @account.nil?
         render_error("api.errors.not_found", :not_found)
         return
       end
 
-      AccountDeletionWorker.perform_async(account.id, { 'reserve_username' => false })
+      DeleteAccountService.new.call(@account, reserve_email: false, reserve_username: false)
       render_success({}, 'api.messages.deleted', :accepted)
     end
 
