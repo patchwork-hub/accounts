@@ -116,6 +116,7 @@ POST /api/v1/user_locales
 - `AUTO_FOLLOW_ENABLED` - Enable auto-follow on signup (`true` or `false`, defaults to disabled)
 - `AUTO_FOLLOW_ACCOUNTS` - Comma-separated list of account handles to auto-follow after signup
 - `WELCOME_EMAIL_DISABLED` - Disable welcome email sent to new users after signup (set to `true` to disable, defaults to enabled)
+- `ALLOWED_SIGNUP_EMAIL_DOMAIN` - Restrict new user registration to specific email domain(s). Comma-separated for multiple domains (e.g., `example.org` or `example01.org,example02.org`). When set, only users with matching email domains can sign up via both web and API. When not set, all email domains are allowed
 
 #### Push Notifications
 

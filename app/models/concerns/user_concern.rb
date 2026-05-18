@@ -5,9 +5,19 @@ module UserConcern
 
   included do
     after_create :create_user_settings, :apply_server_setting_to_account, :set_bluesky_bridge_enable
+    validate :validate_email_domain, on: :create, if: -> { ENV['ALLOWED_SIGNUP_EMAIL_DOMAIN'].present? }
   end
 
   private
+
+  def validate_email_domain
+    allowed_domains = ENV['ALLOWED_SIGNUP_EMAIL_DOMAIN'].split(',').map(&:strip).map(&:downcase)
+    email_domain = email.to_s.split('@').last&.downcase
+
+    return if allowed_domains.any? { |domain| email_domain == domain }
+
+    errors.add(:email, "must be from an allowed domain: #{allowed_domains.join(', ')}")
+  end
 
   def create_user_settings
     notification_emails = settings.as_json.select do |key, _|
