@@ -51,7 +51,19 @@ class CustomNotificationService < BaseService
     when :quoted_update
       body = I18n.t('notification_mailer.update.subject', name: from_account_username)
       destination_id = Quote.find(notification.activity_id)&.status_id
+    when :'admin.sign_up'
+      return nil if ENV['SKIP_SIGNUP_PUSH_NOTI'].present? && ENV['SKIP_SIGNUP_PUSH_NOTI'] == 'true'
+      body = I18n.t('notification_mailer.admin.sign_up.subject', name: from_account_username)
+      destination_id = notification.from_account_id
+    when :'admin.report'
+      body = I18n.t('notification_mailer.admin.report.subject', name: from_account_username)
+      destination_id = notification.activity_id
+    else
+      Rails.logger.warn "[CustomNotificationService] Unhandled notification type: #{notification.type}"
+      return nil
     end
+
+    return nil if body.blank?
 
     data = {
       noti_type: notification.type,
