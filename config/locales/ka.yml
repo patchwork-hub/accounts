@@ -22,6 +22,7 @@ ka:
       account_deleted: "თქვენი ანგარიში უკვე წაშლილია"
       invalid_role_access: "%{role} არ არის დაშვებული შესვლაზე"
       deactivated_channel: "თქვენი არხი დეაქტივირებულია. დაუკავშირდით მხარდაჭერას"
+      two_factor_enabled: "ორფაქტორიანი ავთენტიფიკაცია ჩართულია. გთხოვთ, შეხვიდეთ ვებ-ინტერფეისის მეშვეობით"
 
   bristolcable_login_service:
     errors:

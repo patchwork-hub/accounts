@@ -22,6 +22,7 @@ nl:
       account_deleted: "Je account is al verwijderd"
       invalid_role_access: "%{role} mag niet inloggen"
       deactivated_channel: "Je kanaal is gedeactiveerd. Neem contact op met support"
+      two_factor_enabled: "Tweefactorauthenticatie is ingeschakeld. Log alstublieft in via de webinterface"
 
   bristolcable_login_service:
     errors:

@@ -22,6 +22,7 @@ nan:
       account_deleted: "Lí ê account tī sióng-káng sī bē-tàng chhōe"
       invalid_role_access: "%{role} bô hō͘-hêng login"
       deactivated_channel: "Lí ê channel tī bē-tàng chhōe. Chhiáⁿ lia̍h support"
+      two_factor_enabled: "兩步驗證已啟用。請透過網頁介面登入"
   api:
     errors:
       unauthorized: "Lí bô hō͘-hêng chhōe chit ê tōng-tsok"

@@ -22,6 +22,7 @@ io:
       account_deleted: "Vua konto jam esas deletita"
       invalid_role_access: "%{role} ne esas permisita enirar"
       deactivated_channel: "Vua canalo esas deaktivesita. Kontaktar supporto"
+      two_factor_enabled: "Du-faktora autentikado esas aktivigita. Bonvole enirez per la reta interfaco"
 
   bristolcable_login_service:
     errors:

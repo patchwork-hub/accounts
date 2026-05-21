@@ -22,6 +22,7 @@ fo:
       account_deleted: "Kontan tín er longu strikað"
       invalid_role_access: "%{role} hevur ikki loyvi at logga inn"
       deactivated_channel: "Rásin tín er óvirkin. Vinarliga set teg í samband við stuðul"
+      two_factor_enabled: "Tveggja-faktara auðkenning er virkjað. Vinarliga skrá inn við vevsiðuna"
 
   bristolcable_login_service:
     errors:

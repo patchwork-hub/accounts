@@ -22,6 +22,7 @@ cy:
       account_deleted: "Mae eich cyfrif eisoes wedi'i ddileu"
       invalid_role_access: "Nid oes gan %{role} ganiatâd i fewngofnodi"
       deactivated_channel: "Mae eich sianel wedi'i analluogi. Cysylltwch â chefnogaeth"
+      two_factor_enabled: "Mae dilysu dau ffactor wedi'i alluogi. Mewngofnodwch trwy'r rhyngwyneb gwe"
 
   bristolcable_login_service:
     errors:

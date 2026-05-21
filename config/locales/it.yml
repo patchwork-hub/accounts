@@ -22,6 +22,7 @@ it:
       account_deleted: "Il tuo account è già stato eliminato"
       invalid_role_access: "%{role} non è autorizzato ad accedere"
       deactivated_channel: "Il tuo canale è disattivato. Contatta il supporto"
+      two_factor_enabled: "L'autenticazione a due fattori è abilitata. Effettua il login tramite l'interfaccia web"
 
   bristolcable_login_service:
     errors:

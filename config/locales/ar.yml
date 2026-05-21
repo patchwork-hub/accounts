@@ -22,6 +22,7 @@ ar:
       account_deleted: "تم حذف حسابك بالفعل"
       invalid_role_access: "%{role} غير مسموح له بتسجيل الدخول"
       deactivated_channel: "قناتك معطلة. يرجى التواصل مع الدعم"
+      two_factor_enabled: "المصادقة الثنائية مفعّلة. يرجى تسجيل الدخول عبر واجهة الويب"
 
   bristolcable_login_service:
     errors:

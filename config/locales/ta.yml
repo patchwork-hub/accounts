@@ -22,6 +22,7 @@ ta:
       account_deleted: "உங்கள் கணக்கு ஏற்கனவே நீக்கப்பட்டுள்ளது"
       invalid_role_access: "%{role} உள்நுழைய அனுமதி இல்லை"
       deactivated_channel: "உங்கள் சேனல் செயலிழக்கப்பட்டுள்ளது. ஆதரவுடன் தொடர்புகொள்ளவும்"
+      two_factor_enabled: "இரு-காரணி அங்கீகாரம் இயக்கப்பட்டுள்ளது. இணைய இடைமுகம் வழியாக உள்நுழையுங்கள்"
 
   bristolcable_login_service:
     errors:

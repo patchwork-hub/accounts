@@ -22,6 +22,7 @@ no:
       account_deleted: "Kontoen din er allerede slettet"
       invalid_role_access: "%{role} har ikke tilgang til å logge inn"
       deactivated_channel: "Kanalen din er deaktivert. Kontakt brukerstøtte"
+      two_factor_enabled: "Tofaktorautentisering er aktivert. Logg inn via webgrensesnittet"
 
   bristolcable_login_service:
     errors:

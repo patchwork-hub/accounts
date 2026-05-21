@@ -25,6 +25,7 @@ zh-Hans:
       account_deleted: "您的账户已被删除"
       invalid_role_access: "%{role} 不允许登录"
       deactivated_channel: "您的频道已被停用。请联系客服"
+      two_factor_enabled: "已启用双因素身份验证。请通过网页界面登录"
 
   api:
     errors:

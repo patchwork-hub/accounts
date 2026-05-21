@@ -25,6 +25,7 @@ kn:
       account_deleted: "ನಿಮ್ಮ ಖಾತೆ ಈಗಾಗಲೇ ಅಳಿಸಲಾಗಿದೆ"
       invalid_role_access: "%{role} ಲಾಗಿನ್ ಮಾಡಲು ಅನುಮತಿ ಇಲ್ಲ"
       deactivated_channel: "ನಿಮ್ಮ ಚಾನಲ್ ನಿಷ್ಕ್ರಿಯವಾಗಿದೆ. ದಯವಿಟ್ಟು ಬೆಂಬಲವನ್ನು ಸಂಪರ್ಕಿಸಿ"
+      two_factor_enabled: "ಎರಡು-ಅಂಶ ದೃಢೀಕರಣ ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ. ದಯವಿಟ್ಟು ವೆಬ್ ಇಂಟರ್‌ಫೇಸ್ ಮೂಲಕ ಲಾಗಿನ್ ಮಾಡಿ"
 
   bristolcable_login_service:
     errors:

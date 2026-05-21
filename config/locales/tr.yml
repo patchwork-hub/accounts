@@ -22,6 +22,7 @@ tr:
       account_deleted: "Hesabınız zaten silinmiş"
       invalid_role_access: "%{role} giriş yapmaya yetkili değil"
       deactivated_channel: "Kanalınız devre dışı bırakıldı. Lütfen destek ile iletişime geçin"
+      two_factor_enabled: "İki faktörlü kimlik doğrulama etkinleştirildi. Lütfen web arayüzü ile giriş yapın"
 
   bristolcable_login_service:
     errors:

@@ -22,6 +22,7 @@ ja:
       account_deleted: "あなたのアカウントはすでに削除されています"
       invalid_role_access: "%{role} はログインできません"
       deactivated_channel: "あなたのチャンネルは無効化されています。サポートに連絡してください"
+      two_factor_enabled: "二段階認証が有効です。ウェブインターフェースからログインしてください"
 
   bristolcable_login_service:
     errors:

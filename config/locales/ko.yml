@@ -25,6 +25,7 @@ ko:
       account_deleted: "계정이 이미 삭제되었습니다"
       invalid_role_access: "%{role}은(는) 로그인이 허용되지 않습니다"
       deactivated_channel: "채널이 비활성화되었습니다. 지원팀에 문의해 주세요"
+      two_factor_enabled: "이중 인증이 활성화되어 있습니다. 웹 인터페이스로 로그인해 주세요"
 
   bristolcable_login_service:
     errors:

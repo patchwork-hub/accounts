@@ -22,6 +22,7 @@ lad:
       account_deleted: "Tu kuenta ya es eliminada"
       invalid_role_access: "%{role} no tiene permisu para entrar"
       deactivated_channel: "Tu kanal es desaktivado. Kontakta el suport"
+      two_factor_enabled: "La autentifikasyon de dos faktores está aktivada. Merkad entrar kon la interfaz web"
   api:
     errors:
       unauthorized: "No tienes permisu para hazer esta akzion"

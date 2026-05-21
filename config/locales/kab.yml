@@ -25,6 +25,7 @@ kab:
       account_deleted: "Amiḍan-ik yufa-d yella"
       invalid_role_access: "%{role} ur yesɛi ara ad ikcem"
       deactivated_channel: "Akal-ik yufa-d yella. Mudd-d tazmert"
+      two_factor_enabled: "Tasestant s sin n yilugan ttwaktay. Ttxil-k kcem s usebter web"
 
   api:
     errors:

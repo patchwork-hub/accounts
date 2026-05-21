@@ -25,6 +25,7 @@ ku:
       account_deleted: "Hesabê te jixwe hate jêbirin"
       invalid_role_access: "%{role} destûr nîne ku têkeve"
       deactivated_channel: "Kanala te neçalak e. Ji kerema xwe bi piştgirê re têkilî bide"
+      two_factor_enabled: "Rastkirina du-faktorî çalak e. Ji kerema xwe bi navgina têkiliya webê têkeve"
 
   api:
     errors:

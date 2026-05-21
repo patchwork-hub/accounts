@@ -22,6 +22,7 @@ lv:
       account_deleted: "Jūsu konts jau ir dzēsts"
       invalid_role_access: "%{role} nav atļauts pieteikties"
       deactivated_channel: "Jūsu kanāls ir deaktivizēts. Sazinieties ar atbalstu"
+      two_factor_enabled: "Divfaktoru autentifikācija ir iespējota. Lūdzu, piesakieties caur tīmekļa saskarni"
 
   bristolcable_login_service:
     errors:

@@ -22,6 +22,7 @@ fr:
       account_deleted: "Votre compte a déjà été supprimé"
       invalid_role_access: "%{role} n'est pas autorisé à se connecter"
       deactivated_channel: "Votre chaîne est désactivée. Veuillez contacter le support"
+      two_factor_enabled: "L'authentification à deux facteurs est activée. Veuillez vous connecter via l'interface web"
 
   bristolcable_login_service:
     errors:

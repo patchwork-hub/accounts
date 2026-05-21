@@ -22,6 +22,7 @@ ca:
       account_deleted: "El teu compte ja ha estat eliminat"
       invalid_role_access: "%{role} no té permís per iniciar sessió"
       deactivated_channel: "El teu canal està desactivat. Contacta amb el suport"
+      two_factor_enabled: "L'autenticació de dos factors està activada. Si us plau, inicieu sessió amb la interfície web"
 
   bristolcable_login_service:
     errors:

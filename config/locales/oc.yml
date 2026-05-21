@@ -22,6 +22,7 @@ oc:
       account_deleted: "Vòstre compte es ja suprimit"
       invalid_role_access: "%{role} es pas autorizat a se connectar"
       deactivated_channel: "Vòstre canal es desactivat. Contactatz lo supòrt"
+      two_factor_enabled: "L'autentificacion a dos factors es activada. Vos pregam de vos connectar via l'interfàcia web"
   api:
     errors:
       unauthorized: "Sètz pas autorizat a realizar aquesta accion"

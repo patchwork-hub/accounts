@@ -22,6 +22,7 @@ sv:
       account_deleted: "Ditt konto har redan raderats"
       invalid_role_access: "%{role} har inte behörighet att logga in"
       deactivated_channel: "Din kanal är inaktiverad. Kontakta support"
+      two_factor_enabled: "Tvåfaktorsautentisering är aktiverat. Logga in via webbgränssnittet"
 
   bristolcable_login_service:
     errors:

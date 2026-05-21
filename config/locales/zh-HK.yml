@@ -22,6 +22,7 @@ zh-HK:
       account_deleted: "您的帳戶已被刪除"
       invalid_role_access: "%{role} 無權登錄"
       deactivated_channel: "您的頻道已停用。請聯繫支持"
+      two_factor_enabled: "已啟用雙重身份驗證。請透過網頁介面登入"
 
   bristolcable_login_service:
     errors:

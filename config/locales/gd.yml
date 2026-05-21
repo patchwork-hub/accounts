@@ -22,6 +22,7 @@ gd:
       account_deleted: "Tha do chunntas air a sguabadh às mar-thà"
       invalid_role_access: "Chan eil cead aig %{role} logadh a-steach"
       deactivated_channel: "Tha do shianal air a chur à comas. Cuir fios gu taic"
+      two_factor_enabled: "Tha dearbhadh dà-fhactair comasaichte. Feuch an log thu a-steach tron eadar-aghaidh lìn"
 
   bristolcable_login_service:
     errors:

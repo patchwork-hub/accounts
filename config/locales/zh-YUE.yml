@@ -22,6 +22,7 @@ zh-YUE:
       account_deleted: "你嘅帳戶已經被刪除"
       invalid_role_access: "%{role} 冇權限登入"
       deactivated_channel: "你嘅頻道已經停用。請聯絡支援"
+      two_factor_enabled: "已啟用雙重驗證。請透過粵語網頁介面登入"
   api:
     errors:
       unauthorized: "你冇權限執行呢個操作"

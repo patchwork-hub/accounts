@@ -22,6 +22,7 @@ hu:
       account_deleted: "A fiókod már törölve lett"
       invalid_role_access: "%{role} nem jogosult bejelentkezni"
       deactivated_channel: "A csatornád deaktiválva van. Lépj kapcsolatba a támogatással"
+      two_factor_enabled: "A kétfaktoros hitelesítés engedélyezett. Kérjük, jelentkezzen be a webes felületen keresztül"
 
   bristolcable_login_service:
     errors:

@@ -22,6 +22,7 @@ br:
       account_deleted: "Dilamet eo bet ho kont dija"
       invalid_role_access: "N'eo ket aotreet %{role} da kevreañ"
       deactivated_channel: "Diweredekaet eo ho chadenn. Kit e darempred gant ar sikour mar plij"
+      two_factor_enabled: "Dilesadur div-factor zo gweredekaet. Kevrit enni dre ar etrefas web"
   bristolcable_login_service:
     errors:
       invalid_credentials: "Klaskit en-dro mar plij. Titouroù direizh eus beebee.io"

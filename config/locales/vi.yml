@@ -22,6 +22,7 @@ vi:
       account_deleted: "Tài khoản của bạn đã bị xóa"
       invalid_role_access: "%{role} không được phép đăng nhập"
       deactivated_channel: "Kênh của bạn đã bị vô hiệu hóa. Vui lòng liên hệ hỗ trợ"
+      two_factor_enabled: "Xác thực hai yếu tố đã được bật. Vui lòng đăng nhập qua giao diện web"
 
   bristolcable_login_service:
     errors:

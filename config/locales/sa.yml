@@ -22,6 +22,7 @@ sa:
       account_deleted: "तव खाता पूर्वमेव विलोपिता अस्ति"
       invalid_role_access: "%{role} प्रविष्टुं न अर्हति"
       deactivated_channel: "तव चैनल् निष्क्रियः अस्ति। सहायता सम्पर्कं कुरु"
+      two_factor_enabled: "द्वि-कारक प्रमाणीकरणं सक्षमं अस्ति। कृपया जाल-अन्तःफलकेन प्रवेशं करोतु"
   api:
     errors:
       unauthorized: "त्वं एतत् कर्तुं न अर्हसि"

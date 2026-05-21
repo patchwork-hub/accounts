@@ -22,6 +22,7 @@ mk:
       account_deleted: "Вашата сметка е веќе избришана"
       invalid_role_access: "%{role} нема дозвола за најава"
       deactivated_channel: "Вашиот канал е деактивиран. Контактирајте поддршка"
+      two_factor_enabled: "Двофакторната автентикација е овозможена. Ве молиме најавете се преку веб-интерфејсот"
 
   bristolcable_login_service:
     errors:

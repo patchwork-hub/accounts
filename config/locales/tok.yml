@@ -22,6 +22,7 @@ tok:
       account_deleted: "Your account is already deleted"
       invalid_role_access: "%{role} isn't allowed to access login"
       deactivated_channel: "Your channel is deactivated. Please contact support"
+      two_factor_enabled: "nasin luka tu li lon. o kama lon kepeken ilo lipu"
   api:
     errors:
       unauthorized: "You are not authorized to perform this action"

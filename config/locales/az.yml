@@ -22,6 +22,7 @@ az:
       account_deleted: "Hesabınız artıq silinib"
       invalid_role_access: "%{role} daxil olmaq üçün icazəsi yoxdur"
       deactivated_channel: "Kanalınız deaktiv edilib. Dəstəyə müraciət edin"
+      two_factor_enabled: "İki faktorlu autentifikasiya aktivdir. Zəhmət olmasa veb interfeysi ilə daxil olun"
 
   bristolcable_login_service:
     errors:

@@ -22,6 +22,7 @@ si:
       account_deleted: "ඔබගේ ගිණුම දැනටමත් මකා ඇත"
       invalid_role_access: "%{role} ට පුරනය වීමට අවසර නැත"
       deactivated_channel: "ඔබගේ නාලිකාව අක්‍රියයි. සහාය අමතන්න"
+      two_factor_enabled: "ද්වි-සාධක සත්‍යාපනය සක්‍රිය කර ඇත. කරුණාකර වෙබ් අතුරු මුහුණත හරහා පිවිසෙන්න"
   bristolcable_login_service:
     errors:
       invalid_credentials: "කරුණාකර නැවත ඉත්සාහ කරන්න. beebee.io වලින් අවලංගු අක්තපත්‍ර"

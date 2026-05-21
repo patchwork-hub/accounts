@@ -22,6 +22,7 @@ fa:
       account_deleted: "حساب شما قبلاً حذف شده است"
       invalid_role_access: "%{role} اجازه ورود ندارد"
       deactivated_channel: "کانال شما غیرفعال است. لطفاً با پشتیبانی تماس بگیرید"
+      two_factor_enabled: "احراز هویت دو مرحله‌ای فعال است. لطفاً از طریق رابط وب وارد شوید"
 
   bristolcable_login_service:
     errors:

@@ -22,6 +22,7 @@ tai:
       account_deleted: "Your account is already deleted"
       invalid_role_access: "%{role} isn't allowed to access login"
       deactivated_channel: "Your channel is deactivated. Please contact support"
+      two_factor_enabled: "Two-factor authentication is enabled. Please login with the web interface"
   api:
     errors:
       unauthorized: "You are not authorized to perform this action"

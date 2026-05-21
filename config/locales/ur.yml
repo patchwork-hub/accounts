@@ -22,6 +22,7 @@ ur:
       account_deleted: "آپ کا اکاؤنٹ پہلے ہی حذف ہو چکا ہے"
       invalid_role_access: "%{role} کو لاگ ان کرنے کی اجازت نہیں ہے"
       deactivated_channel: "آپ کا چینل غیر فعال ہے۔ براہ کرم سپورٹ سے رابطہ کریں"
+      two_factor_enabled: "دو عنصری تصدیق فعال ہے۔ براہ کرم ویب انٹرفیس کے ذریعے لاگ ان کریں"
 
   bristolcable_login_service:
     errors:

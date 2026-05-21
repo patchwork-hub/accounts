@@ -22,6 +22,7 @@ uk:
       account_deleted: "Ваш акаунт вже видалено"
       invalid_role_access: "%{role} не має доступу до входу"
       deactivated_channel: "Ваш канал деактивовано. Зверніться до підтримки"
+      two_factor_enabled: "Двофакторну автентифікацію ввімкнено. Будь ласка, увійдіть через веб-інтерфейс"
 
   bristolcable_login_service:
     errors:

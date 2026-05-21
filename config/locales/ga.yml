@@ -22,6 +22,7 @@ ga:
       account_deleted: "Tá do chuntas scriosta cheana féin"
       invalid_role_access: "Níl cead ag %{role} logáil isteach"
       deactivated_channel: "Tá do chainéal díghníomhachtaithe. Déan teagmháil le tacaíocht"
+      two_factor_enabled: "Tá fíordheimhniú dhá fhachtóir cumasaithe. Logáil isteach tríd an gcomhéadan gréasáin le do thoil"
 
   bristolcable_login_service:
     errors:

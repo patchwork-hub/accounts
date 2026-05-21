@@ -22,6 +22,7 @@ co:
       account_deleted: "U vostru contu hè digià statu eliminatu"
       invalid_role_access: "%{role} ùn hè micca permessu d'accede"
       deactivated_channel: "U vostru canale hè disattivatu. Cuntattate u supportu"
+      two_factor_enabled: "L'autentificazione à dui fattori hè attivata. Per piacè accede cù l'interfaccia web"
 
   bristolcable_login_service:
     errors:
