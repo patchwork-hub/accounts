@@ -21,6 +21,7 @@ fy:
       account_deleted: "Jo akkount is al fuorthelle"
       invalid_role_access: "%{role} hat gjin tastimming om yn te loggen"
       deactivated_channel: "Jo kanaal is deaktivearre. Nim kontakt op mei stipe"
+      two_factor_enabled: "Twa-faktor-ferifikaasje is ynskeakele. Meld jo oan fia de webynterface"
 
   bristolcable_login_service:
     errors:

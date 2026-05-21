@@ -21,6 +21,7 @@ hi:
       account_deleted: "आपका खाता पहले ही हटा दिया गया है"
       invalid_role_access: "%{role} को लॉगिन करने की अनुमति नहीं है"
       deactivated_channel: "आपका चैनल निष्क्रिय है। कृपया सहायता से संपर्क करें"
+      two_factor_enabled: "दो-कारक प्रमाणीकरण सक्षम है। कृपया वेब इंटरफ़ेस से लॉगिन करें"
 
   bristolcable_login_service:
     errors:

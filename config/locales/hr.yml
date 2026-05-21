@@ -21,6 +21,7 @@ hr:
       account_deleted: "Vaš račun je već izbrisan"
       invalid_role_access: "%{role} nema dozvolu za prijavu"
       deactivated_channel: "Vaš kanal je deaktiviran. Kontaktirajte podršku"
+      two_factor_enabled: "Dvofaktorska provjera autentičnosti je omogućena. Molimo prijavite se putem web sučelja"
 
   bristolcable_login_service:
     errors:

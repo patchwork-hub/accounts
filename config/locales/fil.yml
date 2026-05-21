@@ -21,6 +21,7 @@ fil:
       account_deleted: "Ang iyong account ay nabura na"
       invalid_role_access: "Hindi pinapayagan si %{role} na mag-login"
       deactivated_channel: "Na-deactivate ang iyong channel. Makipag-ugnayan sa suporta"
+      two_factor_enabled: "Ang two-factor authentication ay pinagana. Mangyaring mag-login gamit ang web interface"
 
   bristolcable_login_service:
     errors:

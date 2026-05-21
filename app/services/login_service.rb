@@ -5,6 +5,7 @@ class LoginService
 
   def initialize(params)
     @params = params
+    @user = fetch_user_credentials
   end
 
   def channel_login
@@ -19,6 +20,10 @@ class LoginService
 
   def bristol_cable_login
     BristolcableLoginService.new(@params).login if ENV.fetch('LOCAL_DOMAIN', nil) == 'thebristolcable.social'
+  end
+
+  def two_factor_enabled?
+     @user&.two_factor_enabled? 
   end
 
   private
@@ -52,7 +57,7 @@ class LoginService
   def handle_web_login
     return nil if client_credentials?
 
-    user = fetch_user_credentials
+    user = @user
     return I18n.t('login_service.errors.unauthorized_access') if user.nil? || user&.confirmed_at.nil?
 
     return I18n.t('login_service.errors.invalid_role_access', role: user.role&.name&.underscore&.humanize) unless user.role&.name.eql?('UserAdmin') || user.role&.name.eql?('HubAdmin') || user.role&.name.eql?('MasterAdmin')

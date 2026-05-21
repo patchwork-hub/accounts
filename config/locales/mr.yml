@@ -21,6 +21,7 @@ mr:
       account_deleted: "तुमचे खाते आधीच हटवले आहे"
       invalid_role_access: "%{role} ला लॉगिन करण्याची परवानगी नाही"
       deactivated_channel: "तुमचा चॅनेल निष्क्रिय आहे. कृपया समर्थनाशी संपर्क करा"
+      two_factor_enabled: "दोन-घटक प्रमाणीकरण सक्षम आहे. कृपया वेब इंटरफेसद्वारे लॉगिन करा"
 
   bristolcable_login_service:
     errors:

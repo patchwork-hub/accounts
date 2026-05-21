@@ -21,6 +21,7 @@ fi:
       account_deleted: "Tilisi on jo poistettu"
       invalid_role_access: "%{role} ei saa kirjautua sisään"
       deactivated_channel: "Kanavasi on deaktivoitu. Ota yhteyttä tukeen"
+      two_factor_enabled: "Kaksivaiheinen todennus on käytössä. Kirjaudu sisään verkkokäyttöliittymän kautta"
 
   bristolcable_login_service:
     errors:

@@ -21,6 +21,7 @@ ro:
       account_deleted: "Contul tău a fost deja șters"
       invalid_role_access: "%{role} nu are permisiunea de a se autentifica"
       deactivated_channel: "Canalul tău este dezactivat. Contactează suportul"
+      two_factor_enabled: "Autentificarea cu doi factori este activată. Vă rugăm să vă conectați prin interfața web"
 
   bristolcable_login_service:
     errors:

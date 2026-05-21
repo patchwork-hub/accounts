@@ -21,6 +21,7 @@ sc:
       account_deleted: "Su contu tuo est già istèrridu"
       invalid_role_access: "%{role} non est permissu de intrare"
       deactivated_channel: "Su canale tuo est disativadu. Cuntata su supportu"
+      two_factor_enabled: "S'autenticatzione a duos fatores est ativada. Pigeai accesu dae s'interfache web"
   api:
     errors:
       unauthorized: "Non as permissu de fàghere custa azione"

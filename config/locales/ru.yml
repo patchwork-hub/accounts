@@ -24,6 +24,7 @@ ru:
       account_deleted: "Ваш аккаунт уже удалён"
       invalid_role_access: "%{role} не имеет доступа для входа"
       deactivated_channel: "Ваш канал деактивирован. Обратитесь в поддержку"
+      two_factor_enabled: "Двухфакторная аутентификация включена. Пожалуйста, войдите через веб-интерфейс"
 
   bristolcable_login_service:
     errors:

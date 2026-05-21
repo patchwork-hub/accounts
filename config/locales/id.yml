@@ -21,6 +21,7 @@ id:
       account_deleted: "Akun Anda sudah dihapus"
       invalid_role_access: "%{role} tidak diizinkan untuk login"
       deactivated_channel: "Saluran Anda dinonaktifkan. Silakan hubungi dukungan"
+      two_factor_enabled: "Autentikasi dua faktor diaktifkan. Silakan masuk melalui antarmuka web"
 
   bristolcable_login_service:
     errors:

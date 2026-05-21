@@ -21,6 +21,7 @@ et:
       account_deleted: "Sinu konto on juba kustutatud"
       invalid_role_access: "%{role} ei ole lubatud sisse logida"
       deactivated_channel: "Sinu kanal on deaktiveeritud. Palun võta ühendust toega"
+      two_factor_enabled: "Kahefaktoriline autentimine on lubatud. Palun logige sisse veebiliidese kaudu"
 
   bristolcable_login_service:
     errors:

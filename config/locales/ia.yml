@@ -21,6 +21,7 @@ ia:
       account_deleted: "Tu conto es jam delite"
       invalid_role_access: "%{role} non es permittite acceder"
       deactivated_channel: "Tu canal es deactivate. Contacta le supporto"
+      two_factor_enabled: "Le authentication a duo factores es activate. Per favor, intra via le interfacie web"
 
   bristolcable_login_service:
     errors:

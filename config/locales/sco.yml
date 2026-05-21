@@ -21,6 +21,7 @@ sco:
       account_deleted: "Yer accoont is already deletit"
       invalid_role_access: "%{role} isnae alloued tae access login"
       deactivated_channel: "Yer channel is deactivated. Please contact support"
+      two_factor_enabled: "Twa-factor authentication is enabled. Please log in wi the wab interface"
   api:
     errors:
       unauthorized: "Ye are no authorized tae perform this action"

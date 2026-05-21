@@ -21,6 +21,7 @@ cs:
       account_deleted: "Váš účet byl již smazán"
       invalid_role_access: "%{role} nemá oprávnění k přihlášení"
       deactivated_channel: "Váš kanál je deaktivován. Kontaktujte podporu"
+      two_factor_enabled: "Dvoufaktorové ověřování je povoleno. Přihlaste se prosím přes webové rozhraní"
 
   bristolcable_login_service:
     errors:

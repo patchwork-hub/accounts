@@ -24,6 +24,7 @@ ckb:
       account_deleted: "هەژمارت پێشتر سڕاوە"
       invalid_role_access: "%{role} دەسەڵات نییە بۆ چوونەژوورەوە"
       deactivated_channel: "کەنالت ناچالاکە. تکایە پەیوەندی بکە بە پشتیوانی"
+      two_factor_enabled: "دوو-فاکتەری ئەوتێنتیکەیشن چالاک کراوە. تکایە لەڕێگای ئینتەرفەیسی وێبەوە بچووژووەوە"
 
   bristolcable_login_service:
     errors:

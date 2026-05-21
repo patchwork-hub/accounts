@@ -21,6 +21,7 @@ th:
       account_deleted: "บัญชีของคุณถูกลบแล้ว"
       invalid_role_access: "%{role} ไม่ได้รับอนุญาตให้เข้าสู่ระบบ"
       deactivated_channel: "ช่องทางของคุณถูกปิดใช้งาน กรุณาติดต่อฝ่ายสนับสนุน"
+      two_factor_enabled: "การยืนยันตัวตนสองปัจจัยถูกเปิดใช้งานแล้ว กรุณาเข้าสู่ระบบผ่านอินเทอร์เฟซเว็บ"
 
   bristolcable_login_service:
     errors:

@@ -21,6 +21,7 @@ ms:
       account_deleted: "Akaun anda telah dipadamkan"
       invalid_role_access: "%{role} tidak dibenarkan untuk log masuk"
       deactivated_channel: "Saluran anda dinyahaktifkan. Sila hubungi sokongan"
+      two_factor_enabled: "Pengesahan dua faktor diaktifkan. Sila log masuk melalui antara muka web"
 
   bristolcable_login_service:
     errors:
