@@ -21,6 +21,7 @@ eo:
       account_deleted: "Via konto jam estas forigita"
       invalid_role_access: "%{role} ne rajtas ensaluti"
       deactivated_channel: "Via kanalo estas malaktivigita. Bonvolu kontakti subtenon"
+      two_factor_enabled: "Dupaŝa aŭtentigo estas ŝaltita. Bonvolu ensaluti per la retinterfaco"
 
   bristolcable_login_service:
     errors:

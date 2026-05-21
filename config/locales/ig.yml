@@ -21,6 +21,7 @@ ig:
       account_deleted: "Akaụntụ gị ehichapụla"
       invalid_role_access: "%{role} enyiereghị ikike ịbanye"
       deactivated_channel: "Ọwa gị kwụsịrị. Kpọtụrụ nkwado"
+      two_factor_enabled: "Ngosi abụọ nwere ike. Biko banye site na njikọ weebụ"
 
   bristolcable_login_service:
     errors:

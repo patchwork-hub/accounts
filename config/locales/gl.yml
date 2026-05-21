@@ -21,6 +21,7 @@ gl:
       account_deleted: "A túa conta xa foi eliminada"
       invalid_role_access: "%{role} non ten permiso para iniciar sesión"
       deactivated_channel: "O teu canal está desactivado. Contacta co soporte"
+      two_factor_enabled: "A autenticación de dous factores está activada. Por favor, inicia sesión coa interface web"
 
   bristolcable_login_service:
     errors:

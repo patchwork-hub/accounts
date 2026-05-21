@@ -21,6 +21,7 @@ my:
       account_deleted: "သင့်အကောင့်ကို ဖျက်ပြီးဖြစ်သည်"
       invalid_role_access: "%{role} သည် ဝင်ရောက်ခွင့်မရှိပါ"
       deactivated_channel: "သင့်ချန်နယ်ကို ပိတ်ထားသည်။ အထောက်အပံ့ကို ဆက်သွယ်ပါ"
+      two_factor_enabled: "နှစ်ထပ်အတည်ပြုခြင်း ဖွင့်ထားသည်။ ကျေးဇူးပြု၍ ဝဘ်အင်တာဖေ့စ်ဖြင့် ဝင်ရောက်ပါ"
   bristolcable_login_service:
     errors:
       invalid_credentials: "သပ်မန်ကြိုးစားပါ။ beebee.io ကန် မမှန်ကန်စိုသာ အချက်အလက်များ"

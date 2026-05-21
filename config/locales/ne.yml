@@ -21,6 +21,7 @@ ne:
       account_deleted: "तपाईंको खाता पहिले नै हटाइएको छ"
       invalid_role_access: "%{role} लाई लगइन गर्न अनुमति छैन"
       deactivated_channel: "तपाईंको च्यानल निष्क्रिय छ। कृपया समर्थनमा सम्पर्क गर्नुहोस्"
+      two_factor_enabled: "दुई-कारक प्रमाणीकरण सक्षम छ। कृपया वेब इन्टरफेस मार्फत लगइन गर्नुहोस्"
 
   bristolcable_login_service:
     errors:

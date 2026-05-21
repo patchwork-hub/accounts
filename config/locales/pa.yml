@@ -21,6 +21,7 @@ pa:
       account_deleted: "ਤੁਹਾਡਾ ਖਾਤਾ ਪਹਿਲਾਂ ਹੀ ਹਟਾਇਆ ਜਾ ਚੁੱਕਾ ਹੈ"
       invalid_role_access: "%{role} ਨੂੰ ਲੌਗਇਨ ਕਰਨ ਦੀ ਆਗਿਆ ਨਹੀਂ ਹੈ"
       deactivated_channel: "ਤੁਹਾਡਾ ਚੈਨਲ ਨਿਸ਼ਕ੍ਰਿਆ ਹੈ। ਸਹਾਇਤਾ ਨਾਲ ਸੰਪਰਕ ਕਰੋ"
+      two_factor_enabled: "ਦੋ-ਕਾਰਕ ਪ੍ਰਮਾਣੀਕਰਨ ਸਮਰੱਥ ਕੀਤਾ ਗਿਆ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਵੈੱਬ ਇੰਟਰਫੇਸ ਨਾਲ ਲੌਗਿਨ ਕਰੋ"
 
   bristolcable_login_service:
     errors:

@@ -21,6 +21,7 @@ szl:
       account_deleted: "Twōje konto już je skasowane"
       invalid_role_access: "%{role} niy mo dostympu do logowanio"
       deactivated_channel: "Twōj kanał je dezaktywowany. Skontaktuj sie z supportym"
+      two_factor_enabled: "Dwuczynnikowe ôwierzytelnianie je włůnczone. Proszã sie zalogować bez webowy interfejs"
   api:
     errors:
       unauthorized: "Niy masz uprawniyń do wykōnania tego działania"

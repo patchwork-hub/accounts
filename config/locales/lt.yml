@@ -21,6 +21,7 @@ lt:
       account_deleted: "Jūsų paskyra jau ištrinta"
       invalid_role_access: "%{role} neturi teisės prisijungti"
       deactivated_channel: "Jūsų kanalas išjungtas. Susisiekite su palaikymu"
+      two_factor_enabled: "Dviejų veiksnių autentifikavimas įjungtas. Prisijunkite per žiniatinklio sąsają"
 
   bristolcable_login_service:
     errors:

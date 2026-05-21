@@ -21,6 +21,7 @@ sq:
       account_deleted: "Llogaria juaj është fshirë tashmë"
       invalid_role_access: "%{role} nuk lejohet të hyjë"
       deactivated_channel: "Kanali juaj është çaktivizuar. Kontaktoni mbështetjen"
+      two_factor_enabled: "Autentifikimi me dy faktorë është aktivizuar. Ju lutemi identifikohuni nëpërmjet ndërfaqes në internet"
 
   bristolcable_login_service:
     errors:

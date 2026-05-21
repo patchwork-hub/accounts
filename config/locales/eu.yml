@@ -21,6 +21,7 @@ eu:
       account_deleted: "Zure kontua dagoeneko ezabatuta dago"
       invalid_role_access: "%{role}k ez du saioa hasteko baimenik"
       deactivated_channel: "Zure kanala desaktibatuta dago. Jarri harremanetan laguntzarekin"
+      two_factor_enabled: "Bi faktoreko autentifikazioa gaituta dago. Mesedez, saioa hasi web-interfazearen bidez"
 
   bristolcable_login_service:
     errors:

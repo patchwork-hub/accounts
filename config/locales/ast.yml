@@ -21,6 +21,7 @@ ast:
       account_deleted: "La to cuenta yá ta desaniciada"
       invalid_role_access: "%{role} nun tien permisu pa aniciar sesión"
       deactivated_channel: "El to canal ta desactiváu. Contauta col soporte"
+      two_factor_enabled: "L'autenticación en dos pasos ta activada. Por favor, inicia sesión cola interfaz web"
 
   bristolcable_login_service:
     errors:

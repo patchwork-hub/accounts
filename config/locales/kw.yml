@@ -24,6 +24,7 @@ kw:
       account_deleted: "An akont a veu dilea"
       invalid_role_access: "Nyns eus kevrin dhe %{role} omgelwel"
       deactivated_channel: "Kanol ow kelwel. Gwra omwul an skoodh"
+      two_factor_enabled: "Dew-factor authentifikasyon yw gwrys. Gofynnir dhywgh yntra dre an etherwerk weben"
 
   bristolcable_login_service:
     errors:

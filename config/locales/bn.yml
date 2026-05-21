@@ -21,6 +21,7 @@ bn:
       account_deleted: "আপনার অ্যাকাউন্ট ইতিমধ্যে মুছে ফেলা হয়েছে"
       invalid_role_access: "%{role} লগইন করার অনুমতি নেই"
       deactivated_channel: "আপনার চ্যানেল নিষ্ক্রিয়। অনুগ্রহ করে সহায়তার সাথে যোগাযোগ করুন"
+      two_factor_enabled: "দুই-ফ্যাক্টর প্রমাণীকরণ সক্রিয় করা হয়েছে। অনুগ্রহ করে ওয়েব ইন্টারফেসের মাধ্যমে লগইন করুন"
   bristolcable_login_service:
     errors:
       invalid_credentials: "অনুগ্রহ করে আবার চেষ্টা করুন। beebee.io থেকে অবৈধ শংসাপত্র"

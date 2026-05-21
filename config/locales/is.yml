@@ -21,6 +21,7 @@ is:
       account_deleted: "Reikningurinn þinn hefur þegar verið eytt"
       invalid_role_access: "%{role} hefur ekki leyfi til að skrá sig inn"
       deactivated_channel: "Rásin þín er óvirk. Hafðu samband við þjónustuver"
+      two_factor_enabled: "Tveggja þátta auðkenning er virkjuð. Vinsamlegast skráðu þig inn í gegnum vefviðmótið"
 
   bristolcable_login_service:
     errors:

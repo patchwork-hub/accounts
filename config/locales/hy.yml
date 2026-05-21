@@ -24,6 +24,7 @@ hy:
       account_deleted: "Ձեր հաշիվն արդեն ջնջված է"
       invalid_role_access: "%{role}-ը մուտք գործելու իրավունք չունի"
       deactivated_channel: "Ձեր ալիքը ապաակտիվացված է։ Խնդրում ենք կապվել աջակցությանը"
+      two_factor_enabled: "Երկգործոն նույնականացումն ակտիվ է: Խնդրում ենք մուտք գործել վեբ ինտերֆեյսի միջոցով"
 
   bristolcable_login_service:
     errors:

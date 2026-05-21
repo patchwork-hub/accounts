@@ -21,6 +21,7 @@ pt-PT:
       account_deleted: "A sua conta já foi eliminada"
       invalid_role_access: "%{role} não tem permissão para iniciar sessão"
       deactivated_channel: "O seu canal está desativado. Contacte o suporte"
+      two_factor_enabled: "A autenticação de dois fatores está ativada. Por favor, inicie sessão através da interface web"
 
   bristolcable_login_service:
     errors:

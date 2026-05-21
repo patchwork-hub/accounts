@@ -21,6 +21,7 @@ de:
       account_deleted: "Dein Konto wurde bereits gelöscht"
       invalid_role_access: "%{role} ist nicht zum Einloggen berechtigt"
       deactivated_channel: "Dein Kanal ist deaktiviert. Bitte kontaktiere den Support"
+      two_factor_enabled: "Zwei-Faktor-Authentifizierung ist aktiviert. Bitte melde dich über die Weboberfläche an"
 
   bristolcable_login_service:
     errors:

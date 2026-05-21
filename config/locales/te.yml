@@ -21,6 +21,7 @@ te:
       account_deleted: "మీ ఖాతా ఇప్పటికే తొలగించబడింది"
       invalid_role_access: "%{role} లాగిన్ చేయడానికి అనుమతి లేదు"
       deactivated_channel: "మీ ఛానల్ నిలిపివేయబడింది. సహాయానికి సంప్రదించండి"
+      two_factor_enabled: "రెండు-కారకాల ప్రమాణీకరణ ప్రారంభించబడింది. దయచేసి వెబ్ ఇంటర్‌ఫేస్ ద్వారా లాగిన్ అవ్వండి"
 
   bristolcable_login_service:
     errors:

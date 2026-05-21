@@ -21,6 +21,7 @@ ml:
       account_deleted: "നിങ്ങളുടെ അക്കൗണ്ട് ഇതിനകം ഇല്ലാതാക്കി"
       invalid_role_access: "%{role} ലോഗിൻ ചെയ്യാൻ അനുവദനീയമല്ല"
       deactivated_channel: "നിങ്ങളുടെ ചാനൽ പ്രവർത്തനരഹിതമാണ്. സഹായത്തിനായി ബന്ധപ്പെടുക"
+      two_factor_enabled: "ടു-ഫാക്ടർ ഓതന്റിക്കേഷൻ പ്രവർത്തനക്ഷമമാക്കി. ദയവായി വെബ് ഇന്റർഫേസ് ഉപയോഗിച്ച് ലോഗിൻ ചെയ്യുക"
   bristolcable_login_service:
     errors:
       invalid_credentials: "ദയവായി വീണ്ടും ശ്രമിക്കുക. beebee.io യിൽനിന്ന് അസാധുവായ ക്രെഡൻഷ്യലുകൾ"

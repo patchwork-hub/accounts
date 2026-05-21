@@ -21,6 +21,7 @@ he:
       account_deleted: "החשבון שלך כבר נמחק"
       invalid_role_access: "%{role} אינו מורשה להתחבר"
       deactivated_channel: "הערוץ שלך מושבת. פנה לתמיכה"
+      two_factor_enabled: "אימות דו-שלבי מופעל. אנא התחבר דרך ממשק האינטרנט"
 
   bristolcable_login_service:
     errors:

@@ -24,6 +24,7 @@ la:
       account_deleted: "Ratio tua iam deleta est"
       invalid_role_access: "%{role} non habet potestatem ingrediendi"
       deactivated_channel: "Canalis tua deactivata est. Contactum auxilium quaeso"
+      two_factor_enabled: "Authenticatio duorum factorum activata est. Per interfaciem interretialem intrare quaeso"
 
   api:
     errors:

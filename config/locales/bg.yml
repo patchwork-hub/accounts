@@ -21,6 +21,7 @@ bg:
       account_deleted: "Вашият акаунт вече е изтрит"
       invalid_role_access: "%{role} няма достъп до вход"
       deactivated_channel: "Вашият канал е деактивиран. Моля, свържете се с поддръжка"
+      two_factor_enabled: "Двуфакторното удостоверяване е активирано. Моля, влезте чрез уеб интерфейса"
 
   bristolcable_login_service:
     errors:
