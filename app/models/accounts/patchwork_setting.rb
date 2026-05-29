@@ -6,7 +6,7 @@ module Accounts
   class PatchworkSetting < ApplicationRecord
     self.table_name = 'patchwork_settings'
 
-    belongs_to :account
+    belongs_to :account, class_name: '::Account'
 
     enum :app_name, { patchwork: 0, newsmast: 1, leicester: 2 }, default: :patchwork
 

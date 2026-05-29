@@ -23,7 +23,6 @@ module Accounts::Concerns::CustomAuthenticationBehavior
       LoginService.new(oauth_params).channel_login || nil
     end
 
-    byebug
     error_message.nil? ? super : render_error(error_message)
   end
 
