@@ -74,6 +74,14 @@ bundle install
 - Drafted statuses support
 - User alt-text preferences
 
+### Deep Linking (iOS & Android)
+
+- **iOS Universal Links**: Serves `apple-app-site-association` at `/.well-known/apple-app-site-association` with correct `application/json` Content-Type
+- **Android App Links**: Serves `assetlinks.json` at `/.well-known/assetlinks.json`
+- **Environment Variable Configuration**: All app identifiers configured via env vars — no hardcoded values
+- **No Nginx Changes Required**: Unlike static file approach, the controller handles Content-Type headers automatically
+- **Safe Fallback**: Returns 404 if env vars are not configured
+
 ## API Endpoints
 
 ### Notification Tokens
@@ -105,6 +113,13 @@ POST /api/v1/patchwork/email_settings/notification
 GET  /api/v1/patchwork/alttext_settings
 POST /api/v1/patchwork/alttext_settings/alttext
 POST /api/v1/user_locales
+```
+
+### Deep Linking (Well-Known)
+
+```text
+GET /.well-known/apple-app-site-association  # iOS Universal Links (AASA)
+GET /.well-known/assetlinks.json             # Android App Links
 ```
 
 ## Configuration
@@ -143,6 +158,13 @@ POST /api/v1/user_locales
 
 - `GHOST_URL` - Base URL of Ghost CMS instance (required only if using Ghost subscriptions feature, e.g., `https://newsletter.example.com`)
 - `GHOST_ADMIN_API_KEY` - Ghost Admin API key in format `id:secret` for authentication (required only if using Ghost subscriptions feature)
+
+#### Deep Linking
+
+- `IOS_APP_ID` - Full iOS app identifier in `TeamID.BundleID` format (e.g., `VA45Q6RWV3.com.csidnetwork.social`). Required for `/.well-known/apple-app-site-association` to be served; returns 404 if not set
+- `IOS_DEEPLINK_PATHS` - Comma-separated URL path patterns for iOS deep links (optional, defaults to `/@*,/@*/*`)
+- `ANDROID_PACKAGE_NAME` - Android app package name (e.g., `com.csidnetwork.social`). Required for `/.well-known/assetlinks.json` to be served; returns 404 if not set
+- `ANDROID_SHA256_CERT_FINGERPRINTS` - Comma-separated SHA-256 certificate fingerprints for Android app verification (e.g., `3C:0D:6D:2F:70:2C:0D:ED:25:FA:3A:83:DF:B3:8C:C9:67:F7:26:38:4E:6B:67:1E:CF:88:53:61:7D:C7:8D:22`). Required for `/.well-known/assetlinks.json` to be served; returns 404 if not set
 
 ## Development
 
