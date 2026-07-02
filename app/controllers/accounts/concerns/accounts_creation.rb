@@ -24,7 +24,7 @@ module Accounts::Concerns::AccountsCreation
 
   private
 
-  def generate_opt_token
+  def generate_otp_token
     user = User.find_by(email: account_params[:email])
     return unless user && defined?(CustomPasswordsMailer)
 
